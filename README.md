@@ -2,6 +2,9 @@
 * Note: This Documentation is also available in Portuguese. Scrool down for it.
 * Nota: Essa documentação está também disponível em Português, role pra baixo para acessar.
 
+* IMPORTANT: I've also recorded some Vídeos (Youtube tutorials) that shows how to RUN this app, how to
+prepare your envoirnment, and also explaining how this Architecture was developed. Links Below.
+
 # This is my Demo of a FullStack App using:
 .NET Core BackEnd (With Rich Arquitecture) DDD/SOLID/CQRS + WebApi.
 Web-Panel using Angular 8.2 Version with Material with Rich Arquitecture.
@@ -100,10 +103,23 @@ DashBoard will also add the Device to the BackEnd, so the Panel will display a L
 ## How to RUN it and Technical Information:
 
 - You can Develop and Run it on Windows, Linux and MacOs.
-In My Machine:
+In My Machine: I've Used Linux Ubuntu 18.04 and VS Code as Code-Editor. In My Repository there's a project
+called "docsamples" and inside it "generaldocs". I use it as my own-manual to configure my envoirment, so
+inside "vscode" you'll find witch EXTENSIONS i use, witch FONTS and also my "settings.json". There are other
+files and folders on "generaldocs" for my Angular Env, my React-Native, and a lot of other useful informations.
 
-- We recommend you to use Visual Studio Code. If you want to use my VSCode preferences like fonts, colors,
-icons, plugins you can look on my Repository: "Docsamples > General Docs > VsCode".
-- On Windows you can also use Visual Studio Community 2019.
+I also use "Insomnia" to TEST API, but you can use Postman or if you prefer, install some integrated tool
+like Swagger. I also use "Azure Data Studio" to check the DataBase in case of need. Note: I've also tested
+all this APP and Envoirment using Windows 10 and it also works perfect. Basically chooose your favorite :trollface:
 
-Youtube Vídeo:
+### Tutorial vídeos on Youtube:
+(1) How to Prepare your Envoirment and Machine: 
+(2) How to RUN this App and How it Works:
+(3) Technical Explanation - understanding what's under the Hood:
+
+
+### How to RUN it with the Docker-Compose integrated Envoirnment:
+
+
+
+### how to RUN it out of the Docker Containner (100% on local operational system):
