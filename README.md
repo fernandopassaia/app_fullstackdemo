@@ -3,14 +3,13 @@
 * Nota: Essa documentação está também disponível em Português, role pra baixo para acessar.
 
 * IMPORTANT: I've also recorded some Vídeos (Youtube tutorials) that shows how to RUN this app, how to
-prepare your envoirnment, and also explaining how this Architecture was developed. Links Below.
+prepare your envoirnment, and also explaining how this Architecture was developed. Links Below. (also PT).
 
-# This is my Demo of a FullStack App using:
 .NET Core BackEnd (With Rich Arquitecture) DDD/SOLID/CQRS + WebApi.
 Web-Panel using Angular 8.2 Version with Material with Rich Arquitecture.
 Mobile App using React-Native.
 
-# More Details about this Architecture you can find going on this doc...
+### More Details about this Architecture you can find going on this doc...
 ------------------------------------------------------------------------------------------------------------
 
 ## Business Logic:
@@ -18,13 +17,13 @@ Mobile App using React-Native.
 How it works: WebPanel (Angular) and MobileApp (React) will have a Login-Screen, that will communicate with
 the backend, to login and Store the Token (JWT) with the Claims. Once Logged:
 
-MobileApp can "register" the Device on backend, registering the Manufacturer (Motorola, LG, Samsung, Xiaomi),
+**MobileApp** can "register" the Device on backend, registering the Manufacturer (Motorola, LG, Samsung, Xiaomi),
 Model (S7, S8, S9, RedMi9, RedMi10), IMEI number and some other information. MobileApp will have a cool screen
 to show some important informations from Device - once registered, will store the ID taken from backend. You
 could use your Real Device or also an Emulator (like Android Studio or Genymotion) to test it. Once it's React
 Native, you can also work to compile it to iOS and iPhone.
 
-FrontEnd will also Login and get the Token (JWT with Claims). On Panel you will have a DashBoard (showing 
+**FrontEnd** will also Login and get the Token (JWT with Claims). On Panel you will have a DashBoard (showing 
 graphics with Number of Devices per AndroidVersion, and Number of Devices per Manufacturer). Users logged on
 Panel will be allowed to create Another Users that can also Login into Panel and MobileApp. So the Users
 Screen will comes with a "CRUD" function to List, Create, Edit and Delete Users.
@@ -34,7 +33,7 @@ Device, so once user Login in MobileApp and Register the Device, it will be avai
 Angular Panel is also ready to work with the Token, with a Interceptor Layer to Deal with 401/403 codes,
 show good messages, alerts, ballon messages, modals and a lot of cool things with a nice Material-Interface.
 
-BackEnd will manage Automatically the Manufacturers > Models of devices. So new Manufacturers and new models
+**BackEnd** will manage Automatically the Manufacturers > Models of devices. So new Manufacturers and new models
 will be generate by the BackEnd, attaching the Device to the Right "relationship". So basically: A Device will
 belong to a Model, and a Model will belong to a Manufacturer. One Manufacturer has N Models, One Model has
 N devices. This relationships will be generated on Entities, and also, replicated by EF on Database.
@@ -42,7 +41,7 @@ N devices. This relationships will be generated on Entities, and also, replicate
 The Screen on Panel to Manage (CRUD) this Manufacturers > Models will also be Available. So we have at least
 3 Cruds: Users, Manufacturers and Models. A Screen for Devices (List and Details) is also available.
 
-Under the hood : The BackEnd .NET Core will be running providing all this data for both apps.
+**Under the hood**: The BackEnd .NET Core will be running providing all this data for both apps.
 
 :+1: (Note: Add some PrintScreens of App Here) :shipit:
 
@@ -67,7 +66,7 @@ JWT Token to Auth Parts + JSON to Data
 
 CQRS to Receive Queries and Comands and Return Results
 
-Repositories Layer + Unit of Work + 2 CRUDS (EF Code First)
+Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
 
 Validation by Contracts.
 
@@ -75,9 +74,11 @@ Validation by Contracts.
 
 ## FrontEnd:
 
-### Angular 8 + Angular Material Panel + Login + Auth + 2 Full-CRUDS:
+### Angular 8 + Angular Material Panel + Login + Auth + 3 Full-CRUDS:
 
 Complete Panel to Login + DashBoard + 2 Entire CRUDS (read below for the Business Logic)
+
+Nice Interface using Angular Material, Modals, MatTable, Chartlist and more...
 
 CQRS Models and Interfaces based on BackEnd (Queries, Commands and Results)
 
@@ -104,13 +105,15 @@ DashBoard will also add the Device to the BackEnd, so the Panel will display a L
 
 - You can Develop and Run it on Windows, Linux and MacOs.
 In My Machine: I've Used Linux Ubuntu 18.04 and VS Code as Code-Editor. In My Repository there's a project
-called "docsamples" and inside it "generaldocs". I use it as my own-manual to configure my envoirment, so
+called **"docsamples"** and inside it **"generaldocs"**. I use it as my own-manual to configure my envoirment, so
 inside "vscode" you'll find witch EXTENSIONS i use, witch FONTS and also my "settings.json". There are other
-files and folders on "generaldocs" for my Angular Env, my React-Native, and a lot of other useful informations.
+files and folders on "generaldocs" for my Angular Env, my React-Native, .Net Core, GitHub with the main
+commands i use and a lot of other useful informations.
 
 I also use "Insomnia" to TEST API, but you can use Postman or if you prefer, install some integrated tool
 like Swagger. I also use "Azure Data Studio" to check the DataBase in case of need. Note: I've also tested
-all this APP and Envoirment using Windows 10 and it also works perfect. Basically chooose your favorite :trollface:
+all this APP and Envoirment using Windows 10 and it also works perfect, also in VS Community 2019. Basically
+chooose your favorite :trollface:
 
 ### Tutorial vídeos on Youtube:
 (1) How to Prepare your Envoirment and Machine: 
