@@ -1,0 +1,47 @@
+﻿using AppFullStackDemo.Domain.Entities.Security;
+using AppFullStackDemo.Domain.ValueObjects;
+using Flunt.Validations;
+using System.Collections.Generic;
+
+namespace AppFullStackDemo.Domain.Entities
+{
+    public class User : EntityBase
+    {
+        public User(string aditionalInfo, Name name, Document document, Phone phone, Email email)
+        {
+            AditionalInfo = aditionalInfo;
+            Name = name;
+            Document = document;
+            Phone = phone;
+            Email = email;
+            Validate();
+        }
+
+        //Parameters and ObjectValues
+        public string AditionalInfo { get; private set; }
+        public Document Document { get; private set; }
+        public Email Email { get; private set; }
+        public Name Name { get; private set; }
+        public Phone Phone { get; private set; }
+        //User has a collection of Equipments and a List of Claims
+        public List<Equipment> EquipmentsList { get; private set; }
+        public List<UserClaim> UserClaim { get; private set; }
+
+        public void Update(string aditionalInfo, Name name, Document document, Phone phone, Email email)
+        {
+            AditionalInfo = aditionalInfo;
+            Name = name;
+            Document = document;
+            Phone = phone;
+            Email = email;
+            Validate();
+        }
+
+        public void Validate()
+        {
+            AddNotifications(new Contract()
+                .HasMaxLengthIfNotNullOrEmpty(AditionalInfo, 200, "AditionalInfo", "Aditional Info could not be higger than 200c")
+            );
+        }
+    }
+}

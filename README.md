@@ -1,10 +1,14 @@
-# app_fullstackdemo .NetCore + Angular + React Native.
+# app_fullstackdemo .NetCore DDD/SOLID + Angular 8.2 Material + React Native MobileApp.
 * Note: This Documentation is also available in Portuguese. Scrool down for it.
 * Nota: Essa documentação está também disponível em Português, role pra baixo para acessar.
 
-* IMPORTANT: I've also recorded some Vídeos (Youtube tutorials) that shows how to RUN this app, how to
-prepare your envoirnment, and also explaining how this Architecture was developed. Links Below. (also PT).
+* Note 2: I've also recorded some Vídeos (Youtube tutorials) that shows how to RUN this app, how to prepare
+your envoirnment, and also explaining how this Architecture was developed. Links Below.
 
+* Note 3: We have this system published ONLINE, you can access and test it on a URL without installing or
+set-up Dev-envoirnment. Scrool down for URLs.
+
+------------------------------------------------------------------------------------------------------------
 .NET Core BackEnd (With Rich Arquitecture) DDD/SOLID/CQRS + WebApi.
 Web-Panel using Angular 8.2 Version with Material with Rich Arquitecture.
 Mobile App using React-Native.
@@ -39,15 +43,29 @@ belong to a Model, and a Model will belong to a Manufacturer. One Manufacturer h
 N devices. This relationships will be generated on Entities, and also, replicated by EF on Database.
 
 The Screen on Panel to Manage (CRUD) this Manufacturers > Models will also be Available. So we have at least
-3 Cruds: Users, Manufacturers and Models. A Screen for Devices (List and Details) is also available.
+3 Cruds: Users, Manufacturers and Models. And more + Screen for Devices (List and Details) - also available.
 
-**Under the hood**: The BackEnd .NET Core will be running providing all this data for both apps.
+**Under the hood**: The BackEnd .NET Core with RichArchitecture will be running providing all this data for both apps.
 
 :+1: (Note: Add some PrintScreens of App Here) :shipit:
 
+### License and USE of this App in a RealWorld:
+Note: This App is FREE and FULL OpenSource. You can Use it as a base for your system, or you can also colaborate
+with me to improve it. In a REAL-WORLD, this App needs to be better thinked:
 
-Note: This App is FREE. You can Use it as a base for your system, or you can also colaborate with me to
-improve it. In a REAL-WORLD, this App needs to be bigger: Users should belong to a Company, should have
+Users should belong to a Company (or even better - User should belong to a Real-Entity like Employee or something),
+Claims should have Profiles (like Master, Admin...) where the Claims will be connected (not right to the user). We
+also need a screen to manage the CRUD of the Claims (that we don't have on this app). Create category for the Devices:
+
+We also need to implement things like RefreshToken Logic, and go on and on - lot of other things to use this app in a
+Real-scenario. We need to adapt lot of things to a REAL-WORLD-Scenario of Real-Business needs Logic.
+
+But for now: Remember that this app is a "demo" of Programming, Architecture and Techinical Skills - NOT a demo of
+Real-World App. So we will keep the business-stuff simple to Focus on Techinical stuff. Anyway, you can use it as a
+BASE of a Architecture, and start your own system under it, following the patterns already implemented on it. You can
+use it as a "skeleton" for your next Real-Software. Good luck :cake:
+
+should have
 levels (where we will connect the claims), one "low-level" user cannot update data from others. The Main
 point here is to Show Programming, Architecture and Techinical stuff. In a Real-World, this app nees better
 logic-business studies, and for sure a better need for development.
@@ -62,13 +80,17 @@ Rich Modeling (Models-Entities, Enums, ValueObjects) (read below for the Busines
 
 Api REST + Handlers to Deal with the Requests + DI
 
-JWT Token to Auth Parts + JSON to Data
+JWT Token to Auth Parts + Claims + JSON to Data
 
 CQRS to Receive Queries and Comands and Return Results
+
+Handler Layer (you can also call it as "Service") to "orchestrate" the requests
 
 Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
 
 Validation by Contracts.
+
+Shared Project (classlib) for Field Formaters, Validations, Cryptografy
 
 * Note: DataBase can be Easily replaced (to Postgres, MySQL) once layers are very well separated.
 
@@ -76,19 +98,20 @@ Validation by Contracts.
 
 ### Angular 8 + Angular Material Panel + Login + Auth + 3 Full-CRUDS:
 
-Complete Panel to Login + DashBoard + 2 Entire CRUDS (read below for the Business Logic)
+Complete Panel to Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
 
 Nice Interface using Angular Material, Modals, MatTable, Chartlist and more...
 
 CQRS Models and Interfaces based on BackEnd (Queries, Commands and Results)
 
-Layer for the Services and API Communication
+Layer for the Services and API Communication - Capable to Catch Results and Display Messages (and backend-errors)
+without programming separated code to catch messages for each service/screen (httpinterceptor).
 
 Separated Modules and Rotes Files for better Organization
 
 Shared Services for Dialogs, Notification Messages, Modal Screens, Enum Description.
 
-Auth Guard / Auth Interceptor to Deal Perfectly with the Tokens, Authentication, Headers (401/403)
+Auth Guard / Auth Interceptor to Deal Perfectly with the Tokens, Authentication, Headers (401/403).
 
 ## Mobile:
 
@@ -121,8 +144,30 @@ chooose your favorite :trollface:
 (3) Technical Explanation - understanding what's under the Hood:
 
 
-### How to RUN it with the Docker-Compose integrated Envoirnment:
+### User to Access the App:
+During the Migration of the API will be created an User with some Devices (Xiaomi, Motorola, Samsung, Google) just 
+for test, you can use this user to login and create another users, or also to test the system.
+
+Login: admin
+Password: admin
+
+If you just want to **TEST** this system as a USER, without setting (or having) an envoirnment, we published it
+**ONLINE**. This system is published and ONLINE for test with the same user account below. You can test the Panel,
+and you can also test the APK file by installing it on your own Mobile or even an Emulator. Feel free at:
+
+www.futuradata.com.br/appfullstackdemo/panel (login on panel to see AngularApp)
+www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device)
+www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)
 
 
+## How to RUN it OUT of the Docker Containner (100% on local operational system):
 
-### how to RUN it out of the Docker Containner (100% on local operational system):
+## (1) BackEnd:
+**Note**: SQLServer Connection string for the BackEnd is on "BackEnd>AppFullStackDemo.Api>appsettins.json", so please
+set-up your SQL Connection Server info before try to RUN the APP.
+
+## How to RUN it with the Docker-Compose integrated Envoirnment:
+Note: Need to be done on Future. Once i don't know (even if it's possible) to encapsulate inside a Containner the
+"React Native" (Mobile) part. Once app needs to Run on Machine (to access the Device and install the APK), i don't
+know how to make it runs inside a docker and make it automatically. Maybe it's possible to run "npm start" and 
+"react-native run-android" inside the docker containner and install on local mobile. Well, to be checked...
