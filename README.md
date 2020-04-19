@@ -74,7 +74,7 @@ logic-business studies, and for sure a better need for development.
 
 ## BackEnd:
 
-### .NET Core 2.2 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
+### .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
 
 Rich Modeling (Models-Entities, Enums, ValueObjects) (read below for the Business Logic)
 

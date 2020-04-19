@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "qlf8l0tjaxwvqG9xZs6zaHS9mniGMmgId1ZPu5BwOE6zjbICBakmXAoYU9EEZWOXwp91DHjj4Oxr0MVFlMxHXQ==",
+  "success": true,
+  "projectFilePath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/AppFullStackDemo.Api.csproj",
+  "expectedPackageFiles": [
+    "/home/fernandopassaia/.nuget/packages/flunt/1.0.3/flunt.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

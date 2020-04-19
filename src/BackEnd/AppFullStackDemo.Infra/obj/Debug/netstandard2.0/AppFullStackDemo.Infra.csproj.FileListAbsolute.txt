@@ -1,0 +1,14 @@
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Infra.deps.json
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Infra.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Infra.pdb
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.csprojAssemblyReference.cache
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.csproj.CoreCompileInputs.cache
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.AssemblyInfoInputs.cache
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.AssemblyInfo.cs
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.pdb
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Domain.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Shared.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Domain.pdb
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Shared.pdb
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.csproj.CopyComplete

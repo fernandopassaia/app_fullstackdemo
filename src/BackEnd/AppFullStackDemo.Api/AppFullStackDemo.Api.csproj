@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppFullStackDemo.Domain\AppFullStackDemo.Domain.csproj" />
+    <ProjectReference Include="..\AppFullStackDemo.Infra\AppFullStackDemo.Infra.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+</Project>
