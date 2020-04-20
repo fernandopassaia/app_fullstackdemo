@@ -6,7 +6,7 @@ namespace AppFullStackDemo.Domain.Entities
     public class Equipment : EntityBase
     {
         public Equipment(string androidId, string imei1, string imei2, string phoneNumber, string macAddress, string apiLevel,
-             string apiLevelDesc, string serialNumber, string systemName, string systemVersion, Model modelDevice, User user)
+             string apiLevelDesc, string serialNumber, string systemName, string systemVersion, DeviceModel deviceModel, User user)
         {
             AndroidId = androidId;
             Imei1 = imei1;
@@ -18,6 +18,8 @@ namespace AppFullStackDemo.Domain.Entities
             SerialNumber = serialNumber;
             SystemName = systemName;
             SystemVersion = systemVersion;
+            DeviceModel = deviceModel;
+            User = user;
             Validate();
         }
 
@@ -33,11 +35,11 @@ namespace AppFullStackDemo.Domain.Entities
         public string SerialNumber { get; private set; }
         public string SystemName { get; private set; }
         public string SystemVersion { get; private set; }
-        public Model Model { get; private set; }
+        public DeviceModel DeviceModel { get; private set; }
         public User User { get; private set; }
 
         public void Update(string androidId, string imei1, string imei2, string phoneNumber, string macAddress, string apiLevel,
-             string apiLevelDesc, string serialNumber, string systemName, string systemVersion, Model modelDevice, User user)
+             string apiLevelDesc, string serialNumber, string systemName, string systemVersion, DeviceModel deviceModel, User user)
         {
             AndroidId = androidId;
             Imei1 = imei1;
@@ -49,6 +51,8 @@ namespace AppFullStackDemo.Domain.Entities
             SerialNumber = serialNumber;
             SystemName = systemName;
             SystemVersion = systemVersion;
+            DeviceModel = deviceModel;
+            User = user;
             Validate();
         }
 

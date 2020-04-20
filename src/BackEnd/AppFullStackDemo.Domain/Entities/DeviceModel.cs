@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AppFullStackDemo.Domain.Entities
 {
-    public class Model : EntityBase
+    public class DeviceModel : EntityBase
     {
-        public Model(string description, Manufacturer manufacturer)
+        public DeviceModel(string description, Manufacturer manufacturer)
         {
             Description = description;
             Manufacturer = manufacturer;

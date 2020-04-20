@@ -212,7 +212,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AppFullStackDemo.Shared >= 1.0.0",
-      "Flunt >= *",
+      "Flunt >= 1.0.4",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -261,7 +261,7 @@
         "dependencies": {
           "Flunt": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[1.0.4, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",

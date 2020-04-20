@@ -45,7 +45,7 @@
           "dependencies": {
             "Flunt": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[1.0.4, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

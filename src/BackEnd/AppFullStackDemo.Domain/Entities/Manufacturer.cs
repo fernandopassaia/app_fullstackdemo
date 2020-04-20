@@ -15,7 +15,7 @@ namespace AppFullStackDemo.Domain.Entities
         public string Description { get; private set; }
 
         //Manufacturer has a collection of ManufacturerCategories
-        public List<Model> Model { get; private set; }
+        public List<DeviceModel> Model { get; private set; }
 
         public void Update(string description)
         {
