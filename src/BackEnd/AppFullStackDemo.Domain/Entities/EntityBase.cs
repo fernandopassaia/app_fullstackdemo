@@ -8,7 +8,7 @@ namespace AppFullStackDemo.Domain.Entities
     // (this one comes from Flunt, a package to validate strings, dates...) and all my "Entities" will have a "Validate()" method to validate if the
     // Entity is in a Valid state. I could also "extend" it by Validating the Commands, but, in this case I'll not increase too much keeping on entities.
 
-    public abstract class EntityBase : Notifiable, IEquatable<EntityBase>
+    public abstract class EntityBase : Notifiable
     {
         public EntityBase()
         {
@@ -49,11 +49,6 @@ namespace AppFullStackDemo.Domain.Entities
         public void Deactivate()
         {
             Status = ECommonStatus.Inactive;
-        }
-
-        public bool Equals(EntityBase other)
-        {
-            return Id == other.Id;
         }
 
         public void Remove()

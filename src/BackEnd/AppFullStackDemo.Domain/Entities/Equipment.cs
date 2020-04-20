@@ -58,6 +58,8 @@ namespace AppFullStackDemo.Domain.Entities
 
         public void Validate()
         {
+            // I'll not validate too much here because this info will come from device
+            // and the API on Device always take all values (will not be edited by user)
             AddNotifications(new Contract()
                 .IsNotNullOrEmpty(AndroidId, "AndroidId", "Please inform an AndroidId.")
                 .HasMaxLengthIfNotNullOrEmpty(AndroidId, 30, "AndroidId", "Please inform an AndroidId.")

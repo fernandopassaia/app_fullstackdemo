@@ -7,7 +7,7 @@ namespace AppFullStackDemo.Domain.Entities
 {
     public class User : EntityBase
     {
-        public User(string aditionalInfo, Name name, Document document, Phone phone, Email email, Address address)
+        public User(string aditionalInfo, Name name, Document document, Phone phone, Email email, Address address, UserAccount userAccount)
         {
             AditionalInfo = aditionalInfo;
             Name = name;
@@ -15,6 +15,7 @@ namespace AppFullStackDemo.Domain.Entities
             Phone = phone;
             Email = email;
             Address = address;
+            UserAccount = userAccount;
             Validate();
         }
 
@@ -25,12 +26,13 @@ namespace AppFullStackDemo.Domain.Entities
         public Name Name { get; private set; }
         public Phone Phone { get; private set; }
         public Address Address { get; private set; }
+        public UserAccount UserAccount { get; private set; }
 
         //User has a collection of Equipments and a List of Claims
         public List<Equipment> EquipmentsList { get; private set; }
         public List<UserClaim> UserClaim { get; private set; }
 
-        public void Update(string aditionalInfo, Name name, Document document, Phone phone, Email email, Address address)
+        public void Update(string aditionalInfo, Name name, Document document, Phone phone, Email email, Address address, UserAccount userAccount)
         {
             AditionalInfo = aditionalInfo;
             Name = name;
@@ -38,6 +40,7 @@ namespace AppFullStackDemo.Domain.Entities
             Phone = phone;
             Email = email;
             Address = address;
+            UserAccount = userAccount;
             Validate();
         }
 
