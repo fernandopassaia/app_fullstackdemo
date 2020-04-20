@@ -4,10 +4,11 @@ using System;
 
 namespace AppFullStackDemo.Domain.Entities
 {
-    //Note: I'm using a package called "FluentValidator" that allow to Add Domain Notifications. So all my validations will
-    //be at my Domain, based on Contracts and i will have methods to add, get, see if my Entitie is valid. You'll see.
+    // Note: I'm using a strategy called "FluentValitation" or "Validation by Contract", so basically this base-class is inheriting from "Notifiable"
+    // (this one comes from Flunt, a package to validate strings, dates...) and all my "Entities" will have a "Validate()" method to validate if the
+    // Entity is in a Valid state. I could also "extend" it by Validating the Commands, but, in this case I'll not increase too much keeping on entities.
 
-    public abstract class EntityBase : Notifiable
+    public abstract class EntityBase : Notifiable, IEquatable<EntityBase>
     {
         public EntityBase()
         {
@@ -15,7 +16,7 @@ namespace AppFullStackDemo.Domain.Entities
             UpdatedBy = Id.ToString();
             CreatedIn = DateTime.Now;
             UpdatedIn = DateTime.Now;
-            Status = ECommonStatus.Active;
+            Activate();
         }
 
         public string CreatedBy { get; private set; }
@@ -48,6 +49,11 @@ namespace AppFullStackDemo.Domain.Entities
         public void Deactivate()
         {
             Status = ECommonStatus.Inactive;
+        }
+
+        public bool Equals(EntityBase other)
+        {
+            return Id == other.Id;
         }
 
         public void Remove()

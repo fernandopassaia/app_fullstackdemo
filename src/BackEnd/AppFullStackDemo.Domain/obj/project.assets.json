@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "Flunt/1.0.3": {
+      "Flunt/1.0.4": {
         "type": "package",
         "compile": {
           "lib/netstandard2.0/Flunt.dll": {}
@@ -48,14 +48,14 @@
     }
   },
   "libraries": {
-    "Flunt/1.0.3": {
-      "sha512": "7/wzY8uowlaM5Xydj428PdF1yp1bfuSEm5ONqnx4xiEbPv/zfGLNQoJQVNzU7cqmt3MmvJEGrCCEg7T1NHFdmA==",
+    "Flunt/1.0.4": {
+      "sha512": "zsKA3Wol1+UeQBYtXuO56+ua6DBUpD5dcp3iAa86W5WcMLOWBMaDXKdqIrrLNgQUOW/U/svecb4ldgqwnC9XDQ==",
       "type": "package",
-      "path": "flunt/1.0.3",
+      "path": "flunt/1.0.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "flunt.1.0.3.nupkg.sha512",
+        "flunt.1.0.4.nupkg.sha512",
         "flunt.nuspec",
         "lib/netstandard2.0/Flunt.dll"
       ]
@@ -212,7 +212,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AppFullStackDemo.Shared >= 1.0.0",
-      "Flunt >= 1.0.3",
+      "Flunt >= *",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -261,7 +261,7 @@
         "dependencies": {
           "Flunt": {
             "target": "Package",
-            "version": "[1.0.3, )"
+            "version": "[*, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",

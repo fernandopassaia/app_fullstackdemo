@@ -11,19 +11,24 @@ namespace AppFullStackDemo.Domain.ValueObjects
         {
             UserName = username;
             Password = EncryptDecryptData.Encrypt(password);
-
-            AddNotifications(new Contract()
-                .HasMaxLengthIfNotNullOrEmpty(UserName, 100, "Username", "UserName cannot be higher than 100c.")
-            );
-        }
-
-        protected User()
-        {
+            Validate();
         }
 
         public string Password { get; private set; }
 
         public string UserName { get; private set; }
+
+        public void updatePassword(string password)
+        {
+            Password = EncryptDecryptData.Encrypt(password);
+        }
+
+        public void Validate()
+        {
+            AddNotifications(new Contract()
+                .HasMaxLengthIfNotNullOrEmpty(UserName, 100, "Username", "UserName cannot be higher than 100c.")
+            );
+        }
 
         public bool Authenticate(string username, string password)
         {

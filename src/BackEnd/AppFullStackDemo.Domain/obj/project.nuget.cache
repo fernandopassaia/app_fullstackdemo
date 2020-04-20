@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lewaCmV7DYT4DB32TPz6p6V3haBeNwEhKJTtckpwTxkH3txf7JjkHwj+ucB6x1vHRWlcu+d2m9DcMem4E2x1kg==",
+  "dgSpecHash": "IS3+DVrNlek11QBb892kwUs9pgOp2ZE8oPgNJ7cQRzXPz0JrRKjEBEbe7t5zCD/kgkoeLhQDoFbiNNsAy+FeYA==",
   "success": true,
   "projectFilePath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Domain/AppFullStackDemo.Domain.csproj",
   "expectedPackageFiles": [
-    "/home/fernandopassaia/.nuget/packages/flunt/1.0.3/flunt.1.0.3.nupkg.sha512",
+    "/home/fernandopassaia/.nuget/packages/flunt/1.0.4/flunt.1.0.4.nupkg.sha512",
     "/usr/share/dotnet/sdk/NuGetFallbackFolder/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "/usr/share/dotnet/sdk/NuGetFallbackFolder/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
   ],

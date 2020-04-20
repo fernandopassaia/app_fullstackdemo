@@ -12,10 +12,6 @@ namespace AppFullStackDemo.Domain.ValueObjects
             Validate();
         }
 
-        protected Name()
-        {
-        }
-
         public string FirstName { get; private set; }
         public string LastName { get; private set; }
 

@@ -14,10 +14,6 @@ namespace AppFullStackDemo.Domain.ValueObjects
             Validate();
         }
 
-        protected Phone()
-        {
-        }
-
         public string MobilePhoneNumber1 { get; private set; }
 
         public string MobilePhoneNumber2 { get; private set; }

@@ -1,4 +1,5 @@
 ﻿using AppFullStackDemo.Shared.Validations;
+using Flunt.Validations;
 
 namespace AppFullStackDemo.Domain.Entities
 {
@@ -53,11 +54,10 @@ namespace AppFullStackDemo.Domain.Entities
 
         public void Validate()
         {
-            //AddNotifications(new Contract()
-            //    .IsNotNullOrEmpty(Description, "Description", "Por favor informe uma Descrição.")
-            //    .HasMaxLengthIfNotNullOrEmpty(Description, 30, "Description", "Descrição não pode ter mais de 30 caracters.")
-
-            //);
+            AddNotifications(new Contract()
+                .IsNotNullOrEmpty(AndroidId, "AndroidId", "Please inform an AndroidId.")
+                .HasMaxLengthIfNotNullOrEmpty(AndroidId, 30, "AndroidId", "Please inform an AndroidId.")
+            );
         }
     }
 }

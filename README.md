@@ -57,18 +57,15 @@ Users should belong to a Company (or even better - User should belong to a Real-
 Claims should have Profiles (like Master, Admin...) where the Claims will be connected (not right to the user). We
 also need a screen to manage the CRUD of the Claims (that we don't have on this app). Create category for the Devices:
 
-We also need to implement things like RefreshToken Logic, and go on and on - lot of other things to use this app in a
-Real-scenario. We need to adapt lot of things to a REAL-WORLD-Scenario of Real-Business needs Logic.
+We also need to implement things like RefreshToken Logic, WelcomeEmail, Register Page on Panel, Recover Password
+and go on and on - lot of other things to use this app in a Real-scenario. We need to adapt lot of things to a 
+REAL-WORLD-Scenario of Real-Business needs Logic.
 
 But for now: Remember that this app is a "demo" of Programming, Architecture and Techinical Skills - NOT a demo of
 Real-World App. So we will keep the business-stuff simple to Focus on Techinical stuff. Anyway, you can use it as a
 BASE of a Architecture, and start your own system under it, following the patterns already implemented on it. You can
 use it as a "skeleton" for your next Real-Software. Good luck :cake:
 
-should have
-levels (where we will connect the claims), one "low-level" user cannot update data from others. The Main
-point here is to Show Programming, Architecture and Techinical stuff. In a Real-World, this app nees better
-logic-business studies, and for sure a better need for development.
 
 ------------------------------------------------------------------------------------------------------------
 

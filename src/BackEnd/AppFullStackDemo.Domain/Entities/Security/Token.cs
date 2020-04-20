@@ -13,10 +13,6 @@ namespace AppFullStackDemo.Domain.Entities.Security
             TokenKey = tokenKey;
         }
 
-        protected Token()
-        {
-        }
-
         public bool Active { get; private set; }
 
         public DateTime DateOfExpiration { get; private set; }
