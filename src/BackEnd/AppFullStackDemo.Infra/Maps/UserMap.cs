@@ -8,7 +8,7 @@ namespace AppFullStackDemo.Infra.Maps
     {
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            builder.ToTable("Employee");
+            builder.ToTable("User");
             builder.HasKey(c => c.Id);
             builder.Property(c => c.AditionalInfo).IsRequired().HasMaxLength(200);
             builder.Property(c => c.CreatedBy).IsRequired();

@@ -45,3 +45,17 @@
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.Collections.Immutable.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.ComponentModel.Annotations.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.Configuration.ConfigurationManager.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.Runtime.Caching.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.1/Microsoft.Data.SqlClient.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/win-arm64/native/sni.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/win-x64/native/sni.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/win-x86/native/sni.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/unix/lib/netcoreapp2.0/System.Runtime.Caching.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/win/lib/netcoreapp2.0/System.Runtime.Caching.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
