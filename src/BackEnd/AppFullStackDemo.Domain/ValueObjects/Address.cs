@@ -16,6 +16,8 @@ namespace AppFullStackDemo.Domain.ValueObjects
             Validate();
         }
 
+        protected Address() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
+
         public string City { get; private set; }
         public string NeighborHood { get; private set; }
         public string Street { get; private set; }

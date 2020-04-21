@@ -14,6 +14,8 @@ namespace AppFullStackDemo.Domain.ValueObjects
             Validate();
         }
 
+        protected User() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
+
         public string Password { get; private set; }
 
         public string UserName { get; private set; }

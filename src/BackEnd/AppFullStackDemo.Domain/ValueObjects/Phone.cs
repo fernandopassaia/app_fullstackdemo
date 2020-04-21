@@ -14,6 +14,8 @@ namespace AppFullStackDemo.Domain.ValueObjects
             Validate();
         }
 
+        protected Phone() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
+
         public string MobilePhoneNumber1 { get; private set; }
 
         public string MobilePhoneNumber2 { get; private set; }
