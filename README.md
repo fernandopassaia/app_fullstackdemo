@@ -94,7 +94,7 @@ Handler Layer (you can also call it as "Service") to "orchestrate" the requests
 
 Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
 
-Validation by Contracts.
+Validation by Contracts - Pattern for Results (BaseCommandResult).
 
 Shared Project (classlib) for Field Formaters, Validations, Cryptografy
 
@@ -113,9 +113,11 @@ CQRS Models and Interfaces based on BackEnd (Queries, Commands and Results)
 Layer for the Services and API Communication - Capable to Catch Results and Display Messages (and backend-errors)
 without programming separated code to catch messages for each service/screen (httpinterceptor).
 
-Separated Modules and Rotes Files for better Organization
+Separated Modules and Rotes Files for better Organization.
 
 Shared Services for Dialogs, Notification Messages, Modal Screens, Enum Description.
+
+Capability to catch BaseCommandResult and show good message or array of errors from BackEnd.
 
 Auth Guard / Auth Interceptor to Deal Perfectly with the Tokens, Authentication, Headers (401/403).
 
@@ -151,8 +153,9 @@ chooose your favorite :trollface:
 
 
 ### User to Access the App:
-During the Migration of the API will be created an User with some Devices (Xiaomi, Motorola, Samsung, Google) just 
-for test, you can use this user to login and create another users, or also to test the system.
+During the Migration of the API will be created an User with a Devices (Xiaomi Mi Max 2) just for test, you can use
+this user to login and create another users, or also to test the system. If you don't want it, comment the method-
+call on the Context.
 
 Login: admin
 Password: admin

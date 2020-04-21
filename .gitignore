@@ -353,3 +353,6 @@ MigrationBackup/
 *.appsettings.json
 src/BackEnd/AppFullStackDemo.Api/appsettings.json
 appsettings.json
+*.AppFullStackDemoContext.cs
+src/BackEnd/AppFullStackDemo.Infra/Context/AppFullStackDemoContext.cs
+*.AppFullStackDemoContext

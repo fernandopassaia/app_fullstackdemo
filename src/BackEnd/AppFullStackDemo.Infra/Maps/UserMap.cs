@@ -17,7 +17,9 @@ namespace AppFullStackDemo.Infra.Maps
             builder.Property(c => c.UpdatedIn).IsRequired();
             builder.Property(c => c.Status).IsRequired();
 
-            //here i had to (1) show all my valueobject and (2) says to EF ignore the Notifications inside it
+            // here i had to (1) show all my valueobject and (2) says to EF ignore the Notifications inside it
+            // Note: By Default EF will create fields with the ValueObject name (Address_Street, Address_City, Name_FirstName)
+            // If you want to gave your own custom name just add an annotattion to it: HasColumnName("FirstName")
             builder.OwnsOne(c => c.Address).Ignore(p => p.Notifications);
             builder.OwnsOne(c => c.Address).Property(c => c.Street).IsRequired();
             builder.OwnsOne(c => c.Address).Property(c => c.StreetNumber).HasMaxLength(20).IsRequired();
@@ -45,27 +47,6 @@ namespace AppFullStackDemo.Infra.Maps
             builder.OwnsOne(c => c.UserAccount).Ignore(p => p.Notifications);
             builder.OwnsOne(c => c.UserAccount).Property(c => c.UserName).HasMaxLength(100).IsRequired();
             builder.OwnsOne(c => c.UserAccount).Property(c => c.Password).HasMaxLength(120).IsRequired();
-
-            // builder
-            //     .HasOne(p => p.Position)
-            //     .WithMany(b => b.EmployeesList)
-            //     .OnDelete(DeleteBehavior.Restrict);
-
-            // builder
-            //     .HasOne(p => p.Subsidiary)
-            //     .WithMany(b => b.EmployeesList)
-            //     .OnDelete(DeleteBehavior.Restrict);
-
-            // builder
-            //     .HasOne(p => p.UserProfile)
-            //     .WithMany(b => b.EmployeesList)
-            //     .OnDelete(DeleteBehavior.Restrict);
-
-            // builder
-            //     .HasOne(p => p.CostCenterArea)
-            //     .WithMany(b => b.EmployeesList)
-            //     .OnDelete(DeleteBehavior.Cascade); //ON EF: Tables with Multiple FK can have just one Cascade
-
             builder.Ignore(c => c.Notifications);
         }
     }
