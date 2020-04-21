@@ -19,6 +19,8 @@ namespace AppFullStackDemo.Domain.Entities
             Validate();
         }
 
+        protected User() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
+
         //Parameters and ObjectValues
         public string AditionalInfo { get; private set; }
         public Document Document { get; private set; }
@@ -30,7 +32,7 @@ namespace AppFullStackDemo.Domain.Entities
 
         //User has a collection of Equipments and a List of Claims
         public List<Equipment> EquipmentsList { get; private set; }
-        public List<UserClaim> UserClaim { get; private set; }
+        public List<UserClaim> UserClaimList { get; private set; }
 
         public void Update(string aditionalInfo, Name name, Document document, Phone phone, Email email, Address address, UserAccount userAccount)
         {

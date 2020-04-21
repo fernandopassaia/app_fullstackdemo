@@ -70,3 +70,4 @@
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Newtonsoft.Json.Bson.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.IdentityModel.Tokens.Jwt.dll
+/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll

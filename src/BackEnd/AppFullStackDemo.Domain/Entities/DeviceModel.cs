@@ -12,6 +12,8 @@ namespace AppFullStackDemo.Domain.Entities
             Validate();
         }
 
+        protected DeviceModel() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
+
         public string Description { get; private set; }
 
         public Manufacturer Manufacturer { get; private set; }

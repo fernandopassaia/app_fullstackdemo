@@ -23,6 +23,8 @@ namespace AppFullStackDemo.Domain.Entities
             Validate();
         }
 
+        protected Equipment() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
+
         //If someday We'll do the CAR control, create a second table with KM, Engine, etc...        
 
         public string AndroidId { get; private set; }

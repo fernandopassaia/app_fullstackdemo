@@ -11,6 +11,8 @@ namespace AppFullStackDemo.Domain.Entities.Security
             ClaimUrlOpt = claimUrlOpt;
             Validate();
         }
+
+        protected Claim() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
         public string ClaimName { get; private set; }
 
         public string ClaimUrlOpt { get; private set; }

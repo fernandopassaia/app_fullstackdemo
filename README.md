@@ -47,7 +47,7 @@ The Screen on Panel to Manage (CRUD) this Manufacturers > Models will also be Av
 
 **Under the hood**: The BackEnd .NET Core with RichArchitecture will be running providing all this data for both apps.
 
-:+1: (Note: Add some PrintScreens of App Here) :shipit:
+:+1: (Note: Add some PrintScreens of App Here) :shipit: (ALSO CREATE A DIAGRAM EXPLAINING IT)
 
 ### License and USE of this App in a RealWorld:
 Note: This App is FREE and FULL OpenSource. You can Use it as a base for your system, or you can also colaborate
@@ -66,6 +66,15 @@ Real-World App. So we will keep the business-stuff simple to Focus on Techinical
 BASE of a Architecture, and start your own system under it, following the patterns already implemented on it. You can
 use it as a "skeleton" for your next Real-Software. Good luck :cake:
 
+**Note about the CLAIMS**: System comes with a Claim Table and have 5 base claims: dashboard, manufacturer, devicemodel,
+user and equipment. The "right" way to implement it should be granulated (user.list, user.create, user.edit) and
+the system needs a Screen to Edit the Claims, and a way to "link" the User to the Claims. In my personal opinion
+system should have "Profiles" (like Master, Admin, Users...) and user will receive claims based on a Profile.
+
+Anyway, as we describe, this system is not a Sample of Business rules. You should improve it according to your needs.
+So basically when a User is created, on the "UserHandler" the claims (all of them) will be gave to the User, and it
+will have all accesses. Anyway, if you want to test a "forbidden" and Angular Interceptor, you can delete it from
+"UserClaim" table (that links Claims to the Users). Than just logout (to delete token) and go on...
 
 ------------------------------------------------------------------------------------------------------------
 

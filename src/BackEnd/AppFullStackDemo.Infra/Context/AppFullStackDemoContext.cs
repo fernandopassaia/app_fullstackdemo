@@ -1,5 +1,7 @@
 using AppFullStackDemo.Domain.Entities;
+using AppFullStackDemo.Domain.Entities.Security;
 using AppFullStackDemo.Infra.Maps;
+using AppFullStackDemo.Infra.Maps.Security;
 using Microsoft.EntityFrameworkCore;
 
 namespace AppFullStackDemo.Infra.Context
@@ -27,6 +29,10 @@ namespace AppFullStackDemo.Infra.Context
 
         public DbSet<User> User { get; set; }
 
+        public DbSet<Claim> Claim { get; set; }
+
+        public DbSet<UserClaim> UserClaim { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured) //if it's not configured and not comming from anysource, I'll use the default connection here
@@ -46,6 +52,8 @@ namespace AppFullStackDemo.Infra.Context
             builder.ApplyConfiguration(new EquipmentMap());
             builder.ApplyConfiguration(new DeviceModelMap());
             builder.ApplyConfiguration(new ManufacturerMap());
+            builder.ApplyConfiguration(new ClaimMap());
+            builder.ApplyConfiguration(new UserClaimMap());
         }
 
         #endregion OnModelCreating

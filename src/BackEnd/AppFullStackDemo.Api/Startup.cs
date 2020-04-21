@@ -14,6 +14,7 @@ using AppFullStackDemo.Infra.Context;
 using AppFullStackDemo.Infra.Transactions;
 using AppFullStackDemo.Api.Models;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppFullStackDemo.Api
 {
@@ -41,7 +42,7 @@ namespace AppFullStackDemo.Api
 
             #region Config of EF Context / ConnectionString and Json Options
             services.AddCors(options =>
-                options.AddPolicy("MobileControlCors",
+                options.AddPolicy("AppFullStackDemoCors",
                     builder =>
                     {
                         builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
@@ -93,6 +94,11 @@ namespace AppFullStackDemo.Api
                 };
             });
             #endregion Config of JWT
+
+            #region Context and DataBase
+            services.AddDbContext<AppFullStackDemoContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("ServerLocalConnection")));
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -118,7 +124,7 @@ namespace AppFullStackDemo.Api
                 .AllowAnyMethod()
                 .AllowAnyHeader());
 
-            app.UseCors("MobileControlCors");
+            app.UseCors("AppFullStackDemoCors");
             app.UseAuthentication();
             app.UseAuthorization();
 
