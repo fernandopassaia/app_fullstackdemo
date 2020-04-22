@@ -12,6 +12,7 @@ namespace AppFullStackDemo.Domain.Entities
     {
         public EntityBase()
         {
+            //Id = System.Guid.NewGuid();
             CreatedBy = Id.ToString();
             UpdatedBy = Id.ToString();
             CreatedIn = DateTime.Now;

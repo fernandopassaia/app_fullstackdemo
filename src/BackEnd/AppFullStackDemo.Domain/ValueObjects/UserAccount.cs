@@ -10,7 +10,6 @@ namespace AppFullStackDemo.Domain.Entities
         {
             UserName = username;
             Password = EncryptDecryptData.Encrypt(password);
-
             Validate();
         }
 

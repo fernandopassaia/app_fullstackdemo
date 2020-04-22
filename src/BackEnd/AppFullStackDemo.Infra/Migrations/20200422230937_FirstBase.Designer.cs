@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AppFullStackDemo.Infra.Migrations
 {
     [DbContext(typeof(AppFullStackDemoContext))]
-    [Migration("20200421164619_FirstBase")]
+    [Migration("20200422230937_FirstBase")]
     partial class FirstBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -15,6 +15,7 @@ using AppFullStackDemo.Infra.Transactions;
 using AppFullStackDemo.Api.Models;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
+using AppFullStackDemo.Infra.Data;
 
 namespace AppFullStackDemo.Api
 {
@@ -127,6 +128,9 @@ namespace AppFullStackDemo.Api
             app.UseCors("AppFullStackDemoCors");
             app.UseAuthentication();
             app.UseAuthorization();
+
+            //Here I'll call the Helper that generate mockdata test for the API
+            SeedMockDataCreator.CreateMockData(app.ApplicationServices.GetRequiredService<AppFullStackDemoContext>());
 
             app.UseEndpoints(endpoints =>
             {

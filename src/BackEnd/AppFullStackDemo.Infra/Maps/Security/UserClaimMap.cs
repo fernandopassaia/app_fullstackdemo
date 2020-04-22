@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using AppFullStackDemo.Domain.Entities.Security;
 
-namespace AppFullStackDemo.Infra.Maps
+namespace AppFullStackDemo.Infra.Maps.Security
 {
     public class UserClaimMap : IEntityTypeConfiguration<UserClaim>
     {
