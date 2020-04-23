@@ -27,7 +27,7 @@ namespace AppFullStackDemo.Domain.Entities
             Validate();
         }
 
-        public void Validate()
+        public override void Validate()
         {
             AddNotifications(new Contract()
                 .IsNotNullOrEmpty(Description, "Description", "Please inform a Description.")

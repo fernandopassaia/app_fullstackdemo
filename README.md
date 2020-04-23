@@ -94,7 +94,9 @@ Handler Layer (you can also call it as "Service") to "orchestrate" the requests
 
 Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
 
-Validation by Contracts - Pattern for Results (BaseCommandResult).
+Validation by Contracts
+
+Pattern (BaseCommandResult) for the Returns of the API on a Well-defined type
 
 Shared Project (classlib) for Field Formaters, Validations, Cryptografy
 

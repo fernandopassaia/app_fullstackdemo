@@ -46,7 +46,7 @@ namespace AppFullStackDemo.Domain.Entities
             Validate();
         }
 
-        public void Validate()
+        public override void Validate()
         {
             AddNotifications(new Contract()
                 .HasMaxLengthIfNotNullOrEmpty(AditionalInfo, 200, "AditionalInfo", "Aditional Info could not be higger than 200c")

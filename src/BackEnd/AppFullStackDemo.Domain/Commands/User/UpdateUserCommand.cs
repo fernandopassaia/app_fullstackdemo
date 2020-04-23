@@ -1,21 +1,23 @@
-namespace AppFullStackDemo.Domain.Commands.Entities
+namespace AppFullStackDemo.Domain.Commands.User
 {
     public class UpdateUserCommand
     {
-        public string AditionalInfo { get; private set; }
-        public string CountryRegistryNumber { get; private set; }
-        public string StateRegistryNumber { get; private set; }
-        public string EmailAddress { get; private set; }
-        public string FirstName { get; private set; }
-        public string LastName { get; private set; }
-        public string MobilePhoneNumber1 { get; private set; }
-        public string MobilePhoneNumber2 { get; private set; }
-        public string PhoneNumber1 { get; private set; }
-        public string PhoneNumber2 { get; private set; }
-        public string City { get; private set; }
-        public string NeighborHood { get; private set; }
-        public string Street { get; private set; }
-        public string StreetNumber { get; private set; }
-        public string ZipCode { get; private set; }
+        public string AditionalInfo { get; set; }
+        public string CountryRegistryNumber { get; set; }
+        public string StateRegistryNumber { get; set; }
+        public string EmailAddress { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MobilePhoneNumber1 { get; set; }
+        public string MobilePhoneNumber2 { get; set; }
+        public string PhoneNumber1 { get; set; }
+        public string PhoneNumber2 { get; set; }
+        public string City { get; set; }
+        public string NeighborHood { get; set; }
+        public string Street { get; set; }
+        public string StreetNumber { get; set; }
+        public string ZipCode { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
     }
 }

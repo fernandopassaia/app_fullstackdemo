@@ -56,5 +56,7 @@ namespace AppFullStackDemo.Domain.Entities
         {
             Status = ECommonStatus.Removed;
         }
+
+        public abstract void Validate(); //Validate Method will be override on the childs by the correct validation according to the specific entity    
     }
 }

@@ -19,5 +19,10 @@
             User = user;
             Claim = claim;
         }
+
+        public override void Validate()
+        {
+
+        }
     }
 }
