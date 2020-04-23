@@ -34,8 +34,16 @@ namespace AppFullStackDemo.Api
         {
             #region Config of Cors DependencyInjection
             //inject on this class the configuration coming from my .json
-            services.AddSingleton<IWebHostEnvironment>(Environment);
-            services.AddScoped<AppFullStackDemoContext, AppFullStackDemoContext>();
+            //services.AddSingleton<IWebHostEnvironment>(Environment);
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
+
+            var appSettings = appSettingsSection.Get<AppSettings>();
+            var key = Encoding.ASCII.GetBytes(appSettings.TokenSecret); //I will get a Key of my TokenSecret            
+
+            services.AddScoped<AppFullStackDemoContext>();
+            services.AddDbContext<AppFullStackDemoContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("ServerLocalConnection")));
             services.AddTransient<IUow, Uow>();
             //services.AddTransient<ICategoryRepository, CategoryRepository>();
             //services.AddTransient<CategoryHandler, CategoryHandler>();
@@ -67,11 +75,7 @@ namespace AppFullStackDemo.Api
 
             //Jwt Authentication
             //first of all i get the config in .Json and Cast to my Class AppSettings
-            var appSettingsSection = Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingsSection);
 
-            var appSettings = appSettingsSection.Get<AppSettings>();
-            var key = Encoding.ASCII.GetBytes(appSettings.TokenSecret); //I will get a Key of my TokenSecret            
 
             services.AddAuthentication(x =>
             {
@@ -97,8 +101,7 @@ namespace AppFullStackDemo.Api
             #endregion Config of JWT
 
             #region Context and DataBase
-            services.AddDbContext<AppFullStackDemoContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("ServerLocalConnection")));
+
             #endregion
         }
 
@@ -130,7 +133,7 @@ namespace AppFullStackDemo.Api
             app.UseAuthorization();
 
             //Here I'll call the Helper that generate mockdata test for the API
-            SeedMockDataCreator.CreateMockData(app.ApplicationServices.GetRequiredService<AppFullStackDemoContext>());
+            //SeedMockDataCreator.CreateMockData(app.ApplicationServices.GetRequiredService<AppFullStackDemoContext>());
 
             app.UseEndpoints(endpoints =>
             {
