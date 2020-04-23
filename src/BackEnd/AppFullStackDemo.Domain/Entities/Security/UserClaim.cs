@@ -20,7 +20,7 @@
             Claim = claim;
         }
 
-        public override void Validate()
+        public void Validate()
         {
 
         }

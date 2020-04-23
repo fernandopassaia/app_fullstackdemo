@@ -16,7 +16,6 @@ namespace AppFullStackDemo.Domain.Entities
             Email = email;
             Address = address;
             UserAccount = userAccount;
-            Validate();
         }
 
         protected User() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
@@ -43,14 +42,6 @@ namespace AppFullStackDemo.Domain.Entities
             Email = email;
             Address = address;
             UserAccount = userAccount;
-            Validate();
-        }
-
-        public override void Validate()
-        {
-            AddNotifications(new Contract()
-                .HasMaxLengthIfNotNullOrEmpty(AditionalInfo, 200, "AditionalInfo", "Aditional Info could not be higger than 200c")
-            );
         }
     }
 }

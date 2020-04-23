@@ -58,7 +58,7 @@ namespace AppFullStackDemo.Domain.Entities
             Validate();
         }
 
-        public override void Validate()
+        public void Validate()
         {
             // I'll not validate too much here because this info will come from device
             // and the API on Device always take all values (will not be edited by user)

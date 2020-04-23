@@ -26,7 +26,7 @@ namespace AppFullStackDemo.Domain.Entities.Security
             Validate();
         }
 
-        public override void Validate()
+        public void Validate()
         {
             AddNotifications(new Contract()
                 .IsNotNullOrEmpty(ClaimName, "ClaimName", "Please inform a Name for Claim.")
