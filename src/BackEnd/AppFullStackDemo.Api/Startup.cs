@@ -100,8 +100,9 @@ namespace AppFullStackDemo.Api
             });
             #endregion Config of JWT
 
-            #region Context and DataBase
-
+            #region MockDataCreator
+            var dbContext = services.BuildServiceProvider().GetService<AppFullStackDemoContext>();
+            SeedMockDataCreator.CreateMockData(dbContext);
             #endregion
         }
 
@@ -133,7 +134,7 @@ namespace AppFullStackDemo.Api
             app.UseAuthorization();
 
             //Here I'll call the Helper that generate mockdata test for the API
-            //SeedMockDataCreator.CreateMockData(app.ApplicationServices.GetRequiredService<AppFullStackDemoContext>());
+
 
             app.UseEndpoints(endpoints =>
             {

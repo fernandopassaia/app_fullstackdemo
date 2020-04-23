@@ -1,5 +1,6 @@
-// This is a helper class to generate Mock Data during the First Run of the System (if there's no data, will insert some test/fake data)
-// This class is not following any pattern once the only reason here is to fill some fake data
+// This is a helper class to generate Mock Data during the First Run of the System (if there's no data, will insert some mock/fake data)
+// This class is not following any pattern once the only reason here is to fill some fake data on DB. The better approach for it is to
+// Create some project to fill the DataBase (like a consoleapp) or even a TEST project if i Want to Generate some data. Anyway...
 
 using System.Linq;
 using AppFullStackDemo.Domain.Entities;
@@ -13,7 +14,7 @@ namespace AppFullStackDemo.Infra.Data
     {
         public static void CreateMockData(AppFullStackDemoContext _context)
         {
-            if (_context.User.Any()) //before insert data I'll check if db is empty
+            if (!_context.User.Any()) //before insert data I'll check if db is empty
             {
                 var users = new User[] {
                     new User("Created by loadFakeData",
