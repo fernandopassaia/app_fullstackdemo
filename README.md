@@ -88,13 +88,13 @@ Api REST + Handlers to Deal with the Requests + DI
 
 JWT Token to Auth Parts + Claims + JSON to Data
 
-CQRS to Receive Queries and Comands and Return Results
-
 Handler Layer (you can also call it as "Service") to "orchestrate" the requests
 
 Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
 
-Validation by Contracts
+CQRS to Receive Queries and Comands and Return Results
+
+Validation by Contracts on Commands (Fail-Fast Validations)
 
 Pattern (BaseCommandResult) for the Returns of the API on a Well-defined type
 

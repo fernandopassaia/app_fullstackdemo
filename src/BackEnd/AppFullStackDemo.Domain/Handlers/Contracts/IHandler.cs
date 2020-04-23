@@ -5,6 +5,6 @@ namespace AppFullStackDemo.Domain.Handlers.Contracts
 {
     public interface IHandler<T> where T : ICommand
     {
-        BaseCommandResult Handle(T command);
+        IBaseCommandResult Handle(T command);
     }
 }
