@@ -98,6 +98,8 @@ Validation by Contracts - Pattern for Results (BaseCommandResult).
 
 Shared Project (classlib) for Field Formaters, Validations, Cryptografy
 
+Unit-Tests for Commands, Queries, Repositories, Entities and Handlers
+
 * Note: DataBase can be Easily replaced (to Postgres, MySQL) once layers are very well separated.
 
 ## FrontEnd:
