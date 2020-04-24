@@ -18,7 +18,9 @@ namespace AppFullStackDemo.Domain.ValueObjects
 
         public bool Authenticate(string username, string password)
         {
-            if (UserName == username && Password == EncryptDecryptData.Encrypt(password))
+            var passwordFromDbDecrypted = EncryptDecryptData.Decrypt(Password);
+
+            if (UserName == username && password == passwordFromDbDecrypted)
                 return true;
             return false;
         }
