@@ -1,6 +1,9 @@
 using AppFullStackDemo.Domain.Commands;
 using AppFullStackDemo.Domain.Commands.User;
+using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Handlers.Contracts;
+using AppFullStackDemo.Domain.Repositories;
+using AppFullStackDemo.Domain.ValueObjects;
 using Flunt.Notifications;
 
 namespace AppFullStackDemo.Domain.Handlers
@@ -11,9 +14,9 @@ namespace AppFullStackDemo.Domain.Handlers
         IHandler<UpdateUserCommand>,
         IHandler<LoginUserCommand>
     {
-        private readonly ITodoRepository _repository;
+        private readonly IUserRepository _repository;
 
-        public TodoHandler(ITodoRepository repository)
+        public TodoHandler(IUserRepository repository)
         {
             _repository = repository;
         }
@@ -23,56 +26,60 @@ namespace AppFullStackDemo.Domain.Handlers
             // Fail Fast Validation
             command.Validate();
             if (command.Invalid)
-                return new GenericCommandResult(false, "Ops, parece que sua tarefa está errada!", command.Notifications);
+                return new BaseCommandResult(false, "Need to fix the errors on User", command.Notifications);
 
-            // Gera o TodoItem
-            var todo = new TodoItem(command.Title, command.User, command.Date);
+            // if i pass the validation, i should create a new user
+            var user = new User(command.AditionalInfo,
+                new Name(command.FirstName, command.LastName),
+                new Document(command.CountryRegistryNumber, command.StateRegistryNumber),
+                new Phone(command.PhoneNumber1, command.PhoneNumber2, command.MobilePhoneNumber1, command.MobilePhoneNumber2),
+                new Email(command.EmailAddress),
+                new Address(command.Street, command.StreetNumber, command.NeighborHood, command.City, command.ZipCode),
+                new UserAccount(command.UserName, command.Password));
 
-            // Salva no banco
-            _repository.Create(todo);
+            // Save on Database
+            _repository.Create(user);
 
-            // Retorna o resultado
-            return new GenericCommandResult(true, "Tarefa salva", todo);
+            // Return the Value
+            return new BaseCommandResult(true, "User Saved with Success!", user);
         }
 
         public IBaseCommandResult Handle(UpdateUserCommand command)
         {
-            // Fail Fast Validation
             command.Validate();
             if (command.Invalid)
-                return new GenericCommandResult(false, "Ops, parece que sua tarefa está errada!", command.Notifications);
+                return new BaseCommandResult(false, "Need to fix the errors on User", command.Notifications);
 
-            // Recupera o TodoItem (Rehidratação)
-            var todo = _repository.GetById(command.Id, command.User);
+            var user = _repository.GetById(command.Id);
 
-            // Altera o título
-            todo.UpdateTitle(command.Title);
+            user.Update(command.AditionalInfo,
+                new Name(command.FirstName, command.LastName),
+                new Document(command.CountryRegistryNumber, command.StateRegistryNumber),
+                new Phone(command.PhoneNumber1, command.PhoneNumber2, command.MobilePhoneNumber1, command.MobilePhoneNumber2),
+                new Email(command.EmailAddress),
+                new Address(command.Street, command.StreetNumber, command.NeighborHood, command.City, command.ZipCode),
+                new UserAccount(command.UserName, command.Password));
 
-            // Salva no banco
-            _repository.Update(todo);
+            _repository.Update(user);
 
-            // Retorna o resultado
-            return new GenericCommandResult(true, "Tarefa salva", todo);
+            return new BaseCommandResult(true, "User Updated with Success!", user);
         }
 
         public IBaseCommandResult Handle(LoginUserCommand command)
         {
-            // Fail Fast Validation
             command.Validate();
             if (command.Invalid)
-                return new GenericCommandResult(false, "Ops, parece que sua tarefa está errada!", command.Notifications);
+                return new BaseCommandResult(false, "Cannot login because invalid information", command.Notifications);
 
-            // Recupera o TodoItem
-            var todo = _repository.GetById(command.Id, command.User);
+            var user = _repository.GetByLogin(command.UserName);
+            if (user == null)
+                return new BaseCommandResult(false, "UserName or PassWord invalid", command.Notifications);
 
-            // Altera o estado
-            todo.MarkAsDone();
+            if (!user.UserAccount.Authenticate(command.UserName, command.Password))
+                return new BaseCommandResult(false, "UserName or PassWord invalid", command.Notifications);
 
-            // Salva no banco
-            _repository.Update(todo);
-
-            // Retorna o resultado
-            return new GenericCommandResult(true, "Tarefa salva", todo);
+            //TO-DO: Need to load the CLAIMS here and return on Obj instead of user
+            return new BaseCommandResult(true, "Login with Success", user);
         }
     }
 }

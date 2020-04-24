@@ -3,7 +3,7 @@ using Flunt.Notifications;
 
 namespace AppFullStackDemo.Domain.Entities
 {
-    public class UserAccount : Notifiable
+    public class UserAccount
     {
         public UserAccount(string username, string password)
         {
@@ -21,8 +21,6 @@ namespace AppFullStackDemo.Domain.Entities
         {
             if (UserName == username && Password == EncryptDecryptData.Encrypt(password))
                 return true;
-
-            AddNotification("User", "User or PassWord invalid");
             return false;
         }
     }

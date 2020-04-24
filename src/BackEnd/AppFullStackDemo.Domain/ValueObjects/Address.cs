@@ -5,8 +5,7 @@ namespace AppFullStackDemo.Domain.ValueObjects
 {
     public class Address
     {
-        public Address(string street, string streetNumber, string neighborHood,
-               string city, string postalCode, string zipCode, string state, string country)
+        public Address(string street, string streetNumber, string neighborHood, string city, string zipCode)
         {
             Street = street;
             StreetNumber = streetNumber;

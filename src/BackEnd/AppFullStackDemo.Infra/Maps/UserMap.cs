@@ -39,7 +39,6 @@ namespace AppFullStackDemo.Infra.Maps
 
             builder.OwnsOne(c => c.Email).Property(c => c.EmailAddress).HasMaxLength(100).IsRequired();
 
-            builder.OwnsOne(c => c.UserAccount).Ignore(p => p.Notifications);
             builder.OwnsOne(c => c.UserAccount).Property(c => c.UserName).HasMaxLength(100).IsRequired();
             builder.OwnsOne(c => c.UserAccount).Property(c => c.Password).HasMaxLength(120).IsRequired();
             builder.Ignore(c => c.Notifications);

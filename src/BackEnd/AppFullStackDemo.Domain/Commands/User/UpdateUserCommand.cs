@@ -1,3 +1,4 @@
+using System;
 using AppFullStackDemo.Domain.Commands.Contracts;
 using Flunt.Notifications;
 using Flunt.Validations;
@@ -10,8 +11,9 @@ namespace AppFullStackDemo.Domain.Commands.User
         {
         }
 
-        public UpdateUserCommand(string aditionalInfo, string countryRegistryNumber, string stateRegistryNumber, string emailAddress, string firstName, string lastName, string mobilePhoneNumber1, string mobilePhoneNumber2, string phoneNumber1, string phoneNumber2, string city, string neighborHood, string street, string streetNumber, string zipCode, string userName, string password)
+        public UpdateUserCommand(Guid id, string aditionalInfo, string countryRegistryNumber, string stateRegistryNumber, string emailAddress, string firstName, string lastName, string mobilePhoneNumber1, string mobilePhoneNumber2, string phoneNumber1, string phoneNumber2, string city, string neighborHood, string street, string streetNumber, string zipCode, string userName, string password)
         {
+            Id = id;
             AditionalInfo = aditionalInfo;
             CountryRegistryNumber = countryRegistryNumber;
             StateRegistryNumber = stateRegistryNumber;
@@ -31,6 +33,7 @@ namespace AppFullStackDemo.Domain.Commands.User
             Password = password;
         }
 
+        public Guid Id { get; set; }
         public string AditionalInfo { get; set; }
         public string CountryRegistryNumber { get; set; }
         public string StateRegistryNumber { get; set; }
