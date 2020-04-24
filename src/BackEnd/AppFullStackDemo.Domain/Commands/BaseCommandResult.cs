@@ -12,6 +12,8 @@ namespace AppFullStackDemo.Domain.Commands
             ResponseDataObj = responseDataObj;
         }
 
+        public BaseCommandResult() { }
+
         public object ResponseDataObj { get; set; }
 
         public string Message { get; set; }

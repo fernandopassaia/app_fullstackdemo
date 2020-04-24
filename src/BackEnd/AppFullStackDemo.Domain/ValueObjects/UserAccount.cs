@@ -1,7 +1,6 @@
 using AppFullStackDemo.Shared.Crypt;
-using Flunt.Notifications;
 
-namespace AppFullStackDemo.Domain.Entities
+namespace AppFullStackDemo.Domain.ValueObjects
 {
     public class UserAccount
     {

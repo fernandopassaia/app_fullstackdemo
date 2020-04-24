@@ -7,13 +7,13 @@ using AppFullStackDemo.Domain.Repositories;
 using AppFullStackDemo.Infra.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Todo.Domain.Infra.Repositories
+namespace AppFullStackDemo.Infra.Repositories
 {
-    public class TodoRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly AppFullStackDemoContext _context;
 
-        public TodoRepository(AppFullStackDemoContext context)
+        public UserRepository(AppFullStackDemoContext context)
         {
             _context = context;
         }

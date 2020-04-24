@@ -1,6 +1,4 @@
-﻿using Flunt.Notifications;
-using Flunt.Validations;
-
+﻿
 namespace AppFullStackDemo.Domain.ValueObjects
 {
     public class Name

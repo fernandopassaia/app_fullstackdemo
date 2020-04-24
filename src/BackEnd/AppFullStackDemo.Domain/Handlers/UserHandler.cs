@@ -8,7 +8,7 @@ using Flunt.Notifications;
 
 namespace AppFullStackDemo.Domain.Handlers
 {
-    public class TodoHandler :
+    public class UserHandler :
         Notifiable,
         IHandler<CreateUserCommand>,
         IHandler<UpdateUserCommand>,
@@ -16,7 +16,7 @@ namespace AppFullStackDemo.Domain.Handlers
     {
         private readonly IUserRepository _repository;
 
-        public TodoHandler(IUserRepository repository)
+        public UserHandler(IUserRepository repository)
         {
             _repository = repository;
         }

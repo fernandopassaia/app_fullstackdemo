@@ -78,9 +78,10 @@ namespace AppFullStackDemo.Domain.Commands.User
                 .HasMinLen(LastName, 2, "LastName", "Please Inform a Last name.")
                 .HasMaxLengthIfNotNullOrEmpty(LastName, 80, "LastName", "Last name cannot be higher than 40c.")
                 //Phone
-                .IsNotNull(PhoneNumber1, "PhoneNumber1", "Phone Number 1 cannot be null")
-                .HasMaxLengthIfNotNullOrEmpty(PhoneNumber1, 20, "PhoneNumber1", "Phone Number 1 Cannot be higher than 20c")
-                .HasMaxLengthIfNotNullOrEmpty(MobilePhoneNumber2, 20, "MobilePhoneNumber2", "Phone Number 2 Cannot be higher than 20c")
+                .HasMaxLengthIfNotNullOrEmpty(PhoneNumber1, 20, "PhoneNumber1", "Phone Number 1 Cannot be Higher 20c.")
+                .HasMaxLengthIfNotNullOrEmpty(PhoneNumber2, 20, "PhoneNumber2", "Phone Number 2 Cannot be Higher 20c.")
+                .HasMaxLengthIfNotNullOrEmpty(MobilePhoneNumber1, 20, "MobilePhoneNumber1", "Mobile Phone Number 1 Cannot be Higher 20c.")
+                .HasMaxLengthIfNotNullOrEmpty(MobilePhoneNumber2, 20, "MobilePhoneNumber2", "Mobile Phone Number 2 Cannot be Higher 20c.")
             );
         }
     }
