@@ -20,7 +20,6 @@ namespace AppFullStackDemo.Domain.Entities
             SystemVersion = systemVersion;
             DeviceModel = deviceModel;
             User = user;
-            Validate();
         }
 
         protected Equipment() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
@@ -55,17 +54,6 @@ namespace AppFullStackDemo.Domain.Entities
             SystemVersion = systemVersion;
             DeviceModel = deviceModel;
             User = user;
-            Validate();
-        }
-
-        public void Validate()
-        {
-            // I'll not validate too much here because this info will come from device
-            // and the API on Device always take all values (will not be edited by user)
-            AddNotifications(new Contract()
-                .IsNotNullOrEmpty(AndroidId, "AndroidId", "Please inform an AndroidId.")
-                .HasMaxLengthIfNotNullOrEmpty(AndroidId, 30, "AndroidId", "Please inform an AndroidId.")
-            );
         }
     }
 }

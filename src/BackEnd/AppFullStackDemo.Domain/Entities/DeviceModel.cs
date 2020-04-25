@@ -9,7 +9,6 @@ namespace AppFullStackDemo.Domain.Entities
         {
             Description = description;
             Manufacturer = manufacturer;
-            Validate();
         }
 
         protected DeviceModel() { } //This constructor will be used by EF during migrations (for some reason, EF needs a empty constructor to run)
@@ -24,15 +23,6 @@ namespace AppFullStackDemo.Domain.Entities
         {
             Description = description;
             Manufacturer = manufacturer;
-            Validate();
-        }
-
-        public void Validate()
-        {
-            AddNotifications(new Contract()
-                .IsNotNullOrEmpty(Description, "Description", "Please inform a Description.")
-                .HasMaxLengthIfNotNullOrEmpty(Description, 30, "Description", "Please Inform a Description.")
-            );
         }
     }
 }
