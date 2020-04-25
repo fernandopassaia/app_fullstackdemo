@@ -1,6 +1,7 @@
 using AppFullStackDemo.Domain.Commands.Contracts;
 using Flunt.Notifications;
 using Flunt.Validations;
+using System;
 
 namespace AppFullStackDemo.Domain.Commands.Manufacturer
 {
