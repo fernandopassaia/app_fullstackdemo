@@ -3,7 +3,6 @@ using AppFullStackDemo.Domain.Commands.Manufacturer;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Handlers.Contracts;
 using AppFullStackDemo.Domain.Repositories;
-using AppFullStackDemo.Domain.ValueObjects;
 using Flunt.Notifications;
 
 namespace AppFullStackDemo.Domain.Handlers
