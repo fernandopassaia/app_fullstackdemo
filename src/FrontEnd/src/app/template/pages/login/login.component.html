@@ -1,0 +1,82 @@
+<div class="wrapper wrapper-full-page">
+  <div class="page-header login-page header-filter" filter-color="black"
+    style="background-image: url('./assets/img/login.jpg'); background-size: cover; background-position: top center;">
+    <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 ml-auto mr-auto">
+          <form [formGroup]="form" class="form" (submit)="onSubmit()">
+            <div class="card card-login card-hidden">
+              <div class="card-header card-header-rose text-center">
+                <h4 class="card-title">Log in</h4>
+                <div class="social-line">
+                  <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                    <i class="fa fa-facebook-square"></i>
+                  </a>
+                  <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                    <i class="fa fa-twitter"></i>
+                  </a>
+                  <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
+                    <i class="fa fa-google-plus"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body ">
+                <p class="card-description text-center">Login Clássico</p>
+
+                <span class="bmd-form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">email</i>
+                      </span>
+                    </div>
+                    <input type="email" formControlName="UsernameOrEmail" class="form-control" placeholder="Email...">
+                  </div>
+                </span>
+                <span class="bmd-form-group">
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">
+                        <i class="material-icons">lock_outline</i>
+                      </span>
+                    </div>
+                    <input type="password" formControlName="Password" class="form-control" placeholder="Password...">
+                  </div>
+                </span>
+              </div>
+              <div class="card-footer justify-content-center">
+                <!--<a href="#pablo" class="btn btn-rose btn-link btn-lg">Lets Go</a>-->
+                <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Let's
+                  Go</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="footer ">
+      <div class="container">
+        <nav class="pull-left">
+          <ul>
+            <li>
+              <a href="https://www.bmbtecnologia.com.br">
+                BMB
+              </a>
+            </li>
+            <li>
+              <a href="https://futuradata.com.br">
+                FuturaData
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="copyright pull-right">
+          &copy;
+          {{test | date: 'yyyy'}}, made with <i class="material-icons">favorite</i> by
+          <a href="www.futuradata.com.br" target="_blank">BMB & FuturaData</a> para um controle melhor.
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

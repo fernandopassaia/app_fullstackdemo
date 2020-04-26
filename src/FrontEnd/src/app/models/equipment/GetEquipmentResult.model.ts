@@ -1,0 +1,29 @@
+export class GetEquipmentResult {
+    Id: string;
+    Description: string;
+    AndroidId: string;
+    Imei1: string;
+    Imei2: string;
+    Carrier: string;
+    PhoneNumber: string;
+    MacAddress: string;
+    ApiLevel: string;
+    ApiLevelDesc: string;
+    SerialNumber: string;
+    SystemName: string;
+    SystemVersion: string;
+    SecurityPatch: string;
+    BuildId: string;
+    UniqueId: string;
+    TotalMemory: string;
+    TotalDisk: string;
+    TotalMemoryDesc: string;
+    TotalDiskDesc: string;
+    Brand: string;
+    Manufacturer: string;
+    Model: string;
+    SystemAvailableFeatures: string;
+    DeviceModel: string;
+    Employee: string;
+    CreatedIn: string;
+}

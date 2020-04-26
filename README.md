@@ -129,6 +129,12 @@ Anyway, as we describe, this system is not a Sample of Business rules. You shoul
 So basically when a User is created, on the "UserHandler" the claims (all of them) will be gave to the User, and it
 will have all accesses. Anyway, if you want to test a "forbidden" and Angular Interceptor, you can delete it from
 "UserClaim" table (that links Claims to the Users). Than just logout (to delete token) and go on...
+
+**Note about the Template**: I've used a Ready-Template from internet. So basically most of the things, html/css code
+comes from it. Part of items i've done (like modals, messages, some designs), installed and configured components.
+The Template comes with no code to integrate to backend, no services, no interceptor, auth, nothing at all. Just
+clean Design-Material template.
+
 ------------------------------------------------------------------------------------------------------------
 
 ## How to RUN it and Technical Information:

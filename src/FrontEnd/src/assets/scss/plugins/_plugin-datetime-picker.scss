@@ -1,0 +1,231 @@
+/*!
+ * Datetimepicker for Bootstrap 3
+ * ! version : 4.7.14
+ * https://github.com/Eonasdan/bootstrap-datetimepicker/
+ */
+ $bs-datetimepicker-timepicker-font-size: 1.2em !default;
+ $bs-datetimepicker-active-bg: $brand-primary !default;
+ $bs-datetimepicker-active-color: $white-color !default;
+ $bs-datetimepicker-border-radius: $border-radius-base;
+ $bs-datetimepicker-btn-hover-bg: $gray-lighter !default;
+ $bs-datetimepicker-disabled-color: $gray-lighter !default;
+ $bs-datetimepicker-alternate-color: $gray-light !default;
+ $bs-datetimepicker-secondary-border-color: #ccc !default;
+ $bs-datetimepicker-secondary-border-color-rgba: rgba(0, 0, 0, 0.2) !default;
+ $bs-datetimepicker-primary-border-color: white !default;
+ $bs-datetimepicker-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) !default;
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.cdk-overlay-container {
+    position: fixed;
+    z-index: 1050;
+}
+.cdk-overlay-container, .cdk-global-overlay-wrapper {
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0.48;
+}
+
+.cdk-overlay-pane {
+    position: absolute;
+    pointer-events: auto;
+    box-sizing: border-box;
+    z-index: 1031;
+}
+.mat-datepicker-content {
+    background-color: white;
+    color: rgba(0, 0, 0, 0.87);
+}
+.cdk-visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    text-transform: none;
+    width: 1px;
+}
+.mat-calendar {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.mat-calendar-period-button {
+    min-width: 0;
+}
+.mat-calendar-next-button, .mat-calendar-previous-button {
+    position: relative;
+}
+.mat-ripple {
+    overflow: hidden;
+}
+.mat-button, .mat-icon-button {
+    background: transparent;
+}
+.mat-calendar-table-header {
+    color: rgba(0, 0, 0, 0.38);
+}
+.mat-calendar-table-header th {
+    font-size: 11px;
+    font-weight: 400;
+}
+.mat-calendar-body {
+    font-size: 13px;
+}
+.mat-calendar-body-label {
+    color: rgba(0, 0, 0, 0.54);
+}
+.mat-calendar-body-label, .mat-calendar-period-button {
+    font-size: 14px;
+    font-weight: 500;
+}
+.mat-calendar-body-cell-content {
+    color: rgba(0, 0, 0, 0.87);
+    border-color: transparent;
+}
+.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+    border-color: rgba(0, 0, 0, 0.38);
+}
+.mat-calendar-body-selected{
+    &,
+    &:hover{
+        background-color: $bs-datetimepicker-active-bg;
+        color: $bs-datetimepicker-active-color;
+        @include shadow-big-color($brand-primary);
+    }
+
+}
+.cdk-global-overlay-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    z-index: 1000; //FERNANDO: Reduzi de 1031 pra 1000 pra resolver o problema da CBB ficar atrás
+}
+.cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+.mat-dialog-container {
+    background: white;
+    border-radius: 2px;
+}
+.mat-dialog-container {
+    background: white;
+    color: rgba(0, 0, 0, 0.87);
+}
+.mat-input-placeholder-wrapper {
+    top: -0.84375em;
+    padding-top: 0.84375em;
+}
+.mat-input-placeholder {
+    color: rgba(0, 0, 0, 0.38);
+}
+.mat-input-placeholder.mat-empty {
+    top: 1.28125em;
+}
+.mat-input-infix {
+    padding: 0.4375em 0;
+    border-top: 0.84375em solid transparent;
+}
+.mat-input-wrapper {
+    padding-bottom: 1.296875em;
+}
+.mat-input-underline {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.mat-input-underline {
+    bottom: 1.296875em;
+}
+.mat-input-subscript-wrapper {
+    font-size: 75%;
+    margin-top: 0.60416667em;
+    top: calc(100% - 1.72916667em);
+}
+.mat-input-ripple {
+    background-color: $brand-primary;
+}
+// :focus is applied to the input, but we apply mat-focused to the other elements
+// that need to listen to it.
+.mat-focused .mat-input-placeholder {
+  color: $brand-primary;
+}
+
+.mat-input-element:disabled {
+  color: grey;
+}
+.mat-calendar-body-cell-content,
+.mat-icon-button,
+.mat-button-focus-overlay,
+.mat-button{
+    @extend .animation-transition-fast;
+}
+
+.mat-calendar-body-cell-content:hover{
+    background: $bs-datetimepicker-btn-hover-bg;
+}
+// Applies a floating placeholder above the input itself.
+@mixin _mat-input-placeholder-floating($font-scale, $infix-padding, $infix-margin-top) {
+  transform: translateY(-$infix-margin-top - $infix-padding)
+             scale($font-scale)
+             // We use perspecitve to fix the text blurriness as described here:
+             // http://www.useragentman.com/blog/2014/05/04/fixing-typography-inside-of-2-d-css-transforms/
+             // This results in a small jitter after the label floats on Firefox, which the
+             // translateZ fixes.
+             perspective(100px) translateZ(0.001px);
+  // The tricks above used to smooth out the animation on chrome and firefox actually make things
+  // worse on IE, so we don't include them in the IE version.
+  -ms-transform: translateY(-$infix-margin-top - $infix-padding)
+                 scale($font-scale);
+
+  width: 100% / $font-scale;
+}
+.mat-input-placeholder {
+
+  // Show the placeholder above the input when it's not empty, or focused.
+  &.mat-float:not(.mat-empty), .mat-focused &.mat-float {
+    @include _mat-input-placeholder-floating(0.75,
+        0.75em, 0em);
+  }
+}
+
+.input-group.date {
+    & .input-group-addon {
+        cursor: pointer;
+    }
+}
+
+
+.table-condensed>tbody>tr>td,
+.table-condensed>tbody>tr>th,
+.table-condensed>tfoot>tr>td,
+.table-condensed>tfoot>tr>th,
+.table-condensed>thead>tr>td,
+.table-condensed>thead>tr>th{
+    padding: 1px;
+    text-align: center;
+}
+.datepicker__input[_ngcontent-c4]{
+    border: none !important;
+}
+.datepicker[_ngcontent-c4] {
+    width: 100%
+}
+.datepicker__calendar[_ngcontent-c4]{
+    top: 2.1em !important;
+    left: -45px !important;
+}

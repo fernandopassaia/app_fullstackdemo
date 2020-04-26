@@ -1,0 +1,29 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <br>
+                <div class="row">
+                    <div class="col-md-7">
+                        <legend>Selecione um Dispositivo</legend>
+                        <app-equipment-list #list [employeeId]="employeeId"></app-equipment-list>
+                    </div>
+                    <div class="col-md-5">
+                        <legend>Detalhes do Dispositivo</legend>
+                        <app-equipment-cu #cu [listData]="list.equipmentDetail"></app-equipment-cu>
+                    </div>
+                </div>
+                <br>
+                <br>
+
+                <br>
+                <br>
+
+                <br>
+                <br>
+
+            </div>
+        </div>
+        <!-- end card -->
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div>
+    <div class="content-container">
+      <mat-icon id="close-icon" (click)="closeDialog()">close</mat-icon>
+      <span class="content-span full-width">{{data.message}}</span>
+    </div>
+    <button mat-flat-button id="no-button" [mat-dialog-close]="false">No</button>
+    <button mat-flat-button id="yes-button" [mat-dialog-close]="true">Yes</button>
+  </div>

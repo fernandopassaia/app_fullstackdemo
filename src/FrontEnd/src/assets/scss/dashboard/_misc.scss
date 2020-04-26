@@ -1,0 +1,110 @@
+@import "../core/misc";
+.loader {
+    margin: 0 auto;
+    width: 60px;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    @include transform-translate-y(-50%);
+    text-align: center;
+    top: 50%;
+
+    &:before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+}
+
+.circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 2s ease-in-out infinite;
+  stroke-linecap: round;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+
+@keyframes color {
+  100%,
+  0% {
+    stroke: $brand-primary;
+  }
+  50% {
+    stroke: $brand-warning;
+  }
+  100% {
+    stroke: $brand-primary;
+  }
+}
+
+a{
+  color: $link-color;
+  &:hover,
+  &:focus{
+      color: darken($link-color, 5%);
+      text-decoration: none;
+  }
+
+  &.text-info{
+      &:hover, &:focus{
+          color: darken($brand-info, 5%);
+      }
+  }
+
+  & .material-icons {
+    vertical-align: middle;
+  }
+}
+
+a[data-toggle="collapse"][aria-expanded="true"] .caret,
+.dropdown.open .caret,
+.dropup.open .caret,
+.btn-group.bootstrap-select.open .caret{
+    @include rotate-180();
+}
+
+.caret,
+.bootstrap-tagsinput .tag,
+.sidebar a,
+.bootstrap-tagsinput [data-role="remove"] {
+    @include transition-all($fast-transition-time, $transition-ease-in);
+}
+
+.disabled,[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+}

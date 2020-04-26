@@ -1,0 +1,66 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-icon card-header-rose">
+              <div class="card-icon">
+                <i class="material-icons">insert_chart</i>
+              </div>
+              <h4 class="card-title">Fabricantes dos Devices
+                <small> - (iOS em breve)</small>
+              </h4>
+            </div>
+            <div class="card-body">
+              <div id="colouredRoundedLineChart" class="ct-chart"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header card-header-icon card-header-info">
+              <div class="card-icon">
+                <i class="material-icons">timeline</i>
+              </div>
+              <h4 class="card-title">Versões do Android
+                <small> - (iOS em breve)</small>
+              </h4>
+            </div>
+            <div class="card-body">
+              <div id="simpleBarChart" class="ct-chart"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-chart">
+            <div class="card-header card-header-icon card-header-danger">
+              <div class="card-icon">
+                <i class="material-icons">pie_chart</i>
+              </div>
+              <h4 class="card-title">Disponibilidade</h4>
+            </div>
+            <div class="card-body">
+              <div id="chartPreferences" class="ct-chart"></div>
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-md-12">
+                  <h6 class="card-category">Status atual:</h6>
+                </div>
+                <div class="col-md-12">
+                  <i class="fa fa-circle text-info"></i> {{numberOnlineEquips}} Online
+                  <i class="fa fa-circle text-danger"></i> {{numberOfflineEquips}} Offline
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

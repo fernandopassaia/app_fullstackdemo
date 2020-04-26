@@ -1,0 +1,173 @@
+.mat-select{
+    width: 100%;
+}
+.mat-select-trigger,
+.mat-option {
+    font-size: 16px;
+}
+.mat-select-placeholder {
+    line-height: normal;
+    padding: 0;
+}
+.mat-select-underline {
+    bottom: 1px;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+.app-dark .mat-select-panel {
+    background-color: $white-color;
+}
+
+.mat-select-placeholder {
+    position: relative;
+    padding: 0 2px;
+    transform-origin: left top;
+    flex-grow: 1;
+}
+ .mat-select-value, .mat-select-trigger {
+    color: #3C4858!important;
+}
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow{
+    color: rgba(0,0,0,.54);
+}
+//
+.mat-select-panel{
+  .mat-pseudo-checkbox{
+      border: none !important;
+    }
+}
+.mat-pseudo-checkbox{
+    margin-top: 2px;
+    float: right;
+}
+.mat-select-panel{
+    background: white;
+}
+.mat-option.mat-selected:not(.mat-option-multiple){
+    background-color: #9c27b0 !important;
+    color: $white-color !important;
+}
+.mat-option {
+    color: rgba(0, 0, 0, 0.87) !important;
+    transition: all 150ms linear;
+
+    &:hover {
+        @include box-shadow($shadow-mat-select-option);
+        background: #9c27b0 !important;
+        color: $white-color !important;
+    }
+    &:focus {
+        color: rgba(0, 0, 0, 0.87) !important;
+        background: transparent !important;
+        .mat-option-pseudo-checkbox{
+            &:after{
+                color: $white-color;
+            }
+        }
+        &:hover{
+            background-color: #9c27b0 !important;
+            color: $white-color !important;
+        }
+    }
+    &.mat-selected{
+        .mat-option-pseudo-checkbox{
+            background: transparent;
+            &:after{
+                color: $black-color;
+            }
+        }
+        &:focus{
+            background: transparent !important;
+        }
+        &:hover {
+            background-color: #9c27b0 !important;
+            color: $white-color !important;
+            .mat-option-pseudo-checkbox:after{
+                color: $white-color;
+            }
+        }
+    }
+}
+.mat-option {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    line-height: 48px;
+    height: 48px;
+    padding: 0 16px;
+    text-align: left;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    margin: 0 5px;
+    border-radius: 2px;
+
+    .mat-option-text{
+        float: left;
+    }
+    span .mat-option-pseudo-checkbox{
+        float: right;
+    }
+}
+.mat-option {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 16px;
+    .mat-option-ripple.mat-ripple{
+        display: none;
+    }
+}
+.mat-option.mat-selected:not(.mat-option-multiple) {
+        box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+}
+.mat-form-field-infix{
+  width: auto !important;
+}
+.mat-select{
+ .mat-select-value-text span{
+     font-size: 14px;
+  }
+}
+
+// .simple {
+//     .mat-select-trigger{
+//         margin: 0;
+//         padding-bottom: 0;
+//         color: $white-color!important;
+//         font-size: 12px !important;
+//     }
+//     .mat-select-arrow {
+//         display: block;
+//         float: right;
+//     }
+//     .mat-select-underline{
+//         display: none;
+//     }
+//     .mat-select-placeholder.mat-floating-placeholder{
+//         opacity: 1 !important;
+//         color: #3f3f3f;
+//         margin-top: -25px;
+//     }
+// }
+// .mat-input-container.mat-form-field.btn.btn-primary{
+//     padding: 0 10px!important;
+//     margin: 0 !important;
+//     .mat-form-field-underline{
+//         display: none !important;
+//     }
+//     .mat-input-placeholder{
+//         color: $white-color;
+//         margin: 4px 0px 0px 10px;
+//     }
+//     .mat-select-arrow-wrapper .mat-select-arrow{
+//        color: $white-color;
+//     }
+//     .mat-input-wrapper,
+//     .mat-form-field-wrapper{
+//         padding: 5px !important;
+//     }
+//     .mat-select-value-text{
+//         color: $white-color;
+//         font-size: 14px;
+//     }
+// }

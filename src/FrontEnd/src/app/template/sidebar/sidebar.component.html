@@ -1,0 +1,116 @@
+<div class="logo">
+  <a class="simple-text logo-mini">
+    <div class="logo-img">
+      <img src="./assets/img/assets.png" />
+    </div>
+  </a>
+  <a href="https://www.futuradata.com.br/ac" class="simple-text logo-normal">
+    Control Mobile
+  </a>
+</div>
+
+
+<div class="sidebar-wrapper">
+
+  <div class="user">
+    <!--<div class="photo">
+      <img src="./assets/img/faces/avatar.jpg" />
+    </div> -->
+    <div class="user-info">
+      <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+        <span>
+          {{name}}
+          <b class="caret"></b>
+        </span>
+      </a>
+      <div class="collapse" id="collapseExample">
+        <ul class="nav">
+          <li class="nav-item">
+            <a href="javascript:void(0)" class="nav-link">
+              <span class="sidebar-normal">{{email}}</span>
+              <span class="sidebar-normal">{{company}}</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isMobileMenu()">
+    <form class="navbar-form">
+      <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+      </span>
+    </form>
+    <ul class="nav navbar-nav nav-mobile-menu">
+      <li class="nav-item">
+        <a class="nav-link" href="#pablo">
+          <i class="material-icons">dashboard</i>
+          <p>
+            <span class="d-lg-none d-md-block">Stats</span>
+          </p>
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#pablo" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <i class="material-icons">notifications</i>
+          <span class="notification">5</span>
+          <p>
+            <span class="d-lg-none d-md-block">Some Actions</span>
+          </p>
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Mike John responded to your email</a>
+          <a class="dropdown-item" href="#">You have 5 new tasks</a>
+          <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+          <a class="dropdown-item" href="#">Another Notification</a>
+          <a class="dropdown-item" href="#">Another One</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#pablo">
+          <i class="material-icons">person</i>
+          <p>
+            <span class="d-lg-none d-md-block">Account</span>
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <ul class="nav">
+    <li routerLinkActive="active" *ngFor="let menuitem of menuItems" class="nav-item">
+      <!--If is a single link-->
+      <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'" class="nav-link">
+        <i class="material-icons">{{menuitem.icontype}}</i>
+        <p>{{menuitem.title}}</p>
+      </a>
+      <!--If it have a submenu-->
+      <a data-toggle="collapse" href="#{{menuitem.collapse}}" *ngIf="menuitem.type === 'sub'" (click)="updatePS()"
+        class="nav-link">
+        <i class="material-icons">{{menuitem.icontype}}</i>
+        <p>{{menuitem.title}}<b class="caret"></b></p>
+      </a>
+
+      <!--Display the submenu items-->
+      <div id="{{menuitem.collapse}}" class="collapse" *ngIf="menuitem.type === 'sub'">
+        <ul class="nav">
+          <li routerLinkActive="active" *ngFor="let childitem of menuitem.children" class="nav-item">
+            <a [routerLink]="[menuitem.path, childitem.path]" class="nav-link">
+              <span class="sidebar-mini">{{childitem.ab}}</span>
+              <span class="sidebar-normal">{{childitem.title}}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+  </ul>
+
+</div>

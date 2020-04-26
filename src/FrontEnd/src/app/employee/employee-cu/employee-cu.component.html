@@ -1,0 +1,248 @@
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+
+  <mat-tab-group>
+    <mat-tab label="Name and Adress">
+      <mat-grid-list cols="2" rowHeight="360px">
+
+        <mat-grid-tile>
+          <div class="controles-container">
+            <input type="hidden" formControlName="Id">
+            <input type="hidden" formControlName="TypePerson">
+
+            <mat-form-field>
+              <input formControlName="FirstName" matInput placeholder="Nome*">
+              <mat-error>Por favor informe o Nome.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="LastName" matInput placeholder="SobreNome*">
+              <mat-error>Por favor informe o Sobrenome.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="EmailAddress" matInput placeholder="Email*">
+              <mat-error>Por favor informe o Email.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input formControlName="EmailAdminSystem" matInput placeholder="System Email*">
+              <mat-error>Por favor informe o Email de Admin do Sistema.</mat-error>
+            </mat-form-field>
+
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="controles-container">
+
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="UserName" matInput placeholder="Nome Usuário*">
+                  <mat-error>Por favor informe o Nome do Usuário.</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <mat-select formControlName="UserProfile" placeholder="Perfil Usuário">
+                    <ng-container *ngFor="let userProfile of listUserProfile">
+                      <mat-option value="{{userProfile.Id}}">{{userProfile.Name}}</mat-option>
+                    </ng-container>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <input type="password" formControlName="Password" placeholder="Senha*" class="form-control">
+                </div>
+              </div>
+              <div class="col-md-6">
+
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">
+                      <i class="material-icons">lock_outline</i>
+                    </span>
+                  </div>
+                  <input type="password" formControlName="ConfirmPassword" placeholder="Senha*" class="form-control">
+
+                </div>
+              </div>
+            </div>
+
+
+            <div class="form-group">
+
+              <label class="col text-danger"
+                *ngIf="service.form.controls['ConfirmPassword'].hasError('NoPassswordMatch')"><i class="material-icons">
+                  {{ service.form.controls['Password'].hasError('required') ||
+                    service.form.controls['Password'].hasError('minlength') ? 'cancel' :
+                    'check_circle' }}</i>
+                Senhas não são iguais.</label>
+
+              <label class="col"
+                [ngClass]="service.form.controls['Password'].hasError('required') || service.form.controls['Password'].hasError('minlength')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ service.form.controls['Password'].hasError('required') ||
+                      service.form.controls['Password'].hasError('minlength') ? 'cancel' :
+                      'check_circle' }}</i>
+                Senha deve ter ao menos 8 caracters.
+              </label>
+
+              <label class="col"
+                [ngClass]="service.form.controls['Password'].hasError('required') || service.form.controls['Password'].hasError('hasNumber')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ service.form.controls['Password'].hasError('required') ||
+                      service.form.controls['Password'].hasError('hasNumber') ? 'cancel' :
+                      'check_circle' }}</i>
+                Deve conter ao menos 1 número.
+              </label>
+              <label class="col"
+                [ngClass]="service.form.controls['Password'].hasError('required') || service.form.controls['Password'].hasError('hasCapitalCase')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ service.form.controls['Password'].hasError('required') ||
+                      service.form.controls['Password'].hasError('hasCapitalCase') ? 'cancel' :
+                      'check_circle' }}</i>
+                Deve conter 1 caracter maiúsculo.
+              </label>
+              <label class="col"
+                [ngClass]="service.form.controls['Password'].hasError('required') || service.form.controls['Password'].hasError('hasSmallCase')  ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ service.form.controls['Password'].hasError('required') ||
+                      service.form.controls['Password'].hasError('hasSmallCase') ? 'cancel' :
+                      'check_circle' }}</i>
+                Deve conter 1 caracter minúsculo!
+              </label>
+              <label class="col"
+                [ngClass]="service.form.controls['Password'].hasError('required') || service.form.controls['Password'].hasError('hasSpecialCharacters') ? 'text-danger' : 'text-success'">
+                <i class="material-icons">{{ service.form.controls['Password'].hasError('required') ||
+                      service.form.controls['Password'].hasError('hasSpecialCharacters') ? 'cancel' :
+                      'check_circle' }}</i>
+                Deve conter um caracter especial!
+              </label>
+
+            </div>
+
+
+          </div>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </mat-tab>
+
+    <mat-tab label="Documents and Contacts">
+      <mat-grid-list cols="2" rowHeight="360px">
+
+        <mat-grid-tile>
+          <div class="controles-container">
+
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="AditionalInfo" matInput placeholder="Info Adic.">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="CountryRegistryNumber" matInput placeholder="CPF/RE (Inscr.Funcionário)*">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="StateRegistryNumber" matInput placeholder="RG*">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="CityRegistryNumber" matInput placeholder="RE (Registro Empregado)">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="PhoneNumber1" mask="(00)0000-0000" matInput placeholder="Fone 1*">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="PhoneNumber2" mask="(00)0000-0000" matInput placeholder="Fone 2">
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="MobilePhoneNumber1" mask="(00)00000-0000" matInput placeholder="Mobile 1*">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field>
+                  <input formControlName="MobilePhoneNumber2" mask="(00)00000-0000" matInput placeholder="Mobile 2">
+                </mat-form-field>
+              </div>
+            </div>
+
+          </div>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <div class="controles-container">
+
+            <mat-form-field>
+              <mat-select formControlName="Company" placeholder="Empresa"
+                (selectionChange)="reloadSubsidiaryPositionCostCenterAreaUserProfile()">
+                <ng-container *ngFor="let company of listCompanyReduced">
+                  <mat-option value="{{company.Id}}">{{company.Name}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-select formControlName="Subsidiary" placeholder="Subsidiária">
+                <ng-container *ngFor="let subsidiary of listSubsidiary">
+                  <mat-option value="{{subsidiary.Id}}">
+                    {{subsidiary.Description}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field> <!-- Subsidiary -->
+
+            <mat-form-field>
+              <mat-select formControlName="Position" placeholder="Posição">
+                <ng-container *ngFor="let position of listPosition">
+                  <mat-option value="{{position.Id}}">
+                    {{position.Description}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field> <!-- Position -->
+
+            <mat-form-field>
+              <mat-select formControlName="CostCenterArea" placeholder="Centro Custo Area">
+                <ng-container *ngFor="let costcenterarea of listCostCenterArea">
+                  <mat-option value="{{costcenterarea.Id}}">
+                    {{costcenterarea.Area}} - {{costcenterarea.CostCenter}}</mat-option>
+                </ng-container>
+              </mat-select>
+            </mat-form-field> <!-- CostCenterArea -->
+
+          </div>
+        </mat-grid-tile>
+
+      </mat-grid-list>
+    </mat-tab>
+
+
+  </mat-tab-group>
+
+  <div class="button-row">
+    <button mat-raised-button color="primary" type="submit"
+      [disabled]="service.form.invalid">{{service.form.controls['Id'].value?"Alterar Colaborador":"Criar Colaborador"}}</button>
+    <button mat-raised-button color="warn" (click)="onClose()">Cancel</button>
+  </div>
+</form>
