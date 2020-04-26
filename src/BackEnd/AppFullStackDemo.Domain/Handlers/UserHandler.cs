@@ -51,6 +51,8 @@ namespace AppFullStackDemo.Domain.Handlers
                 return new BaseCommandResult(false, "Need to fix the errors on User", command.Notifications);
 
             var user = _repository.GetById(command.Id);
+            if (user == null)
+                return new BaseCommandResult(false, "User not found", null);
 
             user.Update(command.AditionalInfo,
                 new Name(command.FirstName, command.LastName),
