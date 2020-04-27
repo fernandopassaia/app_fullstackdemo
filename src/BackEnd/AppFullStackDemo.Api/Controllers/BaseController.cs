@@ -17,7 +17,7 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [NonAction] //need decorator because Swagger is trying to build this method and falling into error
-        public new async Task<IActionResult> Response(BaseCommandResult baseCommandResult)
+        public new async Task<IActionResult> Response(IBaseCommandResult baseCommandResult)
         {
             if (baseCommandResult.Success)
             {

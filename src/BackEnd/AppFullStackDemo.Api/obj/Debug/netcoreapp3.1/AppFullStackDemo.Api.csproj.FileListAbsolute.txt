@@ -42,9 +42,6 @@
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Options.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.Extensions.Primitives.dll
-/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.Collections.Immutable.dll
-/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.ComponentModel.Annotations.dll
-/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/System.Diagnostics.DiagnosticSource.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.Data.SqlClient.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.SqlServer.dll
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/bin/Debug/netcoreapp3.1/Microsoft.Identity.Client.dll

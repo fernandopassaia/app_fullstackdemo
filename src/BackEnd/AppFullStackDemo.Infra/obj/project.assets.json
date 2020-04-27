@@ -6197,8 +6197,7 @@
     ]
   },
   "packageFolders": {
-    "/home/fernandopassaia/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/home/fernandopassaia/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
@@ -6209,9 +6208,6 @@
       "packagesPath": "/home/fernandopassaia/.nuget/packages/",
       "outputPath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "/home/fernandopassaia/.nuget/NuGet/NuGet.Config"
       ],
@@ -6274,7 +6270,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/home/fernandopassaia/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
       }
     }
   }
