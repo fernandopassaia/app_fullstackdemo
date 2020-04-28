@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "o/eKNx0T1kQ1QcWe+NPaq4rZ0R0pEeuhtJ5x1/tyavvgsf/w7Yqe3qDv/FYNe1b/uEw12nLvWTvGziX+vlUxZQ==",
+  "dgSpecHash": "bQl2uf57FpVv08jWGO1p3zUd2arAs5hMZdBCKip7yyXuEIM98m7RsDqKsU9K1H6aCpW0VIi/lWZrWl29d8ACgg==",
   "success": true,
   "projectFilePath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Api/AppFullStackDemo.Api.csproj",
   "expectedPackageFiles": [
