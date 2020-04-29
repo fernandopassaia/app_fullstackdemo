@@ -2,14 +2,16 @@ using AppFullStackDemo.Domain.Commands;
 using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Handlers;
 using AppFullStackDemo.Domain.Results;
+using AppFullStackDemo.Domain.Results.User;
 using AppFullStackDemo.Infra.Context;
 using AppFullStackDemo.Infra.Repositories;
+using AppFullStackDemo.Infra.Repositories.Security;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AppFullStackDemo.Tests.HandlersTests
 {
     [TestClass]
-    public class CreateTodoHandlerTests
+    public class UserHandlerTests
     {
         //4 errors: StreetNumberHigherThan4 - NoCity - NoEmailFormat - LastName too small
         private readonly CreateUserCommand _invalidCommand = new CreateUserCommand("", "325-552", "789-654", "noEmailFormat", "Fernando", "P",
@@ -22,39 +24,40 @@ namespace AppFullStackDemo.Tests.HandlersTests
 
         //Note: Repository will use the EF Context, and here there's not DI, so the Default ConnectionString on class will be used
         private UserRepository _repository = new UserRepository(new AppFullStackDemoContext());
+        private UserClaimRepository _repositoryUserClaim = new UserClaimRepository(new AppFullStackDemoContext());
         private readonly UserHandler _handler;
-        private BaseCommandResult _result = new BaseCommandResult();
+        private GetLoggedUserResult _result = new GetLoggedUserResult();
 
-        public CreateTodoHandlerTests()
+        public UserHandlerTests()
         {
-            _handler = new UserHandler(_repository);
+            _handler = new UserHandler(_repository, _repositoryUserClaim);
         }
 
         [TestMethod]
         public void HandlerShouldFail_OnCreateUser()
         {
-            _result = (BaseCommandResult)_handler.Handle(_invalidCommand);
+            _result = (GetLoggedUserResult)_handler.Handle(_invalidCommand);
             Assert.AreEqual(_result.Success, false);
         }
 
         [TestMethod]
         public void HandlerShouldPass_OnCreateUser()
         {
-            _result = (BaseCommandResult)_handler.Handle(_validCommand);
+            _result = (GetLoggedUserResult)_handler.Handle(_validCommand);
             Assert.AreEqual(_result.Success, true);
         }
 
         [TestMethod]
         public void Handle_ShouldNotLoginAUser()
         {
-            _result = (BaseCommandResult)_handler.Handle(_invalidLoginUser);
+            _result = (GetLoggedUserResult)_handler.Handle(_invalidLoginUser);
             Assert.AreEqual(_result.Success, false);
         }
 
         [TestMethod]
         public void Handle_ShouldLoginAUser()
         {
-            _result = (BaseCommandResult)_handler.Handle(_validLoginUser);
+            _result = (GetLoggedUserResult)_handler.Handle(_validLoginUser);
             Assert.AreEqual(_result.Success, true);
         }
     }

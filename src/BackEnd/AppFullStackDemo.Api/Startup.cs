@@ -19,6 +19,8 @@ using AppFullStackDemo.Infra.Data;
 using AppFullStackDemo.Domain.Repositories;
 using AppFullStackDemo.Infra.Repositories;
 using AppFullStackDemo.Domain.Handlers;
+using AppFullStackDemo.Infra.Repositories.Security;
+using AppFullStackDemo.Domain.Repositories.Security;
 
 namespace AppFullStackDemo.Api
 {
@@ -53,6 +55,7 @@ namespace AppFullStackDemo.Api
             services.AddTransient<IEquipmentRepository, EquipmentRepository>();
             services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IUserClaimRepository, UserClaimRepository>();
 
             services.AddTransient<DeviceModelHandler, DeviceModelHandler>();
             services.AddTransient<EquipmentHandler, EquipmentHandler>();

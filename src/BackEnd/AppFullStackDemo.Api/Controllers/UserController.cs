@@ -5,6 +5,10 @@ using AppFullStackDemo.Domain.Handlers;
 using AppFullStackDemo.Domain.Repositories;
 using AppFullStackDemo.Infra.Transactions;
 using AppFullStackDemo.Domain.Commands.User;
+using AppFullStackDemo.Domain.Results;
+using System.Collections.Generic;
+using AppFullStackDemo.Api.Controllers.Security;
+using AppFullStackDemo.Api.Models;
 
 namespace AppFullStackDemo.Api.Controllers
 {
@@ -17,6 +21,7 @@ namespace AppFullStackDemo.Api.Controllers
         private readonly IUserRepository _repository;
 
         private readonly IUow _uow;
+        private readonly AppSettings _appSettings; //here i will get the Values storage in appsettings.json that will be used to generate my Token
 
         public UserController(IUow uow, IUserRepository repository, UserHandler handler) : base(uow)
         {
@@ -96,7 +101,15 @@ namespace AppFullStackDemo.Api.Controllers
         public async Task<IActionResult> Login([FromBody]LoginUserCommand command)
         {
             var result = _handler.Handle(command);
-            return await Response(result);
+            if (result.Success == true)
+            {
+                var userClaimsList = (List<string>)result.Data;
+                var user = _repository.GetByLogin(command.UserName);
+                var token = new JwtGenerator(_appSettings).GenerateToken(result, userClaimsList);
+                return Ok(new { token });
+            }
+
+            return await Response(new BaseCommandResult(false, "Username or Password invalid.", null)); //Do Not need to Jsonfy it, so I'll return the Own Result            
         }
     }
 }

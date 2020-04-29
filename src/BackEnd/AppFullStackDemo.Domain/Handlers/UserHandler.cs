@@ -1,8 +1,12 @@
+using System.Collections.Generic;
 using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Entities;
+using AppFullStackDemo.Domain.Entities.Security;
 using AppFullStackDemo.Domain.Handlers.Contracts;
 using AppFullStackDemo.Domain.Repositories;
+using AppFullStackDemo.Domain.Repositories.Security;
 using AppFullStackDemo.Domain.Results;
+using AppFullStackDemo.Domain.Results.User;
 using AppFullStackDemo.Domain.ValueObjects;
 using Flunt.Notifications;
 
@@ -11,14 +15,15 @@ namespace AppFullStackDemo.Domain.Handlers
     public class UserHandler :
         Notifiable,
         IHandler<CreateUserCommand>,
-        IHandler<UpdateUserCommand>,
-        IHandler<LoginUserCommand>
+        IHandler<UpdateUserCommand>
     {
         private readonly IUserRepository _repository;
+        private readonly IUserClaimRepository _userClaimRepository;
 
-        public UserHandler(IUserRepository repository)
+        public UserHandler(IUserRepository repository, IUserClaimRepository userClaimRepository)
         {
             _repository = repository;
+            _userClaimRepository = userClaimRepository;
         }
 
         public IBaseCommandResult Handle(CreateUserCommand command)
@@ -67,46 +72,30 @@ namespace AppFullStackDemo.Domain.Handlers
             return new BaseCommandResult(true, "User Updated with Success!", user);
         }
 
-        // public async Task<GetLoggedUserResult> HandleLoginUser(LoginUserCommand command)
-        // {
-        //     var employee = await _EmployeeRepository.GetEntityByEmailAsync(command.UsernameOrEmail);
-        //     if (employee == null)
-        //         return new GetLoggedUserResult(false, "Email ou senha não localizados!", "", "", "", "", "", command);
-
-        //     var company = await _CompanyRepository.GetByIdAsync(employee.Company);
-        //     var EmployeeObj = await _EmployeeRepository.GetByIdAsync(employee.Id); //I`ll load the Employee Entity because i need to use the PassWord Method
-
-        //     if (EncryptDecryptData.Decrypt(EmployeeObj.User.Password) != command.Password)
-        //     {
-        //         return new GetLoggedUserResult(false, "Email ou senha não localizados!", "", "", "", "", "", command);
-        //     }
-
-        //     //Se passou por aqui, Email e Senha batem, então vou recuperar as Claims e jogar no BaseCommandResult
-        //     var userClaim = await _UserClaimRepository.GetUserClaimByUserProfile(EmployeeObj.UserProfile);
-
-        //     List<string> Claims = new List<string>();
-        //     userClaim.ForEach(item =>
-        //     {
-        //         Claims.Add(item.Claim.ClaimName);
-        //     });
-        //     return new GetLoggedUserResult(true, "Login Efetuado com Sucesso!", employee.Id.ToString(), employee.FirstName + " " + employee.LastName, employee.EmailAddress, employee.UserName, company.Name.ToString(), Claims);
-        // }
-
-        public IBaseCommandResult Handle(LoginUserCommand command)
+        public GetLoggedUserResult Handle(LoginUserCommand command)
         {
             command.Validate();
             if (command.Invalid)
-                return new BaseCommandResult(false, "Cannot login because invalid information", command.Notifications);
+                return new GetLoggedUserResult(false, "Cannot login because invalid information", "", "", "", "", null);
 
             var user = _repository.GetByLogin(command.UserName);
             if (user == null)
-                return new BaseCommandResult(false, "UserName or PassWord invalid", command.Notifications);
+                return new GetLoggedUserResult(false, "Cannot find UserName or Password", "", "", "", "", null);
 
             if (!user.UserAccount.Authenticate(command.UserName, command.Password))
-                return new BaseCommandResult(false, "UserName or PassWord invalid", command.Notifications);
+                return new GetLoggedUserResult(false, "Cannot find UserName or Password", "", "", "", "", null);
+
+            // If pass, user was authenticated, so i need to get the claims
+            var userClaim = _userClaimRepository.GetByUser(user);
+            List<string> Claims = new List<string>();
+
+            foreach (UserClaim item in userClaim)
+            {
+                Claims.Add(item.Claim.ClaimName);
+            }
 
             //TO-DO: Need to load the CLAIMS here and return on Obj instead of user
-            return new BaseCommandResult(true, "Login with Success", user);
+            return new GetLoggedUserResult(true, "Logged with Success.", user.Id.ToString(), user.Name.ToString(), user.Email.ToString(), user.UserAccount.UserName, Claims);
         }
     }
 }
