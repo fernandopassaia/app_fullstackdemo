@@ -1,7 +1,5 @@
-using AppFullStackDemo.Domain.Commands;
 using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Handlers;
-using AppFullStackDemo.Domain.Results;
 using AppFullStackDemo.Domain.Results.User;
 using AppFullStackDemo.Infra.Context;
 using AppFullStackDemo.Infra.Repositories;
