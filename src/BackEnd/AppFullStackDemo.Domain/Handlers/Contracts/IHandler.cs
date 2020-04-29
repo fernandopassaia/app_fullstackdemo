@@ -1,5 +1,5 @@
-using AppFullStackDemo.Domain.Commands;
 using AppFullStackDemo.Domain.Commands.Contracts;
+using AppFullStackDemo.Domain.Results;
 
 namespace AppFullStackDemo.Domain.Handlers.Contracts
 {

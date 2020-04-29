@@ -13,6 +13,9 @@
         "packagesPath": "/home/fernandopassaia/.nuget/packages/",
         "outputPath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Shared/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
           "/home/fernandopassaia/.nuget/NuGet/NuGet.Config"
         ],

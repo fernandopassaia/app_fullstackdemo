@@ -1,4 +1,4 @@
-namespace AppFullStackDemo.Domain.Commands
+namespace AppFullStackDemo.Domain.Results
 {
     //How it Works: On Post/Put/Delete - WebApi Controller will send a DTO to Handler. Handler will check (validate), if fails, will return in
     //"BaseCommandResult" a friendly and pattern message and if there's errors, it will come on an array. If no error, will return the message

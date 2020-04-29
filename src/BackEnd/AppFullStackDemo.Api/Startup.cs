@@ -16,6 +16,9 @@ using AppFullStackDemo.Api.Models;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
 using AppFullStackDemo.Infra.Data;
+using AppFullStackDemo.Domain.Repositories;
+using AppFullStackDemo.Infra.Repositories;
+using AppFullStackDemo.Domain.Handlers;
 
 namespace AppFullStackDemo.Api
 {
@@ -32,7 +35,7 @@ namespace AppFullStackDemo.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            #region Config of Cors DependencyInjection
+            #region Config of Context, Cors and DependencyInjection
             //inject on this class the configuration coming from my .json
             //services.AddSingleton<IWebHostEnvironment>(Environment);
             var appSettingsSection = Configuration.GetSection("AppSettings");
@@ -44,9 +47,18 @@ namespace AppFullStackDemo.Api
             services.AddScoped<AppFullStackDemoContext>();
             services.AddDbContext<AppFullStackDemoContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("ServerLocalConnection")));
+
             services.AddTransient<IUow, Uow>();
-            //services.AddTransient<ICategoryRepository, CategoryRepository>();
-            //services.AddTransient<CategoryHandler, CategoryHandler>();
+            services.AddTransient<IDeviceModelRepository, DeviceModelRepository>();
+            services.AddTransient<IEquipmentRepository, EquipmentRepository>();
+            services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
+
+            services.AddTransient<DeviceModelHandler, DeviceModelHandler>();
+            services.AddTransient<EquipmentHandler, EquipmentHandler>();
+            services.AddTransient<ManufacturerHandler, ManufacturerHandler>();
+            services.AddTransient<UserHandler, UserHandler>();
+
             #endregion Config of Cors DependencyInjection
 
             #region Config of EF Context / ConnectionString and Json Options
@@ -72,11 +84,8 @@ namespace AppFullStackDemo.Api
             #endregion Config of EF Context / ConnectionString / Postgres and Json Options 
 
             #region Config of JWT
-
             //Jwt Authentication
             //first of all i get the config in .Json and Cast to my Class AppSettings
-
-
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

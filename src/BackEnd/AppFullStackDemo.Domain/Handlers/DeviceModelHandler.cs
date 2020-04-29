@@ -1,8 +1,8 @@
-using AppFullStackDemo.Domain.Commands;
 using AppFullStackDemo.Domain.Commands.DeviceModel;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Handlers.Contracts;
 using AppFullStackDemo.Domain.Repositories;
+using AppFullStackDemo.Domain.Results;
 using Flunt.Notifications;
 
 namespace AppFullStackDemo.Domain.Handlers

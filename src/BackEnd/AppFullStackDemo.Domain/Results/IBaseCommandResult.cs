@@ -1,4 +1,4 @@
-namespace AppFullStackDemo.Domain.Commands
+namespace AppFullStackDemo.Domain.Results
 {
     public interface IBaseCommandResult
     {

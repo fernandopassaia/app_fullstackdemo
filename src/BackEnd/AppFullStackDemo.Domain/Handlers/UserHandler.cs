@@ -1,8 +1,8 @@
-using AppFullStackDemo.Domain.Commands;
 using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Handlers.Contracts;
 using AppFullStackDemo.Domain.Repositories;
+using AppFullStackDemo.Domain.Results;
 using AppFullStackDemo.Domain.ValueObjects;
 using Flunt.Notifications;
 
@@ -66,6 +66,31 @@ namespace AppFullStackDemo.Domain.Handlers
 
             return new BaseCommandResult(true, "User Updated with Success!", user);
         }
+
+        // public async Task<GetLoggedUserResult> HandleLoginUser(LoginUserCommand command)
+        // {
+        //     var employee = await _EmployeeRepository.GetEntityByEmailAsync(command.UsernameOrEmail);
+        //     if (employee == null)
+        //         return new GetLoggedUserResult(false, "Email ou senha não localizados!", "", "", "", "", "", command);
+
+        //     var company = await _CompanyRepository.GetByIdAsync(employee.Company);
+        //     var EmployeeObj = await _EmployeeRepository.GetByIdAsync(employee.Id); //I`ll load the Employee Entity because i need to use the PassWord Method
+
+        //     if (EncryptDecryptData.Decrypt(EmployeeObj.User.Password) != command.Password)
+        //     {
+        //         return new GetLoggedUserResult(false, "Email ou senha não localizados!", "", "", "", "", "", command);
+        //     }
+
+        //     //Se passou por aqui, Email e Senha batem, então vou recuperar as Claims e jogar no BaseCommandResult
+        //     var userClaim = await _UserClaimRepository.GetUserClaimByUserProfile(EmployeeObj.UserProfile);
+
+        //     List<string> Claims = new List<string>();
+        //     userClaim.ForEach(item =>
+        //     {
+        //         Claims.Add(item.Claim.ClaimName);
+        //     });
+        //     return new GetLoggedUserResult(true, "Login Efetuado com Sucesso!", employee.Id.ToString(), employee.FirstName + " " + employee.LastName, employee.EmailAddress, employee.UserName, company.Name.ToString(), Claims);
+        // }
 
         public IBaseCommandResult Handle(LoginUserCommand command)
         {
