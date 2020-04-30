@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { map, catchError, retry } from "rxjs/operators";
 import { of } from "rxjs";
@@ -12,7 +12,7 @@ import { UpdateDeviceModelCommand } from "../models/devicemodel/UpdateDeviceMode
   providedIn: "root",
 })
 export class DeviceModelService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   listDeviceModel: GetDeviceModelResult[];
 
   // I've created a group for the controls of the form

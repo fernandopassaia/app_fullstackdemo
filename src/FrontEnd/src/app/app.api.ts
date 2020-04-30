@@ -13,4 +13,6 @@ export class AppApi {
     AppApi.MobileControlApi + "/Equipment";
   static MobileControlApiResourceManufacturer =
     AppApi.MobileControlApi + "/Manufacturer";
+  static MobileControlApiResourceDashBoard =
+    AppApi.MobileControlApi + "/DashBoard";
 }

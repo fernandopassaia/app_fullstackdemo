@@ -5,10 +5,6 @@ import { BaseCommandResult } from 'src/app/models/BaseCommandResult.model';
 import { GetCostCenterAreaResult } from 'src/app/models/costcenterarea/GetCostCenterAreaResult.model';
 import { GetPositionResult } from 'src/app/models/position/GetPositionResult.model';
 import { GetSubsidiaryResult } from 'src/app/models/subsidiary/GetSubsidiaryResult.model';
-import { CompanyService } from 'src/app/services/company.service';
-import { SubsidiaryService } from 'src/app/services/subsidiary.service';
-import { PositionService } from 'src/app/services/position.service';
-import { CostCenterAreaService } from 'src/app/services/costcenterarea.service';
 import { GetCompanyReducedResult } from 'src/app/models/company/GetCompanyReducedResult.model';
 import { GetUserProfileResult } from 'src/app/models/userprofile/GetUserProfileResult.model';
 import { AuthService } from 'src/app/services/auth.service';
@@ -27,10 +23,6 @@ export class EmployeeCuComponent implements OnInit {
   listOfUserTypes: any[];
 
   constructor(public service: EmployeeService,
-    public companyService: CompanyService,
-    public subsidiaryService: SubsidiaryService,
-    public positionService: PositionService,
-    public costCenterAreaService: CostCenterAreaService,
     public userProfileService: AuthService,
     public dialogRef: MatDialogRef<EmployeeCuComponent>) { }
 
@@ -39,26 +31,10 @@ export class EmployeeCuComponent implements OnInit {
   }
 
   loadCompanys() {
-    this.companyService.getCompanyReduced().subscribe(
-      list => {
-        this.listCompanyReduced = list;
-        this.reloadSubsidiaryPositionCostCenterAreaUserProfile(); //just after load the Companies, I'll load the Subsidiaries (this is the OK method!)
-      });
+
   }
 
   reloadSubsidiaryPositionCostCenterAreaUserProfile() {
-    this.subsidiaryService.getSubsidiaryByCompany(this.service.form.get('Company').value).subscribe(
-      list => {
-        this.listSubsidiary = list;
-      });
-    this.positionService.getPositionByCompany(this.service.form.get('Company').value).subscribe(
-      list => {
-        this.listPosition = list;
-      });
-    this.costCenterAreaService.getCostCenterAreaByCompany(this.service.form.get('Company').value).subscribe(
-      list => {
-        this.listCostCenterArea = list;
-      });
     this.userProfileService.getUserProfiles().subscribe(
       list => {
         this.listUserProfile = list;
