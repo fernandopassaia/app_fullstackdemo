@@ -23,13 +23,11 @@ namespace AppFullStackDemo.Infra.Repositories
         public void Create(Equipment equipment)
         {
             _context.Equipments.Add(equipment);
-            _context.SaveChanges();
         }
 
         public void Update(Equipment equipment)
         {
             _context.Entry(equipment).State = EntityState.Modified;
-            _context.SaveChanges();
         }
 
         public Equipment GetById(Guid id)

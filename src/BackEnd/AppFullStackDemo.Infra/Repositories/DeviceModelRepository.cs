@@ -21,13 +21,11 @@ namespace AppFullStackDemo.Infra.Repositories
         public void Create(DeviceModel deviceModel)
         {
             _context.DeviceModels.Add(deviceModel);
-            _context.SaveChanges();
         }
 
         public void Update(DeviceModel deviceModel)
         {
             _context.Entry(deviceModel).State = EntityState.Modified;
-            _context.SaveChanges();
         }
 
         public DeviceModel GetById(Guid id)

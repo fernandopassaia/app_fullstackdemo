@@ -42,7 +42,7 @@ namespace AppFullStackDemo.Api.Controllers
 
         [HttpPost]
         [Route("v1")]
-        [Authorize(Roles = "user.create")]
+        [AllowAnonymous]
         public async Task<IActionResult> Post([FromBody]CreateUserCommand command)
         {
             var result = _handler.Handle(command);

@@ -21,13 +21,11 @@ namespace AppFullStackDemo.Infra.Repositories
         public void Create(Manufacturer manufacturer)
         {
             _context.Manufacturers.Add(manufacturer);
-            _context.SaveChanges();
         }
 
         public void Update(Manufacturer manufacturer)
         {
             _context.Entry(manufacturer).State = EntityState.Modified;
-            _context.SaveChanges();
         }
 
         public Manufacturer GetById(Guid id)

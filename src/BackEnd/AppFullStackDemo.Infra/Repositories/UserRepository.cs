@@ -21,13 +21,11 @@ namespace AppFullStackDemo.Infra.Repositories
         public void Create(User user)
         {
             _context.Users.Add(user);
-            _context.SaveChanges();
         }
 
         public void Update(User user)
         {
             _context.Entry(user).State = EntityState.Modified;
-            _context.SaveChanges();
         }
 
         public User GetById(Guid id)

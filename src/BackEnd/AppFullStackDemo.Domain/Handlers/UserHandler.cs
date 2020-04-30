@@ -35,6 +35,10 @@ namespace AppFullStackDemo.Domain.Handlers
             if (command.Invalid)
                 return new BaseCommandResult(false, "Need to fix the errors on User", command.Notifications);
 
+            var userByUsername = _repository.GetByLogin(command.UserName);
+            if (userByUsername != null)
+                return new BaseCommandResult(true, "Username Already exists.", null);
+
             // if i pass the validation, i should create a new user
             var user = new User(command.AditionalInfo,
                 new Name(command.FirstName, command.LastName),
@@ -59,7 +63,7 @@ namespace AppFullStackDemo.Domain.Handlers
 
             _userClaimRepository.AddUserClaims(claimsForUser);
             // Return the Value
-            return new BaseCommandResult(true, "User Saved with Success!", user);
+            return new BaseCommandResult(true, "User Saved with Success!", null);
         }
 
         public IBaseCommandResult Handle(UpdateUserCommand command)
@@ -82,7 +86,7 @@ namespace AppFullStackDemo.Domain.Handlers
 
             _repository.Update(user);
 
-            return new BaseCommandResult(true, "User Updated with Success!", user);
+            return new BaseCommandResult(true, "User Updated with Success!", null);
         }
 
         public GetLoggedUserResult Handle(LoginUserCommand command)
