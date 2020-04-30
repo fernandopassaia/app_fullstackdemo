@@ -51,16 +51,14 @@ namespace AppFullStackDemo.Domain.Commands.User
 
         public void Validate()
         {
+            // Note: On the Create I`ll allow user to create just with First and LastName, Username (email) and Password.
+            // Once User is logged, if user tries to UPDATE the profile, will be forced to add Address, Phone and other info.
             AddNotifications(new Contract()
                 .HasMaxLengthIfNotNullOrEmpty(UserName, 100, "Username", "UserName cannot be higher than 100c.")
                 //Address
-                .IsNotNullOrEmpty(Street, "Street", "Please Inform a Street.")
                 .HasMaxLengthIfNotNullOrEmpty(Street, 120, "Street", "Street needs to be lower than 120c.")
-                .IsNotNullOrEmpty(StreetNumber, "StreetNumber", "Please Inform a Street Number")
                 .HasMaxLengthIfNotNullOrEmpty(StreetNumber, 20, "StreetNumber", "Street Number needs to be lower than 20c.")
-                .IsNotNullOrEmpty(NeighborHood, "NeighborHood", "Please Inform a Neighboorhood")
                 .HasMaxLengthIfNotNullOrEmpty(NeighborHood, 60, "NeighborHood", "Neighboorhood needs to be lower than 60c")
-                .IsNotNullOrEmpty(City, "City", "Please Inform a City.")
                 .HasMaxLengthIfNotNullOrEmpty(City, 60, "City", "City needs to be lower than 60c")
                 .HasMaxLengthIfNotNullOrEmpty(ZipCode, 10, "ZipCode", "Zipcode needs to be lower than 10c")
                 .HasMaxLengthIfNotNullOrEmpty(CountryRegistryNumber, 20, "CountryRegistryNumber", "Country Register Number Cannot be higher than 20.")
@@ -70,7 +68,6 @@ namespace AppFullStackDemo.Domain.Commands.User
                 .HasMaxLengthIfNotNullOrEmpty(StateRegistryNumber, 20, "StateRegistryNumber", "State Register Number Cannot be higher than 20.")
                 //Email
                 .IsEmail(EmailAddress, "EmailAddress", "Please inform a valid email")
-                .IsNotNull(EmailAddress, "EmailAddress", "Email cannot be null")
                 .HasMaxLengthIfNotNullOrEmpty(EmailAddress, 100, "EmailAddress", "Email cannot be higher than 100c")
                 //Name
                 .HasMinLen(FirstName, 2, "FirstName", "Please Inform a First name.")
