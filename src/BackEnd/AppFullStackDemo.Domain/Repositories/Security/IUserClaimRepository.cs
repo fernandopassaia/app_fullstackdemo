@@ -7,5 +7,6 @@ namespace AppFullStackDemo.Domain.Repositories.Security
     public interface IUserClaimRepository
     {
         IEnumerable<UserClaim> GetByUser(User user);
+        void AddUserClaims(List<UserClaim> usersClaims);
     }
 }

@@ -19,11 +19,13 @@ namespace AppFullStackDemo.Domain.Handlers
     {
         private readonly IUserRepository _repository;
         private readonly IUserClaimRepository _userClaimRepository;
+        private readonly IClaimRepository _claimRepository;
 
-        public UserHandler(IUserRepository repository, IUserClaimRepository userClaimRepository)
+        public UserHandler(IUserRepository repository, IUserClaimRepository userClaimRepository, IClaimRepository claimRepository)
         {
             _repository = repository;
             _userClaimRepository = userClaimRepository;
+            _claimRepository = claimRepository;
         }
 
         public IBaseCommandResult Handle(CreateUserCommand command)
@@ -45,6 +47,17 @@ namespace AppFullStackDemo.Domain.Handlers
             // Save on Database
             _repository.Create(user);
 
+            // Note: Here I`ll simply add all CLAIMS to this New User, so basically the user will access everything. As described in README.MD
+            // you should adapt this rule to your business (like creating claims based on a "Profile" or a Screen to select claims to the user)
+            // because this sample is not a sample of "real business" but development, we will simply give user all claims.
+            var claims = _claimRepository.Get();
+            var claimsForUser = new List<UserClaim>();
+            foreach (Claim cla in claims)
+            {
+                claimsForUser.Add(new UserClaim(user, cla));
+            }
+
+            _userClaimRepository.AddUserClaims(claimsForUser);
             // Return the Value
             return new BaseCommandResult(true, "User Saved with Success!", user);
         }

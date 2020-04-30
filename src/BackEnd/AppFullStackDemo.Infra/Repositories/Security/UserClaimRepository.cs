@@ -17,6 +17,11 @@ namespace AppFullStackDemo.Infra.Repositories.Security
             _context = context;
         }
 
+        public void AddUserClaims(List<UserClaim> usersClaims)
+        {
+            _context.UserClaims.AddRange(usersClaims);
+        }
+
         public IEnumerable<UserClaim> GetByUser(User user)
         {
             var userClaims = _context.UserClaims

@@ -56,6 +56,7 @@ namespace AppFullStackDemo.Api
             services.AddTransient<IManufacturerRepository, ManufacturerRepository>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IUserClaimRepository, UserClaimRepository>();
+            services.AddTransient<IClaimRepository, ClaimRepository>();
 
             services.AddTransient<DeviceModelHandler, DeviceModelHandler>();
             services.AddTransient<EquipmentHandler, EquipmentHandler>();
