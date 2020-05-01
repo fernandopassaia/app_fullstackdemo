@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
     Password: new FormControl('', Validators.required)
   });
 
+  constructor() { }
+
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
     body.classList.add('register-page');

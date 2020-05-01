@@ -1,10 +1,7 @@
 import { Routes } from "@angular/router";
-import { EmployeeComponent } from "../employee/employee.component";
-import { ManufacturerComponent } from "../devices-groups/manufacturer/manufacturer.component";
-import { DeviceModelComponent } from "../devices-groups/devicemodel/devicemodel.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { ForbiddenComponent } from "./auth/forbidden/forbidden.component";
-import { EquipmentComponent } from "../equipment/equipment.component";
+//import { EquipmentComponent } from "../equipment/equipment.component";
 
 export const AppFullStackDemoRoutes: Routes = [
   //custom maps routes made by Fernando
@@ -14,30 +11,11 @@ export const AppFullStackDemoRoutes: Routes = [
   //Client side, so this is a "First-level" Authorization, before API, and i will check if LoggedUser can se a Screen.
   //The second level will be done on the API side, on the Api-URL, by the Tag [Authorization] and corresponding Claim
 
-  {
-    path: "employee",
-    component: EmployeeComponent,
-    canActivate: [AuthGuard],
-    data: { permittedRoles: ["employee.screen"] },
-  },
-  {
-    path: "manufacturer",
-    component: ManufacturerComponent,
-    canActivate: [AuthGuard],
-    data: { permittedRoles: ["manufacturer.screen"] },
-  },
-  {
-    path: "devicemodel",
-    component: DeviceModelComponent,
-    canActivate: [AuthGuard],
-    data: { permittedRoles: ["devicemodel.screen"] },
-  },
-
   //Equipment
-  {
-    path: "equipment/:employeeId",
-    component: EquipmentComponent,
-    canActivate: [AuthGuard],
-    data: { permittedRoles: ["equipment.screen"] },
-  },
+  // {
+  //   path: "equipment/:employeeId",
+  //   component: EquipmentComponent,
+  //   canActivate: [AuthGuard],
+  //   data: { permittedRoles: ["equipment.screen"] },
+  // },
 ];

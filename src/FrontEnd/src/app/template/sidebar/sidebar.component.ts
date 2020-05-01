@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import PerfectScrollbar from 'perfect-scrollbar';
 import { Router } from '@angular/router';
-import { GetLoggedUserResult } from 'src/app/models/userprofile/GetLoggedUserResult.model';
+import { GetLoggedUserResult } from 'src/app/models/user/GetLoggedUserResult.model';
 import { AuthService } from 'src/app/services/auth.service';
 
 declare const $: any;

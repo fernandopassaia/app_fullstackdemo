@@ -4,8 +4,8 @@ import { AppApi } from "../app.api";
 import { retry, catchError, tap, mapTo } from "rxjs/operators";
 import { NotificationService } from "../shared/notification.service";
 import { of, Observable } from "rxjs";
-import { TokenAndRefreshToken } from "../models/userprofile/TokenAndRefreshToken.model";
-import { LoginUserCommand } from "../models/userprofile/LoginUserCommand.model";
+import { TokenAndRefreshToken } from "../models/user/TokenAndRefreshToken.model";
+import { LoginUserCommand } from "../models/user/LoginUserCommand.model";
 
 @Injectable({
   providedIn: "root",
@@ -20,7 +20,7 @@ export class AuthService {
   private readonly EMPLOYEE_EMAIL = "acEE";
   private loggedUser: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login(user: { username: string; password: string }): Observable<boolean> {
     const loginCommand = new LoginUserCommand();

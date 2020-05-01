@@ -6,25 +6,10 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 
 import { IConfig, NgxMaskModule } from "ngx-mask"; //for ngmask
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = {};
-
-import { EmployeeComponent } from "../employee/employee.component";
-import { EmployeeCuComponent } from "../employee/employee-cu/employee-cu.component";
-import { EmployeeListComponent } from "../employee/employee-list/employee-list.component";
-
-//import { AdminLayoutModule } from '../template/admin-layout/admin-layout.module';
 import { MaterialModule } from "./material.module";
-import { DevicesGroupsComponent } from "../devices-groups/devices-groups.component";
-import { DeviceModelComponent } from "../devices-groups/devicemodel/devicemodel.component";
-import { DeviceModelCuComponent } from "../devices-groups/devicemodel/devicemodel-cu/devicemodel-cu.component";
-import { DeviceModelListComponent } from "../devices-groups/devicemodel/devicemodel-list/devicemodel-list.component";
-import { ManufacturerComponent } from "../devices-groups/manufacturer/manufacturer.component";
-import { ManufacturerCuComponent } from "../devices-groups/manufacturer/manufacturer-cu/manufacturer-cu.component";
-import { ManufacturerListComponent } from "../devices-groups/manufacturer/manufacturer-list/manufacturer-list.component";
+
 import { ForbiddenComponent } from "./auth/forbidden/forbidden.component";
 import { ForbiddenMessageComponent } from "./auth/forbidden/forbiddenmessage/forbiddenmessage.component";
-import { EquipmentComponent } from "../equipment/equipment.component";
-import { EquipmentCuComponent } from "../equipment/equipment-cu/equipment-cu.component";
-import { EquipmentListComponent } from "../equipment/equipment-list/equipment-list.component";
 import { NumberPickerModule } from "ng-number-picker";
 import { EnumDescriber } from "../shared/enum-describer.service";
 import { AppFullStackDemoRoutes } from "./appfullstackdemo.routing";
@@ -44,29 +29,15 @@ import { AppFullStackDemoRoutes } from "./appfullstackdemo.routing";
     ForbiddenComponent,
     ForbiddenMessageComponent,
     // Modules from the Real system
-    EmployeeComponent,
-    EmployeeCuComponent,
-    EmployeeListComponent,
-
-    // Groups of Devices
-    DevicesGroupsComponent,
-    DeviceModelComponent,
-    DeviceModelCuComponent,
-    DeviceModelListComponent,
-    ManufacturerComponent,
-    ManufacturerCuComponent,
-    ManufacturerListComponent,
-
-    EquipmentComponent,
-    EquipmentCuComponent,
-    EquipmentListComponent,
+    //EmployeeComponent,
+    //EmployeeCuComponent,
+    //EmployeeListComponent,
     EnumDescriber,
   ],
   //to open in a Modal (be injected) needs to be here in entry
   entryComponents: [
-    DeviceModelCuComponent,
-    ManufacturerCuComponent,
-    EmployeeCuComponent,
+    //DeviceModelCuComponent,
+    //ManufacturerCuComponent
   ],
 })
 export class AppFullStackDemoModule { }
