@@ -6,7 +6,7 @@ import { Observable, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, filter, take, switchMap, retry, map } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
 import { NotificationService } from '../../shared/notification.service';
-import { BaseCommandResult } from 'src/app/models/BaseCommandResult.model';
+import { BaseCommandResult } from 'src/app/commands/BaseCommandResult.model';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

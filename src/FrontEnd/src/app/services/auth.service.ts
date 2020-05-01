@@ -4,8 +4,8 @@ import { AppApi } from "../app.api";
 import { retry, catchError, tap, mapTo } from "rxjs/operators";
 import { NotificationService } from "../shared/notification.service";
 import { of, Observable } from "rxjs";
-import { TokenAndRefreshToken } from "../models/user/TokenAndRefreshToken.model";
-import { LoginUserCommand } from "../models/user/LoginUserCommand.model";
+import { TokenAndRefreshToken } from "../results/user/TokenAndRefreshToken.model";
+import { LoginUserCommand } from "../commands/user/LoginUserCommand.model";
 
 @Injectable({
   providedIn: "root",

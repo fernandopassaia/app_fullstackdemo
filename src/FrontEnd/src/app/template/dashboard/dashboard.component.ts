@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import { DashBoardService } from 'src/app/services/dashboard.service';
-import { GetDashBoardResult } from 'src/app/models/dashboard/GetDashBoardResult';
+import { GetDashBoardResult } from 'src/app/commands/dashboard/GetDashBoardResult';
 
 declare const $: any;
 

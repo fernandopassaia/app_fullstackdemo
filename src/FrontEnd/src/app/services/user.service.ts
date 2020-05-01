@@ -1,14 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
-import { map, catchError, retry } from "rxjs/operators";
-import { of } from "rxjs";
 import { AppApi } from "../app.api";
-import { BaseCommandResultDashBoard } from "../commands/BaseCommandResultDashBoard.model";
 
 @Injectable({
     providedIn: "root",
 })
-export class DashBoardService {
+export class UserService {
     headers = {
         headers: new HttpHeaders({
             "Content-Type": "application/json",
@@ -16,19 +13,18 @@ export class DashBoardService {
     };
 
     constructor(private http: HttpClient) { }
-    dashBoardData: BaseCommandResultDashBoard;
 
     initializeFormGroup() { }
 
-    getDashBoardData() {
+    createUser(command: CreateCategoryCommand) {
         return this.http
-            .get(`${AppApi.MobileControlApiResourceDashBoard}/v1`)
+            .post(
+                `${AppApi.MobileControlApiResourceCategory}/v1`,
+                JSON.stringify(command),
+                this.headers
+            )
             .pipe(
                 retry(2), //if something happens, will retry 2x
-                map(
-                    (res) =>
-                        (this.dashBoardData = res as BaseCommandResultDashBoard)
-                ),
                 catchError((err) => {
                     return of(null); //if exception happens, i'll return null
                 })

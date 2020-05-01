@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, OnDestroy } from '@angular/core';
-import { GetLoggedUserResult } from 'src/app/models/user/GetLoggedUserResult.model';
+import { GetLoggedUserResult } from 'src/app/results/user/GetLoggedUserResult.model';
 import { NotificationService } from 'src/app/shared/notification.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';

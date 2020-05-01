@@ -12,8 +12,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
   // Note: On the Create I`ll allow user to create just with First and LastName, Username (email) and Password.
   // Once User is logged, if user tries to UPDATE the profile, will be forced to add Address, Phone and other info.
   form: FormGroup = new FormGroup({
-    UsernameOrEmail: new FormControl('', Validators.required),
-    Password: new FormControl('', Validators.required)
+    FirstName: new FormControl('', Validators.required),
+    LastName: new FormControl('', Validators.required),
+    EmailAddress: new FormControl('', Validators.required),
+    Password: new FormControl('', Validators.required),
   });
 
   constructor() { }
