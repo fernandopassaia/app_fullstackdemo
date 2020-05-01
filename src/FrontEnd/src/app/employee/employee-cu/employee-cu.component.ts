@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { EmployeeService } from 'src/app/services/employee.service';
+import { EmployeeService } from 'src/app/services/user.service';
 import { BaseCommandResult } from 'src/app/models/BaseCommandResult.model';
 import { GetCostCenterAreaResult } from 'src/app/models/costcenterarea/GetCostCenterAreaResult.model';
 import { GetPositionResult } from 'src/app/models/position/GetPositionResult.model';

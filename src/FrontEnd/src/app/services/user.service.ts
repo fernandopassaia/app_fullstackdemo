@@ -19,11 +19,30 @@ import { CustomValidators } from "../shared/custom.validators";
 })
 export class EmployeeService {
   public form: FormGroup;
+  public singInform: FormGroup;
 
   constructor(private http: HttpClient, private fb: FormBuilder) {
     this.form = this.createSignupForm();
+
   }
+
+  // Note: On the Create I`ll allow user to create just with First and LastName, Username (email) and Password.
+  // Once User is logged, if user tries to UPDATE the profile, will be forced to add Address, Phone and other info.
+  singInform: FormGroup = new FormGroup({
+    UsernameOrEmail: new FormControl('', Validators.required),
+    Password: new FormControl('', Validators.required)
+  });
+
+
+
+
+
+
   listEmployee: GetEmployeeResult[];
+
+
+
+
 
   createSignupForm(): FormGroup {
     return this.fb.group(

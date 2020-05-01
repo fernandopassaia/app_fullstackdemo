@@ -3,7 +3,6 @@ import { GetLoggedUserResult } from 'src/app/models/userprofile/GetLoggedUserRes
 import { NotificationService } from 'src/app/shared/notification.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 declare var $: any;
 
@@ -19,11 +18,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     private nativeElement: Node;
     logUserResult: GetLoggedUserResult;
     public errors: any[] = [];
-
-    form: FormGroup = new FormGroup({
-        UsernameOrEmail: new FormControl('', Validators.required),
-        Password: new FormControl('', Validators.required)
-    });
 
     constructor(private element: ElementRef, public service: AuthService, private router: Router) {
         this.nativeElement = element.nativeElement;
