@@ -4,8 +4,8 @@ import { AppApi } from "../app.api";
 import { retry, catchError, tap, mapTo } from "rxjs/operators";
 import { NotificationService } from "../shared/notification.service";
 import { of, Observable } from "rxjs";
-import { TokenAndRefreshToken } from "../results/user/TokenAndRefreshToken.model";
 import { LoginUserCommand } from "../commands/user/LoginUserCommand.model";
+import { TokenResult } from "../results/user/TokenResult.model";
 
 @Injectable({
   providedIn: "root",
@@ -29,7 +29,7 @@ export class AuthService {
     loginCommand.Source = 0;
     return this.http
       .post<any>(
-        `${AppApi.MobileControlApiResourceUserProfile}/v1/Login`,
+        `${AppApi.MobileControlApiResourceUser}/v1/Login`,
         loginCommand
       )
       .pipe(
@@ -47,7 +47,7 @@ export class AuthService {
   testApi() {
     //Note: token will be added by the HttpInterceptor, and UserProfile will be taken by the Token
     return this.http
-      .get(`${AppApi.MobileControlApiResourceUserProfile}/v1/test`)
+      .get(`${AppApi.MobileControlApiResourceUser}/v1/test`)
       .pipe(
         tap((response) => alert(response)),
         retry(2), //if something happens, will retry 2x
@@ -61,7 +61,7 @@ export class AuthService {
     //Note: token will be added by the HttpInterceptor, and UserProfile will be taken by the Token
     return this.http
       .get(
-        `${AppApi.MobileControlApiResourceUserProfile}/v1/GetUserProfileClaims`
+        `${AppApi.MobileControlApiResourceUser}/v1/GetUserProfileClaims`
       )
       .pipe(
         retry(2), //if something happens, will retry 2x
@@ -74,7 +74,7 @@ export class AuthService {
   getUserProfiles() {
     //Note: token will be added by the HttpInterceptor, and UserProfile will be taken by the Token
     return this.http
-      .get(`${AppApi.MobileControlApiResourceUserProfile}/v1`)
+      .get(`${AppApi.MobileControlApiResourceUser}/v1`)
       .pipe(
         retry(2), //if something happens, will retry 2x
         catchError((err) => {
@@ -106,18 +106,18 @@ export class AuthService {
 
   refreshToken() {
     return this.http
-      .post<any>(`${AppApi.MobileControlApiResourceUserProfile}/v1/Login/rt`, {
+      .post<any>(`${AppApi.MobileControlApiResourceUser}/v1/Login/rt`, {
         refreshToken: this.getRefreshToken(),
       })
       .pipe(
-        tap((tokens: TokenAndRefreshToken) => {
+        tap((tokens: TokenResult) => { //Fernando: i`ve changed from tokenAndRefreshToken to String here
           this.storeJwtToken(tokens);
         })
       );
   }
 
   // refreshToken() {
-  //     return this.http.post<any>(`${MobileControlApiResourceUserProfile}v1/Login/rt`, {
+  //     return this.http.post<any>(`${MobileControlApiResourceUser}v1/Login/rt`, {
   //         'refreshToken': this.getRefreshToken()
   //     }).pipe(tap((tokens: TokenAndRefreshToken) => {
 

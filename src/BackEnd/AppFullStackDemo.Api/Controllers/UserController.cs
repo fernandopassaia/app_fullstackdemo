@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using AppFullStackDemo.Api.Controllers.Security;
 using AppFullStackDemo.Api.Models;
 using Microsoft.Extensions.Options;
+using AppFullStackDemo.Domain.Results.User;
 
 namespace AppFullStackDemo.Api.Controllers
 {
@@ -69,7 +70,8 @@ namespace AppFullStackDemo.Api.Controllers
                 var userClaimsList = (List<string>)result.Data;
                 var user = _repository.GetByLogin(command.UserName);
                 var token = new JwtGenerator(_appSettings).GenerateToken(result, userClaimsList);
-                return Ok(new { token });
+                var tokenResult = new TokenResult() { Token = token, LoggedSuccessful = true, UserName = user.Name.ToString(), UserEmail = user.Email.EmailAddress, UserId = user.Id.ToString() };
+                return await Response(new BaseCommandResult(true, "Logged with Success.", tokenResult)); //Do Not need to Jsonfy it, so I'll return the Own Result            
             }
 
             return await Response(new BaseCommandResult(false, "Username or Password invalid.", null)); //Do Not need to Jsonfy it, so I'll return the Own Result            

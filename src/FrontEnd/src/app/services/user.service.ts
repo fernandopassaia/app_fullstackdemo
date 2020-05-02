@@ -1,6 +1,9 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { AppApi } from "../app.api";
+import { retry, catchError } from "rxjs/operators";
+import { CreateUserCommand } from "../commands/user/CreateUserCommand.model";
+import { of } from "rxjs";
 
 @Injectable({
     providedIn: "root",
@@ -16,10 +19,10 @@ export class UserService {
 
     initializeFormGroup() { }
 
-    createUser(command: CreateCategoryCommand) {
+    createUser(command: CreateUserCommand) {
         return this.http
             .post(
-                `${AppApi.MobileControlApiResourceCategory}/v1`,
+                `${AppApi.MobileControlApiResourceUser}/v1`,
                 JSON.stringify(command),
                 this.headers
             )

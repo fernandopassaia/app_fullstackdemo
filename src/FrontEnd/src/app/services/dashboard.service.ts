@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { map, catchError, retry } from "rxjs/operators";
 import { of } from "rxjs";
 import { AppApi } from "../app.api";
-import { BaseCommandResultDashBoard } from "../commands/BaseCommandResultDashBoard.model";
+import { BaseCommandResultDashBoard } from "../results/BaseCommandResultDashBoard.model";
 
 @Injectable({
     providedIn: "root",
