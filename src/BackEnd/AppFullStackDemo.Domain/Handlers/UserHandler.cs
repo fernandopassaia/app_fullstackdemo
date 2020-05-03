@@ -63,7 +63,7 @@ namespace AppFullStackDemo.Domain.Handlers
 
             _userClaimRepository.AddUserClaims(claimsForUser);
             // Return the Value
-            return new BaseCommandResult(true, "User Saved with Success!", null);
+            return new BaseCommandResult(true, "User Saved with Success! You can use it for login now.", null);
         }
 
         public IBaseCommandResult Handle(UpdateUserCommand command)

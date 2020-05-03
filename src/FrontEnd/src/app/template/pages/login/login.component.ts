@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     public errors: any[] = [];
 
     form: FormGroup = new FormGroup({
-        UsernameOrEmail: new FormControl('', Validators.required),
+        UserName: new FormControl('', Validators.required),
         Password: new FormControl('', Validators.required)
     });
 
@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
     // Fernando: Will authenticate the user, if authenticated, will save the Token in LocalStorage
     onSubmit() {
-        this.service.login({ username: this.form.controls['UsernameOrEmail'].value, password: this.form.controls['Password'].value }).subscribe(
+        this.service.login({ username: this.form.controls['UserName'].value, password: this.form.controls['Password'].value }).subscribe(
             (result: any) => { //if i have any kind of result                
                 if (result.Success) {
                     this.router.navigateByUrl('/dashboard');

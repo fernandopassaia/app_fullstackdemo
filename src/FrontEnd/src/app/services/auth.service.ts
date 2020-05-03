@@ -24,9 +24,9 @@ export class AuthService {
 
   login(user: { username: string; password: string }): Observable<boolean> {
     const loginCommand = new LoginUserCommand();
-    loginCommand.UsernameOrEmail = user.username;
+    loginCommand.UserName = user.username;
     loginCommand.Password = user.password;
-    loginCommand.Source = 0;
+    console.log(loginCommand);
     return this.http
       .post<any>(
         `${AppApi.MobileControlApiResourceUser}/v1/Login`,
@@ -126,6 +126,7 @@ export class AuthService {
   // }
 
   private doLoginUser(username: string, tokens: any) {
+    console.log('Tokens:', tokens);
     this.loggedUser = username;
     this.storeTokens(tokens);
   }

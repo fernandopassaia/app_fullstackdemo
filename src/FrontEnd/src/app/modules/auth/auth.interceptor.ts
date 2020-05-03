@@ -43,7 +43,7 @@ export class AuthInterceptor implements HttpInterceptor {
                     if (res.body.Success != undefined) {
                         let baseCommandResult = res.body as BaseCommandResult; //convert the baseCommandResult                        
                         if (baseCommandResult.Success == true) {
-                            NotificationService.showNotification('success', 'top', 'right', 'Sucesso', res.body.Message);
+                            NotificationService.showNotification('success', 'top', 'right', 'Success', res.body.Message);
                         }
                         else {
                             //Note: The BackEnd will return 400 just when there is an exception. In case of validation errors or backend message, it will return an 200 OK
@@ -54,7 +54,7 @@ export class AuthInterceptor implements HttpInterceptor {
                             baseCommandResult.ResponseDataObj.forEach(item => {
                                 erros = erros + '<br />' + item.Message;
                             })
-                            NotificationService.showNotification('warning', 'top', 'right', 'Erro: ' + res.body.Message, erros);
+                            NotificationService.showNotification('warning', 'top', 'right', 'Error: ' + res.body.Message, erros);
                         }
                     }
                 }
