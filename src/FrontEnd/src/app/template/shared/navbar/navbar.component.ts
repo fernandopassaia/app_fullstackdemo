@@ -24,7 +24,6 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
     private _router: Subscription;
-    public logoUrl: string;
 
     @ViewChild('app-navbar-cmp', { static: false }) button: any;
 
@@ -32,7 +31,6 @@ export class NavbarComponent implements OnInit {
         this.location = location;
         this.nativeElement = element.nativeElement;
         this.sidebarVisible = false;
-        this.logoUrl = localStorage.getItem('acCL'); //logo da empresa
     }
     minimizeSidebar() {
         const body = document.getElementsByTagName('body')[0];

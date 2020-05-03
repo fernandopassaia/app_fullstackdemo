@@ -81,7 +81,6 @@ export class SidebarComponent implements OnInit {
     public menuItems: any[];
     public name: string;
     public email: string;
-    public company: string;
 
     ps: any;
     isMobileMenu() {
@@ -104,9 +103,8 @@ export class SidebarComponent implements OnInit {
         //         this.email = userLogged.EmailAddress;
         //     });
 
-        this.name = localStorage.getItem('acEN');
-        this.email = localStorage.getItem('acEE');
-        this.company = localStorage.getItem('acCN');
+        this.name = localStorage.getItem('appFullStackDemoUN');
+        this.email = localStorage.getItem('appFullStackDemoEM');
 
         this.menuItems = ROUTES.filter(menuItem => menuItem);
         if (window.matchMedia(`(min-width: 960px)`).matches && !this.isMac()) {

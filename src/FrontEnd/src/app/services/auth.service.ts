@@ -1,11 +1,9 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { AppApi } from "../app.api";
-import { retry, catchError, tap, mapTo } from "rxjs/operators";
-import { NotificationService } from "../shared/notification.service";
+import { retry, catchError, tap } from "rxjs/operators";
 import { of, Observable } from "rxjs";
 import { LoginUserCommand } from "../commands/user/LoginUserCommand.model";
-import { TokenResult } from "../results/user/TokenResult.model";
 
 @Injectable({
   providedIn: "root",
@@ -104,42 +102,30 @@ export class AuthService {
 
   private storeTokens(tokens: any) {
     if (tokens.Success) {
-      localStorage.setItem(this.JWT_TOKEN, tokens.ResponseDataObj.token);
+      localStorage.setItem(this.JWT_TOKEN, tokens.ResponseDataObj.Token);
       //private readonly USERNAME = "appFullStackDemoUN";
       //private readonly USEREMAIL = "appFullStackDemoEM";
       //private readonly USERID = "appFullStackDemoUI";
       localStorage.setItem(
-        this.REFRESH_TOKEN,
-        tokens.ResponseDataObj.refreshToken
+        this.USERNAME,
+        tokens.ResponseDataObj.UserName
       );
       localStorage.setItem(
-        this.COMPANY_NAME,
-        tokens.ResponseDataObj.companyName
+        this.USEREMAIL,
+        tokens.ResponseDataObj.UserEmail
       );
       localStorage.setItem(
-        this.COMPANY_LOGO,
-        tokens.ResponseDataObj.companyLogoUrl
-      );
-      localStorage.setItem(
-        this.EMPLOYEE_NAME,
-        tokens.ResponseDataObj.employeeName
-      );
-      localStorage.setItem(this.EMPLOYEE_ID, tokens.ResponseDataObj.employeeId);
-      localStorage.setItem(
-        this.EMPLOYEE_EMAIL,
-        tokens.ResponseDataObj.employeeEmail
+        this.USERID,
+        tokens.ResponseDataObj.UserId
       );
     }
   }
 
   private removeTokens() {
     localStorage.removeItem(this.JWT_TOKEN);
-    localStorage.removeItem(this.REFRESH_TOKEN);
-    localStorage.removeItem(this.COMPANY_NAME);
-    localStorage.removeItem(this.EMPLOYEE_NAME);
-    localStorage.removeItem(this.EMPLOYEE_ID);
-    localStorage.removeItem(this.COMPANY_LOGO);
-    localStorage.removeItem(this.EMPLOYEE_EMAIL);
+    localStorage.removeItem(this.USERNAME);
+    localStorage.removeItem(this.USEREMAIL);
+    localStorage.removeItem(this.USERID);
   }
 
   //This Method will Receive the "Role" (taken on the Route File by Auth.Guard) and Check if the User
