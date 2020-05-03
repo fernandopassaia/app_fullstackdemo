@@ -21,6 +21,7 @@ using AppFullStackDemo.Infra.Repositories;
 using AppFullStackDemo.Domain.Handlers;
 using AppFullStackDemo.Infra.Repositories.Security;
 using AppFullStackDemo.Domain.Repositories.Security;
+using Newtonsoft.Json;
 
 namespace AppFullStackDemo.Api
 {
@@ -75,16 +76,24 @@ namespace AppFullStackDemo.Api
                 )
             );
 
-            services.AddMvc();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            // this is for the old version 2.2 of framework
-            // services.AddMvc().AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
-            // services.AddMvc().AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+            // services.AddMvc();
+            // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            // services.AddMvc().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
-            services.AddMvc()
+            // services.AddMvc()
+            //     .AddNewtonsoftJson(options =>
+            //     options.SerializerSettings.ContractResolver =
+            //     new CamelCasePropertyNamesContractResolver());
+
+            services
+                .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
                 .AddNewtonsoftJson(options =>
-                options.SerializerSettings.ContractResolver =
-                new CamelCasePropertyNamesContractResolver());
+                {
+                    options.SerializerSettings.ContractResolver = new DefaultContractResolver();
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                });
+
+
             #endregion Config of EF Context / ConnectionString / Postgres and Json Options 
 
             #region Config of JWT

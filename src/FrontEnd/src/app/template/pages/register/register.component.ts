@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { UserService } from 'src/app/services/user.service';
+import { BaseCommandResult } from 'src/app/results/BaseCommandResult.model';
+import { NotificationService } from 'src/app/shared/notification.service';
 
 @Component({
   selector: 'app-register-cmp',
@@ -9,16 +11,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class RegisterComponent implements OnInit, OnDestroy {
   test: Date = new Date();
 
-  // Note: On the Create I`ll allow user to create just with First and LastName, Username (email) and Password.
-  // Once User is logged, if user tries to UPDATE the profile, will be forced to add Address, Phone and other info.
-  form: FormGroup = new FormGroup({
-    FirstName: new FormControl('', Validators.required),
-    LastName: new FormControl('', Validators.required),
-    EmailAddress: new FormControl('', Validators.required),
-    Password: new FormControl('', Validators.required),
-  });
-
-  constructor() { }
+  constructor(private service: UserService) { }
 
   ngOnInit() {
     const body = document.getElementsByTagName('body')[0];
@@ -31,5 +24,14 @@ export class RegisterComponent implements OnInit, OnDestroy {
     body.classList.remove('off-canvas-sidebar');
   }
 
-  onSubmit() { }
+  onSubmit() {
+    this.service.createUser(this.service.form.value).subscribe(res => {
+      let baseCommandResult = res as BaseCommandResult;
+      if (baseCommandResult.Success == true) {
+        NotificationService.showNotification('success', 'top', 'right', 'Success', baseCommandResult.Message);
+      } else {
+        NotificationService.showNotification('warn', 'top', 'right', 'Error', baseCommandResult.Message);
+      }
+    });
+  }
 }

@@ -61,7 +61,7 @@
                     </button>
                     <h4 class="mt-3"> or be classical </h4>
                   </div>
-                  <form [formGroup]="form" class="form" (submit)="onSubmit()">
+                  <form [formGroup]="service.form" class="form" (submit)="onSubmit()">
                     <div class="form-group has-default">
                       <div class="input-group">
                         <div class="input-group-prepend">
@@ -114,7 +114,8 @@
                       </label>
                     </div>
                     <div class="text-center">
-                      <a href="#pablo" class="btn btn-primary btn-round mt-4">Get Started</a>
+                      <button class="btn btn-primary btn-round mt-4" type="submit" [disabled]="service.form.invalid">Get
+                        Started</button>
                     </div>
                   </form>
                 </div>
