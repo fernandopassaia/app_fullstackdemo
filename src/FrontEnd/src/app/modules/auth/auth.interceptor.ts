@@ -116,13 +116,7 @@ export class AuthInterceptor implements HttpInterceptor {
             this.isRefreshing = true;
             this.refreshTokenSubject.next(null);
 
-            return this.authService.refreshToken().pipe(
-                switchMap((token: any) => {
-                    this.isRefreshing = false;
-                    this.refreshTokenSubject.next(token.jwt);
-                    return next.handle(this.addHeaderToken(request, token.jwt));
-                }));
-
+            //TO-DO: RefreshToken here
         } else {
             return this.refreshTokenSubject.pipe(
                 filter(token => token != null),
@@ -138,14 +132,7 @@ export class AuthInterceptor implements HttpInterceptor {
         if (!this.isRefreshing) {
             this.isRefreshing = true;
             this.refreshTokenSubject.next(null);
-
-            return this.authService.refreshToken().pipe(
-                switchMap((token: any) => {
-                    this.isRefreshing = false;
-                    this.refreshTokenSubject.next(token.jwt);
-                    return next.handle(this.addHeaderToken(request, token.jwt));
-                }));
-
+            //TO-DO: RefreshToken here
         } else {
             return this.refreshTokenSubject.pipe(
                 filter(token => token != null),

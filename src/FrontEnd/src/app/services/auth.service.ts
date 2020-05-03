@@ -11,13 +11,10 @@ import { TokenResult } from "../results/user/TokenResult.model";
   providedIn: "root",
 })
 export class AuthService {
-  private readonly JWT_TOKEN = "acT";
-  private readonly REFRESH_TOKEN = "acRT";
-  private readonly COMPANY_NAME = "acCN";
-  private readonly COMPANY_LOGO = "acCL";
-  private readonly EMPLOYEE_NAME = "acEN";
-  private readonly EMPLOYEE_ID = "acEI";
-  private readonly EMPLOYEE_EMAIL = "acEE";
+  private readonly JWT_TOKEN = "appFullStackDemoTK";
+  private readonly USERNAME = "appFullStackDemoUN";
+  private readonly USEREMAIL = "appFullStackDemoEM";
+  private readonly USERID = "appFullStackDemoUI";
   private loggedUser: string;
 
   constructor(private http: HttpClient) { }
@@ -84,19 +81,6 @@ export class AuthService {
   }
 
   logout() {
-    //NOTE: In the future i can implement here something to also do logout on BackEnd
-    //I don't know, remove the RefreshToken, do some LOG, i don't know
-    // return this.http.post<any>(`${MobileControlApiResourceUserProfile}v1/Login`, {
-    //     'refreshToken': this.getRefreshToken()
-    // }).pipe(
-    //     tap(() => this.doLogoutUser()),
-    //     mapTo(true),
-    //     catchError(error => {
-    //         alert(error.error);
-    //         return of(false);
-    //     })
-    // );
-
     this.doLogoutUser();
   }
 
@@ -104,29 +88,7 @@ export class AuthService {
     return !!this.getJwtToken();
   }
 
-  refreshToken() {
-    return this.http
-      .post<any>(`${AppApi.MobileControlApiResourceUser}/v1/Login/rt`, {
-        refreshToken: this.getRefreshToken(),
-      })
-      .pipe(
-        tap((tokens: TokenResult) => { //Fernando: i`ve changed from tokenAndRefreshToken to String here
-          this.storeJwtToken(tokens);
-        })
-      );
-  }
-
-  // refreshToken() {
-  //     return this.http.post<any>(`${MobileControlApiResourceUser}v1/Login/rt`, {
-  //         'refreshToken': this.getRefreshToken()
-  //     }).pipe(tap((tokens: TokenAndRefreshToken) => {
-
-  //         this.storeJwtToken(tokens.token);
-  //     }));
-  // }
-
   private doLoginUser(username: string, tokens: any) {
-    console.log('Tokens:', tokens);
     this.loggedUser = username;
     this.storeTokens(tokens);
   }
@@ -140,17 +102,12 @@ export class AuthService {
     return localStorage.getItem(this.JWT_TOKEN);
   }
 
-  getRefreshToken() {
-    return localStorage.getItem(this.REFRESH_TOKEN);
-  }
-
-  private storeJwtToken(tokens) {
-    this.storeTokens(tokens);
-  }
-
   private storeTokens(tokens: any) {
     if (tokens.Success) {
       localStorage.setItem(this.JWT_TOKEN, tokens.ResponseDataObj.token);
+      //private readonly USERNAME = "appFullStackDemoUN";
+      //private readonly USEREMAIL = "appFullStackDemoEM";
+      //private readonly USERID = "appFullStackDemoUI";
       localStorage.setItem(
         this.REFRESH_TOKEN,
         tokens.ResponseDataObj.refreshToken
@@ -171,14 +128,6 @@ export class AuthService {
       localStorage.setItem(
         this.EMPLOYEE_EMAIL,
         tokens.ResponseDataObj.employeeEmail
-      );
-    } else {
-      NotificationService.showNotification(
-        "warning",
-        "top",
-        "right",
-        "Não é possível logar.",
-        "Usuário ou Senha não correspondem."
       );
     }
   }
