@@ -31,10 +31,9 @@ export const ROUTES: RouteInfo[] = [{
     type: 'link',
     icontype: 'dashboard'
 },
-
 {
-    path: '/company',
-    title: 'Empresas',
+    path: '/user',
+    title: 'Users',
     type: 'link',
     icontype: 'explicit'
 },

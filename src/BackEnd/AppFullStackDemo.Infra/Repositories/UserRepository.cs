@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Queries;
 using AppFullStackDemo.Domain.Repositories;
@@ -48,6 +49,25 @@ namespace AppFullStackDemo.Infra.Repositories
                 .AsNoTracking()
                 .Where(UserQueries.GetByLogin(userName))
                 .FirstOrDefault();
+        }
+
+        public IEnumerable<GetUserResumed> GetUserResumed()
+        {
+            var data = _context.Users
+               .Where(UserQueries.GetAll())
+               .OrderBy(x => x.Name.FirstName)
+               .ToList();
+
+            if (data == null)
+                return null;
+
+            return data.Select(reg => new GetUserResumed
+            {
+                Id = reg.Id.ToString(),
+                Name = reg.Name.ToString(),
+                Email = reg.Email.EmailAddress,
+                City = reg.Address.City
+            });
         }
     }
 }

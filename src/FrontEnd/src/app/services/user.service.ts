@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { AppApi } from "../app.api";
-import { retry, catchError } from "rxjs/operators";
+import { retry, catchError, map } from "rxjs/operators";
 import { CreateUserCommand } from "../commands/user/CreateUserCommand.model";
 import { of } from "rxjs";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { GetUserResumed } from "../results/user/GetUserResumed.model";
 
 @Injectable({
     providedIn: "root",
@@ -39,6 +40,8 @@ export class UserService {
         Password: new FormControl('', Validators.required),
     });
 
+    listUser: GetUserResumed[];
+
     constructor(private http: HttpClient, private service: UserService) { }
 
     initializeFormGroup() { }
@@ -58,5 +61,15 @@ export class UserService {
                     return of(null); //if exception happens, i'll return null
                 })
             );
+    }
+
+    getUsers() {
+        return this.http.get(`${AppApi.MobileControlApiResourceUser}/v1/GetUserResumed`).pipe(
+            retry(2), //if something happens, will retry 2x
+            map((res) => (this.listUser = res as GetUserResumed[])),
+            catchError((err) => {
+                return of(null); //if exception happens, i'll return null
+            })
+        );
     }
 }

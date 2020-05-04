@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Entities;
 
 namespace AppFullStackDemo.Domain.Repositories
@@ -11,6 +12,6 @@ namespace AppFullStackDemo.Domain.Repositories
         User GetById(Guid id);
         IEnumerable<User> GetAll();
         User GetByLogin(string userName);
-        //GetResumed
+        IEnumerable<GetUserResumed> GetUserResumed();
     }
 }

@@ -21,7 +21,6 @@ export class AuthService {
     const loginCommand = new LoginUserCommand();
     loginCommand.UserName = user.username;
     loginCommand.Password = user.password;
-    console.log(loginCommand);
     return this.http
       .post<any>(
         `${AppApi.MobileControlApiResourceUser}/v1/Login`,

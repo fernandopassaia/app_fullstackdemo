@@ -13,6 +13,8 @@ import { ForbiddenMessageComponent } from "./auth/forbidden/forbiddenmessage/for
 import { NumberPickerModule } from "ng-number-picker";
 import { EnumDescriber } from "../shared/enum-describer.service";
 import { AppFullStackDemoRoutes } from "./appfullstackdemo.routing";
+import { UserComponent } from "../pages/user/user.component";
+import { UserListComponent } from "../pages/user/user-list/user-list.component";
 
 @NgModule({
   imports: [
@@ -29,9 +31,9 @@ import { AppFullStackDemoRoutes } from "./appfullstackdemo.routing";
     ForbiddenComponent,
     ForbiddenMessageComponent,
     // Modules from the Real system
-    //EmployeeComponent,
-    //EmployeeCuComponent,
-    //EmployeeListComponent,
+    UserComponent,
+    //UserCuComponent,
+    UserListComponent,
     EnumDescriber,
   ],
   //to open in a Modal (be injected) needs to be here in entry

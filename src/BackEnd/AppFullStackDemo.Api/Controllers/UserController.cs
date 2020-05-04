@@ -52,7 +52,7 @@ namespace AppFullStackDemo.Api.Controllers
 
         [HttpPut]
         [Route("v1")]
-        [Authorize(Roles = "user.update")]
+        [Authorize(Roles = "user")]
         public async Task<IActionResult> Put([FromBody]UpdateUserCommand command)
         {
             var result = _handler.Handle(command);
@@ -73,8 +73,15 @@ namespace AppFullStackDemo.Api.Controllers
                 var tokenResult = new TokenResult() { Token = token, LoggedSuccessful = true, UserName = user.Name.ToString(), UserEmail = user.Email.EmailAddress, UserId = user.Id.ToString() };
                 return await Response(new BaseCommandResult(true, "Logged with Success.", tokenResult)); //Do Not need to Jsonfy it, so I'll return the Own Result            
             }
-
             return await Response(new BaseCommandResult(false, "Username or Password invalid.", null)); //Do Not need to Jsonfy it, so I'll return the Own Result            
+        }
+
+        [HttpGet]
+        [Route("v1/GetUserResumed")]
+        [Authorize(Roles = "user")]
+        public IEnumerable<GetUserResumed> GetUserResumed()
+        {
+            return _repository.GetUserResumed();
         }
     }
 }

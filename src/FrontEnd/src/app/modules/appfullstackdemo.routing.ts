@@ -1,6 +1,7 @@
 import { Routes } from "@angular/router";
 import { AuthGuard } from "./auth/auth.guard";
 import { ForbiddenComponent } from "./auth/forbidden/forbidden.component";
+import { UserComponent } from "../pages/user/user.component";
 //import { EquipmentComponent } from "../equipment/equipment.component";
 
 export const AppFullStackDemoRoutes: Routes = [
@@ -11,11 +12,10 @@ export const AppFullStackDemoRoutes: Routes = [
   //Client side, so this is a "First-level" Authorization, before API, and i will check if LoggedUser can se a Screen.
   //The second level will be done on the API side, on the Api-URL, by the Tag [Authorization] and corresponding Claim
 
-  //Equipment
-  // {
-  //   path: "equipment/:employeeId",
-  //   component: EquipmentComponent,
-  //   canActivate: [AuthGuard],
-  //   data: { permittedRoles: ["equipment.screen"] },
-  // },
+  {
+    path: "user",
+    component: UserComponent,
+    canActivate: [AuthGuard],
+    data: { permittedRoles: ["user"] },
+  },
 ];
