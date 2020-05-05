@@ -5,7 +5,7 @@ import { retry, catchError, map } from "rxjs/operators";
 import { CreateUserCommand } from "../commands/user/CreateUserCommand.model";
 import { of } from "rxjs";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { GetUserResumed } from "../results/user/GetUserResumed.model";
+import { GetUsersResumed } from "../results/user/GetUsersResumed.model";
 
 @Injectable({
     providedIn: "root",
@@ -40,7 +40,7 @@ export class UserService {
         Password: new FormControl('', Validators.required),
     });
 
-    listUser: GetUserResumed[];
+    listUsers: GetUsersResumed[];
 
     constructor(private http: HttpClient, private service: UserService) { }
 
@@ -64,9 +64,9 @@ export class UserService {
     }
 
     getUsers() {
-        return this.http.get(`${AppApi.MobileControlApiResourceUser}/v1/GetUserResumed`).pipe(
+        return this.http.get(`${AppApi.MobileControlApiResourceUser}/v1/GetUsersResumed`).pipe(
             retry(2), //if something happens, will retry 2x
-            map((res) => (this.listUser = res as GetUserResumed[])),
+            map((res) => (this.listUsers = res as GetUsersResumed[])),
             catchError((err) => {
                 return of(null); //if exception happens, i'll return null
             })

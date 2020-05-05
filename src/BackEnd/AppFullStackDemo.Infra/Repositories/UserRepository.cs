@@ -69,5 +69,36 @@ namespace AppFullStackDemo.Infra.Repositories
                 City = reg.Address.City
             });
         }
+
+        public GetUserResult GetUser(Guid id)
+        {
+            var data = _context.Users
+               .Where(UserQueries.GetById(id))
+               .FirstOrDefault();
+
+
+            if (data == null)
+                return null;
+
+            return new GetUserResult
+            {
+                Id = data.Id.ToString(),
+                AditionalInfo = data.AditionalInfo,
+                CountryRegistryNumber = data.Document.CountryRegistryNumber,
+                StateRegistryNumber = data.Document.StateRegistryNumber,
+                EmailAddress = data.Email.EmailAddress,
+                FirstName = data.Name.FirstName,
+                LastName = data.Name.LastName,
+                MobilePhoneNumber1 = data.Phone.MobilePhoneNumber1,
+                MobilePhoneNumber2 = data.Phone.MobilePhoneNumber2,
+                PhoneNumber1 = data.Phone.PhoneNumber1,
+                PhoneNumber2 = data.Phone.PhoneNumber2,
+                City = data.Address.City,
+                NeighborHood = data.Address.NeighborHood,
+                Street = data.Address.Street,
+                StreetNumber = data.Address.StreetNumber,
+                ZipCode = data.Address.ZipCode
+            };
+        }
     }
 }

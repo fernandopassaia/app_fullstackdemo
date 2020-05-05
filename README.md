@@ -111,7 +111,7 @@ Users should belong to a Company (or even better - User should belong to a Real-
 Claims should have Profiles (like Master, Admin...) where the Claims will be connected (not right to the user). We
 also need a screen to manage the CRUD of the Claims (that we don't have on this app). Create category for the Devices:
 
-We also need to implement things like RefreshToken Logic, WelcomeEmail, Register Page on Panel, Recover Password
+We also need to implement things like RefreshToken Logic, WelcomeEmail, Recover Password, Change PassWord Screen
 and go on and on - lot of other things to use this app in a Real-scenario. We need to adapt lot of things to a 
 REAL-WORLD-Scenario of Real-Business needs Logic.
 

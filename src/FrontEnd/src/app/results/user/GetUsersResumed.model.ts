@@ -1,4 +1,4 @@
-export class GetUserResumed {
+export class GetUsersResumed {
     Id: string;
     Name: string;
     Email: string;

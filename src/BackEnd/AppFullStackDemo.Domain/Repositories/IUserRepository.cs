@@ -13,5 +13,6 @@ namespace AppFullStackDemo.Domain.Repositories
         IEnumerable<User> GetAll();
         User GetByLogin(string userName);
         IEnumerable<GetUserResumed> GetUserResumed();
+        GetUserResult GetUser(Guid id);
     }
 }

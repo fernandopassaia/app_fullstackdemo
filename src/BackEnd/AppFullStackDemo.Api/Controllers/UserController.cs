@@ -11,6 +11,7 @@ using AppFullStackDemo.Api.Controllers.Security;
 using AppFullStackDemo.Api.Models;
 using Microsoft.Extensions.Options;
 using AppFullStackDemo.Domain.Results.User;
+using System;
 
 namespace AppFullStackDemo.Api.Controllers
 {
@@ -77,11 +78,19 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpGet]
-        [Route("v1/GetUserResumed")]
+        [Route("v1/GetUsersResumed")]
         [Authorize(Roles = "user")]
-        public IEnumerable<GetUserResumed> GetUserResumed()
+        public IEnumerable<GetUserResumed> GetUsersResumed()
         {
             return _repository.GetUserResumed();
+        }
+
+        [HttpGet]
+        [Route("v1/GetUser")]
+        [Authorize(Roles = "user")]
+        public GetUserResult GetUser([FromHeader]Guid Id)
+        {
+            return _repository.GetUser(Id);
         }
     }
 }
