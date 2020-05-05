@@ -97,7 +97,10 @@ namespace AppFullStackDemo.Infra.Repositories
                 NeighborHood = data.Address.NeighborHood,
                 Street = data.Address.Street,
                 StreetNumber = data.Address.StreetNumber,
-                ZipCode = data.Address.ZipCode
+                ZipCode = data.Address.ZipCode,
+                UserName = data.UserAccount.UserName,
+                Password = "" //will force user to always change password, while
+                // password screen to update password is not ready
             };
         }
     }

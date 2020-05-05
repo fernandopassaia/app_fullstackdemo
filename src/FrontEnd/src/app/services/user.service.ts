@@ -6,6 +6,7 @@ import { CreateUserCommand } from "../commands/user/CreateUserCommand.model";
 import { of } from "rxjs";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { GetUsersResumed } from "../results/user/GetUsersResumed.model";
+import { GetUserResult } from "../results/user/GetUserResult.model";
 
 @Injectable({
     providedIn: "root",
@@ -71,5 +72,33 @@ export class UserService {
                 return of(null); //if exception happens, i'll return null
             })
         );
+    }
+
+    populateForm(User) {
+        this.http
+            .get(`${AppApi.MobileControlApiResourceUser}/v1/GetUser/` + User.Id)
+            .subscribe((res) => {
+                const user = res as GetUserResult;
+                this.form.setValue({
+                    Id: user.Id,
+                    AditionalInfo: user.AditionalInfo,
+                    CountryRegistryNumber: user.CountryRegistryNumber,
+                    StateRegistryNumber: user.StateRegistryNumber,
+                    EmailAddress: user.EmailAddress,
+                    FirstName: user.FirstName,
+                    LastName: user.LastName,
+                    MobilePhoneNumber1: user.MobilePhoneNumber1,
+                    MobilePhoneNumber2: user.MobilePhoneNumber2,
+                    PhoneNumber1: user.PhoneNumber1,
+                    PhoneNumber2: user.PhoneNumber2,
+                    City: user.City,
+                    NeighborHood: user.NeighborHood,
+                    Street: user.Street,
+                    StreetNumber: user.StreetNumber,
+                    ZipCode: user.ZipCode,
+                    UserName: user.UserName,
+                    Password: user.Password,
+                });
+            });
     }
 }
