@@ -1,0 +1,97 @@
+<div class="card">
+  <div class="card-body">
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input
+        matInput
+        [(ngModel)]="searchKey"
+        placeholder="Search"
+        autocomplete="off"
+        (keyup)="applyFilter()"
+      />
+      <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        aria-label="Clean"
+        *ngIf="searchKey"
+        (click)="onSearchClear()"
+      ></button>
+    </mat-form-field>
+    <mat-table [dataSource]="listData" matSort>
+      <ng-container matColumnDef="Brand">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Marca</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.Brand }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Model">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Modelo</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.Model }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >Apelido</mat-header-cell
+        >
+        <mat-cell *matCellDef="let element">{{ element.Description }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
+        <mat-cell *matCellDef="let row">
+          <button mat-icon-button color="primary" (click)="onSynteticData(row)">
+            <mat-icon>assessment</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="onFullData(row)">
+            <mat-icon>launch</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="warn"
+            [routerLink]="['/equipmentlog', row.Id]"
+          >
+            <mat-icon>view_list</mat-icon>
+          </button>
+          <button
+            mat-icon-button
+            color="primary"
+            [routerLink]="['/equipment-backgroundtask', row.Id]"
+          >
+            <mat-icon>view_headline</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="loading">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Carregando dados, por favor aguarde...
+        </mat-footer-cell>
+      </ng-container>
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+          Sem dados.
+        </mat-footer-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      <mat-footer-row
+        *matFooterRowDef="['loading']"
+        [ngClass]="{ hide: listData != null }"
+      >
+      </mat-footer-row>
+      <mat-footer-row
+        *matFooterRowDef="['noData']"
+        [ngClass]="{ hide: !(listData != null && listData.data.length == 0) }"
+      ></mat-footer-row>
+    </mat-table>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      [pageSize]="8"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</div>

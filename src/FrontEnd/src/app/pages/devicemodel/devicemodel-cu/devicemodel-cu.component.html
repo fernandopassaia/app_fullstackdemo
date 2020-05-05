@@ -1,0 +1,50 @@
+<mat-toolbar>
+  <span>{{service.form.controls['Id'].value?"Atualizar Dispositivo":"Novo Dispositivo"}}</span>
+  <span class="fill-remaining-space"></span>
+  <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-toolbar>
+
+<form [formGroup]="service.form" class="normal-form" (submit)="onSubmit()">
+  <mat-grid-list cols="2" rowHeight="300px">
+    <mat-grid-tile>
+      <div class="controles-container">
+        <!-- this hidden key is forr my PK (it's on my service) -->
+        <input type="hidden" formControlName="Id">
+
+        <mat-form-field>
+          <input formControlName="Description" matInput placeholder="Descrição do Dispositivo*">
+          <mat-error>Por favor informe a Descrição do Dispositivo.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-select formControlName="ManufacturerCategory" placeholder="ManufacturerCategory">
+            <ng-container *ngFor="let manufacturerCategory of listManufacturerCategory">
+              <mat-option value="{{manufacturerCategory.Id}}">
+                {{manufacturerCategory.CategoryName}} - {{manufacturerCategory.ManufacturerName}}</mat-option>
+            </ng-container>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </mat-grid-tile>
+
+
+
+
+    <mat-grid-tile>
+      <div class="controles-container">
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit"
+            [disabled]="service.form.invalid">{{service.form.controls['Id'].value?"Salvar":"Criar"}}</button>
+          <button mat-raised-button color="warn" *ngIf="!service.form.controls['Id'].value"
+            (click)="onClear()">Clear</button>
+        </div>
+
+      </div>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</form>

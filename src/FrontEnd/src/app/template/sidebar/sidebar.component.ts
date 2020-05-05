@@ -35,38 +35,24 @@ export const ROUTES: RouteInfo[] = [{
     path: '/user',
     title: 'Users',
     type: 'link',
-    icontype: 'explicit'
+    icontype: 'person'
 },
 {
     path: '',
-    title: 'Grupos Empresa',
+    title: 'Groups',
     type: 'sub',
     icontype: 'group',
     collapse: 'groupcompanys',
     children: [
-        { path: 'position', title: 'Posições', ab: 'PO' },
-        { path: 'subsidiary', title: 'Subsidiária', ab: 'SU' },
-        { path: 'costcenterarea', title: 'Área Centro Custo', ab: 'AC' }
+        { path: 'manufacturer', title: 'Manufacturer', ab: 'MA' },
+        { path: 'devicemodel', title: 'DeviceModel', ab: 'DM' }
     ]
 },
 {
-    path: '',
-    title: 'Dispositivos',
-    type: 'sub',
-    icontype: 'phonelink_ring',
-    collapse: 'groupdevices',
-    children: [
-        { path: 'category', title: 'Categoria', ab: 'CA' },
-        { path: 'manufacturer', title: 'Fabricante', ab: 'FA' },
-        { path: 'manufacturercategory', title: 'Categoria-Fabricante', ab: 'CF' },
-        { path: 'devicemodel', title: 'Modelo Dispositivos', ab: 'MD' },
-    ]
-},
-{
-    path: '/employee',
-    title: 'Funcionários',
+    path: '/equipment',
+    title: 'Equipments',
     type: 'link',
-    icontype: 'person'
+    icontype: 'phonelink_ring'
 }
 
     //Parte do Menú do Template do Template

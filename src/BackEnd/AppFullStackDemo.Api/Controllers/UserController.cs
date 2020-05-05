@@ -34,14 +34,6 @@ namespace AppFullStackDemo.Api.Controllers
             _appSettings = appSettings.Value;
         }
 
-        [HttpGet]
-        [Route("v1/test")]
-        [AllowAnonymous]
-        public string GetTest()
-        {
-            return "Api AppFullStackDemo is Working!";
-        }
-
         [HttpPost]
         [Route("v1")]
         [AllowAnonymous]
@@ -69,6 +61,22 @@ namespace AppFullStackDemo.Api.Controllers
             return await Response(result);
         }
 
+        [HttpGet]
+        [Route("v1/GetUsersResumed")]
+        [Authorize(Roles = "user")]
+        public IEnumerable<GetUserResumed> GetUsersResumed()
+        {
+            return _repository.GetUserResumed();
+        }
+
+        [HttpGet]
+        [Route("v1/GetUser/{Id}")]
+        [Authorize(Roles = "user")]
+        public GetUserResult GetUser([FromRoute]Guid Id)
+        {
+            return _repository.GetUser(Id);
+        }
+
         [HttpPost]
         [Route("v1/Login")]
         [AllowAnonymous]
@@ -84,22 +92,6 @@ namespace AppFullStackDemo.Api.Controllers
                 return await Response(new BaseCommandResult(true, "Logged with Success.", tokenResult)); //Do Not need to Jsonfy it, so I'll return the Own Result            
             }
             return await Response(new BaseCommandResult(false, "Username or Password invalid.", null)); //Do Not need to Jsonfy it, so I'll return the Own Result            
-        }
-
-        [HttpGet]
-        [Route("v1/GetUsersResumed")]
-        [Authorize(Roles = "user")]
-        public IEnumerable<GetUserResumed> GetUsersResumed()
-        {
-            return _repository.GetUserResumed();
-        }
-
-        [HttpGet]
-        [Route("v1/GetUser/{Id}")]
-        [Authorize(Roles = "user")]
-        public GetUserResult GetUser([FromRoute]Guid Id)
-        {
-            return _repository.GetUser(Id);
         }
     }
 }

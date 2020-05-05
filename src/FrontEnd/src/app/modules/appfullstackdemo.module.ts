@@ -16,6 +16,15 @@ import { AppFullStackDemoRoutes } from "./appfullstackdemo.routing";
 import { UserComponent } from "../pages/user/user.component";
 import { UserListComponent } from "../pages/user/user-list/user-list.component";
 import { UserCuComponent } from "../pages/user/user-cu/user-cu.component";
+import { ManufacturerComponent } from "../pages/manufacturer/manufacturer.component";
+import { ManufacturerCuComponent } from "../pages/manufacturer/manufacturer-cu/manufacturer-cu.component";
+import { ManufacturerListComponent } from "../pages/manufacturer/manufacturer-list/manufacturer-list.component";
+import { DeviceModelComponent } from "../pages/devicemodel/devicemodel.component";
+import { DeviceModelCuComponent } from "../pages/devicemodel/devicemodel-cu/devicemodel-cu.component";
+import { DeviceModelListComponent } from "../pages/devicemodel/devicemodel-list/devicemodel-list.component";
+import { EquipmentCuComponent } from "../pages/equipment/equipment-cu/equipment-cu.component";
+import { EquipmentListComponent } from "../pages/equipment/equipment-list/equipment-list.component";
+import { EquipmentComponent } from "../pages/equipment/equipment.component";
 
 @NgModule({
   imports: [
@@ -35,13 +44,27 @@ import { UserCuComponent } from "../pages/user/user-cu/user-cu.component";
     UserComponent,
     UserCuComponent,
     UserListComponent,
+
+    ManufacturerComponent,
+    ManufacturerCuComponent,
+    ManufacturerListComponent,
+
+    DeviceModelComponent,
+    DeviceModelCuComponent,
+    DeviceModelListComponent,
+
+    EquipmentComponent,
+    EquipmentCuComponent,
+    EquipmentListComponent,
+
     EnumDescriber,
   ],
   //to open in a Modal (be injected) needs to be here in entry
   entryComponents: [
-    UserCuComponent
-    //DeviceModelCuComponent,
-    //ManufacturerCuComponent
+    UserCuComponent,
+    DeviceModelCuComponent,
+    ManufacturerCuComponent,
+    EquipmentCuComponent
   ],
 })
 export class AppFullStackDemoModule { }
