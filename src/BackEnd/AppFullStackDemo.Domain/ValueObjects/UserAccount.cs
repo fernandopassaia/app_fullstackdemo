@@ -24,5 +24,10 @@ namespace AppFullStackDemo.Domain.ValueObjects
                 return true;
             return false;
         }
+
+        public string DecryptPassword()
+        {
+            return EncryptDecryptData.Decrypt(Password);
+        }
     }
 }

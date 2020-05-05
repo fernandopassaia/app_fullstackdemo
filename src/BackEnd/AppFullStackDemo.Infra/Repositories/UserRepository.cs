@@ -99,8 +99,8 @@ namespace AppFullStackDemo.Infra.Repositories
                 StreetNumber = data.Address.StreetNumber,
                 ZipCode = data.Address.ZipCode,
                 UserName = data.UserAccount.UserName,
-                Password = "" //will force user to always change password, while
-                // password screen to update password is not ready
+                Password = data.UserAccount.DecryptPassword(),
+                ConfirmPassword = data.UserAccount.DecryptPassword()
             };
         }
     }

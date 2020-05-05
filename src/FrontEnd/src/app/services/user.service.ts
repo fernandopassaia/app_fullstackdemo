@@ -4,9 +4,11 @@ import { AppApi } from "../app.api";
 import { retry, catchError, map } from "rxjs/operators";
 import { CreateUserCommand } from "../commands/user/CreateUserCommand.model";
 import { of } from "rxjs";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
 import { GetUsersResumed } from "../results/user/GetUsersResumed.model";
 import { GetUserResult } from "../results/user/GetUserResult.model";
+import { CustomValidators } from "../shared/custom.validators";
+
 
 @Injectable({
     providedIn: "root",
@@ -18,34 +20,91 @@ export class UserService {
         }),
     };
 
-    // Note: On the Create I`ll allow user to create just with First and LastName, Username (email) and Password.
-    // Once User is logged, if user tries to UPDATE the profile, will be forced to add Address, Phone and other info.
-    form: FormGroup = new FormGroup({
-        Id: new FormControl(''),
-        AditionalInfo: new FormControl(''),
-        CountryRegistryNumber: new FormControl(''),
-        StateRegistryNumber: new FormControl(''),
-        EmailAddress: new FormControl('', Validators.required),
-        FirstName: new FormControl('', Validators.required),
-        LastName: new FormControl('', Validators.required),
-        MobilePhoneNumber1: new FormControl(''),
-        MobilePhoneNumber2: new FormControl(''),
-        PhoneNumber1: new FormControl(''),
-        PhoneNumber2: new FormControl(''),
-        City: new FormControl(''),
-        NeighborHood: new FormControl(''),
-        Street: new FormControl(''),
-        StreetNumber: new FormControl(''),
-        ZipCode: new FormControl(''),
-        UserName: new FormControl(''),
-        Password: new FormControl('', Validators.required),
-    });
+    createSignupForm(): FormGroup {
+        return this.fb.group(
+            {
+                Id: new FormControl(''),
+                AditionalInfo: new FormControl(''),
+                CountryRegistryNumber: new FormControl(''),
+                StateRegistryNumber: new FormControl(''),
+                EmailAddress: new FormControl('', Validators.required),
+                FirstName: new FormControl('', Validators.required),
+                LastName: new FormControl('', Validators.required),
+                MobilePhoneNumber1: new FormControl(''),
+                MobilePhoneNumber2: new FormControl(''),
+                PhoneNumber1: new FormControl(''),
+                PhoneNumber2: new FormControl(''),
+                City: new FormControl(''),
+                NeighborHood: new FormControl(''),
+                Street: new FormControl(''),
+                StreetNumber: new FormControl(''),
+                ZipCode: new FormControl(''),
+                UserName: new FormControl(''),
+
+                Password: [
+                    null,
+                    Validators.compose([
+                        Validators.required,
+                        // check whether the entered password has a number
+                        CustomValidators.patternValidator(/\d/, {
+                            hasNumber: true,
+                        }),
+                        // check whether the entered password has upper case letter
+                        CustomValidators.patternValidator(/[A-Z]/, {
+                            hasCapitalCase: true,
+                        }),
+                        // check whether the entered password has a lower case letter
+                        CustomValidators.patternValidator(/[a-z]/, {
+                            hasSmallCase: true,
+                        }),
+                        // check whether the entered password has a special character
+                        CustomValidators.patternValidator(
+                            /[ !@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/,
+                            {
+                                hasSpecialCharacters: true,
+                            }
+                        ),
+                        Validators.minLength(8),
+                    ]),
+                ],
+                ConfirmPassword: [null, Validators.compose([Validators.required])],
+            },
+            {
+                // check whether our password and confirm password match
+                validator: CustomValidators.passwordMatchValidator,
+            }
+        );
+    }
 
     listUsers: GetUsersResumed[];
+    public form: FormGroup;
+    constructor(private http: HttpClient, private fb: FormBuilder, private service: UserService) {
+        this.form = this.createSignupForm();
+    }
 
-    constructor(private http: HttpClient, private service: UserService) { }
-
-    initializeFormGroup() { }
+    initializeFormGroup() {
+        this.form.setValue({
+            Id: "",
+            AditionalInfo: "",
+            CountryRegistryNumber: "",
+            StateRegistryNumber: "",
+            EmailAddress: "",
+            FirstName: "",
+            LastName: "",
+            MobilePhoneNumber1: "",
+            MobilePhoneNumber2: "",
+            PhoneNumber1: "",
+            PhoneNumber2: "",
+            City: "",
+            NeighborHood: "",
+            Street: "",
+            StreetNumber: "",
+            ZipCode: "",
+            UserName: "",
+            Password: "",
+            ConfirmPassword: ""
+        });
+    }
 
     createUser(command: CreateUserCommand) {
         command.UserName = command.EmailAddress; //small hack to create the first config of login with email
@@ -98,6 +157,7 @@ export class UserService {
                     ZipCode: user.ZipCode,
                     UserName: user.UserName,
                     Password: user.Password,
+                    ConfirmPassword: user.ConfirmPassword,
                 });
             });
     }

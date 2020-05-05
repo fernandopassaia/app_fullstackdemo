@@ -15,6 +15,7 @@ import { EnumDescriber } from "../shared/enum-describer.service";
 import { AppFullStackDemoRoutes } from "./appfullstackdemo.routing";
 import { UserComponent } from "../pages/user/user.component";
 import { UserListComponent } from "../pages/user/user-list/user-list.component";
+import { UserCuComponent } from "../pages/user/user-cu/user-cu.component";
 
 @NgModule({
   imports: [
@@ -32,12 +33,13 @@ import { UserListComponent } from "../pages/user/user-list/user-list.component";
     ForbiddenMessageComponent,
     // Modules from the Real system
     UserComponent,
-    //UserCuComponent,
+    UserCuComponent,
     UserListComponent,
     EnumDescriber,
   ],
   //to open in a Modal (be injected) needs to be here in entry
   entryComponents: [
+    UserCuComponent
     //DeviceModelCuComponent,
     //ManufacturerCuComponent
   ],

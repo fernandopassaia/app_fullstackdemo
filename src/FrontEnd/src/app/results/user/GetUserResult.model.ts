@@ -17,4 +17,5 @@ export class GetUserResult {
     ZipCode: string;
     UserName: string;
     Password: string;
+    ConfirmPassword: string;
 }

@@ -6,6 +6,7 @@ import { DialogService } from 'src/app/shared/dialog.service';
 import { NotificationService } from 'src/app/shared/notification.service';
 //import { EmployeeCuComponent } from '../employee-cu/employee-cu.component';
 import { Router } from '@angular/router';
+import { UserCuComponent } from '../user-cu/user-cu.component';
 
 @Component({
   selector: 'app-user-list',
@@ -59,21 +60,21 @@ export class UserListComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '80%';
-    dialogConfig.height = '65%';
+    dialogConfig.height = '32%';
     this.dialog.afterAllClosed.subscribe(data => { this.loadData(); });
-    //this.dialog.open(EmployeeCuComponent, dialogConfig);
+    this.dialog.open(UserCuComponent, dialogConfig);
   }
 
   onEdit(row) {
     this.service.initializeFormGroup();
-    //this.service.populateForm(row);
+    this.service.populateForm(row);
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '80%';
-    dialogConfig.height = '65%';
+    dialogConfig.height = '32%';
     this.dialog.afterAllClosed.subscribe(data => { this.loadData(); });
-    //this.dialog.open(EmployeeCuComponent, dialogConfig);
+    this.dialog.open(UserCuComponent, dialogConfig);
   }
 
   onDelete(userId) {

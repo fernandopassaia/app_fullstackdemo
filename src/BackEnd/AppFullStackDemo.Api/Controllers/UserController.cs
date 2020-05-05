@@ -86,9 +86,9 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpGet]
-        [Route("v1/GetUser")]
+        [Route("v1/GetUser/{Id}")]
         [Authorize(Roles = "user")]
-        public GetUserResult GetUser([FromHeader]Guid Id)
+        public GetUserResult GetUser(Guid Id)
         {
             return _repository.GetUser(Id);
         }
