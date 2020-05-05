@@ -124,11 +124,24 @@ export class UserService {
     }
 
     updateUser(command: UpdateUserCommand) {
-        command.UserName = command.EmailAddress; //small hack to create the first config of login with email
         return this.http
             .put(
                 `${AppApi.MobileControlApiResourceUser}/v1/` + command.Id,
                 JSON.stringify(command),
+                this.headers
+            )
+            .pipe(
+                retry(2), //if something happens, will retry 2x
+                catchError((err) => {
+                    return of(null); //if exception happens, i'll return null
+                })
+            );
+    }
+
+    deleteUser(Id: string) {
+        return this.http
+            .delete(
+                `${AppApi.MobileControlApiResourceUser}/v1/` + Id,
                 this.headers
             )
             .pipe(

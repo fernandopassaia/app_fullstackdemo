@@ -60,6 +60,15 @@ namespace AppFullStackDemo.Api.Controllers
             return await Response(result);
         }
 
+        [HttpDelete]
+        [Route("v1/{Id}")]
+        [Authorize(Roles = "user")]
+        public async Task<IActionResult> Delete([FromRoute]Guid Id)
+        {
+            var result = _handler.Handle(Id);
+            return await Response(result);
+        }
+
         [HttpPost]
         [Route("v1/Login")]
         [AllowAnonymous]

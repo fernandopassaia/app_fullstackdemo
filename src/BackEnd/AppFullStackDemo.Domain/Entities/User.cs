@@ -1,6 +1,5 @@
 ﻿using AppFullStackDemo.Domain.Entities.Security;
 using AppFullStackDemo.Domain.ValueObjects;
-using Flunt.Validations;
 using System.Collections.Generic;
 
 namespace AppFullStackDemo.Domain.Entities

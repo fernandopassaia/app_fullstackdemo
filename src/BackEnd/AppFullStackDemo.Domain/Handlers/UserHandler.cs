@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Entities;
@@ -87,6 +88,17 @@ namespace AppFullStackDemo.Domain.Handlers
             _repository.Update(user);
 
             return new BaseCommandResult(true, "User Updated with Success!", null);
+        }
+
+        public IBaseCommandResult Handle(Guid id)
+        {
+            var user = _repository.GetById(id);
+            if (user == null)
+                return new BaseCommandResult(false, "User not found", null);
+
+            user.Remove();
+            _repository.Update(user);
+            return new BaseCommandResult(true, "User Deleted with Success!", null);
         }
 
         public GetLoggedUserResult Handle(LoginUserCommand command)

@@ -81,10 +81,9 @@ export class UserListComponent implements OnInit {
     this.dialogService.openConfirmDialog('Are you sure you want to delete?')
       .afterClosed().subscribe(res => {
         if (res) {
-          // this.service.deleteEmployee(userId).subscribe(data => {
-          //   this.returnOfWebService = data; this.loadData();
-          // });
-          NotificationService.showNotification('warning', 'top', 'right', 'Success!', 'User Deleted!');
+          this.service.deleteUser(userId).subscribe(data => {
+            this.returnOfWebService = data; this.loadData();
+          });
         }
       });
   }
