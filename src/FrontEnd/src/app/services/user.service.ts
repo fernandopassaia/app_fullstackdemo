@@ -8,6 +8,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms"
 import { GetUsersResumed } from "../results/user/GetUsersResumed.model";
 import { GetUserResult } from "../results/user/GetUserResult.model";
 import { CustomValidators } from "../shared/custom.validators";
+import { UpdateUserCommand } from "../commands/user/UpdateUserCommand.model";
 
 
 @Injectable({
@@ -108,10 +109,25 @@ export class UserService {
 
     createUser(command: CreateUserCommand) {
         command.UserName = command.EmailAddress; //small hack to create the first config of login with email
-        console.log('Command enviado', command);
         return this.http
             .post(
                 `${AppApi.MobileControlApiResourceUser}/v1`,
+                JSON.stringify(command),
+                this.headers
+            )
+            .pipe(
+                retry(2), //if something happens, will retry 2x
+                catchError((err) => {
+                    return of(null); //if exception happens, i'll return null
+                })
+            );
+    }
+
+    updateUser(command: UpdateUserCommand) {
+        command.UserName = command.EmailAddress; //small hack to create the first config of login with email
+        return this.http
+            .put(
+                `${AppApi.MobileControlApiResourceUser}/v1/` + command.Id,
                 JSON.stringify(command),
                 this.headers
             )

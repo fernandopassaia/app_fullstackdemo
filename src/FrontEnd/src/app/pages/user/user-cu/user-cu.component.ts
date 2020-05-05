@@ -37,7 +37,7 @@ export class UserCuComponent implements OnInit {
     }
 
     update() {
-        this.service.createUser(this.service.form.value).subscribe(result => {
+        this.service.updateUser(this.service.form.value).subscribe(result => {
             this.baseCommandResult = result as BaseCommandResult;
             if (this.baseCommandResult.Success) {
                 this.onClose();

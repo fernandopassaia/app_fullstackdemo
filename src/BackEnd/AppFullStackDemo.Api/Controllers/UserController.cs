@@ -52,9 +52,9 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpPut]
-        [Route("v1")]
+        [Route("v1/{Id}")]
         [Authorize(Roles = "user")]
-        public async Task<IActionResult> Put([FromBody]UpdateUserCommand command)
+        public async Task<IActionResult> Put([FromRoute]Guid Id, [FromBody]UpdateUserCommand command)
         {
             var result = _handler.Handle(command);
             return await Response(result);
@@ -88,7 +88,7 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpGet]
         [Route("v1/GetUser/{Id}")]
         [Authorize(Roles = "user")]
-        public GetUserResult GetUser(Guid Id)
+        public GetUserResult GetUser([FromRoute]Guid Id)
         {
             return _repository.GetUser(Id);
         }
