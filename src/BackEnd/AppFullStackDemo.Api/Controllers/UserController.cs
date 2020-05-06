@@ -37,7 +37,7 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpPost]
         [Route("v1")]
         [AllowAnonymous]
-        public async Task<IActionResult> Post([FromBody]CreateUserCommand command)
+        public async Task<IActionResult> Post([FromBody] CreateUserCommand command)
         {
             var result = _handler.Handle(command);
             return await Response(result);
@@ -46,7 +46,7 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpPut]
         [Route("v1/{Id}")]
         [Authorize(Roles = "user")]
-        public async Task<IActionResult> Put([FromRoute]Guid Id, [FromBody]UpdateUserCommand command)
+        public async Task<IActionResult> Put([FromRoute] Guid Id, [FromBody] UpdateUserCommand command)
         {
             var result = _handler.Handle(command);
             return await Response(result);
@@ -55,14 +55,14 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpDelete]
         [Route("v1/{Id}")]
         [Authorize(Roles = "user")]
-        public async Task<IActionResult> Delete([FromRoute]Guid Id)
+        public async Task<IActionResult> Delete([FromRoute] Guid Id)
         {
             var result = _handler.Handle(Id);
             return await Response(result);
         }
 
         [HttpGet]
-        [Route("v1/GetUsersResumed")]
+        [Route("v1")]
         [Authorize(Roles = "user")]
         public IEnumerable<GetUserResumed> GetUsersResumed()
         {
@@ -70,9 +70,9 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpGet]
-        [Route("v1/GetUser/{Id}")]
+        [Route("v1/{Id}")]
         [Authorize(Roles = "user")]
-        public GetUserResult GetUser([FromRoute]Guid Id)
+        public GetUserResult GetUser([FromRoute] Guid Id)
         {
             return _repository.GetUser(Id);
         }
@@ -80,7 +80,7 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpPost]
         [Route("v1/Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login([FromBody]LoginUserCommand command)
+        public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
         {
             var result = _handler.Handle(command);
             if (result.Success == true)

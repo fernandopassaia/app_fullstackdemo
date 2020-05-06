@@ -145,7 +145,7 @@ export class UserService {
     }
 
     getUsers() {
-        return this.http.get(`${AppApi.MobileControlApiResourceUser}/v1/GetUsersResumed`).pipe(
+        return this.http.get(`${AppApi.MobileControlApiResourceUser}/v1`).pipe(
             retry(2), //if something happens, will retry 2x
             map((res) => (this.listUsers = res as GetUsersResumed[])),
             catchError((err) => {
@@ -156,7 +156,7 @@ export class UserService {
 
     populateForm(User) {
         this.http
-            .get(`${AppApi.MobileControlApiResourceUser}/v1/GetUser/` + User.Id)
+            .get(`${AppApi.MobileControlApiResourceUser}/v1/` + User.Id)
             .subscribe((res) => {
                 const user = res as GetUserResult;
                 this.form.setValue({

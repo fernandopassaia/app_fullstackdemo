@@ -30,7 +30,7 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpPost]
         [Route("v1")]
         [Authorize(Roles = "manufacturer")]
-        public async Task<IActionResult> Post([FromBody]CreateManufacturerCommand command)
+        public async Task<IActionResult> Post([FromBody] CreateManufacturerCommand command)
         {
             var result = _handler.Handle(command);
             return await Response(result);
@@ -39,7 +39,7 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpPut]
         [Route("v1/{Id}")]
         [Authorize(Roles = "manufacturer")]
-        public async Task<IActionResult> Put([FromRoute]Guid Id, [FromBody]UpdateManufacturerCommand command)
+        public async Task<IActionResult> Put([FromRoute] Guid Id, [FromBody] UpdateManufacturerCommand command)
         {
             var result = _handler.Handle(command);
             return await Response(result);
@@ -48,14 +48,14 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpDelete]
         [Route("v1/{Id}")]
         [Authorize(Roles = "manufacturer")]
-        public async Task<IActionResult> Delete([FromRoute]Guid Id)
+        public async Task<IActionResult> Delete([FromRoute] Guid Id)
         {
             var result = _handler.Handle(Id);
             return await Response(result);
         }
 
         [HttpGet]
-        [Route("v1/GetManufacturersResumed")]
+        [Route("v1")]
         [Authorize(Roles = "manufacturer")]
         public IEnumerable<GetManufacturerResumed> GetManufacturersResumed()
         {
@@ -63,9 +63,9 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpGet]
-        [Route("v1/GetManufacturer/{Id}")]
+        [Route("v1/{Id}")]
         [Authorize(Roles = "manufacturer")]
-        public GetManufacturerResumed GetManufacturer([FromRoute]Guid Id)
+        public GetManufacturerResumed GetManufacturer([FromRoute] Guid Id)
         {
             return _repository.GetManufacturer(Id);
         }

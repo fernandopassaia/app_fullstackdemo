@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 import { AuthGuard } from "./auth/auth.guard";
 import { ForbiddenComponent } from "./auth/forbidden/forbidden.component";
 import { UserComponent } from "../pages/user/user.component";
+import { ManufacturerComponent } from "../pages/manufacturer/manufacturer.component";
 //import { EquipmentComponent } from "../equipment/equipment.component";
 
 export const AppFullStackDemoRoutes: Routes = [
@@ -17,5 +18,11 @@ export const AppFullStackDemoRoutes: Routes = [
     component: UserComponent,
     canActivate: [AuthGuard],
     data: { permittedRoles: ["user"] },
+  },
+  {
+    path: "manufacturer",
+    component: ManufacturerComponent,
+    canActivate: [AuthGuard],
+    data: { permittedRoles: ["manufacturer"] },
   },
 ];

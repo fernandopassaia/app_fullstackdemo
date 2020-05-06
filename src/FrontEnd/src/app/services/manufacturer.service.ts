@@ -69,7 +69,7 @@ export class ManufacturerService {
 
   getManufacturers() {
     return this.http
-      .get(`${AppApi.MobileControlApiResourceManufacturer}/v1/GetManufacturersResumed`)
+      .get(`${AppApi.MobileControlApiResourceManufacturer}/v1/`)
       .pipe(
         retry(2), //if something happens, will retry 2x
         map((res) => (this.listManufacturer = res as GetManufacturerResumed[])),
