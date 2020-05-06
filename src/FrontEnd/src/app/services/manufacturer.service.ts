@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { map, catchError, retry } from "rxjs/operators";
 import { of } from "rxjs";
 import { AppApi } from "../app.api";
-import { GetManufacturerResumed } from "../results/manufacturer/GetManufacturerResumed.model";
+import { GetManufacturerResult } from "../results/manufacturer/GetManufacturerResult.model";
 import { CreateManufacturerCommand } from "../commands/manufacturer/CreateManufacturerCommand.model";
 import { UpdateManufacturerCommand } from "../commands/manufacturer/UpdateManufacturerCommand.model";
 
@@ -13,7 +13,7 @@ import { UpdateManufacturerCommand } from "../commands/manufacturer/UpdateManufa
 })
 export class ManufacturerService {
   constructor(private http: HttpClient) { }
-  listManufacturer: GetManufacturerResumed[];
+  listManufacturer: GetManufacturerResult[];
 
   // I've created a group for the controls of the form
   form: FormGroup = new FormGroup({
@@ -72,7 +72,7 @@ export class ManufacturerService {
       .get(`${AppApi.MobileControlApiResourceManufacturer}/v1/`)
       .pipe(
         retry(2), //if something happens, will retry 2x
-        map((res) => (this.listManufacturer = res as GetManufacturerResumed[])),
+        map((res) => (this.listManufacturer = res as GetManufacturerResult[])),
         catchError((err) => {
           return of(null); //if exception happens, i'll return null
         })
@@ -84,7 +84,7 @@ export class ManufacturerService {
       .get(
         `${AppApi.MobileControlApiResourceManufacturer}/v1/` + Manufacturer.Id)
       .subscribe((res) => {
-        const ManufacturerToBeChanged = res as UpdateManufacturerCommand;
+        const ManufacturerToBeChanged = res as GetManufacturerResult;
         this.form.setValue({
           Id: ManufacturerToBeChanged.Id,
           Description: ManufacturerToBeChanged.Description,

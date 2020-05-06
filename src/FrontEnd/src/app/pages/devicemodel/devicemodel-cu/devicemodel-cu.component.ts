@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 import { DeviceModelService } from 'src/app/services/devicemodel.service';
 import { BaseCommandResult } from 'src/app/results/BaseCommandResult.model';
-import { GetDeviceModelResult } from 'src/app/results/devicemodel/GetDeviceModelResult.model';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
-import { GetManufacturerResumed } from 'src/app/results/manufacturer/GetManufacturerResumed.model';
+import { GetManufacturerResult } from 'src/app/results/manufacturer/GetManufacturerResult.model';
+import { GetDeviceModelResult } from 'src/app/results/devicemodel/GetDeviceModelResult.model';
 
 @Component({
   selector: 'app-devicemodel-cu',
@@ -14,7 +14,7 @@ import { GetManufacturerResumed } from 'src/app/results/manufacturer/GetManufact
 export class DeviceModelCuComponent implements OnInit {
   baseCommandResult: BaseCommandResult;
   listDeviceModel: GetDeviceModelResult[];
-  listManufacturerCategory: GetManufacturerResumed[];
+  listManufacturerCategory: GetManufacturerResult[];
 
   constructor(public service: DeviceModelService,
     public serviceManufacturerCategory: ManufacturerService,

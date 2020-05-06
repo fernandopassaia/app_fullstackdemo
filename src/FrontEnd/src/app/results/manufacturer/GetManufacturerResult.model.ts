@@ -1,4 +1,4 @@
-export class GetManufacturerResumed {
+export class GetManufacturerResult {
     Id: string;
     Description: string;
 }

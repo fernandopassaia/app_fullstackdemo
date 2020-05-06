@@ -1,4 +1,4 @@
 export class CreateDeviceModelCommand {
     Description: string;
-    ManufacturerCategory: number;
+    ManufacturerId: number;
 }

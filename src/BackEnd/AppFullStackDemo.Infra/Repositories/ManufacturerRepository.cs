@@ -44,7 +44,7 @@ namespace AppFullStackDemo.Infra.Repositories
                );
         }
 
-        public IEnumerable<GetManufacturerResumed> GetManufacturerResumed()
+        public IEnumerable<GetManufacturerResult> GetManufacturers()
         {
             var data = _context.Manufacturers
                .Where(ManufacturerQueries.GetAll())
@@ -54,14 +54,14 @@ namespace AppFullStackDemo.Infra.Repositories
             if (data == null)
                 return null;
 
-            return data.Select(reg => new GetManufacturerResumed
+            return data.Select(reg => new GetManufacturerResult
             {
                 Id = reg.Id.ToString(),
                 Description = reg.Description
             });
         }
 
-        public GetManufacturerResumed GetManufacturer(Guid id)
+        public GetManufacturerResult GetManufacturer(Guid id)
         {
             var data = _context.Manufacturers
                .Where(ManufacturerQueries.GetById(id))
@@ -71,7 +71,7 @@ namespace AppFullStackDemo.Infra.Repositories
             if (data == null)
                 return null;
 
-            return new GetManufacturerResumed
+            return new GetManufacturerResult
             {
                 Id = data.Id.ToString(),
                 Description = data.Description

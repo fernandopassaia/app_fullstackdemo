@@ -26,7 +26,7 @@ export class DeviceModelService {
     this.form.setValue({
       Id: 0,
       Description: "",
-      ManufacturerCategory: "1",
+      ManufacturerId: "1",
     });
   }
 

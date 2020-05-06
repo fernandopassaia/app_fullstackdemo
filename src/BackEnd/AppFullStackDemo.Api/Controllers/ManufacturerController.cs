@@ -57,15 +57,15 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpGet]
         [Route("v1")]
         [Authorize(Roles = "manufacturer")]
-        public IEnumerable<GetManufacturerResumed> GetManufacturersResumed()
+        public IEnumerable<GetManufacturerResult> GetManufacturers()
         {
-            return _repository.GetManufacturerResumed();
+            return _repository.GetManufacturers();
         }
 
         [HttpGet]
         [Route("v1/{Id}")]
         [Authorize(Roles = "manufacturer")]
-        public GetManufacturerResumed GetManufacturer([FromRoute] Guid Id)
+        public GetManufacturerResult GetManufacturer([FromRoute] Guid Id)
         {
             return _repository.GetManufacturer(Id);
         }

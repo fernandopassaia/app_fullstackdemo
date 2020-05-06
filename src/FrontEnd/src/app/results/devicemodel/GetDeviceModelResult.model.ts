@@ -1,8 +1,6 @@
 export class GetDeviceModelResult {
     Id: string;
     Description: string;
-    ManufacturerCategory: number;
+    ManufacturerId: number;
     Manufacturer: string;
-    Category: string;
-    ManufacturerCategoryName: string;
 }

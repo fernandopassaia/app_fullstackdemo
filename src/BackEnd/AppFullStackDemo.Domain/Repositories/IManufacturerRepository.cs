@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using AppFullStackDemo.Domain.Commands.Manufacturer;
-using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Entities;
 
 namespace AppFullStackDemo.Domain.Repositories
@@ -12,7 +11,7 @@ namespace AppFullStackDemo.Domain.Repositories
         void Update(Manufacturer manufacturer);
         Manufacturer GetById(Guid id);
         IEnumerable<Manufacturer> GetAll();
-        IEnumerable<GetManufacturerResumed> GetManufacturerResumed();
-        GetManufacturerResumed GetManufacturer(Guid id);
+        IEnumerable<GetManufacturerResult> GetManufacturers();
+        GetManufacturerResult GetManufacturer(Guid id);
     }
 }
