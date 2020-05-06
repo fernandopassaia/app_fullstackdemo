@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>{{service.form.controls['Id'].value?"Atualizar Fabricante":"Novo Fabricante"}}</span>
+  <span>{{service.form.controls['Id'].value?"Update Manufacturer":"New Manufacturer"}}</span>
   <span class="fill-remaining-space"></span>
   <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
     <mat-icon>close</mat-icon>
@@ -14,8 +14,8 @@
         <input type="hidden" formControlName="Id">
 
         <mat-form-field>
-          <input formControlName="Description" matInput placeholder="Descrição*">
-          <mat-error>Por favor informe a Descrição do Fabricante.</mat-error>
+          <input formControlName="Description" matInput placeholder="Description*">
+          <mat-error>Please inform a Description.</mat-error>
         </mat-form-field>
 
       </div>
@@ -29,7 +29,7 @@
 
         <div class="button-row">
           <button mat-raised-button color="primary" type="submit"
-            [disabled]="service.form.invalid">{{service.form.controls['Id'].value?"Salvar":"Criar"}}</button>
+            [disabled]="service.form.invalid">{{service.form.controls['Id'].value?"Update":"Create"}}</button>
           <button mat-raised-button color="warn" *ngIf="!service.form.controls['Id'].value"
             (click)="onClear()">Clear</button>
         </div>

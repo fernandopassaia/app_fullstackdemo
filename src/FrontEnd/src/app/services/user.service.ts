@@ -15,11 +15,6 @@ import { UpdateUserCommand } from "../commands/user/UpdateUserCommand.model";
     providedIn: "root",
 })
 export class UserService {
-    headers = {
-        headers: new HttpHeaders({
-            "Content-Type": "application/json",
-        }),
-    };
 
     createSignupForm(): FormGroup {
         return this.fb.group(
@@ -73,12 +68,12 @@ export class UserService {
             {
                 // check whether our password and confirm password match
                 validator: CustomValidators.passwordMatchValidator,
-            }
-        );
+            });
     }
 
     listUsers: GetUsersResumed[];
     public form: FormGroup;
+
     constructor(private http: HttpClient, private fb: FormBuilder, private service: UserService) {
         this.form = this.createSignupForm();
     }
@@ -112,8 +107,7 @@ export class UserService {
         return this.http
             .post(
                 `${AppApi.MobileControlApiResourceUser}/v1`,
-                JSON.stringify(command),
-                this.headers
+                JSON.stringify(command)
             )
             .pipe(
                 retry(2), //if something happens, will retry 2x
@@ -127,8 +121,7 @@ export class UserService {
         return this.http
             .put(
                 `${AppApi.MobileControlApiResourceUser}/v1/` + command.Id,
-                JSON.stringify(command),
-                this.headers
+                JSON.stringify(command)
             )
             .pipe(
                 retry(2), //if something happens, will retry 2x
@@ -141,8 +134,7 @@ export class UserService {
     deleteUser(Id: string) {
         return this.http
             .delete(
-                `${AppApi.MobileControlApiResourceUser}/v1/` + Id,
-                this.headers
+                `${AppApi.MobileControlApiResourceUser}/v1/` + Id
             )
             .pipe(
                 retry(2), //if something happens, will retry 2x

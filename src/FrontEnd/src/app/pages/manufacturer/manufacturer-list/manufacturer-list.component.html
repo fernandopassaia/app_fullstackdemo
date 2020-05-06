@@ -31,12 +31,12 @@
               <mat-table [dataSource]="listData" matSort>
 
                 <ng-container matColumnDef="Description">
-                  <mat-header-cell *matHeaderCellDef mat-sort-header>Fabricante</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef mat-sort-header>Manufacturer</mat-header-cell>
                   <mat-cell *matCellDef="let element">{{element.Description}}</mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="actions">
-                  <mat-header-cell *matHeaderCellDef>Opções</mat-header-cell>
+                  <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
                   <mat-cell *matCellDef="let row">
                     <button mat-icon-button (click)="onEdit(row)">
                       <mat-icon>launch</mat-icon>
@@ -49,12 +49,12 @@
 
                 <ng-container matColumnDef="loading">
                   <mat-footer-cell *matFooterCellDef colspan="6">
-                    Carregando dados, por favor aguarde...
+                    Loading data, please wait...
                   </mat-footer-cell>
                 </ng-container>
                 <ng-container matColumnDef="noData">
                   <mat-footer-cell *matFooterCellDef colspan="6">
-                    Sem dados.
+                    No Data.
                   </mat-footer-cell>
                 </ng-container>
                 <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

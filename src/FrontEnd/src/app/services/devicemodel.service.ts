@@ -3,16 +3,16 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { map, catchError, retry } from "rxjs/operators";
 import { of } from "rxjs";
-import { GetDeviceModelResult } from "../models/devicemodel/GetDeviceModelResult.model";
 import { AppApi } from "../app.api";
-import { CreateDeviceModelCommand } from "../models/devicemodel/CreateDeviceModelCommand.model";
-import { UpdateDeviceModelCommand } from "../models/devicemodel/UpdateDeviceModelCommand.model";
+import { GetDeviceModelResult } from "../results/devicemodel/GetDeviceModelResult.model";
+import { CreateDeviceModelCommand } from "../commands/devicemodel/CreateDeviceModelCommand.model";
+import { UpdateDeviceModelCommand } from "../commands/devicemodel/UpdateDeviceModelCommand.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class DeviceModelService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   listDeviceModel: GetDeviceModelResult[];
 
   // I've created a group for the controls of the form
@@ -28,18 +28,6 @@ export class DeviceModelService {
       Description: "",
       ManufacturerCategory: "1",
     });
-  }
-
-  getDeviceModel() {
-    return this.http
-      .get(`${AppApi.MobileControlApiResourceDeviceModel}/v1`)
-      .pipe(
-        retry(2), //if something happens, will retry 2x
-        map((res) => (this.listDeviceModel = res as GetDeviceModelResult[])),
-        catchError((err) => {
-          return of(null); //if exception happens, i'll return null
-        })
-      );
   }
 
   createDeviceModel(command: CreateDeviceModelCommand) {
@@ -59,7 +47,7 @@ export class DeviceModelService {
   updateDeviceModel(command: UpdateDeviceModelCommand) {
     return this.http
       .put(
-        `${AppApi.MobileControlApiResourceDeviceModel}/v1`,
+        `${AppApi.MobileControlApiResourceDeviceModel}/v1/` + command.Id,
         JSON.stringify(command)
       )
       .pipe(
@@ -75,6 +63,18 @@ export class DeviceModelService {
       .delete(`${AppApi.MobileControlApiResourceDeviceModel}/v1/` + Id)
       .pipe(
         retry(3), //if something happens, will retry 2x
+        catchError((err) => {
+          return of(null); //if exception happens, i'll return null
+        })
+      );
+  }
+
+  getDeviceModel() {
+    return this.http
+      .get(`${AppApi.MobileControlApiResourceDeviceModel}/v1`)
+      .pipe(
+        retry(2), //if something happens, will retry 2x
+        map((res) => (this.listDeviceModel = res as GetDeviceModelResult[])),
         catchError((err) => {
           return of(null); //if exception happens, i'll return null
         })

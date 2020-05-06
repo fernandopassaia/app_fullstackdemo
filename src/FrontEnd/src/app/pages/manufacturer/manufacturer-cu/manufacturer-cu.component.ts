@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { NotificationService } from 'src/app/shared/notification.service';
-import { BaseCommandResult } from 'src/app/models/BaseCommandResult.model';
 import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { BaseCommandResult } from 'src/app/results/BaseCommandResult.model';
 
 @Component({
   selector: 'app-manufacturer-cu',

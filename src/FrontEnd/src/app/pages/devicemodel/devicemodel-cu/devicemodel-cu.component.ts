@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
-import { NotificationService } from 'src/app/shared/notification.service';
-import { BaseCommandResult } from 'src/app/models/BaseCommandResult.model';
 import { DeviceModelService } from 'src/app/services/devicemodel.service';
-import { GetDeviceModelResult } from 'src/app/models/devicemodel/GetDeviceModelResult.model';
-import { ManufacturerCategoryService } from 'src/app/services/manufacturercategory.service';
-import { GetManufacturerCategoryResult } from 'src/app/models/manufacturercategory/GetManufacturerCategoryResult.model';
+import { BaseCommandResult } from 'src/app/results/BaseCommandResult.model';
+import { GetDeviceModelResult } from 'src/app/results/devicemodel/GetDeviceModelResult.model';
+import { ManufacturerService } from 'src/app/services/manufacturer.service';
+import { GetManufacturerResumed } from 'src/app/results/manufacturer/GetManufacturerResumed.model';
 
 @Component({
   selector: 'app-devicemodel-cu',
@@ -15,10 +14,10 @@ import { GetManufacturerCategoryResult } from 'src/app/models/manufacturercatego
 export class DeviceModelCuComponent implements OnInit {
   baseCommandResult: BaseCommandResult;
   listDeviceModel: GetDeviceModelResult[];
-  listManufacturerCategory: GetManufacturerCategoryResult[];
+  listManufacturerCategory: GetManufacturerResumed[];
 
   constructor(public service: DeviceModelService,
-    public serviceManufacturerCategory: ManufacturerCategoryService,    
+    public serviceManufacturerCategory: ManufacturerService,
     public dialogRef: MatDialogRef<DeviceModelCuComponent>) { }
 
   ngOnInit() {
@@ -26,7 +25,7 @@ export class DeviceModelCuComponent implements OnInit {
   }
 
   loadManufacturerCategory() {
-    this.serviceManufacturerCategory.getManufacturerCategory().subscribe(
+    this.serviceManufacturerCategory.getManufacturers().subscribe(
       list => {
         this.listManufacturerCategory = list;
       });

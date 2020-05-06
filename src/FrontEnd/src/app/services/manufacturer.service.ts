@@ -3,17 +3,17 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { map, catchError, retry } from "rxjs/operators";
 import { of } from "rxjs";
-import { GetManufacturerResult } from "../models/manufacturer/GetManufacturerResult.model";
 import { AppApi } from "../app.api";
-import { CreateManufacturerCommand } from "../models/manufacturer/CreateManufacturerCommand.model";
-import { UpdateManufacturerCommand } from "../models/manufacturer/UpdateManufacturerCommand.model";
+import { GetManufacturerResumed } from "../results/manufacturer/GetManufacturerResumed.model";
+import { CreateManufacturerCommand } from "../commands/manufacturer/CreateManufacturerCommand.model";
+import { UpdateManufacturerCommand } from "../commands/manufacturer/UpdateManufacturerCommand.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class ManufacturerService {
-  constructor(private http: HttpClient) {}
-  listManufacturer: GetManufacturerResult[];
+  constructor(private http: HttpClient) { }
+  listManufacturer: GetManufacturerResumed[];
 
   // I've created a group for the controls of the form
   form: FormGroup = new FormGroup({
@@ -26,18 +26,6 @@ export class ManufacturerService {
       Id: 0,
       Description: "",
     });
-  }
-
-  getManufacturer() {
-    return this.http
-      .get(`${AppApi.MobileControlApiResourceManufacturer}/v1`)
-      .pipe(
-        retry(2), //if something happens, will retry 2x
-        map((res) => (this.listManufacturer = res as GetManufacturerResult[])),
-        catchError((err) => {
-          return of(null); //if exception happens, i'll return null
-        })
-      );
   }
 
   createManufacturer(command: CreateManufacturerCommand) {
@@ -57,7 +45,7 @@ export class ManufacturerService {
   updateManufacturer(command: UpdateManufacturerCommand) {
     return this.http
       .put(
-        `${AppApi.MobileControlApiResourceManufacturer}/v1`,
+        `${AppApi.MobileControlApiResourceManufacturer}/v1/` + command.Id,
         JSON.stringify(command)
       )
       .pipe(
@@ -79,11 +67,22 @@ export class ManufacturerService {
       );
   }
 
+  getManufacturers() {
+    return this.http
+      .get(`${AppApi.MobileControlApiResourceManufacturer}/v1/GetManufacturersResumed`)
+      .pipe(
+        retry(2), //if something happens, will retry 2x
+        map((res) => (this.listManufacturer = res as GetManufacturerResumed[])),
+        catchError((err) => {
+          return of(null); //if exception happens, i'll return null
+        })
+      );
+  }
+
   populateForm(Manufacturer) {
     this.http
       .get(
-        `${AppApi.MobileControlApiResourceManufacturer}/v1/` + Manufacturer.Id
-      )
+        `${AppApi.MobileControlApiResourceManufacturer}/v1/` + Manufacturer.Id)
       .subscribe((res) => {
         const ManufacturerToBeChanged = res as UpdateManufacturerCommand;
         this.form.setValue({

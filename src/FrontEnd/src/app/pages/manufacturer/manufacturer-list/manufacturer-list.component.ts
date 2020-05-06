@@ -27,7 +27,7 @@ export class ManufacturerListComponent implements OnInit {
   }
 
   loadData() {
-    this.service.getManufacturer().subscribe(
+    this.service.getManufacturers().subscribe(
       list => {
         this.listData = new MatTableDataSource(list);
         this.listData.sort = this.sort;

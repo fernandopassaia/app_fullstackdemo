@@ -9,11 +9,6 @@ import { BaseCommandResultDashBoard } from "../results/BaseCommandResultDashBoar
     providedIn: "root",
 })
 export class DashBoardService {
-    headers = {
-        headers: new HttpHeaders({
-            "Content-Type": "application/json",
-        }),
-    };
 
     constructor(private http: HttpClient) { }
     dashBoardData: BaseCommandResultDashBoard;
