@@ -1,3 +1,4 @@
+using System;
 using AppFullStackDemo.Domain.Commands.DeviceModel;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Handlers.Contracts;
@@ -57,6 +58,17 @@ namespace AppFullStackDemo.Domain.Handlers
             _repository.Update(deviceModel);
 
             return new BaseCommandResult(true, "User Updated with Success!", deviceModel);
+        }
+
+        public IBaseCommandResult Handle(Guid id)
+        {
+            var deviceModel = _repository.GetById(id);
+            if (deviceModel == null)
+                return new BaseCommandResult(false, "DeviceModel not found", null);
+
+            deviceModel.Remove();
+            _repository.Update(deviceModel);
+            return new BaseCommandResult(true, "DeviceModel Deleted with Success!", null);
         }
     }
 }

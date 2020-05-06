@@ -14,10 +14,10 @@ import { GetDeviceModelResult } from 'src/app/results/devicemodel/GetDeviceModel
 export class DeviceModelCuComponent implements OnInit {
   baseCommandResult: BaseCommandResult;
   listDeviceModel: GetDeviceModelResult[];
-  listManufacturerCategory: GetManufacturerResult[];
+  listManufacturer: GetManufacturerResult[];
 
   constructor(public service: DeviceModelService,
-    public serviceManufacturerCategory: ManufacturerService,
+    public serviceManufacturer: ManufacturerService,
     public dialogRef: MatDialogRef<DeviceModelCuComponent>) { }
 
   ngOnInit() {
@@ -25,9 +25,9 @@ export class DeviceModelCuComponent implements OnInit {
   }
 
   loadManufacturerCategory() {
-    this.serviceManufacturerCategory.getManufacturers().subscribe(
+    this.serviceManufacturer.getManufacturers().subscribe(
       list => {
-        this.listManufacturerCategory = list;
+        this.listManufacturer = list;
       });
   }
 

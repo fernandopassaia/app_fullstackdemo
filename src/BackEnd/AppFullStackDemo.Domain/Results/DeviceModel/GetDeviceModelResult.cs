@@ -1,5 +1,5 @@
 
-namespace AppFullStackDemo.Domain.Commands.Manufacturer
+namespace AppFullStackDemo.Domain.Commands.DeviceModel
 {
     public class GetDeviceModelResult
     {

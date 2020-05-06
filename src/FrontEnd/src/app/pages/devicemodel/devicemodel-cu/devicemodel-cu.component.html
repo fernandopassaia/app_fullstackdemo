@@ -19,19 +19,16 @@
         </mat-form-field>
 
         <mat-form-field>
-          <mat-select formControlName="ManufacturerCategory" placeholder="ManufacturerCategory">
-            <ng-container *ngFor="let manufacturerCategory of listManufacturerCategory">
+          <mat-select formControlName="ManufacturerId" placeholder="Manufacturer">
+            <ng-container *ngFor="let manufacturer of listManufacturer">
               <mat-option value="{{manufacturerCategory.Id}}">
-                {{manufacturerCategory.CategoryName}} - {{manufacturerCategory.ManufacturerName}}</mat-option>
+                {{manufacturerCategory.ManufacturerName}}</mat-option>
             </ng-container>
           </mat-select>
         </mat-form-field>
 
       </div>
     </mat-grid-tile>
-
-
-
 
     <mat-grid-tile>
       <div class="controles-container">

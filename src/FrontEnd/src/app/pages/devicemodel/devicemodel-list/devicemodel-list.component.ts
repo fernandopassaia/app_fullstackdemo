@@ -17,7 +17,7 @@ export class DeviceModelListComponent implements OnInit {
     private dialogService: DialogService) { }
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['Description', 'Category', 'Manufacturer', 'actions'];
+  displayedColumns: string[] = ['Description', 'Manufacturer', 'actions'];
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   searchKey: string;
@@ -73,13 +73,12 @@ export class DeviceModelListComponent implements OnInit {
   }
 
   onDelete(Id) {
-    this.dialogService.openConfirmDialog('Tem certeza que deseja excluir?')
+    this.dialogService.openConfirmDialog('Are you sure you want to delete?')
       .afterClosed().subscribe(res => {
         if (res) {
           this.service.deleteDeviceModel(Id).subscribe(data => {
             this.returnOfWebService = data; this.loadData();
           });
-          NotificationService.showNotification('warning', 'top', 'right', 'Success!', 'Posição Excluída!');
         }
       });
   }
