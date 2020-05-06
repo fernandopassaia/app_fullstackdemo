@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AppFullStackDemo.Domain.Commands.Manufacturer;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Queries;
 using AppFullStackDemo.Domain.Repositories;
@@ -41,6 +42,40 @@ namespace AppFullStackDemo.Infra.Repositories
                .Where(ManufacturerQueries.GetAll())
                .OrderBy(x => x.Description
                );
+        }
+
+        public IEnumerable<GetManufacturerResumed> GetManufacturerResumed()
+        {
+            var data = _context.Manufacturers
+               .Where(ManufacturerQueries.GetAll())
+               .OrderBy(x => x.Description)
+               .ToList();
+
+            if (data == null)
+                return null;
+
+            return data.Select(reg => new GetManufacturerResumed
+            {
+                Id = reg.Id.ToString(),
+                Description = reg.Description
+            });
+        }
+
+        public GetManufacturerResumed GetManufacturer(Guid id)
+        {
+            var data = _context.Manufacturers
+               .Where(ManufacturerQueries.GetById(id))
+               .FirstOrDefault();
+
+
+            if (data == null)
+                return null;
+
+            return new GetManufacturerResumed
+            {
+                Id = data.Id.ToString(),
+                Description = data.Description
+            };
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using AppFullStackDemo.Domain.Commands.Manufacturer;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Handlers.Contracts;
@@ -47,6 +48,17 @@ namespace AppFullStackDemo.Domain.Handlers
             _repository.Update(manufacturer);
 
             return new BaseCommandResult(true, "Manufacturer Updated with Success!", manufacturer);
+        }
+
+        public IBaseCommandResult Handle(Guid id)
+        {
+            var manufacturer = _repository.GetById(id);
+            if (manufacturer == null)
+                return new BaseCommandResult(false, "Manufacturer not found", null);
+
+            manufacturer.Remove();
+            _repository.Update(manufacturer);
+            return new BaseCommandResult(true, "Manufacturer Deleted with Success!", null);
         }
     }
 }

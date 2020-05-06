@@ -5,6 +5,8 @@ using AppFullStackDemo.Domain.Handlers;
 using AppFullStackDemo.Domain.Repositories;
 using AppFullStackDemo.Infra.Transactions;
 using AppFullStackDemo.Domain.Commands.Manufacturer;
+using System;
+using System.Collections.Generic;
 
 namespace AppFullStackDemo.Api.Controllers
 {
@@ -35,12 +37,37 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpPut]
-        [Route("v1")]
+        [Route("v1/{Id}")]
         [Authorize(Roles = "manufacturer")]
-        public async Task<IActionResult> Put([FromBody]UpdateManufacturerCommand command)
+        public async Task<IActionResult> Put([FromRoute]Guid Id, [FromBody]UpdateManufacturerCommand command)
         {
             var result = _handler.Handle(command);
             return await Response(result);
+        }
+
+        [HttpDelete]
+        [Route("v1/{Id}")]
+        [Authorize(Roles = "manufacturer")]
+        public async Task<IActionResult> Delete([FromRoute]Guid Id)
+        {
+            var result = _handler.Handle(Id);
+            return await Response(result);
+        }
+
+        [HttpGet]
+        [Route("v1/GetManufacturersResumed")]
+        [Authorize(Roles = "manufacturer")]
+        public IEnumerable<GetManufacturerResumed> GetManufacturersResumed()
+        {
+            return _repository.GetManufacturerResumed();
+        }
+
+        [HttpGet]
+        [Route("v1/GetManufacturer/{Id}")]
+        [Authorize(Roles = "manufacturer")]
+        public GetManufacturerResumed GetManufacturer([FromRoute]Guid Id)
+        {
+            return _repository.GetManufacturer(Id);
         }
     }
 }

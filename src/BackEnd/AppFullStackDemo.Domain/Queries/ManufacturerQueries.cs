@@ -11,5 +11,10 @@ namespace AppFullStackDemo.Domain.Queries
         {
             return x => x.Status == ECommonStatus.Active; // && x.Done == true;
         }
+
+        public static Expression<Func<Manufacturer, bool>> GetById(Guid id)
+        {
+            return x => x.Id == id;
+        }
     }
 }
