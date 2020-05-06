@@ -21,8 +21,8 @@
         <mat-form-field>
           <mat-select formControlName="ManufacturerId" placeholder="Manufacturer">
             <ng-container *ngFor="let manufacturer of listManufacturer">
-              <mat-option value="{{manufacturerCategory.Id}}">
-                {{manufacturerCategory.ManufacturerName}}</mat-option>
+              <mat-option value="{{manufacturer.Id}}">
+                {{manufacturer.Description}}</mat-option>
             </ng-container>
           </mat-select>
         </mat-form-field>

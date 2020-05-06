@@ -28,6 +28,7 @@ export class DeviceModelCuComponent implements OnInit {
     this.serviceManufacturer.getManufacturers().subscribe(
       list => {
         this.listManufacturer = list;
+        console.log(list);
       });
   }
 

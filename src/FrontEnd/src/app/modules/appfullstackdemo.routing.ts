@@ -3,6 +3,7 @@ import { AuthGuard } from "./auth/auth.guard";
 import { ForbiddenComponent } from "./auth/forbidden/forbidden.component";
 import { UserComponent } from "../pages/user/user.component";
 import { ManufacturerComponent } from "../pages/manufacturer/manufacturer.component";
+import { DeviceModelComponent } from "../pages/devicemodel/devicemodel.component";
 //import { EquipmentComponent } from "../equipment/equipment.component";
 
 export const AppFullStackDemoRoutes: Routes = [
@@ -24,5 +25,11 @@ export const AppFullStackDemoRoutes: Routes = [
     component: ManufacturerComponent,
     canActivate: [AuthGuard],
     data: { permittedRoles: ["manufacturer"] },
+  },
+  {
+    path: "devicemodel",
+    component: DeviceModelComponent,
+    canActivate: [AuthGuard],
+    data: { permittedRoles: ["devicemodel"] },
   },
 ];

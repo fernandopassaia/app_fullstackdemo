@@ -17,9 +17,9 @@ export class DeviceModelService {
 
   // I've created a group for the controls of the form
   form: FormGroup = new FormGroup({
-    Id: new FormControl(""),
-    Description: new FormControl("", Validators.required),
-    ManufacturerCategory: new FormControl("1"),
+    Id: new FormControl(''),
+    Description: new FormControl('', Validators.required),
+    ManufacturerId: new FormControl(''),
   });
 
   initializeFormGroup() {
@@ -89,7 +89,7 @@ export class DeviceModelService {
         this.form.setValue({
           Id: DeviceModelToBeChanged.Id,
           Description: DeviceModelToBeChanged.Description,
-          ManufacturerCategory: DeviceModelToBeChanged.ManufacturerCategory.toString(), //precisa jogar pra string senão não pega!
+          ManufacturerId: DeviceModelToBeChanged.ManufacturerId.toString(), //precisa jogar pra string senão não pega!
         });
       });
   }
