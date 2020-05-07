@@ -4,23 +4,23 @@
 
         <mat-table [dataSource]="listData" matSort>
             <ng-container matColumnDef="Field">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Configuração</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Config</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.Field}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="Value">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Valor</mat-header-cell>
+                <mat-header-cell *matHeaderCellDef mat-sort-header>Value</mat-header-cell>
                 <mat-cell *matCellDef="let element">{{element.Value}}</mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="loading">
                 <mat-footer-cell *matFooterCellDef colspan="6">
-                    Selecione um dispositivo...
+                    Select a Device...
                 </mat-footer-cell>
             </ng-container>
             <ng-container matColumnDef="noData">
                 <mat-footer-cell *matFooterCellDef colspan="6">
-                    Sem dados.
+                    No Data.
                 </mat-footer-cell>
             </ng-container>
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

@@ -63,11 +63,11 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpGet]
-        [Route("v1/user/{UserId}")]
+        [Route("v1/user/{userId}")]
         [Authorize(Roles = "equipment")]
-        public IEnumerable<GetEquipmentResultResumed> GetEquipmentsByUser([FromRoute] Guid UserId)
+        public IEnumerable<GetEquipmentResultResumed> GetEquipmentsByUser([FromRoute] Guid userId)
         {
-            return _repository.GetEquipmentsByUser(UserId);
+            return _repository.GetEquipmentsByUser(userId);
         }
     }
 }

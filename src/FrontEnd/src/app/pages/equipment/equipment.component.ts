@@ -7,15 +7,15 @@ import { Router, ActivatedRoute } from "@angular/router";
   styles: [],
 })
 export class EquipmentComponent implements OnInit {
-  employeeId: string;
+  userId: string;
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe((params) => {
-      this.employeeId = params.get("employeeId");
+      this.userId = params.get("userId");
     });
   }
 }

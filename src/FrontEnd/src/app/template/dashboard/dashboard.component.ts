@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import { DashBoardService } from 'src/app/services/dashboard.service';
-import { GetDashBoardResult } from 'src/app/commands/dashboard/GetDashBoardResult';
+import { GetDashBoardResult } from 'src/app/results/dashboard/GetDashBoardResult';
 
 declare const $: any;
 
@@ -87,13 +87,6 @@ export class DashboardComponent implements OnInit {
     this.dashBoardService.getDashBoardData().subscribe(
       list => {
         this.apiData = this.dashBoardService.dashBoardData.ResponseDataObj as GetDashBoardResult;
-        this.numberOnlineEquips = this.apiData.ListOfOnlineOfflineDevices[0].Value;
-        this.numberOfflineEquips = this.apiData.ListOfOnlineOfflineDevices[1].Value;
-        this.percentOnlineEquips = this.apiData.ListOfOnlineOfflineDevices[2].Value + '%';
-        this.percentOfflineEquips = this.apiData.ListOfOnlineOfflineDevices[3].Value + '%';
-        this.percentOnlineEquipsN = Number(this.apiData.ListOfOnlineOfflineDevices[2].Value);
-        this.percentOfflineEquipsN = Number(this.apiData.ListOfOnlineOfflineDevices[3].Value);
-
         this.apiData.ListOfAndroid.forEach(item => {
           this.androidVersions.push(item.Field.replace('Android ', '') + '(' + item.Value + ')');
           this.androidVersionsN.push(Number(item.Value));

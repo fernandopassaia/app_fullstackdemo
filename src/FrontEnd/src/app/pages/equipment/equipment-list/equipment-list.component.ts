@@ -9,7 +9,7 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 })
 export class EquipmentListComponent implements OnInit {
 
-  @Input() employeeId: string;
+  @Input() userId: string;
 
   // When User click in a Equipment - It will change the "equipmentDetail" and the CU
   // is listening to it. So it will be reloaded showing details of another Equipment.
@@ -17,7 +17,7 @@ export class EquipmentListComponent implements OnInit {
   equipmentDetail: MatTableDataSource<any>;
 
   listData: MatTableDataSource<any>;
-  displayedColumns: string[] = ['Brand', 'Model', 'Description', 'actions'];
+  displayedColumns: string[] = ['DeviceModel', 'ApiLevelDesc', 'SerialNumber', 'actions'];
   @ViewChild(MatSort, { static: false }) sort: MatSort;
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
   searchKey: string;
@@ -29,7 +29,7 @@ export class EquipmentListComponent implements OnInit {
   }
 
   loadData() {
-    this.service.GetByEmployee(this.employeeId).subscribe(
+    this.service.GetEquipmentsByUser(this.userId).subscribe(
       list => {
         this.listData = new MatTableDataSource(list);
         this.listData.sort = this.sort;
@@ -51,18 +51,11 @@ export class EquipmentListComponent implements OnInit {
     this.applyFilter();
   }
 
-  onSynteticData(row) {
+  loadEquipmentDetails(row) {
     this.equipmentId = row.Id;
-    this.service.GetEquipmentSyntetic(this.equipmentId).subscribe(
+    this.service.GetEquipment(this.equipmentId).subscribe(
       list => {
-        this.equipmentDetail = new MatTableDataSource(list);
-      });
-  }
-
-  onFullData(row) {
-    this.equipmentId = row.Id;
-    this.service.GetEquipmentResumed(this.equipmentId).subscribe(
-      list => {
+        console.log('details', list);
         this.equipmentDetail = new MatTableDataSource(list);
       });
   }

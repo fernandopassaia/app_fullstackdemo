@@ -5,11 +5,11 @@
                 <br>
                 <div class="row">
                     <div class="col-md-7">
-                        <legend>Selecione um Dispositivo</legend>
-                        <app-equipment-list #list [employeeId]="employeeId"></app-equipment-list>
+                        <legend>Select a Device</legend>
+                        <app-equipment-list #list [userId]="userId"></app-equipment-list>
                     </div>
                     <div class="col-md-5">
-                        <legend>Detalhes do Dispositivo</legend>
+                        <legend>Details of Device</legend>
                         <app-equipment-cu #cu [listData]="list.equipmentDetail"></app-equipment-cu>
                     </div>
                 </div>
