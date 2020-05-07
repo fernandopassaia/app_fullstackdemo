@@ -38,7 +38,7 @@ namespace AppFullStackDemo.Infra.Repositories
                 .FirstOrDefault(x => x.Id == id);
         }
 
-        public IEnumerable<GetEquipmentResult> GetEquipments()
+        public IEnumerable<GetEquipmentResultResumed> GetEquipments()
         {
             var data = _context.Equipments
                .Where(EquipmentQueries.GetAll())
@@ -50,21 +50,16 @@ namespace AppFullStackDemo.Infra.Repositories
             if (data == null)
                 return null;
 
-            return data.Select(reg => new GetEquipmentResult
+            return data.Select(reg => new GetEquipmentResultResumed
             {
-                AndroidId = reg.AndroidId,
-                Imei1 = reg.Imei1,
-                Imei2 = reg.Imei2,
+                Id = reg.Id.ToString(),
                 PhoneNumber = reg.PhoneNumber,
-                MacAddress = reg.MacAddress,
                 ApiLevel = reg.ApiLevel,
                 ApiLevelDesc = reg.ApiLevelDesc,
                 SerialNumber = reg.SerialNumber,
                 SystemName = reg.SystemName,
                 SystemVersion = reg.SystemVersion,
-                DeviceModelId = reg.DeviceModel.Id,
                 DeviceModel = reg.DeviceModel.Manufacturer.Description + " " + reg.DeviceModel.Description,
-                UserId = reg.User.Id,
                 User = reg.User.Name.ToString()
             });
         }
@@ -83,6 +78,7 @@ namespace AppFullStackDemo.Infra.Repositories
 
             return new GetEquipmentResult
             {
+                Id = data.Id.ToString(),
                 AndroidId = data.AndroidId,
                 Imei1 = data.Imei1,
                 Imei2 = data.Imei2,
@@ -98,6 +94,32 @@ namespace AppFullStackDemo.Infra.Repositories
                 UserId = data.User.Id,
                 User = data.User.Name.ToString()
             };
+        }
+
+        public IEnumerable<GetEquipmentResultResumed> GetEquipmentsByUser(Guid UserId)
+        {
+            var data = _context.Equipments
+               .Where(EquipmentQueries.GetByUser(UserId))
+               .Include(p => p.DeviceModel.Manufacturer)
+               .Include(p => p.User)
+               .OrderBy(x => x.ApiLevelDesc)
+               .ToList();
+
+            if (data == null)
+                return null;
+
+            return data.Select(reg => new GetEquipmentResultResumed
+            {
+                Id = reg.Id.ToString(),
+                PhoneNumber = reg.PhoneNumber,
+                ApiLevel = reg.ApiLevel,
+                ApiLevelDesc = reg.ApiLevelDesc,
+                SerialNumber = reg.SerialNumber,
+                SystemName = reg.SystemName,
+                SystemVersion = reg.SystemVersion,
+                DeviceModel = reg.DeviceModel.Manufacturer.Description + " " + reg.DeviceModel.Description,
+                User = reg.User.Name.ToString()
+            });
         }
     }
 }

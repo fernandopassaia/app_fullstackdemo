@@ -50,7 +50,7 @@ namespace AppFullStackDemo.Api.Controllers
         [HttpGet]
         [Route("v1")]
         [Authorize(Roles = "equipment")]
-        public IEnumerable<GetEquipmentResult> GetEquipments()
+        public IEnumerable<GetEquipmentResultResumed> GetEquipments()
         {
             return _repository.GetEquipments();
         }
@@ -61,6 +61,14 @@ namespace AppFullStackDemo.Api.Controllers
         public GetEquipmentResult GetEquipment([FromRoute] Guid Id)
         {
             return _repository.GetEquipment(Id);
+        }
+
+        [HttpGet]
+        [Route("v1/user/{UserId}")]
+        [Authorize(Roles = "equipment")]
+        public IEnumerable<GetEquipmentResultResumed> GetEquipmentsByUser([FromRoute] Guid UserId)
+        {
+            return _repository.GetEquipmentsByUser(UserId);
         }
     }
 }

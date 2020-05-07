@@ -16,5 +16,10 @@ namespace AppFullStackDemo.Domain.Queries
         {
             return x => x.Id == id;
         }
+
+        public static Expression<Func<Equipment, bool>> GetByUser(Guid UserId)
+        {
+            return x => x.User.Id == UserId;
+        }
     }
 }
