@@ -2,6 +2,8 @@
 * Note: This Documentation is also available in Portuguese PT. Scrool down for it.
 * Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app, check for links.
 * Note 3: We have this system published ONLINE, you can access and test it. Links also below.
+* Note 4: If you are just a BackEnd and/or WebDeveloper and don't want to deal with Mobile, you don't
+need it. React Native project is a small-bonus, but yeah, you can run and use the project without it.
 
 ------------------------------------------------------------------------------------------------------------
 .NET Core BackEnd (With Rich Arquitecture) DDD/SOLID/CQRS + WebApi Rest.

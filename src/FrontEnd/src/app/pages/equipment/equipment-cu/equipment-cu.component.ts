@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { GetEquipmentResult } from 'src/app/results/equipment/GetEquipmentResult.model';
 
 @Component({
   selector: 'app-equipment-cu',
@@ -8,23 +9,10 @@ import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 })
 export class EquipmentCuComponent implements OnInit {
 
-  @Input() listData: MatTableDataSource<any>; //will be load on the list of equipments and reflected here
-  displayedColumns: string[] = ['Field', 'Value'];
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
-  searchKey: string;
+  @Input() equipmentDetail: GetEquipmentResult; //will be load on the list of equipments and reflected here  
 
   constructor() { }
 
   ngOnInit() {
-  }
-
-  applyFilter() {
-    this.listData.filter = this.searchKey.trim().toLowerCase();
-  }
-
-  onSearchClear() {
-    this.searchKey = '';
-    this.applyFilter();
   }
 }

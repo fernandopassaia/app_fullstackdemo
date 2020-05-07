@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { EquipmentService } from 'src/app/services/equipment.service';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { GetEquipmentResult } from 'src/app/results/equipment/GetEquipmentResult.model';
 
 @Component({
   selector: 'app-equipment-list',
@@ -14,7 +15,7 @@ export class EquipmentListComponent implements OnInit {
   // When User click in a Equipment - It will change the "equipmentDetail" and the CU
   // is listening to it. So it will be reloaded showing details of another Equipment.
   equipmentId: string;
-  equipmentDetail: MatTableDataSource<any>;
+  equipmentDetail: GetEquipmentResult;
 
   listData: MatTableDataSource<any>;
   displayedColumns: string[] = ['DeviceModel', 'ApiLevelDesc', 'SerialNumber', 'actions'];
@@ -54,9 +55,8 @@ export class EquipmentListComponent implements OnInit {
   loadEquipmentDetails(row) {
     this.equipmentId = row.Id;
     this.service.GetEquipment(this.equipmentId).subscribe(
-      list => {
-        console.log('details', list);
-        this.equipmentDetail = new MatTableDataSource(list);
+      res => {
+        this.equipmentDetail = res as GetEquipmentResult;
       });
   }
 }

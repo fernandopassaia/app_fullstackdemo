@@ -1,37 +1,45 @@
 <div class="card">
-    <div class="card-body" src="">
-        <!--<img src="/assets/img/mobileDetails.png" />-->
+    <div class="card-body table-full-width" *ngIf="equipmentDetail">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <tbody>
+                    <tr class="table-success">
+                        <td>Android Id: {{equipmentDetail.AndroidId}}</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>Equipment Id: {{equipmentDetail.Id}}</td>
+                    </tr>
 
-        <mat-table [dataSource]="listData" matSort>
-            <ng-container matColumnDef="Field">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Config</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.Field}}</mat-cell>
-            </ng-container>
+                    <tr class="table-success">
+                        <td>Imei1: {{equipmentDetail.Imei1}}</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>Imei2: {{equipmentDetail.Imei2}}</td>
+                    </tr>
 
-            <ng-container matColumnDef="Value">
-                <mat-header-cell *matHeaderCellDef mat-sort-header>Value</mat-header-cell>
-                <mat-cell *matCellDef="let element">{{element.Value}}</mat-cell>
-            </ng-container>
+                    <tr class="table-success">
+                        <td>PhoneNumber: {{equipmentDetail.PhoneNumber}}</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>MacAddress: {{equipmentDetail.MacAddress}}</td>
+                    </tr>
 
-            <ng-container matColumnDef="loading">
-                <mat-footer-cell *matFooterCellDef colspan="6">
-                    Select a Device...
-                </mat-footer-cell>
-            </ng-container>
-            <ng-container matColumnDef="noData">
-                <mat-footer-cell *matFooterCellDef colspan="6">
-                    No Data.
-                </mat-footer-cell>
-            </ng-container>
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-            <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':listData!=null}">
-            </mat-footer-row>
-            <mat-footer-row *matFooterRowDef="['noData']"
-                [ngClass]="{'hide':!(listData!=null && listData.data.length==0)}"></mat-footer-row>
-        </mat-table>
-        <mat-paginator [pageSizeOptions]="[30, 60, 90, 120]" [pageSize]="30" showFirstLastButtons>
-        </mat-paginator>
+                    <tr class="table-success">
+                        <td>Android Version: {{equipmentDetail.ApiLevelDesc}}</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>Serial Number: {{equipmentDetail.SerialNumber}}</td>
+                    </tr>
+
+                    <tr class="table-success">
+                        <td>Manufacturer Model: {{equipmentDetail.DeviceModel}}</td>
+                    </tr>
+                    <tr class="table-info">
+                        <td>Owner: {{equipmentDetail.User}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </div>
 </div>
