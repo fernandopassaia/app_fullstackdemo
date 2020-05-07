@@ -33,7 +33,7 @@ export const ROUTES: RouteInfo[] = [{
 },
 {
     path: '/user',
-    title: 'Users',
+    title: 'Users and Devices',
     type: 'link',
     icontype: 'person'
 },
@@ -48,12 +48,6 @@ export const ROUTES: RouteInfo[] = [{
         { path: 'devicemodel', title: 'DeviceModel', ab: 'DM' }
     ]
 },
-{
-    path: '/equipment',
-    title: 'Equipments',
-    type: 'link',
-    icontype: 'phonelink_ring'
-}
 
     //Parte do Menú do Template do Template
 ];

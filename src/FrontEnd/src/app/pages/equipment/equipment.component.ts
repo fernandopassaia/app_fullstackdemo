@@ -7,7 +7,7 @@ import { Router, ActivatedRoute } from "@angular/router";
   styles: [],
 })
 export class EquipmentComponent implements OnInit {
-  userId: string;
+  userId: string = ""; //I`ll start it passing empty, if empty, will load equipments from all users
   constructor(
     private _router: Router,
     private _activatedRoute: ActivatedRoute
