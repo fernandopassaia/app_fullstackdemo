@@ -10,9 +10,8 @@ namespace AppFullStackDemo.Domain.Repositories
         void Create(User user);
         void Update(User user);
         User GetById(Guid id);
-        IEnumerable<User> GetAll();
         User GetByLogin(string userName);
-        IEnumerable<GetUserResumed> GetUserResumed();
+        IEnumerable<GetUserResumed> GetUsers();
         GetUserResult GetUser(Guid id);
     }
 }

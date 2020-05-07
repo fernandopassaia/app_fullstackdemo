@@ -12,6 +12,6 @@ namespace AppFullStackDemo.Domain.Repositories
         Equipment GetById(Guid id);
         IEnumerable<GetEquipmentResultResumed> GetEquipments();
         GetEquipmentResult GetEquipment(Guid id);
-        IEnumerable<GetEquipmentResultResumed> GetEquipmentsByUser(Guid UserId);
+        IEnumerable<GetEquipmentResultResumed> GetEquipmentsByUser(Guid userId);
     }
 }

@@ -1,4 +1,4 @@
-export class GetEquipmentResult {
+export class GetEquipmentResultResumed {
     Id: string;
     AndroidId: string;
     Imei1: string;

@@ -56,9 +56,9 @@ export class ManufacturerService {
       );
   }
 
-  deleteManufacturer(Id: string) {
+  deleteManufacturer(id: string) {
     return this.http
-      .delete(`${AppApi.MobileControlApiResourceManufacturer}/v1/` + Id)
+      .delete(`${AppApi.MobileControlApiResourceManufacturer}/v1/` + id)
       .pipe(
         retry(3), //if something happens, will retry 2x
         catchError((err) => {
@@ -79,10 +79,10 @@ export class ManufacturerService {
       );
   }
 
-  populateForm(Manufacturer) {
+  populateForm(manufacturer) {
     this.http
       .get(
-        `${AppApi.MobileControlApiResourceManufacturer}/v1/` + Manufacturer.Id)
+        `${AppApi.MobileControlApiResourceManufacturer}/v1/` + manufacturer.Id)
       .subscribe((res) => {
         const ManufacturerToBeChanged = res as GetManufacturerResult;
         this.form.setValue({

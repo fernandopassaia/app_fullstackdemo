@@ -36,13 +36,6 @@ namespace AppFullStackDemo.Infra.Repositories
                 .FirstOrDefault(x => x.Id == id);
         }
 
-        public IEnumerable<User> GetAll()
-        {
-            return _context.Users
-               .Where(UserQueries.GetAll())
-               .OrderBy(x => x.Name.FirstName);
-        }
-
         public User GetByLogin(string userName)
         {
             return _context.Users
@@ -51,7 +44,7 @@ namespace AppFullStackDemo.Infra.Repositories
                 .FirstOrDefault();
         }
 
-        public IEnumerable<GetUserResumed> GetUserResumed()
+        public IEnumerable<GetUserResumed> GetUsers()
         {
             var data = _context.Users
                .Where(UserQueries.GetAll())

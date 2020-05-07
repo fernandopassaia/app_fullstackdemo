@@ -44,7 +44,7 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpPut]
-        [Route("v1/{Id}")]
+        [Route("v1/{id}")]
         [Authorize(Roles = "user")]
         public async Task<IActionResult> Put([FromRoute] Guid Id, [FromBody] UpdateUserCommand command)
         {
@@ -53,28 +53,28 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpDelete]
-        [Route("v1/{Id}")]
+        [Route("v1/{id}")]
         [Authorize(Roles = "user")]
-        public async Task<IActionResult> Delete([FromRoute] Guid Id)
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
-            var result = _handler.Handle(Id);
+            var result = _handler.Handle(id);
             return await Response(result);
         }
 
         [HttpGet]
         [Route("v1")]
         [Authorize(Roles = "user")]
-        public IEnumerable<GetUserResumed> GetUsersResumed()
+        public IEnumerable<GetUserResumed> GetUsers()
         {
-            return _repository.GetUserResumed();
+            return _repository.GetUsers();
         }
 
         [HttpGet]
-        [Route("v1/{Id}")]
+        [Route("v1/{id}")]
         [Authorize(Roles = "user")]
-        public GetUserResult GetUser([FromRoute] Guid Id)
+        public GetUserResult GetUser([FromRoute] Guid id)
         {
-            return _repository.GetUser(Id);
+            return _repository.GetUser(id);
         }
 
         [HttpPost]

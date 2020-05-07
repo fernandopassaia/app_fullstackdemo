@@ -37,20 +37,20 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpPut]
-        [Route("v1/{Id}")]
+        [Route("v1/{id}")]
         [Authorize(Roles = "devicemodel")]
-        public async Task<IActionResult> Put([FromRoute] Guid Id, [FromBody] UpdateDeviceModelCommand command)
+        public async Task<IActionResult> Put([FromRoute] Guid id, [FromBody] UpdateDeviceModelCommand command)
         {
             var result = _handler.Handle(command);
             return await Response(result);
         }
 
         [HttpDelete]
-        [Route("v1/{Id}")]
+        [Route("v1/{id}")]
         [Authorize(Roles = "devicemodel")]
-        public async Task<IActionResult> Delete([FromRoute] Guid Id)
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
-            var result = _handler.Handle(Id);
+            var result = _handler.Handle(id);
             return await Response(result);
         }
 
@@ -63,11 +63,11 @@ namespace AppFullStackDemo.Api.Controllers
         }
 
         [HttpGet]
-        [Route("v1/{Id}")]
+        [Route("v1/{id}")]
         [Authorize(Roles = "devicemodel")]
-        public GetDeviceModelResult GetManufacturer([FromRoute] Guid Id)
+        public GetDeviceModelResult GetManufacturer([FromRoute] Guid id)
         {
-            return _repository.GetDeviceModel(Id);
+            return _repository.GetDeviceModel(id);
         }
     }
 }

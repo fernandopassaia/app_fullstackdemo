@@ -1,4 +1,3 @@
-using System;
 
 namespace AppFullStackDemo.Domain.Results.Equipment
 {

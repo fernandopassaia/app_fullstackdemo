@@ -131,10 +131,10 @@ export class UserService {
             );
     }
 
-    deleteUser(Id: string) {
+    deleteUser(id: string) {
         return this.http
             .delete(
-                `${AppApi.MobileControlApiResourceUser}/v1/` + Id
+                `${AppApi.MobileControlApiResourceUser}/v1/` + id
             )
             .pipe(
                 retry(2), //if something happens, will retry 2x
@@ -154,9 +154,9 @@ export class UserService {
         );
     }
 
-    populateForm(User) {
+    populateForm(user) {
         this.http
-            .get(`${AppApi.MobileControlApiResourceUser}/v1/` + User.Id)
+            .get(`${AppApi.MobileControlApiResourceUser}/v1/` + user.Id)
             .subscribe((res) => {
                 const user = res as GetUserResult;
                 this.form.setValue({

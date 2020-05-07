@@ -58,9 +58,9 @@ export class DeviceModelService {
       );
   }
 
-  deleteDeviceModel(Id: string) {
+  deleteDeviceModel(id: string) {
     return this.http
-      .delete(`${AppApi.MobileControlApiResourceDeviceModel}/v1/` + Id)
+      .delete(`${AppApi.MobileControlApiResourceDeviceModel}/v1/` + id)
       .pipe(
         retry(3), //if something happens, will retry 2x
         catchError((err) => {
@@ -81,9 +81,9 @@ export class DeviceModelService {
       );
   }
 
-  populateForm(DeviceModel) {
+  populateForm(deviceModel) {
     this.http
-      .get(`${AppApi.MobileControlApiResourceDeviceModel}/v1/` + DeviceModel.Id)
+      .get(`${AppApi.MobileControlApiResourceDeviceModel}/v1/` + deviceModel.Id)
       .subscribe((res) => {
         const DeviceModelToBeChanged = res as UpdateDeviceModelCommand;
         this.form.setValue({

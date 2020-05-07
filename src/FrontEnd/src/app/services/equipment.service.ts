@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { map, catchError, retry } from "rxjs/operators";
 import { of } from "rxjs";
 import { AppApi } from "../app.api";
-import { GetEquipmentReducedResult } from "../results/equipment/GetEquipmentReducedResult.model";
-import { GetEquipmentResumed } from "../results/equipment/GetEquipmentResumed.model";
+import { GetEquipmentResult } from "../results/equipment/GetEquipmentResult.model";
+import { GetEquipmentResultResumed } from "../results/equipment/GetEquipmentResultResumed.model";
 
 @Injectable({
   providedIn: "root",
@@ -12,58 +12,58 @@ import { GetEquipmentResumed } from "../results/equipment/GetEquipmentResumed.mo
 export class EquipmentService {
 
   constructor(private http: HttpClient) { }
-  listEquipment: GetEquipmentReducedResult[];
-  listResumed: GetEquipmentResumed[];
+  listEquipment: GetEquipmentResultResumed[];
+  equipmentDetail: GetEquipmentResult[];
 
   initializeFormGroup() { }
 
-  GetByEmployee(employeeId: string) {
-    let params = new HttpParams();
-    params = params.append("employeeId", employeeId);
+  deleteEquipment(id: string) {
     return this.http
-      .get(`${AppApi.MobileControlApiResourceEquipment}/v1/GetByEmployee`, {
-        params: params,
-      })
+      .delete(`${AppApi.MobileControlApiResourceEquipment}/v1/` + id)
       .pipe(
-        retry(2), //if something happens, will retry 2x
-        map((res) => (this.listEquipment = res as GetEquipmentReducedResult[])),
+        retry(3), //if something happens, will retry 2x
         catchError((err) => {
           return of(null); //if exception happens, i'll return null
         })
       );
   }
 
-  GetEquipmentResumed(equipmentId: string) {
-    let params = new HttpParams();
-    params = params.append("equipmentId", equipmentId);
+  GetEquipments() {
     return this.http
       .get(
-        `${AppApi.MobileControlApiResourceEquipment}/v1/GetEquipmentResumed`,
-        { params: params }
-      )
+        `${AppApi.MobileControlApiResourceEquipment}/v1/`)
       .pipe(
         retry(2), //if something happens, will retry 2x
-        map((res) => (this.listResumed = res as GetEquipmentResumed[])),
+        map((res) => (this.listEquipment = res as GetEquipmentResultResumed[])),
         catchError((err) => {
           return of(null); //if exception happens, i'll return null
         })
       );
   }
 
-  GetEquipmentSyntetic(equipmentId: string) {
-    let params = new HttpParams();
-    params = params.append("equipmentId", equipmentId);
+  GetEquipment(id: string) {
     return this.http
       .get(
-        `${AppApi.MobileControlApiResourceEquipment}/v1/GetEquipmentSyntetic`,
-        { params: params }
-      )
+        `${AppApi.MobileControlApiResourceEquipment}/v1/` + id)
       .pipe(
         retry(2), //if something happens, will retry 2x
-        map((res) => (this.listResumed = res as GetEquipmentResumed[])),
+        map((res) => (this.equipmentDetail = res as GetEquipmentResult[])),
         catchError((err) => {
           return of(null); //if exception happens, i'll return null
         })
       );
   }
+
+  GetEquipmentsByUser(userId: string) {
+    return this.http
+      .get(`${AppApi.MobileControlApiResourceEquipment}/v1/user/` + userId)
+      .pipe(
+        retry(2), //if something happens, will retry 2x
+        map((res) => (this.listEquipment = res as GetEquipmentResultResumed[])),
+        catchError((err) => {
+          return of(null); //if exception happens, i'll return null
+        })
+      );
+  }
+
 }
