@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using AppFullStackDemo.Domain.Entities;
+using AppFullStackDemo.Domain.Results.Equipment;
 
 namespace AppFullStackDemo.Domain.Repositories
 {
@@ -9,7 +10,7 @@ namespace AppFullStackDemo.Domain.Repositories
         void Create(Equipment equipment);
         void Update(Equipment equipment);
         Equipment GetById(Guid id);
-        IEnumerable<Equipment> GetAll();
-        //GetResumed
+        IEnumerable<GetEquipmentResult> GetEquipments();
+        GetEquipmentResult GetEquipment(Guid id);
     }
 }

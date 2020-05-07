@@ -36,14 +36,6 @@ namespace AppFullStackDemo.Infra.Repositories
                 .FirstOrDefault(x => x.Id == id);
         }
 
-        public IEnumerable<Manufacturer> GetAll()
-        {
-            return _context.Manufacturers
-               .Where(ManufacturerQueries.GetAll())
-               .OrderBy(x => x.Description
-               );
-        }
-
         public IEnumerable<GetManufacturerResult> GetManufacturers()
         {
             var data = _context.Manufacturers

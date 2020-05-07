@@ -4,7 +4,7 @@ using Flunt.Notifications;
 using Flunt.Validations;
 using System;
 
-namespace AppFullStackDemo.Domain.Commands.DeviceModel
+namespace AppFullStackDemo.Domain.Commands.Equipment
 {
     public class CreateEquipmentCommand : Notifiable, ICommand
     {

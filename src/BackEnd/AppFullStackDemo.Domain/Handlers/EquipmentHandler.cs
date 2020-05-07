@@ -1,4 +1,5 @@
-using AppFullStackDemo.Domain.Commands.DeviceModel;
+using System;
+using AppFullStackDemo.Domain.Commands.Equipment;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Handlers.Contracts;
 using AppFullStackDemo.Domain.Repositories;
@@ -42,5 +43,19 @@ namespace AppFullStackDemo.Domain.Handlers
 
             return new BaseCommandResult(true, "Equipment Saved with Success!", equipment);
         }
+
+        public IBaseCommandResult Handle(Guid id)
+        {
+            var equipment = _repository.GetById(id);
+            if (equipment == null)
+                return new BaseCommandResult(false, "Equipment not found", null);
+
+            equipment.Remove();
+            _repository.Update(equipment);
+            return new BaseCommandResult(true, "Equipment Deleted with Success!", null);
+        }
+
+        // Note: My Goal here is to create the Equipment (the post will comes from the MobileApp) and done. Right now,
+        // there will be no option to EDIT or update the Data once the device will not change itself hardware. To be done...
     }
 }
