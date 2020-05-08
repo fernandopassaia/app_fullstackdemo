@@ -15,7 +15,6 @@ using AppFullStackDemo.Infra.Transactions;
 using AppFullStackDemo.Api.Models;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.EntityFrameworkCore;
-using AppFullStackDemo.Infra.Data;
 using AppFullStackDemo.Domain.Repositories;
 using AppFullStackDemo.Infra.Repositories;
 using AppFullStackDemo.Domain.Handlers;
@@ -115,10 +114,8 @@ namespace AppFullStackDemo.Api
             });
             #endregion Config of JWT
 
-            #region MockDataCreator
-            var dbContext = services.BuildServiceProvider().GetService<AppFullStackDemoContext>();
-            SeedMockDataCreator.CreateMockData(dbContext);
-            #endregion
+            //var dbContext = services.BuildServiceProvider().GetService<AppFullStackDemoContext>();
+            //SeedMockDataCreator.CreateMockData(dbContext);            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

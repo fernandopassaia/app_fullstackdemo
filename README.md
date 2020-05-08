@@ -160,9 +160,9 @@ chooose your favorite :trollface:
 
 
 ### User to Access the App:
-During the Migration of the API will be created an User with a Devices (Xiaomi Mi Max 2) just for test, you can use
-this user to login and create another users, or also to test the system. If you don't want it, comment the method-
-call on the Context.
+During the Migration of the API will be created an User with some Devices just for test, you can use this user to
+login and create another users, or also to test the system. Or you can click "Register" and create a user. If you
+don't want it, comment the call for the method on startup.cs.
 
 Login: admin
 Password: admin

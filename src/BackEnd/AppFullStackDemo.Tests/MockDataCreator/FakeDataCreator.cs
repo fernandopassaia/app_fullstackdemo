@@ -1,18 +1,23 @@
-// This is a helper class to generate Mock Data during the First Run of the System (if there's no data, will insert some mock/fake data)
-// This class is not following any pattern once the only reason here is to fill some fake data on DB. The better approach for it is to
-// Create some project to fill the DataBase (like a consoleapp) or even a TEST project if i Want to Generate some data. Anyway...
-
 using System.Linq;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Entities.Security;
 using AppFullStackDemo.Domain.ValueObjects;
 using AppFullStackDemo.Infra.Context;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AppFullStackDemo.Infra.Data
+namespace AppFullStackDemo.Tests.MockDataCreator
 {
-    public static class SeedMockDataCreator
+    [TestClass]
+    public class FakeDataCreator
     {
-        public static void CreateMockData(AppFullStackDemoContext _context)
+        AppFullStackDemoContext _context = new AppFullStackDemoContext();
+        public FakeDataCreator()
+        {
+
+        }
+
+        [TestMethod]
+        public void CreateFakeMockData()
         {
             if (!_context.Users.Any()) //before insert data I'll check if db is empty
             {
@@ -29,13 +34,21 @@ namespace AppFullStackDemo.Infra.Data
                 _context.SaveChanges(); //I'm calling SaveChanges each time because i need DB to generate the Guids then it will be stored here to the Fks
 
                 var manufacturers = new Manufacturer[] {
-                new Manufacturer("Xiaomi")
+                new Manufacturer("Xiaomi"),
+                new Manufacturer("Motorola"),
+                new Manufacturer("Samsung"),
+                new Manufacturer("LG")
             };
                 _context.Manufacturers.AddRange(manufacturers);
                 _context.SaveChanges();
 
                 var deviceModels = new DeviceModel[] {
-                new DeviceModel("MI MAX 2", manufacturers[0])
+                new DeviceModel("Mi Max 2", manufacturers[0]),//0
+                new DeviceModel("Redmi Note 10", manufacturers[0]),//1
+                new DeviceModel("Moto G8", manufacturers[1]),//2
+                new DeviceModel("Galaxy S20 Plus", manufacturers[2]),//3
+                new DeviceModel("Galaxy S10e", manufacturers[2]),//4
+                new DeviceModel("LG V60", manufacturers[3]),//5
             };
                 _context.DeviceModels.AddRange(deviceModels);
                 _context.SaveChanges();
@@ -62,7 +75,19 @@ namespace AppFullStackDemo.Infra.Data
 
                 var equipments = new Equipment[] {
                 new Equipment("8c4997076d138ae6", "864166044650604", "864167058640512", "36-555-777", "EC:D0:8F:2F:09:D5", "25",
-                "Android 7.1", "5588997788234", "Android", "7.1.1", deviceModels[0], users[0])
+                "Android 7.1", "5588997788234", "Android", "7.1.1", deviceModels[0], users[0]), //mimax2
+                new Equipment("8c4997076d138bc6", "864166044650605", "864167058640513", "36-555-778", "EC:D0:8F:2F:09:D1", "25",
+                "Android 7.1", "5588997788231", "Android", "7.1.1", deviceModels[1], users[0]), //note10
+                new Equipment("8c4997076d138bd6", "864166044650655", "864167058640556", "36-555-790", "EC:D0:8F:2F:09:D6", "27",
+                "Android 8.1", "5588997788333", "Android", "8.1", deviceModels[1], users[0]), //note10
+                new Equipment("8c4997076d138ae7", "864166044650603", "864167058640514", "36-555-779", "EC:D0:8F:2F:09:D7", "27",
+                "Android 8.1", "5588997788232", "Android", "8.1", deviceModels[2], users[0]), //g8
+                new Equipment("8c4997076d138cc7", "864166044650601", "864167058640517", "36-555-780", "EC:D0:8F:2F:09:D2", "27",
+                "Android 8.1", "5588997788235", "Android", "8.1", deviceModels[3], users[0]), //s20
+                new Equipment("8c4997076d138dc7", "864166044650608", "864167058640518", "36-555-781", "EC:D0:8F:2F:09:D3", "27",
+                "Android 8.1", "5588997788236", "Android", "8.1", deviceModels[4], users[0]), //ss10e
+                new Equipment("8c4997076d138cc7", "864166044650602", "864167058640519", "36-555-784", "EC:D0:8F:2F:09:D8", "28",
+                "Android 9", "5588997788245", "Android", "9", deviceModels[5], users[0]), //v60                
             };
                 _context.Equipments.AddRange(equipments);
                 _context.SaveChanges();
