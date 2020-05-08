@@ -12,12 +12,6 @@ declare const $: any;
 export class DashboardComponent implements OnInit {
   apiData: GetDashBoardResult;
 
-  numberOnlineEquips: string;
-  numberOfflineEquips: string;
-  percentOnlineEquips: string;
-  percentOfflineEquips: string;
-  percentOnlineEquipsN: number;
-  percentOfflineEquipsN: number;
   androidVersions: string[] = [];
   androidVersionsN: number[] = [];
   deviceManufacturers: string[] = [];
@@ -101,11 +95,7 @@ export class DashboardComponent implements OnInit {
           }
         });
 
-        //console.log('apiData: ', this.apiData);
-        //console.log(this.apiData.ListOfOnlineOfflineDevices[0].Field, this.apiData.ListOfOnlineOfflineDevices[0].Value);
-        //console.log(this.apiData.ListOfOnlineOfflineDevices[1].Field, this.apiData.ListOfOnlineOfflineDevices[1].Value);
-
-        /*  **************** 1 Gráfico de Barra de Linha - Fabricante ******************** */
+        /*  **************** 1 First Graphic ******************** */
         const dataColouredRoundedLineChart = {
           labels: this.deviceManufacturers,
           series: [this.deviceManufacturersN]
@@ -133,10 +123,10 @@ export class DashboardComponent implements OnInit {
           optionsColouredRoundedLineChart);
 
         this.startAnimationForLineChart(colouredRoundedLineChart);
-        /*  **************** 1 Gráfico de Barra de Linha - Fabricante ******************** */
+        /*  **************** 1 Final First Graphic ******************** */
 
 
-        /*  **************** 2 Gráfico de Barra - Versões Android ******************** */
+        /*  **************** 2 Second Graphic ******************** */
         const dataSimpleBarChart = {
           labels: this.androidVersions, // this.androidVersions,
           series: [this.androidVersionsN]//this.androidVersionsN
@@ -179,23 +169,7 @@ export class DashboardComponent implements OnInit {
         // start animation for the Emails Subscription Chart
         this.startAnimationForBarChart(simpleBarChart);
 
-        /*  **************** 2 Gráfico de Barra - Versões Android ******************** */
-
-
-        /*  **************** 3 Gráfico de Pizza - Disponibilidade ******************** */
-
-        const dataPreferences = {
-          labels: [this.percentOnlineEquips, this.percentOfflineEquips],
-          series: [this.percentOnlineEquipsN, this.percentOfflineEquipsN]
-        };
-
-        const optionsPreferences = {
-          height: '230px'
-        };
-
-        new Chartist.Pie('#chartPreferences', dataPreferences, optionsPreferences);
-
-        /*  **************** 3 Gráfico de Pizza - Disponibilidade ******************** */
+        /*  **************** 2 Final Second Graphic ******************** */
       });
   }
 }

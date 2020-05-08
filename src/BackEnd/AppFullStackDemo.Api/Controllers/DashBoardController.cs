@@ -1,14 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 using AppFullStackDemo.Domain.Handlers;
-using AppFullStackDemo.Domain.Repositories;
 using AppFullStackDemo.Infra.Transactions;
-using AppFullStackDemo.Domain.Commands.Manufacturer;
-using System;
-using System.Collections.Generic;
-using AppFullStackDemo.Domain.Results.Manufacturer;
-using AppFullStackDemo.Domain.Results.DashBoard;
 using AppFullStackDemo.Domain.Results;
 
 namespace AppFullStackDemo.Api.Controllers
