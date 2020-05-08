@@ -1,5 +1,5 @@
 
-namespace AppFullStackDemo.Domain.Commands.User
+namespace AppFullStackDemo.Domain.Results.User
 {
     public class GetUserResumed
     {

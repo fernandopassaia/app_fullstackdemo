@@ -5,6 +5,7 @@ using AppFullStackDemo.Domain.Commands.Manufacturer;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Queries;
 using AppFullStackDemo.Domain.Repositories;
+using AppFullStackDemo.Domain.Results.Manufacturer;
 using AppFullStackDemo.Infra.Context;
 using Microsoft.EntityFrameworkCore;
 

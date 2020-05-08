@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
-using AppFullStackDemo.Domain.Commands.Manufacturer;
 using AppFullStackDemo.Domain.Entities;
+using AppFullStackDemo.Domain.Results.Manufacturer;
 
 namespace AppFullStackDemo.Domain.Repositories
 {

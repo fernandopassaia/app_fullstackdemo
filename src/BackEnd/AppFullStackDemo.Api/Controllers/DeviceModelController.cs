@@ -7,6 +7,7 @@ using AppFullStackDemo.Infra.Transactions;
 using System;
 using System.Collections.Generic;
 using AppFullStackDemo.Domain.Commands.DeviceModel;
+using AppFullStackDemo.Domain.Results.DeviceModel;
 
 namespace AppFullStackDemo.Api.Controllers
 {

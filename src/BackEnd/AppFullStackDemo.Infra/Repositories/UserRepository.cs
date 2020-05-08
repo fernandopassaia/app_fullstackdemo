@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AppFullStackDemo.Domain.Commands.User;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Queries;
 using AppFullStackDemo.Domain.Repositories;
+using AppFullStackDemo.Domain.Results.User;
 using AppFullStackDemo.Infra.Context;
 using Microsoft.EntityFrameworkCore;
 

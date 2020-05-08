@@ -10,6 +10,7 @@ namespace AppFullStackDemo.Domain.Repositories
         void Create(Equipment equipment);
         void Update(Equipment equipment);
         Equipment GetById(Guid id);
+        IEnumerable<Equipment> GetEquipmentsEnt();
         IEnumerable<GetEquipmentResultResumed> GetEquipments();
         GetEquipmentResult GetEquipment(Guid id);
         IEnumerable<GetEquipmentResultResumed> GetEquipmentsByUser(Guid userId);

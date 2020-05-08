@@ -38,6 +38,21 @@ namespace AppFullStackDemo.Infra.Repositories
                 .FirstOrDefault(x => x.Id == id);
         }
 
+        public IEnumerable<Equipment> GetEquipmentsEnt()
+        {
+            var data = _context.Equipments
+               .Where(EquipmentQueries.GetAll())
+               .Include(p => p.DeviceModel.Manufacturer)
+               .Include(p => p.User)
+               .OrderBy(x => x.ApiLevelDesc)
+               .ToList();
+
+            if (data == null)
+                return null;
+
+            return data;
+        }
+
         public IEnumerable<GetEquipmentResultResumed> GetEquipments()
         {
             var data = _context.Equipments

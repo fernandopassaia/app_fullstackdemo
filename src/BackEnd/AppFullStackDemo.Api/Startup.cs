@@ -63,6 +63,7 @@ namespace AppFullStackDemo.Api
             services.AddTransient<EquipmentHandler, EquipmentHandler>();
             services.AddTransient<ManufacturerHandler, ManufacturerHandler>();
             services.AddTransient<UserHandler, UserHandler>();
+            services.AddTransient<DashBoardHandler, DashBoardHandler>();
 
             #endregion Config of Cors DependencyInjection
 
@@ -76,14 +77,6 @@ namespace AppFullStackDemo.Api
                 )
             );
 
-            // services.AddMvc();
-            // services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
-            // services.AddMvc().AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
-
-            // services.AddMvc()
-            //     .AddNewtonsoftJson(options =>
-            //     options.SerializerSettings.ContractResolver =
-            //     new CamelCasePropertyNamesContractResolver());
 
             services
                 .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
@@ -154,9 +147,6 @@ namespace AppFullStackDemo.Api
             app.UseCors("AppFullStackDemoCors");
             app.UseAuthentication();
             app.UseAuthorization();
-
-            //Here I'll call the Helper that generate mockdata test for the API
-
 
             app.UseEndpoints(endpoints =>
             {

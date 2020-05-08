@@ -1,5 +1,5 @@
 
-namespace AppFullStackDemo.Domain.Commands.Manufacturer
+namespace AppFullStackDemo.Domain.Results.Manufacturer
 {
     public class GetManufacturerResult
     {
