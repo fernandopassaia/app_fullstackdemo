@@ -67,7 +67,7 @@ Pattern (BaseCommandResult) for the Returns of the API on a Well-defined type
 
 Shared Project (classlib) for Field Formaters, Validations, Cryptografy
 
-Mock-DataCreator (Seed FakeData) to start the project with some test-data
+Mock-DataCreator to fill start-database with some test-data
 
 Unit-Tests for Commands, Queries, Repositories, Entities and Handlers
 
@@ -160,9 +160,9 @@ chooose your favorite :trollface:
 
 
 ### User to Access the App:
-During the Migration of the API will be created an User with some Devices just for test, you can use this user to
-login and create another users, or also to test the system. Or you can click "Register" and create a user. If you
-don't want it, comment the call for the method on startup.cs.
+You can start your app with some FakeData like a User, some Manufacturers, Devices, then you can see how system works and
+also login into panel. To do it: Open the "BackEnd > AppFullStackDemo.Tests > MockDataCreator > FakeDataCreator" and run
+the test. IMPORTANTE: You have to run the migration and create the database first. Then you could login with:
 
 Login: admin
 Password: admin

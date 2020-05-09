@@ -37,6 +37,13 @@ namespace AppFullStackDemo.Infra.Repositories
                 .FirstOrDefault(x => x.Id == id);
         }
 
+        public Manufacturer GetByDescription(string description)
+        {
+            return _context
+                .Manufacturers
+                .FirstOrDefault(x => x.Description == description);
+        }
+
         public IEnumerable<GetManufacturerResult> GetManufacturers()
         {
             var data = _context.Manufacturers

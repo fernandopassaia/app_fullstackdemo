@@ -13,7 +13,7 @@ namespace AppFullStackDemo.Domain.Commands.Equipment
         }
 
         public CreateEquipmentCommand(string androidId, string imei1, string imei2, string phoneNumber, string macAddress, string apiLevel,
-             string apiLevelDesc, string serialNumber, string systemName, string systemVersion, Guid deviceModelId, Guid userId)
+            string apiLevelDesc, string serialNumber, string systemName, string systemVersion, string manufacturer, string model, Guid userId)
         {
             AndroidId = androidId;
             Imei1 = imei1;
@@ -25,22 +25,24 @@ namespace AppFullStackDemo.Domain.Commands.Equipment
             SerialNumber = serialNumber;
             SystemName = systemName;
             SystemVersion = systemVersion;
-            DeviceModelId = deviceModelId;
+            Manufacturer = manufacturer;
+            Model = model;
             UserId = userId;
         }
 
-        public string AndroidId { get; private set; }
-        public string Imei1 { get; private set; }
-        public string Imei2 { get; private set; }
-        public string PhoneNumber { get; private set; }
-        public string MacAddress { get; private set; }
-        public string ApiLevel { get; private set; }
-        public string ApiLevelDesc { get; private set; }
-        public string SerialNumber { get; private set; }
-        public string SystemName { get; private set; }
-        public string SystemVersion { get; private set; }
-        public Guid DeviceModelId { get; private set; }
-        public Guid UserId { get; private set; }
+        public string AndroidId { get; set; }
+        public string Imei1 { get; set; }
+        public string Imei2 { get; set; }
+        public string PhoneNumber { get; set; }
+        public string MacAddress { get; set; }
+        public string ApiLevel { get; set; }
+        public string ApiLevelDesc { get; set; }
+        public string SerialNumber { get;  set; }
+        public string SystemName { get; set; }
+        public string SystemVersion { get; set; }
+        public string Manufacturer { get; set; }
+        public string Model { get; set; }
+        public Guid UserId { get; set; }
 
         public void Validate()
         {

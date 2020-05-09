@@ -15,11 +15,13 @@ namespace AppFullStackDemo.Domain.Handlers
         private readonly IEquipmentRepository _repository;
         private readonly IDeviceModelRepository _deviceModelRepository;
         private readonly IUserRepository _userRepository;
-        public EquipmentHandler(IEquipmentRepository repository, IDeviceModelRepository deviceModelRepository, IUserRepository userRepository)
+        private readonly IManufacturerRepository _manufacturerRepository;
+        public EquipmentHandler(IEquipmentRepository repository, IDeviceModelRepository deviceModelRepository, IUserRepository userRepository, IManufacturerRepository manufacturerRepository)
         {
             _repository = repository;
             _deviceModelRepository = deviceModelRepository;
             _userRepository = userRepository;
+            _manufacturerRepository = manufacturerRepository;
         }
 
         public IBaseCommandResult Handle(CreateEquipmentCommand command)
@@ -28,13 +30,24 @@ namespace AppFullStackDemo.Domain.Handlers
             if (command.Invalid)
                 return new BaseCommandResult(false, "Need to fix the errors on Equipment", command.Notifications);
 
-            var deviceModel = _deviceModelRepository.GetById(command.DeviceModelId);
-            if (deviceModel == null)
-                return new BaseCommandResult(false, "Device-Model not found", null);
-
             var user = _userRepository.GetById(command.UserId);
             if (user == null)
                 return new BaseCommandResult(false, "User not found", null);
+
+            //logic here: if manufacturer and/or model don't exists, i will create it and attach to equipment
+            var manufacturer = _manufacturerRepository.GetByDescription(command.Manufacturer);
+            if(manufacturer == null)
+            {
+                manufacturer = new Manufacturer(command.Manufacturer);
+                _manufacturerRepository.Create(manufacturer);                
+            }
+            
+            var deviceModel = _deviceModelRepository.GetByDescriptionAndManufacturer(command.Model, manufacturer);
+            if(deviceModel == null)
+            {
+                deviceModel = new DeviceModel(command.Model, manufacturer);
+                _deviceModelRepository.Create(deviceModel);
+            }
 
             var equipment = new Equipment(command.AndroidId, command.Imei1, command.Imei2, command.PhoneNumber, command.MacAddress,
             command.ApiLevel, command.ApiLevelDesc, command.SerialNumber, command.SystemName, command.SystemVersion, deviceModel, user);

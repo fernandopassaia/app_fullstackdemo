@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AppFullStackDemo.Domain.Commands.DeviceModel;
 using AppFullStackDemo.Domain.Entities;
 using AppFullStackDemo.Domain.Queries;
 using AppFullStackDemo.Domain.Repositories;
@@ -74,6 +73,14 @@ namespace AppFullStackDemo.Infra.Repositories
             return _context
                 .DeviceModels
                 .FirstOrDefault(x => x.Id == id);
+        }
+
+        public DeviceModel GetByDescriptionAndManufacturer(string description, Manufacturer manufacturer)
+        {
+            return _context
+                .DeviceModels
+                .Include(x => x.Manufacturer)
+                .FirstOrDefault(x => x.Description == description && x.Manufacturer == manufacturer);
         }
     }
 }

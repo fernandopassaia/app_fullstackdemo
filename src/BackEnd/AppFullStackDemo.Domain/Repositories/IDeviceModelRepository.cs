@@ -12,5 +12,6 @@ namespace AppFullStackDemo.Domain.Repositories
         GetDeviceModelResult GetDeviceModel(Guid id);
         IEnumerable<GetDeviceModelResult> GetDeviceModels();
         DeviceModel GetById(Guid id);
+        DeviceModel GetByDescriptionAndManufacturer(string description, Manufacturer manufacturer);
     }
 }

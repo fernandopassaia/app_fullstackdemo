@@ -10,6 +10,7 @@ namespace AppFullStackDemo.Domain.Repositories
         void Create(Manufacturer manufacturer);
         void Update(Manufacturer manufacturer);
         Manufacturer GetById(Guid id);
+        Manufacturer GetByDescription(string description);
         IEnumerable<GetManufacturerResult> GetManufacturers();
         GetManufacturerResult GetManufacturer(Guid id);
     }
