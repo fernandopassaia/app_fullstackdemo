@@ -54,7 +54,7 @@ namespace AppFullStackDemo.Domain.Handlers
 
             _repository.Create(equipment);
 
-            return new BaseCommandResult(true, "Equipment Saved with Success!", equipment);
+            return new BaseCommandResult(true, "Equipment Saved with Success!", new { Id = equipment.Id.ToString() });
         }
 
         public IBaseCommandResult Handle(Guid id)
