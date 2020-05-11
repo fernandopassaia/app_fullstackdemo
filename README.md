@@ -48,7 +48,7 @@ help-me to increase this App and make it better :)
 
 
 # 
-## BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
+### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
 
 * Rich Modeling (Models-Entities, Enums, ValueObjects) (read below for the Business Logic)
 * Api REST + Handlers to Deal with the Requests + Dependency Injection
@@ -63,7 +63,7 @@ help-me to increase this App and make it better :)
 * Unit-Tests for Commands, Queries, Repositories, Entities and Handlers
 * Note: DataBase can be Easily replaced (to Postgres, MySQL) once layers are very well separated.
 
-## FrontEnd Angular 9 + Angular Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
+### FrontEnd Angular 9 + Angular Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
 * Complete Panel to Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
 * Nice Interface using Angular Material, Modals, MatTable, Chartlist and more.
 * CQRS Models and Interfaces based on BackEnd (Commands and Results)
@@ -74,14 +74,13 @@ help-me to increase this App and make it better :)
 * Shared Services for Dialogs, Notification Messages, Modal Screens, Enum Description.
 * Auth Guard / Auth Interceptor to Deal Perfectly with the Tokens, Authentication, Headers (401/403).
 
-## Mobile React-Native + Device-Info:
+### Mobile React-Native + Device-Info:
 Login Screen that Will Communicate with the BackEnd for Auth and Store the JWT. Once Logged, MobileApp will
 allow user to add this device to the account with the Details of the Device (Imei, PhoneNumber, Serial,
 manufacturer, model). Once Registered, Device and it's info will appears on the Panel > User > Equipment list.
 
 
-# 
-## License and USE of this App in a RealWorld:
+## License and USE of this App in a RealWorld Scenario:
 Note: This App is FREE and FULL OpenSource. You can Use it as a base for your system, or you can also colaborate with me
 to improve it. In a REAL-WORLD, this App needs to be better planned:
 
@@ -99,7 +98,6 @@ of a Architecture, and start your own system under it, following the patterns al
 as a "skeleton" for your next Real-Software. Good luck :cake:
 
 
-# 
 ## How to RUN it and Technical Information:
 - You can Develop and Run it on Windows, Linux and MacOs.
 In My Machine: I've Used Linux Ubuntu 20.04 and VS Code as Code-Editor.
@@ -132,8 +130,7 @@ Password: admin
 ### Tutorial vídeos on Youtube:
 
 
-# 
-## Published ONLINE System - if you just want to see it as a user, not a developer:
+### Published ONLINE System - if you just want to see it as a user, not a developer:
 If you just want to **TEST** this system as a USER, without setting (or having) an envoirnment, we've published it
 **ONLINE**. This system is published and ONLINE for test with the same user account below. You can test the Panel,
 create an account for you, and also there's an APK that you can download, install on your device or an emulator, login
