@@ -1,47 +1,50 @@
-# app_fullstackdemo .NetCore DDD/SOLID/CQRS/ApiRest + Angular 8.2 Material + React Native MobileApp.
+# app_fullstackdemo .NetCore 3.1 DDD/SOLID/CQRS/ApiRest + Angular 9 Material Panel + React Native Mobile.
 * Note: This Documentation is also available in Portuguese PT. Scrool down for it.
 * Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app, check for links.
 * Note 3: We have this system published ONLINE, you can access and test it. Links also below.
-* Note 4: If you are just a BackEnd and/or WebDeveloper and don't want to deal with Mobile, you don't
-need it. React Native project is a small-bonus, but yeah, you can run and use the project without it.
+* Note 4: If you are just a BackEnd and/or WebDeveloper and don't want to deal with Mobile. You can get the
+parts you need, ignoring other folders/sources. You can run and use just the modules you want to.
 
-------------------------------------------------------------------------------------------------------------
-.NET Core BackEnd (With Rich Arquitecture) DDD/SOLID/CQRS + WebApi Rest.
-Web-Panel using Angular 8.2 Version with Material with Rich Arquitecture.
-Mobile App using React-Native.
 ------------------------------------------------------------------------------------------------------------
 
 ## Business Logic:
+How it works: WebPanel (Angular Material) and MobileApp (React Native) will have a Login-Screen, that will works
+with the BackEnd to Login - in case of Panel it will provide full-management for DashBoard + 3 CRUDS + List/Details
+screen. In the case of MobileApp you will be allowed to see details of Device, and register it on portal. Once
+registered, you'll see it on Panel linked to the logged-user (details of Device) and will interact to the Dashboard.
 
-How it works: WebPanel (Angular) and MobileApp (React) will have a Login-Screen, that will communicate with
-the backend, to login and then store the Token (JWT) with the Claims. Once Logged:
+:+1: (Note: Add a DIAGRAM explaining how system works)
 
-**MobileApp** can "register" the Device on backend, registering the Manufacturer (Motorola, LG, Samsung, Xiaomi),
-Model (S7, S8, S9, RedMi9, RedMi10), IMEI number and some other information. MobileApp will have a cool screen
-to show some important informations from Device. You could use your Real Device or also an Emulator (like 
-Android Studio or Genymotion) to test it. Once it's React Native, you can also work to compile on iPhone.
+**FrontEnd** Will have a LoginScreen, where user can click on "Register new user" and create a new user, or also login
+with an existing. Panel you will have a DashBoard (showing graphics with Number of Devices per AndroidVersion, and
+Number of Devices per Manufacturer). Users logged on Panel will be allowed to create another Users that can also Login
+into Panel and MobileApp. So the Users Screen will comes with a "CRUD" function to List, Create, Edit and Delete Users.
 
-**FrontEnd** Will have a LoginScreen, where user can click on "Register new user" or Login with existing user. On
-Panel you will have a DashBoard (showing graphics with Number of Devices per AndroidVersion, and Number of Devices
-per Manufacturer). Users logged on Panel will be allowed to create another Users that can also Login into Panel
-and MobileApp. So the Users Screen will comes with a "CRUD" function to List, Create, Edit and Delete Users.
+On UserScreen (List) will be a button to LIST all the Devices for that user (Device Details Screen). So when you Login
+in a Mobile Device, user can Register the Device, it will be available with Details on Panel. There will plus 2 screens
+to manage Manufacturer and DeviceModel. Once a Equipment belongs to a DeviceModel > A DeviceModel to a Manufacturer:
 
-On UserScreen (List) will be a button to LIST all the Devices for that user. So when you Login in a Mobile
-Device, user can Register the Device, it will be available with Details on Panel. Angular Panel is also ready to
-work with the Token, with an Interceptor Layer to Deal with 401/403 codes, show good messages, alerts, ballon
-messages, modals and a lot of cool things with a nice Material-Interface.
+Manufacturer: Samsung. DeviceModels: Galaxy S8, Galaxy S9, Galaxy S10, Galaxy Note 8, Galaxy Note 9.
+Manufacturer: Xiaomi. Device Models: Mi8, Mi9, Mi10, Redmi8, Redmi 9, Mi Max 2, Mix Max3, Mi Mix2.
 
-**BackEnd** will manage Automatically the Manufacturers > Models of devices. So new Manufacturers and new models
-will be generate by the BackEnd, attaching the Device to the Right "relationship". So basically: A Device will
-belong to a Model, and a Model will belong to a Manufacturer. One Manufacturer has N Models, One Model has
-N devices. This relationships will be generated on Entities, and also, replicated by EF on Database.
+BackEnd will automatically handle it, looking for the Model and Manufacturer, and creating it IF does not exists, or
+attach the new Equipment to an existing Manufacturer>Model. Angular Panel is also ready to work with the Token, with an
+Interceptor Layer to Deal with 401/403 codes, show good messages, alerts, ballon messages, modals and a lot of cool 
+things with a nice Material-Interface.
 
-The Screen on Panel to Manage (CRUD) this Manufacturers > Models will also be Available. So we have at least
-3 Cruds: Users, Manufacturers and Models. And more + screen for Devices (List and Details) - also available.
+**BackEnd** BackEnd will provide an API to support Mobile/Panel apps. All the "Brain" of the App: The Business Logic,
+Entities, the Database layers, API, Services/Handlers, will be here. **Under the hood**: The BackEnd .NET Core with
+RichArchitecture DDD/SOLID will be running providing all this data for both apps.
 
-**Under the hood**: The BackEnd .NET Core with RichArchitecture will be running providing all this data for both apps.
+**MobileApp** can "register" the Device on backend - informing to backend the Manufacturer, Model, Phone Number,
+Serial Number, IMEI and some other information. You could use your Real Device or also an Emulator (like Android 
+Studio or Genymotion) to test it. Once it's React Native and you have a Mac - you can work on it to compile it for iOS.
 
-:+1: (Note: Add some PrintScreens of App Here) :shipit: (ALSO CREATE A DIAGRAM EXPLAINING IT)
+Note that MobileApp is a "bônus": This App will basically just list some information about the Device, and allow this
+device to be registered on the backend, that will appears on the Panel. I'm not a React Native developer, so you can
+help-me to increase this App and make it better :)
+
+:+1: (Note: Add some PrintScreens of App Here)
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -49,59 +52,38 @@ The Screen on Panel to Manage (CRUD) this Manufacturers > Models will also be Av
 
 ### .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
 
-Rich Modeling (Models-Entities, Enums, ValueObjects) (read below for the Business Logic)
-
-Api REST + Handlers to Deal with the Requests + Dependency Injection
-
-JWT Token to Auth Parts + Claims + JSON to Data
-
-Handler Layer (you can also call it as "Service") to "orchestrate" the requests
-
-Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
-
-CQRS to Receive Queries and Comands and Return Results
-
-Validation by Contracts on Commands (Fail-Fast Validations)
-
-Pattern (BaseCommandResult) for the Returns of the API on a Well-defined type
-
-Shared Project (classlib) for Field Formaters, Validations, Cryptografy
-
-Mock-DataCreator to fill start-database with some test-data
-
-Unit-Tests for Commands, Queries, Repositories, Entities and Handlers
-
+* Rich Modeling (Models-Entities, Enums, ValueObjects) (read below for the Business Logic)
+* Api REST + Handlers to Deal with the Requests + Dependency Injection
+* JWT Token to Auth Parts + Claims + JSON to Data
+* Handler Layer (you can also call it as "Service") to "orchestrate" the requests
+* Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
+* CQRS to Receive Queries and Comands and Return Results
+* Validation by Contracts on Commands (Fail-Fast Validations)
+* Pattern (BaseCommandResult) for the Returns of the API on a Well-defined type
+* Shared Project (classlib) for Field Formaters, Validations, Cryptografy
+* Mock-DataCreator to fill start-database with some test-data
+* Unit-Tests for Commands, Queries, Repositories, Entities and Handlers
 * Note: DataBase can be Easily replaced (to Postgres, MySQL) once layers are very well separated.
 
 ## FrontEnd:
 
-### Angular 8 + Angular Material Panel + Login + Auth + 3 Full-CRUDS:
-
-Complete Panel to Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
-
-Nice Interface using Angular Material, Modals, MatTable, Chartlist and more...
-
-CQRS Models and Interfaces based on BackEnd (Queries, Commands and Results)
-
-Layer for the Services and API Communication - Capable to Catch Results and Display Messages (and backend-errors)
-without programming separated code to catch messages for each service/screen (httpinterceptor).
-
-Separated Modules and Rotes Files for better Organization.
-
-Shared Services for Dialogs, Notification Messages, Modal Screens, Enum Description.
-
-Capability to catch BaseCommandResult and show good message or array of errors from BackEnd.
-
-Auth Guard / Auth Interceptor to Deal Perfectly with the Tokens, Authentication, Headers (401/403).
+### Angular 9 + Angular Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
+* Complete Panel to Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
+* Nice Interface using Angular Material, Modals, MatTable, Chartlist and more.
+* CQRS Models and Interfaces based on BackEnd (Commands and Results)
+* Layer for the Services and API Communication - Capable to Catch Results and Display Messages (like
+  good result or list of validation-errors) coming from the backend (you'll not need to catch on each
+  service or screen the messages to display to user what happens) (httpinterceptor)
+* Separated Modules and Rotes Files for better Organization.
+* Shared Services for Dialogs, Notification Messages, Modal Screens, Enum Description.
+* Auth Guard / Auth Interceptor to Deal Perfectly with the Tokens, Authentication, Headers (401/403).
 
 ## Mobile:
 
 ### React-Native + Device-Info:
-
-Login Screen that Will Communicate with the BackEnd for Auth and Store the JWT.
-
-DashBoard to Show the Device Basic Information about the Device (Brand, Model, Android Version, Device Id):
-DashBoard will also add the Device to the BackEnd, so the Panel will display a List of Devices per Users.
+Login Screen that Will Communicate with the BackEnd for Auth and Store the JWT. Once Logged, MobileApp will
+allow user to add this device to the account with the Details of the Device (Imei, PhoneNumber, Serial,
+manufacturer, model). Once Registered, Device and it's info will appears on the Panel > User > Equipment list.
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -118,12 +100,12 @@ and go on and on - lot of other things to use this app in a Real-scenario. We ne
 REAL-WORLD-Scenario of Real-Business needs Logic.
 
 But for now: Remember that this app is a "demo" of Programming, Architecture and Techinical Skills - NOT a demo of
-Real-World App. So we will keep the business-stuff simple to Focus on Techinical stuff. Anyway, you can use it as a
+Real-World App. So we will keep the business-stuff simple to Focus on Technical stuff. Anyway, you can use it as a
 BASE of a Architecture, and start your own system under it, following the patterns already implemented on it. You can
 use it as a "skeleton" for your next Real-Software. Good luck :cake:
 
 **Note about the CLAIMS**: System comes with a Claim Table and have 5 base claims: dashboard, manufacturer, devicemodel,
-user and equipment. The "right" way to implement it should be granulated (user.list, user.create, user.edit) and
+user and equipment. The "better" way to implement it should be granulated (user.list, user.create, user.edit) and
 the system needs a Screen to Edit the Claims, and a way to "link" the User to the Claims. In my personal opinion
 system should have "Profiles" (like Master, Admin, Users...) and user will receive claims based on a Profile.
 
@@ -135,55 +117,56 @@ will have all accesses. Anyway, if you want to test a "forbidden" and Angular In
 **Note about the Template**: I've used a Ready-Template from internet. So basically most of the things, html/css code
 comes from it. Part of items i've done (like modals, messages, some designs), installed and configured components.
 The Template comes with no code to integrate to backend, no services, no interceptor, auth, nothing at all. Just
-clean Design-Material template.
+clean Design-Material template. I'm not a Designer, so i have to use a ready-to-go template to go-ahead with Panel.
 
 ------------------------------------------------------------------------------------------------------------
 
 ## How to RUN it and Technical Information:
-
 - You can Develop and Run it on Windows, Linux and MacOs.
-In My Machine: I've Used Linux Ubuntu 18.04 and VS Code as Code-Editor. In My Repository there's a project
-called **docsamples** and inside it **generaldocs**. I use it as my own-manual to configure my envoirment, so
-inside "vscode" you'll find witch EXTENSIONS i use, witch FONTS and also my "settings.json". There are other
-files and folders on "generaldocs" for my Angular Env, my React-Native, .Net Core, GitHub with the main
-commands i use and a lot of other useful informations.
+In My Machine: I've Used Linux Ubuntu 20.04 and VS Code as Code-Editor.
 
-I also use "Insomnia" to TEST API, but you can use Postman or if you prefer, install some integrated tool
-like Swagger. I also use "Azure Data Studio" to check the DataBase in case of need. Note: I've also tested
-all this APP and Envoirment using Windows 10 and it also works perfect, also in VS Community 2019. Basically
-chooose your favorite :trollface:
+If you want to know how do i configure my Linux Envoirnment: VSCode, extensions, the fonts i use, the system variables
+of my envoirnment and how to i configure then, the packages i use: I have it in a documented way. Please take a look
+to my repo called **docsamples** and inside it **generaldocs**. You'll see files and folders for .Net Core, VsCode,
+Angular, React Native - this are my references and the things i use to work in these languages.
 
-### Tutorial vídeos on Youtube:
-(1) How to Prepare your Envoirment and Machine: 
-(2) How to RUN this App and How it Works:
-(3) Technical Explanation - understanding what's under the Hood:
+I also use "Insomnia" to TEST API, but you can use Postman or if you prefer, install some integrated tool like Swagger.
+I also use "Azure Data Studio" to check the DataBase in case of need. Note: I've also tested all this APP and Envoirment
+using Windows 10 and it also works perfect, also in VS Community 2019. Basically chooose your favorite :trollface:
 
+## How to Run the BackEnd:
+**Note**: SQLServer Connection string for the BackEnd is on "BackEnd>AppFullStackDemo.Api>appsettins.json", so please
+set-up your SQL Connection Server info before try to RUN the APP.
 
-### User to Access the App:
-You can start your app with some FakeData like a User, some Manufacturers, Devices, then you can see how system works and
-also login into panel. To do it: Open the "BackEnd > AppFullStackDemo.Tests > MockDataCreator > FakeDataCreator" and run
-the test. IMPORTANTE: You have to run the migration and create the database first. Then you could login with:
+**Creating FakeMockData**:
+You can start your app with some FakeMockData like a User, some Manufacturers, Devices, then you can see how it works,
+login into panel. To do it you just need to run a TEST: Open the "BackEnd > AppFullStackDemo.Tests > MockDataCreator > 
+FakeDataCreator" and run the test. IMPORTANT: You have to run the migration and create the DB first. Then login with:
 
 Login: admin
 Password: admin
 
-If you just want to **TEST** this system as a USER, without setting (or having) an envoirnment, we published it
+## How to Run the FrontEnd:
+
+## How to Run the Mobile:
+
+### Tutorial vídeos on Youtube:
+
+------------------------------------------------------------------------------------------------------------
+## Published ONLINE System - if you just want to see it as a user, not a developer:
+If you just want to **TEST** this system as a USER, without setting (or having) an envoirnment, we've published it
 **ONLINE**. This system is published and ONLINE for test with the same user account below. You can test the Panel,
-and you can also test the APK file by installing it on your own Mobile or even an Emulator. Feel free at:
+create an account for you, and also there's an APK that you can download, install on your device or an emulator, login
+and see it working. Feel free at:
 
 www.futuradata.com.br/appfullstackdemo/panel (login on panel to see AngularApp)
 www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device)
 www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)
 
-
-## How to RUN it OUT of the Docker Containner (100% on local operational system):
-
-## (1) BackEnd:
-**Note**: SQLServer Connection string for the BackEnd is on "BackEnd>AppFullStackDemo.Api>appsettins.json", so please
-set-up your SQL Connection Server info before try to RUN the APP.
-
-## How to RUN it with the Docker-Compose integrated Envoirnment:
+------------------------------------------------------------------------------------------------------------
+## TO-DO:
+## Docker-Compose and integrated Envoirnment:
 Note: Need to be done on Future. Once i don't know (even if it's possible) to encapsulate inside a Containner the
 "React Native" (Mobile) part. Once app needs to Run on Machine (to access the Device and install the APK), i don't
 know how to make it runs inside a docker and make it automatically. Maybe it's possible to run "npm start" and 
-"react-native run-android" inside the docker containner and install on local mobile. Well, to be checked...
+"react-native run-android" inside the docker containner and install on local mobile. Well, to be checked/done...

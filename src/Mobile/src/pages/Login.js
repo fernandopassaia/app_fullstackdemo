@@ -9,8 +9,7 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-  ImageBackground,
-  Alert,
+  ImageBackground
 } from "react-native";
 import AuthService from "../services/auth.service";
 import acwp from "../assets/acwp.jpg";
@@ -18,7 +17,7 @@ import LoginUserCommand from "../commands/user/LoginUserCommand.model";
 import AsyncStorage from "@react-native-community/async-storage";
 
 export default function Login({ navigation }) {
-  const [usernameOrEmail, setUsernameOrEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [btnLoginText, setBtnLoginText] = useState("Autenticar");
   const [btnLoginStatus, setBtnLoginStatus] = useState(false);
@@ -32,7 +31,7 @@ export default function Login({ navigation }) {
     setBtnLoginStatus(true);
     setBtnLoginText("Please wait...");
     const loginUserCommand = new LoginUserCommand();
-    loginUserCommand.UsernameOrEmail = usernameOrEmail;
+    loginUserCommand.Username = username;
     loginUserCommand.Password = password;
 
     const ret = await authService.handleLogin(loginUserCommand);
@@ -44,7 +43,6 @@ export default function Login({ navigation }) {
 
   async function testApi() {
     const msg = await authService.testApi();
-    console.log("Mensagem:", msg.data);
   }
 
   async function checkTokenAndGoToDashboard() {
