@@ -138,8 +138,8 @@ If you just want to **TEST** this system as a USER, without setting (or having) 
 create an account for you, and also there's an APK that you can download, install on your device or an emulator, login
 and see it working. Feel free at:
 
-<li>www.futuradata.com.br/appfullstackdemo/panel (login on panel to see AngularApp)</li>
-<li>www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device)</li>
+<li>www.futuradata.com.br/appfullstackdemo/panel (Angular Panel - Login/Pass: admin > admin</li>
+<li>www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device, same login)</li>
 <li>www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)</li>
 
 # 
