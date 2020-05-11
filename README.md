@@ -63,7 +63,7 @@ help-me to increase this App and make it better :)
 * Unit-Tests for Commands, Queries, Repositories, Entities and Handlers
 * Note: DataBase can be Easily replaced (to Postgres, MySQL) once layers are very well separated.
 
-### FrontEnd Angular 9 + Angular Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
+### FrontEnd Angular 9 + Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
 * Complete Panel to Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
 * Nice Interface using Angular Material, Modals, MatTable, Chartlist and more.
 * CQRS Models and Interfaces based on BackEnd (Commands and Results)
@@ -138,7 +138,7 @@ If you just want to **TEST** this system as a USER, without setting (or having) 
 create an account for you, and also there's an APK that you can download, install on your device or an emulator, login
 and see it working. Feel free at:
 
-<li>www.futuradata.com.br/appfullstackdemo/panel (Angular Panel - Login/Pass: admin > admin</li>
+<li>www.futuradata.com.br/appfullstackdemo/panel (Angular Panel - Login/Pass: admin > admin)</li>
 <li>www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device, same login)</li>
 <li>www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)</li>
 
