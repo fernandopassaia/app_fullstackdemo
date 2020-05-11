@@ -1,4 +1,4 @@
-### app_fullstackdemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
+### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
 ### Angular 9 Material Panel + React Native Mobile.
 
 * Note: This Documentation is also available in Portuguese PT. Scrool down for it.
@@ -104,8 +104,8 @@ In My Machine: I've Used Linux Ubuntu 20.04 and VS Code as Code-Editor.
 
 If you want to know how do i configure my Linux Envoirnment: VSCode, extensions, the fonts i use, the system variables
 of my envoirnment and how to i configure then, the packages i use: I have it in a documented way. Please take a look
-to my repo called **docsamples** and inside it **generaldocs**. You'll see files and folders for .Net Core, VsCode,
-Angular, React Native - this are my references and the things i use to work in these languages.
+to my repo called **docsamples > generaldocs**. You'll see files and folders for .Net Core, VsCode, Angular, React 
+Native - this are my references and the things i use to work in these languages.
 
 I also use "Insomnia" to TEST API, but you can use Postman or if you prefer, install some integrated tool like Swagger.
 I also use "Azure Data Studio" to check the DataBase in case of need. Note: I've also tested all this APP and Envoirment
@@ -139,9 +139,9 @@ If you just want to **TEST** this system as a USER, without setting (or having) 
 create an account for you, and also there's an APK that you can download, install on your device or an emulator, login
 and see it working. Feel free at:
 
-www.futuradata.com.br/appfullstackdemo/panel (login on panel to see AngularApp)
-www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device)
-www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)
+<li>www.futuradata.com.br/appfullstackdemo/panel (login on panel to see AngularApp)</li>
+<li>www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device)</li>
+<li>www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)</li>
 
 # 
 ### Additional Info:
