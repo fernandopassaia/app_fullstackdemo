@@ -1,6 +1,5 @@
 ### app_fullstackdemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
-### Angular 9 Material Panel
-### React Native Mobile.
+### Angular 9 Material Panel + React Native Mobile.
 
 * Note: This Documentation is also available in Portuguese PT. Scrool down for it.
 * Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app, check for links.
@@ -8,9 +7,8 @@
 * Note 4: If you are just a BackEnd and/or WebDeveloper and don't want to deal with Mobile. You can get the parts you
 need, ignoring other folders/sources. You can run and use just the modules you want to.
 
-
 # 
-## Business Logic:
+### Business Logic:
 How it works: WebPanel (Angular Material) and MobileApp (React Native) will have a Login-Screen, that will works with the
 BackEnd to Login - in case of Panel it will provide full-management for DashBoard + 3 CRUDS + List/Details screen. In the
 case of MobileApp you will be allowed to see details of Device, and register it on portal. Once registered, you'll see it
@@ -49,7 +47,6 @@ help-me to increase this App and make it better :)
 
 :+1: (Note: Add some PrintScreens of App Here)
 
-
 # 
 ### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
 
@@ -82,8 +79,8 @@ Login Screen that Will Communicate with the BackEnd for Auth and Store the JWT. 
 allow user to add this device to the account with the Details of the Device (Imei, PhoneNumber, Serial,
 manufacturer, model). Once Registered, Device and it's info will appears on the Panel > User > Equipment list.
 
-
-## License and USE of this App in a RealWorld Scenario:
+# 
+### License and USE of this App in a RealWorld Scenario:
 Note: This App is FREE and FULL OpenSource. You can Use it as a base for your system, or you can also colaborate with me
 to improve it. In a REAL-WORLD, this App needs to be better planned:
 
@@ -100,8 +97,8 @@ Real-World App. So we will keep the business-stuff simple to Focus on Technical 
 of a Architecture, and start your own system under it, following the patterns already implemented on it. You can use it
 as a "skeleton" for your next Real-Software. Good luck :cake:
 
-
-## How to RUN it and Technical Information:
+# 
+### How to RUN it and Technical Information:
 - You can Develop and Run it on Windows, Linux and MacOs.
 In My Machine: I've Used Linux Ubuntu 20.04 and VS Code as Code-Editor.
 
@@ -127,12 +124,15 @@ Login: admin
 Password: admin
 
 ### How to Run the FrontEnd:
+Add information about run the Angular project here.
 
 ### How to Run the Mobile:
+Add information about run the Mobile project here.
 
 ### Tutorial vídeos on Youtube:
+Add Links to the youtube tutorials here.
 
-
+# 
 ### Published ONLINE System - if you just want to see it as a user, not a developer:
 If you just want to **TEST** this system as a USER, without setting (or having) an envoirnment, we've published it
 **ONLINE**. This system is published and ONLINE for test with the same user account below. You can test the Panel,
@@ -143,9 +143,8 @@ www.futuradata.com.br/appfullstackdemo/panel (login on panel to see AngularApp)
 www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device)
 www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)
 
-
 # 
-## Additional Info:
+### Additional Info:
 **Note about the CLAIMS**: System comes with a Claim Table and have 5 base claims: dashboard, manufacturer, devicemodel,
 user and equipment. The "better" way to implement it should be granulated (user.list, user.create, user.edit) and
 the system needs a Screen to Edit the Claims, and a way to "link" the User to the Claims. In my personal opinion
@@ -161,9 +160,8 @@ comes from it. Part of items i've done (like modals, messages, some designs), in
 The Template comes with no code to integrate to backend, no services, no interceptor, auth, nothing at all. Just
 clean Design-Material template. I'm not a Designer, so i have to use a ready-to-go template to go-ahead with Panel.
 
-
 # 
-## TO-DO:
+### TO-DO:
 ### Docker-Compose and integrated Envoirnment:
 Note: Need to be done on Future. Once i don't know (even if it's possible) to encapsulate inside a Containner the
 "React Native" (Mobile) part. Once app needs to Run on Machine (to access the Device and install the APK), i don't
