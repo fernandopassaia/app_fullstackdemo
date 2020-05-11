@@ -99,8 +99,7 @@ as a "skeleton" for your next Real-Software. Good luck :cake:
 
 # 
 ### How to RUN it and Technical Information:
-- You can Develop and Run it on Windows, Linux and MacOs.
-In My Machine: I've Used Linux Ubuntu 20.04 and VS Code as Code-Editor.
+You can Develop and Run it on Windows, Linux and MacOs. In My Machine: I've Used Linux Ubuntu 20.04 and VS Code :)
 
 If you want to know how do i configure my Linux Envoirnment: VSCode, extensions, the fonts i use, the system variables
 of my envoirnment and how to i configure then, the packages i use: I have it in a documented way. Please take a look
@@ -120,8 +119,8 @@ You can start your app with some FakeMockData like a User, some Manufacturers, D
 login into panel. To do it you just need to run a TEST: Open the "BackEnd > AppFullStackDemo.Tests > MockDataCreator > 
 FakeDataCreator" and run the test. IMPORTANT: You have to run the migration and create the DB first. Then login with:
 
-Login: admin
-Password: admin
+<li>Login: admin</li>
+<li>Password: admin</li>
 
 ### How to Run the FrontEnd:
 Add information about run the Angular project here.
