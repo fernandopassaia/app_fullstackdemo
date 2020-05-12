@@ -133,9 +133,10 @@ FakeDataCreator" and run the test. IMPORTANT: You have to run the migration and 
 The MockDataCreator will generate the First LOGIN, that you can use on Panel/Mobile to Login. Then login with:
 <li>Login: admin</li>
 <li>Password: admin</li>
-<br />
-Then, on the ".Api" folder run the command: dotnet run
-<br />
+
+Then, on the ".Api" folder run the command: 
+<li>dotnet run</li>
+
 The Api should start. If you see it running on PORT 4001, well done. BackEnd is ready to go.
 
 
@@ -143,19 +144,19 @@ The Api should start. If you see it running on PORT 4001, well done. BackEnd is 
 Inside FrontEnd folder go to "src > app > app.api.ts". You'll need to setup your IP connection (replace 192.168.1.10).
 To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Then inside FrontEnd folder:
 
-ng serve --o
+<li>ng serve --o</li>
 
 ### How to Run the Mobile:
 Inside Mobile folder go to "src > services > api.js". You'll need to setup your IP connection (replace 192.168.1.10).
 To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Then inside Mobile folder:
 
-react-native run-android
+<li>react-native run-android</li>
 
 (note: you'll need to setup your envoirnment and have a Device or Emulator running)
 
 ### Tutorial vídeos on Youtube:
-I've recorded some videos also showing you how to Configure your Envoirnment and Run this App. Just go to these links:
-
+I've recorded some videos also showing you how to Configure your Envoirnment and Run this App. Just go to these channel:
+<li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
 # 
 ### Published ONLINE System - if you just want to see it as a user, not a developer:
