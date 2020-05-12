@@ -30,7 +30,7 @@ namespace AppFullStackDemo.Api.Controllers
 
         [HttpPost]
         [Route("v1")]
-        [Authorize(Roles = "equipment")]
+        //[Authorize(Roles = "equipment")]
         public async Task<IActionResult> Post([FromBody] CreateEquipmentCommand command)
         {
             var result = _handler.Handle(command);
