@@ -118,25 +118,43 @@ I also use "Azure Data Studio" to check the DataBase in case of need. Note: I've
 using Windows 10 and it also works perfect, also in VS Community 2019. Basically chooose your favorite :trollface:
 
 ### How to Run the BackEnd:
-**Note**: SQLServer Connection string for the BackEnd is on "BackEnd>AppFullStackDemo.Api>appsettins.json", so please
-set-up your SQL Connection Server info before try to RUN the APP.
+SQLServer Connection string for the BackEnd is on "BackEnd>AppFullStackDemo.Api>appsettins.json", so please set-up your
+SQL Connection Server info before try to RUN the APP. If the connectionstring does not exists on this file, EF will use
+the Default string on "AppFullStackDemoContext.cs".
+
+After setup your connectionstring, enter on ".Infra" folder and RUN the migration command:
+dotnet ef --startup-project ../AppFullStackDemo.Api/ database update
 
 **Creating FakeMockData**:
 You can start your app with some FakeMockData like a User, some Manufacturers, Devices, then you can see how it works,
 login into panel. To do it you just need to run a TEST: Open the "BackEnd > AppFullStackDemo.Tests > MockDataCreator > 
-FakeDataCreator" and run the test. IMPORTANT: You have to run the migration and create the DB first. Then login with:
+FakeDataCreator" and run the test. IMPORTANT: You have to run the migration and create the DB first.
 
+The MockDataCreator will generate the First LOGIN, that you can use on Panel/Mobile to Login. Then login with:
 <li>Login: admin</li>
 <li>Password: admin</li>
 
+Then, on the ".Api" folder run the command: dotnet run
+The Api should start. If you see it running on PORT 4001, well done. BackEnd is ready to go.
+
+
 ### How to Run the FrontEnd:
-Add information about run the Angular project here.
+Inside FrontEnd folder go to "src > app > app.api.ts". You'll need to setup your IP connection (replace 192.168.1.10).
+To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Then inside FrontEnd folder:
+
+ng serve --o
 
 ### How to Run the Mobile:
-Add information about run the Mobile project here.
+Inside Mobile folder go to "src > services > api.js". You'll need to setup your IP connection (replace 192.168.1.10).
+To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Then inside Mobile folder:
+
+react-native run-android
+
+(note: you'll need to setup your envoirnment and have a Device or Emulator running)
 
 ### Tutorial vídeos on Youtube:
-Add Links to the youtube tutorials here.
+I've recorded some videos also showing you how to Configure your Envoirnment and Run this App. Just go to these links:
+
 
 # 
 ### Published ONLINE System - if you just want to see it as a user, not a developer:
