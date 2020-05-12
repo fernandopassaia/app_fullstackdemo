@@ -6,9 +6,11 @@ import {
   Button,
   View,
   Text,
+  Image,
   StyleSheet,
   PermissionsAndroid,
 } from "react-native";
+import fullstackicon from "../assets/fullstackicon.png";
 import AsyncStorage from "@react-native-community/async-storage";
 
 export default function Dashboard({
@@ -18,13 +20,15 @@ export default function Dashboard({
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userId, setUserId] = useState("");
+  const [equipId, setEquipId] = useState(""); //BackEnd
 
   useEffect(() => {
     async function loadUser() {
-      setEmployeeName(await AsyncStorage.getItem("appFullStackDemoTK"));
-      setEmployeeEmail(await AsyncStorage.getItem("appFullStackDemoUN"));
-      setCompanyName(await AsyncStorage.getItem("appFullStackDemoEM"));
-      setCompanyLogoUrl(await AsyncStorage.getItem("appFullStackDemoUI"));
+      setToken(await AsyncStorage.getItem("appFullStackDemoTK"));
+      setUserName(await AsyncStorage.getItem("appFullStackDemoUN"));
+      setUserEmail(await AsyncStorage.getItem("appFullStackDemoEM"));
+      setUserId(await AsyncStorage.getItem("appFullStackDemoUI"));
+      setEquipId(await AsyncStorage.getItem("appFullStackDemoEQ"));
       await requestReadPhoneStatePermission();
     }
     loadUser();
@@ -56,29 +60,28 @@ export default function Dashboard({
     }
   }
 
-
   return (
     <View style={styles.form}>
-      
+      <Image
+        style={styles.thumbnail}
+        source={fullstackicon}
+      />
       <Text> </Text>
-      <Text>User: {userName}</Text>
-      <Text>UserId: {userId} </Text>
+      <Text>User: {userName}</Text>      
       <Text>Email: {userEmail}</Text>
+      <Text>UserId: {userId} </Text>
+      <Text>EquipId: {equipId}</Text>
       <Text> </Text>
 
       <Button
-        title="Device Information"
+        title="Device Info & Registration"
         onPress={requisitarPermissoesNavegarSaveDevice}
         titleStyle={{
           color: "#d6621a",
         }}
         type="clear"
       />
-
       <Text></Text>
-      {verifyIfDeviceRegistered()}
-      <Text></Text>
-
     </View>
   );
 }
@@ -94,7 +97,7 @@ const styles = StyleSheet.create({
   },
   thumbnail: {
     width: 220,
-    height: 60,
+    height: 160,
     resizeMode: "cover",
     borderRadius: 2,
     alignContent: "center",

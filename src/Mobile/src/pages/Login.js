@@ -69,8 +69,8 @@ export default function Login({ navigation }) {
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
-            value={usernameOrEmail}
-            onChangeText={setUsernameOrEmail}
+            value={username}
+            onChangeText={setUsername}
           />
 
           <TextInput
