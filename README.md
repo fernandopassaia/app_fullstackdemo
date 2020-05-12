@@ -123,7 +123,7 @@ SQL Connection Server info before try to RUN the APP. If the connectionstring do
 the Default string on "AppFullStackDemoContext.cs".
 
 After setup your connectionstring, enter on ".Infra" folder and RUN the migration command:
-dotnet ef --startup-project ../AppFullStackDemo.Api/ database update
+<li>dotnet ef --startup-project ../AppFullStackDemo.Api/ database update</li>
 
 **Creating FakeMockData**:
 You can start your app with some FakeMockData like a User, some Manufacturers, Devices, then you can see how it works,
