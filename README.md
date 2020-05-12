@@ -13,8 +13,6 @@ BackEnd to Login - in case of Panel it will provide full-management for DashBoar
 case of MobileApp you will be allowed to see details of Device, and register it on portal. Once registered, you'll see it
 on Panel linked to the logged-user (details of Device) and will interact to the Dashboard.
 
-:+1: (Note: Add a DIAGRAM explaining how system works)
-
 **FrontEnd** Will have a LoginScreen, where user can click on "Register new user" and create a new user, or also login
 with an existing. Panel you will have a DashBoard (showing graphics with Number of Devices per AndroidVersion, and 
 number of devices per Manufacturer). Users logged on Panel will be allowed to create another Users that can also Login
@@ -44,7 +42,17 @@ Note that MobileApp is a "bônus": This App will basically just list some inform
 device to be registered on the backend, that will appears on the Panel. I'm not a React Native developer, so you can
 help-me to increase this App and make it better :)
 
-:+1: (Note: Add some PrintScreens of App Here)
+![Login Panel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel1.png)
+
+![Register Page](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel2.png)
+
+![DashBoard](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel3.png)
+
+![DashBoard2](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel4.png)
+
+![UpdateDeviceModel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel5.png)
+
+![UserCrud](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel6.png)
 
 # 
 ### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
