@@ -25,7 +25,7 @@ namespace AppFullStackDemo.Tests.MockDataCreator
                     new User("Created by loadFakeData",
                     new Name("Admin", "SystemAdmin"),
                     new Document("33557788-9", "55448899"),
-                    new Phone("36-555-777", "", "", ""),
+                    new Phone("3699955566", "", "", ""),
                     new Email("admin@appfullstackdemo.com"),
                     new Address("Street Api", "12", "Solid Village", "City of NetCore", "7788"),
                     new UserAccount("admin", "admin")

@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>{{service.form.controls['Id'].value?"Atualizar Dispositivo":"Novo Dispositivo"}}</span>
+  <span>{{service.form.controls['Id'].value?"Update DeviceModel":"New DeviceModel"}}</span>
   <span class="fill-remaining-space"></span>
   <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1">
     <mat-icon>close</mat-icon>
@@ -35,7 +35,7 @@
 
         <div class="button-row">
           <button mat-raised-button color="primary" type="submit"
-            [disabled]="service.form.invalid">{{service.form.controls['Id'].value?"Salvar":"Criar"}}</button>
+            [disabled]="service.form.invalid">{{service.form.controls['Id'].value?"Update":"Create"}}</button>
           <button mat-raised-button color="warn" *ngIf="!service.form.controls['Id'].value"
             (click)="onClear()">Clear</button>
         </div>

@@ -60,7 +60,7 @@ export class UserListComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '80%';
-    dialogConfig.height = '32%';
+    dialogConfig.height = '60%';
     this.dialog.afterAllClosed.subscribe(data => { this.loadData(); });
     this.dialog.open(UserCuComponent, dialogConfig);
   }
@@ -72,7 +72,7 @@ export class UserListComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '80%';
-    dialogConfig.height = '32%';
+    dialogConfig.height = '60%';
     this.dialog.afterAllClosed.subscribe(data => { this.loadData(); });
     this.dialog.open(UserCuComponent, dialogConfig);
   }
