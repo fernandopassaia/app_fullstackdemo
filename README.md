@@ -124,7 +124,7 @@ the Default string on "AppFullStackDemoContext.cs".
 
 After setup your connectionstring, enter on ".Infra" folder and RUN the migration command:
 <li>dotnet ef --startup-project ../AppFullStackDemo.Api/ database update</li>
-
+<br />
 **Creating FakeMockData**:
 You can start your app with some FakeMockData like a User, some Manufacturers, Devices, then you can see how it works,
 login into panel. To do it you just need to run a TEST: Open the "BackEnd > AppFullStackDemo.Tests > MockDataCreator > 
@@ -133,8 +133,9 @@ FakeDataCreator" and run the test. IMPORTANT: You have to run the migration and 
 The MockDataCreator will generate the First LOGIN, that you can use on Panel/Mobile to Login. Then login with:
 <li>Login: admin</li>
 <li>Password: admin</li>
-
+<br />
 Then, on the ".Api" folder run the command: dotnet run
+<br />
 The Api should start. If you see it running on PORT 4001, well done. BackEnd is ready to go.
 
 
