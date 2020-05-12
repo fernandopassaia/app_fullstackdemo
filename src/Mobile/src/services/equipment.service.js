@@ -7,12 +7,14 @@ export default class EquipmentService {
     constructor() {
     }
 
-    async saveEquipment(createEquipmentCommand) {
+    async saveEquipment(createEquipmentCommand, token) {        
         var header = {
             'Content-Type': 'application/json',
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': '*'
         };
+        api.defaults.headers.common = {'Authorization': `Bearer ${token}`}
+
         const response = await api.post('/Equipment/v1', createEquipmentCommand, header).then(res => {
             if (res.data.ResponseDataObj) {
                 AsyncStorage.setItem('appFullStackDemoEQ', res.data.ResponseDataObj.Id);                

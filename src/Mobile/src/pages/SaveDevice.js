@@ -21,6 +21,7 @@ export default function SaveDevice({ navigation }) {
   
   const [equipId, setEquipId] = useState(""); //BackEnd
   const [userId, setUserId] = useState(""); //BackEnd
+  const [token, setToken] = useState(""); //BackEnd
   const [androidId, setAndroidId] = useState("");
   const [imei1, setImei1] = useState("");
   const [imei2, setImei2] = useState("");
@@ -45,7 +46,8 @@ export default function SaveDevice({ navigation }) {
     //tenta pegar o Id do Portal, se não achar, ai habilita o botão pra Cadastrar
     async function loadUser() {
       setUserId(await AsyncStorage.getItem("appFullStackDemoUI"));
-      setEquipId(await AsyncStorage.getItem("appFullStackDemoEQ"));      
+      setEquipId(await AsyncStorage.getItem("appFullStackDemoEQ"));
+      setToken(await AsyncStorage.getItem("appFullStackDemoTK"));
     }
 
     loadUser();
@@ -136,10 +138,10 @@ export default function SaveDevice({ navigation }) {
     createEquipmentCommand.Model = model.toString();
     createEquipmentCommand.UserId = userId.toString();
 
-    const ret = await equipService.saveEquipment(createEquipmentCommand);
+    const ret = await equipService.saveEquipment(createEquipmentCommand, token);
     if (ret.data) {
       setEquipId(ret.data.ResponseDataObj.Id);
-      AsyncStorage.setItem("appFullStackDemoEQ", equipId);
+      //AsyncStorage.setItem("appFullStackDemoEQ", equipId);
     }
   }
 

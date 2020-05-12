@@ -124,7 +124,7 @@ namespace AppFullStackDemo.Domain.Handlers
             }
 
             //TO-DO: Need to load the CLAIMS here and return on Obj instead of user
-            return new GetLoggedUserResult(true, "Logged with Success.", user.Id.ToString(), user.Name.ToString(), user.Email.ToString(), user.UserAccount.UserName, Claims);
+            return new GetLoggedUserResult(true, "Logged with Success.", user.Id.ToString(), user.Name.ToString(), user.Email.EmailAddress.ToString(), user.UserAccount.UserName, Claims);
         }
     }
 }
