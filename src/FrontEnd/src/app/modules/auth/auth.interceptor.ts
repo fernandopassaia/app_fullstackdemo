@@ -7,6 +7,7 @@ import { catchError, filter, take, switchMap, retry, map } from 'rxjs/operators'
 import { AuthService } from 'src/app/services/auth.service';
 import { NotificationService } from '../../shared/notification.service';
 import { BaseCommandResult } from 'src/app/results/BaseCommandResult.model';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -14,7 +15,7 @@ export class AuthInterceptor implements HttpInterceptor {
     private isRefreshing = false;
     private refreshTokenSubject: BehaviorSubject<any> = new BehaviorSubject<any>(null);
 
-    constructor(private authService: AuthService) {
+    constructor(private authService: AuthService, private router: Router) {
     }
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -111,7 +112,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     private handle401Error(request: HttpRequest<any>, next: HttpHandler) {
-        console.log('401!');
+        this.router.navigate(['/pages/login']);        
         if (!this.isRefreshing) {
             this.isRefreshing = true;
             this.refreshTokenSubject.next(null);
@@ -128,7 +129,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     private handle403Error(request: HttpRequest<any>, next: HttpHandler) {
-        console.log('403!');
+        this.router.navigate(['/pages/login']);
         if (!this.isRefreshing) {
             this.isRefreshing = true;
             this.refreshTokenSubject.next(null);

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import { DashBoardService } from 'src/app/services/dashboard.service';
 import { GetDashBoardResult } from 'src/app/results/dashboard/GetDashBoardResult';
+import { Router } from '@angular/router';
 
 declare const $: any;
 
@@ -18,7 +19,7 @@ export class DashboardComponent implements OnInit {
   deviceManufacturersN: number[] = [];
   deviceManufacturerWithHigherNumber: number = 0;
 
-  constructor(private dashBoardService: DashBoardService) {
+  constructor(private router: Router, private dashBoardService: DashBoardService) {
   }
 
   startAnimationForLineChart(chart: any) {
@@ -80,6 +81,11 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.dashBoardService.getDashBoardData().subscribe(
       list => {
+        if(list == undefined){
+          //if i cannot load the dashboard, probably tokenexpired, will redirect user to login
+          this.router.navigate(['/pages/login']);
+        }
+
         this.apiData = this.dashBoardService.dashBoardData.ResponseDataObj as GetDashBoardResult;
         this.apiData.ListOfAndroid.forEach(item => {
           this.androidVersions.push(item.Field.replace('Android ', '') + '(' + item.Value + ')');
