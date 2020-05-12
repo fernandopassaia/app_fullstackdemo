@@ -1,11 +1,10 @@
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
 ### Angular 9 Material Panel + React Native Mobile.
 
-* Note: This Documentation is also available in Portuguese PT. Scrool down for it.
-* Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app, check for links.
-* Note 3: We have this system published ONLINE, you can access and test it. Links also below.
-* Note 4: If you are just a BackEnd and/or WebDeveloper and don't want to deal with Mobile. You can get the parts you
-need, ignoring other folders/sources. You can run and use just the modules you want to.
+* Note: This Documentation is also available in Portuguese PT. Look for README-PT.MD.
+* Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Links below.
+* Note 3: We have this system published ONLINE, you can access and test it. Links below.
+* Note 4: You can use just parts of this project. Example: If you are not MobileDev, just ignore it.
 
 # 
 ### Business Logic:
