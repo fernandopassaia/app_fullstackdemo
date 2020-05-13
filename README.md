@@ -1,5 +1,5 @@
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
-### Angular 9 Material Panel + React Native Mobile.
+### Angular Material Panel + React Native Mobile.
 ### If you like this project, follow us and give a star :sunglasses: :computer:
 
 * Note: Esse documento também está disponível em Português. Por favor veja o README-PT.
@@ -74,7 +74,7 @@ help-me to increase this App and make it better :)
 * Unit-Tests for Commands, Queries, Repositories, Entities and Handlers
 * Note: DataBase can be Easily replaced (to Postgres, MySQL) once layers are very well separated.
 
-### FrontEnd Angular 9 + Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
+### FrontEnd Angular + Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
 * Complete Panel to Create Account, Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
 * Nice Interface using Angular Material, Modals, MatTable, Chartlist and more.
 * CQRS Models and Interfaces based on BackEnd (Commands and Results)
@@ -198,4 +198,3 @@ Note: Need to be done on Future. Once i don't know (even if it's possible) to en
 know how to make it runs inside a docker and make it automatically. Maybe it's possible to run "npm start" and 
 "react-native run-android" inside the docker containner and install on local mobile. Well, to be checked/done...
 ### Lint: Need to pass the code by Linting and fix the inconsistences.
-### Update Angular to 9 and Remove NPM Packages not in use on ReactNative.

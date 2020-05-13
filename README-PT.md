@@ -1,5 +1,5 @@
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
-### Angular 9 Material Panel + React Native Mobile.
+### Angular Material Panel + React Native Mobile.
 ### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
 
 * Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Os links abaixo.
@@ -75,7 +75,7 @@ ReactNative, então você pode me ajudar a melhorar esse App e fazê-lo melhor :
 * Testes de unidade para os commandos, queries, repositórios, entidades e handlers
 * Nota: Banco de dados pode ser facilmente substituido (para Postgres, MySQL) uma vez que as camadas são separadas.
 
-### FrontEnd Angular 9 + Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
+### FrontEnd Angular + Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
 * Painel completo para Criar Conta, Logar + DashBoard + 3 Cruds Completos (leia abaixo a regra de negócio)
 * Bela Interface Angular Material com Modals, MatTable, Charlist e mais
 * CQRS e Interfaces baseados no BackEnd (Commands and Results)
