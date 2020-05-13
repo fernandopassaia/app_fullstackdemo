@@ -17,7 +17,7 @@ export class DashBoardService {
 
     getDashBoardData() {
         return this.http
-            .get(`${AppApi.MobileControlApiResourceDashBoard}/v1`)
+            .get(`${AppApi.AppFullStackDemoApiResourceDashBoard}/v1`)
             .pipe(
                 retry(2), //if something happens, will retry 2x
                 map(

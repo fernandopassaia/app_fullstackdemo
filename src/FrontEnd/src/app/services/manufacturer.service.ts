@@ -31,7 +31,7 @@ export class ManufacturerService {
   createManufacturer(command: CreateManufacturerCommand) {
     return this.http
       .post(
-        `${AppApi.MobileControlApiResourceManufacturer}/v1`,
+        `${AppApi.AppFullStackDemoApiResourceManufacturer}/v1`,
         JSON.stringify(command)
       )
       .pipe(
@@ -45,7 +45,7 @@ export class ManufacturerService {
   updateManufacturer(command: UpdateManufacturerCommand) {
     return this.http
       .put(
-        `${AppApi.MobileControlApiResourceManufacturer}/v1/` + command.Id,
+        `${AppApi.AppFullStackDemoApiResourceManufacturer}/v1/` + command.Id,
         JSON.stringify(command)
       )
       .pipe(
@@ -58,7 +58,7 @@ export class ManufacturerService {
 
   deleteManufacturer(id: string) {
     return this.http
-      .delete(`${AppApi.MobileControlApiResourceManufacturer}/v1/` + id)
+      .delete(`${AppApi.AppFullStackDemoApiResourceManufacturer}/v1/` + id)
       .pipe(
         retry(3), //if something happens, will retry 2x
         catchError((err) => {
@@ -69,7 +69,7 @@ export class ManufacturerService {
 
   getManufacturers() {
     return this.http
-      .get(`${AppApi.MobileControlApiResourceManufacturer}/v1/`)
+      .get(`${AppApi.AppFullStackDemoApiResourceManufacturer}/v1/`)
       .pipe(
         retry(2), //if something happens, will retry 2x
         map((res) => (this.listManufacturer = res as GetManufacturerResult[])),
@@ -82,7 +82,7 @@ export class ManufacturerService {
   populateForm(manufacturer) {
     this.http
       .get(
-        `${AppApi.MobileControlApiResourceManufacturer}/v1/` + manufacturer.Id)
+        `${AppApi.AppFullStackDemoApiResourceManufacturer}/v1/` + manufacturer.Id)
       .subscribe((res) => {
         const ManufacturerToBeChanged = res as GetManufacturerResult;
         this.form.setValue({

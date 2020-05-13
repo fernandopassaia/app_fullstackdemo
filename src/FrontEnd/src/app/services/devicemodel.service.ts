@@ -33,7 +33,7 @@ export class DeviceModelService {
   createDeviceModel(command: CreateDeviceModelCommand) {
     return this.http
       .post(
-        `${AppApi.MobileControlApiResourceDeviceModel}/v1`,
+        `${AppApi.AppFullStackDemoApiResourceDeviceModel}/v1`,
         JSON.stringify(command)
       )
       .pipe(
@@ -47,7 +47,7 @@ export class DeviceModelService {
   updateDeviceModel(command: UpdateDeviceModelCommand) {
     return this.http
       .put(
-        `${AppApi.MobileControlApiResourceDeviceModel}/v1/` + command.Id,
+        `${AppApi.AppFullStackDemoApiResourceDeviceModel}/v1/` + command.Id,
         JSON.stringify(command)
       )
       .pipe(
@@ -60,7 +60,7 @@ export class DeviceModelService {
 
   deleteDeviceModel(id: string) {
     return this.http
-      .delete(`${AppApi.MobileControlApiResourceDeviceModel}/v1/` + id)
+      .delete(`${AppApi.AppFullStackDemoApiResourceDeviceModel}/v1/` + id)
       .pipe(
         retry(3), //if something happens, will retry 2x
         catchError((err) => {
@@ -71,7 +71,7 @@ export class DeviceModelService {
 
   getDeviceModel() {
     return this.http
-      .get(`${AppApi.MobileControlApiResourceDeviceModel}/v1`)
+      .get(`${AppApi.AppFullStackDemoApiResourceDeviceModel}/v1`)
       .pipe(
         retry(2), //if something happens, will retry 2x
         map((res) => (this.listDeviceModel = res as GetDeviceModelResult[])),
@@ -83,7 +83,7 @@ export class DeviceModelService {
 
   populateForm(deviceModel) {
     this.http
-      .get(`${AppApi.MobileControlApiResourceDeviceModel}/v1/` + deviceModel.Id)
+      .get(`${AppApi.AppFullStackDemoApiResourceDeviceModel}/v1/` + deviceModel.Id)
       .subscribe((res) => {
         const DeviceModelToBeChanged = res as UpdateDeviceModelCommand;
         this.form.setValue({

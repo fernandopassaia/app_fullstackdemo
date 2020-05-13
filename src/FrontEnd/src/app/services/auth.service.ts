@@ -23,7 +23,7 @@ export class AuthService {
     loginCommand.Password = user.password;
     return this.http
       .post<any>(
-        `${AppApi.MobileControlApiResourceUser}/v1/Login`,
+        `${AppApi.AppFullStackDemoApiResourceUser}/v1/Login`,
         loginCommand
       )
       .pipe(
@@ -41,7 +41,7 @@ export class AuthService {
   testApi() {
     //Note: token will be added by the HttpInterceptor, and UserProfile will be taken by the Token
     return this.http
-      .get(`${AppApi.MobileControlApiResourceUser}/v1/test`)
+      .get(`${AppApi.AppFullStackDemoApiResourceUser}/v1/test`)
       .pipe(
         tap((response) => alert(response)),
         retry(2), //if something happens, will retry 2x
@@ -55,7 +55,7 @@ export class AuthService {
     //Note: token will be added by the HttpInterceptor, and UserProfile will be taken by the Token
     return this.http
       .get(
-        `${AppApi.MobileControlApiResourceUser}/v1/GetUserProfileClaims`
+        `${AppApi.AppFullStackDemoApiResourceUser}/v1/GetUserProfileClaims`
       )
       .pipe(
         retry(2), //if something happens, will retry 2x
@@ -68,7 +68,7 @@ export class AuthService {
   getUserProfiles() {
     //Note: token will be added by the HttpInterceptor, and UserProfile will be taken by the Token
     return this.http
-      .get(`${AppApi.MobileControlApiResourceUser}/v1`)
+      .get(`${AppApi.AppFullStackDemoApiResourceUser}/v1`)
       .pipe(
         retry(2), //if something happens, will retry 2x
         catchError((err) => {

@@ -19,7 +19,7 @@ export class EquipmentService {
 
   deleteEquipment(id: string) {
     return this.http
-      .delete(`${AppApi.MobileControlApiResourceEquipment}/v1/` + id)
+      .delete(`${AppApi.AppFullStackDemoApiResourceEquipment}/v1/` + id)
       .pipe(
         retry(3), //if something happens, will retry 2x
         catchError((err) => {
@@ -31,7 +31,7 @@ export class EquipmentService {
   GetEquipments() {
     return this.http
       .get(
-        `${AppApi.MobileControlApiResourceEquipment}/v1/`)
+        `${AppApi.AppFullStackDemoApiResourceEquipment}/v1/`)
       .pipe(
         retry(2), //if something happens, will retry 2x
         map((res) => (this.listEquipment = res as GetEquipmentResultResumed[])),
@@ -44,7 +44,7 @@ export class EquipmentService {
   GetEquipment(id: string) {
     return this.http
       .get(
-        `${AppApi.MobileControlApiResourceEquipment}/v1/` + id)
+        `${AppApi.AppFullStackDemoApiResourceEquipment}/v1/` + id)
       .pipe(
         retry(2), //if something happens, will retry 2x
         map((res) => (this.equipmentDetail = res as GetEquipmentResult[])),
@@ -56,7 +56,7 @@ export class EquipmentService {
 
   GetEquipmentsByUser(userId: string) {
     return this.http
-      .get(`${AppApi.MobileControlApiResourceEquipment}/v1/user/` + userId)
+      .get(`${AppApi.AppFullStackDemoApiResourceEquipment}/v1/user/` + userId)
       .pipe(
         retry(2), //if something happens, will retry 2x
         map((res) => (this.listEquipment = res as GetEquipmentResultResumed[])),

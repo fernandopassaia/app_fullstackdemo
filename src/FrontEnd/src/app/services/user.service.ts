@@ -106,7 +106,7 @@ export class UserService {
         command.UserName = command.EmailAddress; //small hack to create the first config of login with email
         return this.http
             .post(
-                `${AppApi.MobileControlApiResourceUser}/v1`,
+                `${AppApi.AppFullStackDemoApiResourceUser}/v1`,
                 JSON.stringify(command)
             )
             .pipe(
@@ -120,7 +120,7 @@ export class UserService {
     updateUser(command: UpdateUserCommand) {
         return this.http
             .put(
-                `${AppApi.MobileControlApiResourceUser}/v1/` + command.Id,
+                `${AppApi.AppFullStackDemoApiResourceUser}/v1/` + command.Id,
                 JSON.stringify(command)
             )
             .pipe(
@@ -134,7 +134,7 @@ export class UserService {
     deleteUser(id: string) {
         return this.http
             .delete(
-                `${AppApi.MobileControlApiResourceUser}/v1/` + id
+                `${AppApi.AppFullStackDemoApiResourceUser}/v1/` + id
             )
             .pipe(
                 retry(2), //if something happens, will retry 2x
@@ -145,7 +145,7 @@ export class UserService {
     }
 
     getUsers() {
-        return this.http.get(`${AppApi.MobileControlApiResourceUser}/v1`).pipe(
+        return this.http.get(`${AppApi.AppFullStackDemoApiResourceUser}/v1`).pipe(
             retry(2), //if something happens, will retry 2x
             map((res) => (this.listUsers = res as GetUsersResumed[])),
             catchError((err) => {
@@ -156,7 +156,7 @@ export class UserService {
 
     populateForm(user) {
         this.http
-            .get(`${AppApi.MobileControlApiResourceUser}/v1/` + user.Id)
+            .get(`${AppApi.AppFullStackDemoApiResourceUser}/v1/` + user.Id)
             .subscribe((res) => {
                 const user = res as GetUserResult;
                 this.form.setValue({

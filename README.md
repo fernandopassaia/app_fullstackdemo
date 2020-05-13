@@ -1,7 +1,7 @@
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
 ### Angular 9 Material Panel + React Native Mobile.
 
-* Note: This Documentation is also available in Portuguese PT. Look for README-PT.MD.
+* Note: Esse documento também está disponível em Português. Por favor veja o README-PT.
 * Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Links below.
 * Note 3: We have this system published ONLINE, you can access and test it. Links below.
 * Note 4: You can use just parts of this project. Example: If you are not MobileDev, just ignore it.
@@ -60,9 +60,8 @@ help-me to increase this App and make it better :)
 
 # 
 ### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
-
 * Rich Modeling (Models-Entities, Enums, ValueObjects) (read below for the Business Logic)
-* Api REST + Handlers to Deal with the Requests + Dependency Injection
+* Api REST + Handlers (Services) to Deal with the Requests + Dependency Injection
 * JWT Token to Auth Parts + Claims + JSON to Data
 * Handler Layer (you can also call it as "Service") to "orchestrate" the requests
 * Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
@@ -75,7 +74,7 @@ help-me to increase this App and make it better :)
 * Note: DataBase can be Easily replaced (to Postgres, MySQL) once layers are very well separated.
 
 ### FrontEnd Angular 9 + Material Panel + Login + Auth + 3 Full-CRUDS + Detail screen:
-* Complete Panel to Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
+* Complete Panel to Create Account, Login + DashBoard + 3 Entire CRUDS (read below for the Business Logic)
 * Nice Interface using Angular Material, Modals, MatTable, Chartlist and more.
 * CQRS Models and Interfaces based on BackEnd (Commands and Results)
 * Layer for the Services and API Communication - Capable to Catch Results and Display Messages (like
@@ -126,7 +125,11 @@ SQLServer Connection string for the BackEnd is on "BackEnd>AppFullStackDemo.Api>
 SQL Connection Server info before try to RUN the APP. If the connectionstring does not exists on this file, EF will use
 the Default string on "AppFullStackDemoContext.cs".
 
-After setup your connectionstring, enter on ".Infra" folder and RUN the migration command:
+After configure your connection, entre on the main folder (BackEnd) and run:
+dotnet restore
+dotnet build
+
+After that, enter on ".Infra" and Run the Command:
 <li>dotnet ef --startup-project ../AppFullStackDemo.Api/ database update</li>
 <br />
 **Creating FakeMockData**:
@@ -143,20 +146,23 @@ Then, on the ".Api" folder run the command:
 
 The Api should start. If you see it running on PORT 4001, well done. BackEnd is ready to go.
 
-
 ### How to Run the FrontEnd:
-Inside FrontEnd folder go to "src > app > app.api.ts". You'll need to setup your IP connection (replace 192.168.1.10).
-To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Then inside FrontEnd folder:
+Inside the FrontEnd folder run:
 
+<li>npm install</li>
 <li>ng serve --o</li>
 
 ### How to Run the Mobile:
 Inside Mobile folder go to "src > services > api.js". You'll need to setup your IP connection (replace 192.168.1.10).
-To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Then inside Mobile folder:
+To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Note: I've tried to use "localhost" with React-Native
+api, but it conflicts. So I've used the Machine-IP instead.
 
+
+Then inside Mobile folder:
+<li>npm install</li>
 <li>react-native run-android</li>
 
-(note: you'll need to setup your envoirnment and have a Device or Emulator running)
+(Note: you'll need to setup your envoirnment and have a Device or Emulator running)
 
 ### Tutorial vídeos on Youtube:
 I've recorded some videos also showing you how to Configure your Envoirnment and Run this App. Just go to these channel:
