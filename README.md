@@ -126,8 +126,8 @@ SQL Connection Server info before try to RUN the APP. If the connectionstring do
 the Default string on "AppFullStackDemoContext.cs".
 
 After configure your connection, entre on the main folder (BackEnd) and run:
-dotnet restore
-dotnet build
+<li>dotnet restore</li>
+<li>dotnet build</li>
 
 After that, enter on ".Infra" and Run the Command:
 <li>dotnet ef --startup-project ../AppFullStackDemo.Api/ database update</li>

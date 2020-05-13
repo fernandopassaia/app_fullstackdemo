@@ -125,8 +125,8 @@ conexão antes de tentar rodar o app. Se sua conexão não existir nesse arquivo
 "AppFullStackDemoContext.cs".
 
 Depois de configurar sua conexão, na pasta principal (BackEnd) rode:
-dotnet restore
-dotnet build
+<li>dotnet restore</li>
+<li>dotnet build</li>
 
 Após entre na pasta ".Infra" e rode o comando de migration:
 <li>dotnet ef --startup-project ../AppFullStackDemo.Api/ database update</li>
