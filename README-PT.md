@@ -1,46 +1,47 @@
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
 ### Angular 9 Material Panel + React Native Mobile.
 
-* Note: This Documentation is also available in Portuguese PT. Look for README-PT.MD.
-* Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Links below.
-* Note 3: We have this system published ONLINE, you can access and test it. Links below.
-* Note 4: You can use just parts of this project. Example: If you are not MobileDev, just ignore it.
+* Nota: Esse documento também está disponível em Inglês. Por favor veja o README.MD original.
+* Nota 2: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Os links abaixo.
+* Nota 3: Nós publicamos esse sistema ONLINE, você pode acessar e testar. Os links abaixo.
+* Nota 4: Você pode usar apenas partes desse sistema. Exemplo: Se você não é um DevMobile, apenas ignore.
 
 # 
-### Business Logic:
-How it works: WebPanel (Angular Material) and MobileApp (React Native) will have a Login-Screen, that will works with the
-BackEnd to Login - in case of Panel it will provide full-management for DashBoard + 3 CRUDS + List/Details screen. In the
-case of MobileApp you will be allowed to see details of Device, and register it on portal. Once registered, you'll see it
-on Panel linked to the logged-user (details of Device) and will interact to the Dashboard.
+### Lógica de negócios:
+Como funciona: O PainelWeb (Angular Material) e o Aplicativo Mobile (React Native) irão ter uma tela de Login, que irá
+trabalhar com o BackEnd para logar - no caso do painel haverá um gerenciamento completo com DashBoard + 3 CRUDs + Lista/
+Detalhes. No caso do aplicativo mobile você poderá ver os detalhes do Dispositivo e registrar ele no portal. Uma vez
+registrado, você verá ele no Painel ligado ao usuário logado (detalhes do device) e irá interagir na Dashboard.
 
-**FrontEnd** Will have a LoginScreen, where user can click on "Register new user" and create a new user, or also login
-with an existing. Panel you will have a DashBoard (showing graphics with Number of Devices per AndroidVersion, and 
-number of devices per Manufacturer). Users logged on Panel will be allowed to create another Users that can also Login
-into Panel and MobileApp. So the Users Screen will comes with a "CRUD" function to List, Create, Edit and Delete Users.
+**FrontEnd** irá ter uma tela de login, onde o usuário pode clicar "Registrar agora" e criar um novo usuário, ou mesmo
+logar com um existente. No painel você terá a DashBoard (mostrando gráficos com número de dispositivos por versão de 
+android, e número de dispositivos por fabricante). Usuários logados no painel poderão criar novos usuários e também
+poderão logar no painel e no app mobile. Então: A tela de Login terá uma função completa de CRUD (Listar, Criar, Editar,
+Excluir usuários).
 
-On UserScreen (List) will be a button to LIST all the Devices for that user (Device Details Screen). So when you Login in
-a Mobile Device, user can Register the Device, it will be available with Details on Panel. There will plus 2 screens to
-manage Manufacturer and DeviceModel. Once a Equipment belongs to a DeviceModel > A DeviceModel to a Manufacturer:
+Na tela de usuário (lista) haverá um botão para listar os dispositivos para o usuário (detalhes do device). Então ao 
+logar em um Dispositivo, o usuário poderá registrar e então ficará disponível os detalhes no painel. Haverá mais duas
+telas para gerenciar Fabricantes e Modelos. Um Equipamento pertence a um Modelo, e um Modelo a um Fabricante:
 
-Manufacturer: Samsung. DeviceModels: Galaxy S8, Galaxy S9, Galaxy S10, Galaxy Note 8, Galaxy Note 9.
-Manufacturer: Xiaomi. Device Models: Mi8, Mi9, Mi10, Redmi8, Redmi 9, Mi Max 2, Mix Max3, Mi Mix2.
+Fabricante: Samsung. Modelos: Galaxy S8, Galaxy S9, Galaxy S10, Galaxy Note 8, Galaxy Note 9.
+Fabricante: Xiaomi. Modelos: Mi8, Mi9, Mi10, Redmi8, Redmi 9, Mi Max 2, Mix Max3, Mi Mix2.
 
-BackEnd will automatically handle it, looking for the Model and Manufacturer, and creating it IF does not exists, or
-attach the new Equipment to an existing Manufacturer>Model. Angular Panel is also ready to work with the Token, with an
-Interceptor Layer to Deal with 401/403 codes, show good messages, alerts, ballon messages, modals and a lot of cool
-things with a nice Material-Interface.
+O BackEnd irá automaticamente gerenciar isso, procurando pelos modelos e fabricantes e criando se não existirem, ou
+anexar o equipamento ao Fabricante>Modelo existente. O Painel Angular também está pronto pra trabalhar com Token, com
+uma camada interceptor para lidar com códigos 401/403, mostrar mensagens de OK, alertas, mensagens de popup, modals e
+um monte de coisas legais com um um Design Material.
 
-**BackEnd** will provide an API to support Mobile/Panel apps. All the "Brain" of the App: The Business Logic, Entities,
-the Database layers, API, Services/Handlers, will be here. **Under the hood**: The BackEnd .NET Core with Rich 
-Architecture DDD/SOLID will be running providing all this data for both apps.
+**BackEnd** irá provar uma API para suportar o Painel e o Mobile. Todo o "cérebro" do APP: A lógica de negócios,
+entidades, camadas de banco de dados, API, Serviços e Manipuladores estarão aqui. **Abaixo do capô**: Um BackEnd .Net
+Core com Arquitetura Rica DDD/SOLID que rodará provendo toda a informação para ambos os Apps.
 
-**MobileApp** can "register" the Device on backend - informing to backend the Manufacturer, Model, Phone Number, Serial
-Number, IMEI and some other information. You could use your Real Device or also an Emulator (like Android Studio or
-Genymotion) to test it. Once it's React Native and you have a Mac - you can work on it to compile it for iOS.
+**MobileApp** pode registrar o Equipmento no BackEnd - informando o Fabricante, Modelo, Número Phone, Número Serial,
+Imei e algumas outras informações. Você pode usar seu Aparelho Real ou mesmo um Emulador (como Android Studio ou
+Genymotion) para testar. Uma vez que é React-Native e você tiver um Mac - pode trabalhar para compilar para iOS.
 
-Note that MobileApp is a "bônus": This App will basically just list some information about the Device, and allow this
-device to be registered on the backend, that will appears on the Panel. I'm not a React Native developer, so you can
-help-me to increase this App and make it better :)
+Note que o MobileApp é um bônus: Esse App irá basicamente apenas listar algumas informações sobre o Device, e irá
+permitir que esse equipamento seja registrado no BackEnd, e então aparecerá no painel. Eu não sou um desenvolvedor
+ReactNative, então você pode me ajudar a melhorar esse App e fazê-lo melhor :)
 
 ![Login Panel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel1.png)
 
@@ -53,6 +54,10 @@ help-me to increase this App and make it better :)
 ![UpdateDeviceModel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel5.png)
 
 ![UserCrud](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel6.png)
+
+![UserDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel7.png)
+
+![DeviceDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel8.png)
 
 # 
 ### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:

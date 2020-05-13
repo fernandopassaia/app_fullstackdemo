@@ -54,6 +54,10 @@ help-me to increase this App and make it better :)
 
 ![UserCrud](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel6.png)
 
+![UserDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel7.png)
+
+![DeviceDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel8.png)
+
 # 
 ### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
 
@@ -194,3 +198,5 @@ Note: Need to be done on Future. Once i don't know (even if it's possible) to en
 know how to make it runs inside a docker and make it automatically. Maybe it's possible to run "npm start" and 
 "react-native run-android" inside the docker containner and install on local mobile. Well, to be checked/done...
 ### Lint: Need to pass the code by Linting and fix the inconsistences.
+
+### Update Angular to 9 and Remove NPM Packages not in use on ReactNative.
