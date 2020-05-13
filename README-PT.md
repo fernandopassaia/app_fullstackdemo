@@ -65,6 +65,7 @@ ReactNative, então você pode me ajudar a melhorar esse App e fazê-lo melhor :
 * Api REST + Handlers (Services) para lidar com as requisições - injeção de dependência
 * JWT Token para Autenticação + Claims + Json para transferir Data
 * Camada de Handler (você pode chamar de Serviço) para orquestrar as requisições
+* Entity Framework Core com camadas separadas para o ConfigMap das Tabelas + SQL Server Express (Free)
 * Camada de Repositórios + Unit of Work + 3 CRUDS (EF Code First)
 * CQRS para Receber Queries, Commands e Retornar Results
 * Validação por Contratos nos Comandos (Fail-Fast Validations)

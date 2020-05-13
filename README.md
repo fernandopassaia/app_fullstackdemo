@@ -64,6 +64,7 @@ help-me to increase this App and make it better :)
 * Api REST + Handlers (Services) to Deal with the Requests + Dependency Injection
 * JWT Token to Auth Parts + Claims + JSON to Data
 * Handler Layer (you can also call it as "Service") to "orchestrate" the requests
+* Entity Framework Core with separated Layers for the ConfigMap of Tables + SQL Server Express (Free)
 * Repositories Layer + Unit of Work + 3 CRUDS (EF Code First)
 * CQRS to Receive Queries and Comands and Return Results
 * Validation by Contracts on Commands (Fail-Fast Validations)
