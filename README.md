@@ -1,10 +1,10 @@
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
 ### Angular 9 Material Panel + React Native Mobile.
+### If you like this project, follow us and give a star :sunglasses: :computer:
 
 * Note: Esse documento também está disponível em Português. Por favor veja o README-PT.
 * Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Links below.
-* Note 3: We have this system published ONLINE, you can access and test it. Links below.
-* Note 4: You can use just parts of this project. Example: If you are not MobileDev, just ignore it.
+* Note 3: You can use just parts of this project. Example: If you are not MobileDev, just ignore it.
 
 # 
 ### Business Logic:
@@ -157,6 +157,8 @@ Inside Mobile folder go to "src > services > api.js". You'll need to setup your 
 To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Note: I've tried to use "localhost" with React-Native
 api, but it conflicts. So I've used the Machine-IP instead.
 
+You need to create a file called "local.properties" inside "android" Folder with your SDK Location. In my case:
+sdk.dir = /home/fernandopassaia/Android/Sdk
 
 Then inside Mobile folder:
 <li>npm install</li>
@@ -165,19 +167,10 @@ Then inside Mobile folder:
 (Note: you'll need to setup your envoirnment and have a Device or Emulator running)
 
 ### Tutorial vídeos on Youtube:
-I've recorded some videos also showing you how to Configure your Envoirnment and Run this App. Just go to these channel:
+I've recorded some videos also showing you how to Run this App. Just go to these channel:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
-# 
-### Published ONLINE System - if you just want to see it as a user, not a developer:
-If you just want to **TEST** this system as a USER, without setting (or having) an envoirnment, we've published it
-**ONLINE**. This system is published and ONLINE for test with the same user account below. You can test the Panel,
-create an account for you, and also there's an APK that you can download, install on your device or an emulator, login
-and see it working. Feel free at:
-
-<li>www.futuradata.com.br/appfullstackdemo/panel (Angular Panel - Login/Pass: admin > admin)</li>
-<li>www.futuradata.com.br/appfullstackdemo.apk (you can download an run on your device, same login)</li>
-<li>www.futuradata.com.br/appfullstackdemo/backend (you can use Insomnia to test the API)</li>
+### If you like this project, follow us and give a star :sunglasses: :computer:
 
 # 
 ### Additional Info:
@@ -204,5 +197,4 @@ Note: Need to be done on Future. Once i don't know (even if it's possible) to en
 know how to make it runs inside a docker and make it automatically. Maybe it's possible to run "npm start" and 
 "react-native run-android" inside the docker containner and install on local mobile. Well, to be checked/done...
 ### Lint: Need to pass the code by Linting and fix the inconsistences.
-
 ### Update Angular to 9 and Remove NPM Packages not in use on ReactNative.

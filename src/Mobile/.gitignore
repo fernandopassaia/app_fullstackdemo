@@ -1,8 +1,0 @@
-ios/*
-node_modules/*
-
-android/local.properties
-android/app/build/
-android/.idea/
-android/*.iml
-android/.gradle/*

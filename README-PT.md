@@ -1,9 +1,9 @@
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
 ### Angular 9 Material Panel + React Native Mobile.
+### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
 
 * Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Os links abaixo.
-* Nota 2: Nós publicamos esse sistema ONLINE, você pode acessar e testar. Os links abaixo.
-* Nota 3: Você pode usar apenas partes desse sistema. Exemplo: Se você não é um DevMobile, apenas ignore.
+* Nota 2: Você pode usar apenas partes desse sistema. Exemplo: Se você não é um DevMobile, apenas ignore.
 
 # 
 ### Lógica de negócios:
@@ -157,6 +157,8 @@ Dentro da Pasta Mobile vá para "src > services > api.js". Você precisa configu
 Para descobrir seu IP use "ifconfig" (linux) or "ipconfig" (windows). Nota: Eu tentei usar "localhost" com o React-Native,
 mas conflitou. Então eu usei o endereço de IP local.
 
+Você precisa criar um arquivo chamado "local.properties" dentro da pasta "android" com o caminho do seu SDK. No meu caso:
+sdk.dir = /home/fernandopassaia/Android/Sdk
 
 Dentro da Pasta Mobile rode:
 <li>npm install</li>
@@ -165,19 +167,10 @@ Dentro da Pasta Mobile rode:
 (Nota: Você precisará configurar seu ambiente e precisa ter um Equipamento ou Emulador rodando).
 
 ### Tutorial vídeos on Youtube:
-Eu gravei alguns vídeos também mostrando como Configurar seu Ambiente e rodar esse App. Apenas vá para esse canal:
+Eu gravei alguns vídeos também mostrando como rodar esse App. Apenas vá para esse canal:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
-# 
-### Published ONLINE System - if you just want to see it as a user, not a developer:
-Se você quiser **TESTAR** esse sistema, sem precisar (ou ter) um ambiente de Desenvolvimento, testar como um usuário,
-nós publicamos **ONLINE**. Esse sistema está online para teste com o mesmo usuário informado acima. Você pode testar
-o painel, criar uma conta pra você, e mesmo baixar o APK para instalar no seu Device ou emulador, logar e ver como
-funciona. Sinta-se livre em:
-
-<li>www.futuradata.com.br/appfullstackdemo/panel (Angular Panel - Login/Pass: admin > admin)</li>
-<li>www.futuradata.com.br/appfullstackdemo.apk (baixe e instale no seu celular, mesmo login</li>
-<li>www.futuradata.com.br/appfullstackdemo/backend (você pode usar o imsomnia para testar a api)</li>
+### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
 
 # 
 ### Informações adicionais:
