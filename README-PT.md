@@ -2,7 +2,8 @@
 ### Angular Material Panel + React Native Mobile.
 ### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
 
-* Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Os links abaixo.
+* Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Basta acessar meu canal:
+<li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 * Nota 2: Você pode usar apenas partes desse sistema. Exemplo: Se você não é um DevMobile, apenas ignore.
 
 # 

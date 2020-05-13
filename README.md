@@ -3,7 +3,8 @@
 ### If you like this project, follow us and give a star :sunglasses: :computer:
 
 * Note: Esse documento também está disponível em Português. Por favor veja o README-PT.
-* Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Links below.
+* Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Just access my channel:
+<li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 * Note 3: You can use just parts of this project. Example: If you are not MobileDev, just ignore it.
 
 # 
