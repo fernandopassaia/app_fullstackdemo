@@ -151,7 +151,8 @@ Sua Api deve iniciar. Se você ver ela rodando na porta 4001, perfeito! O BackEn
 
 
 ### How to Run the FrontEnd:
-Dentro da Pasta FrontEnd rode:
+Para rodar o Angular e o Mobile, primeiro você precisa instalar o NodeJs e NPM. Na minha máquina pessoal, estou usando
+Node 14.2.0 e NPM 6.14.4. Apṕs isso, dentro da pasta do FrontEnd rode:
 
 <li>npm install</li>
 <li>ng serve --o</li>

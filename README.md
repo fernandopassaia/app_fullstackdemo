@@ -151,7 +151,8 @@ Then, on the ".Api" folder run the command:
 The Api should start. If you see it running on PORT 4001, well done. BackEnd is ready to go.
 
 ### How to Run the FrontEnd:
-Inside the FrontEnd folder run:
+To Run the Angular AND the Mobile, first of all you need to install NodeJs and NPM. In my personal machine, I'm using
+Node 14.2.0 and NPM 6.14.4. Then, Inside the FrontEnd folder run:
 
 <li>npm install</li>
 <li>ng serve --o</li>
