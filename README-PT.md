@@ -111,6 +111,9 @@ Você pode usar como um "esqueleto" para seu próximo software real. Boa sorte :
 ### Como rodar o App e Informações Técnicas:
 Você pode Desenvolver e rodar no Windows, Linux ou MacOs. Na minha máquina: Eu usei Linux Ubuntu 20.04 e VS Code :)
 
+**Tutorial**: Se você preferir um Tutorial em vídeo sobre como rodar esse App, basta acessar:
+https://www.youtube.com/watch?v=ck3GnZC3vho
+
 Se você quiser saber como eu configuro meu ambiente: VSCode, extensões, as fontes que uso, as variáveis de ambiente e como
 eu configuro elas, os pacotes que uso: Eu tenho isso de forma documentada. Por favor olhe o meu repositório chamado
 **docsamples > generaldocs**. Você verá arquivos e pastas para .Net Core, VsCode, Angular, React Native - essas são minhas

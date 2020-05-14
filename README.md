@@ -110,6 +110,9 @@ as a "skeleton" for your next Real-Software. Good luck :cake:
 
 # 
 ### How to RUN it and Technical Information:
+**Tutorial**: If you prefer Video Tutorial about how to run this app, please access here:
+https://www.youtube.com/watch?v=8z7R0NsU5tw
+
 You can Develop and Run it on Windows, Linux and MacOs. In My Machine: I've Used Linux Ubuntu 20.04 and VS Code :)
 
 If you want to know how do i configure my Linux Envoirnment: VSCode, extensions, the fonts i use, the system variables
