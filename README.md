@@ -1,4 +1,4 @@
-### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest
+### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
 ### Angular Material Panel + React Native Mobile.
 ### If you like this project, follow us and give a star :sunglasses: :computer:
 
@@ -32,7 +32,7 @@ things with a nice Material-Interface.
 
 **BackEnd** will provide an API to support Mobile/Panel apps. All the "Brain" of the App: The Business Logic, Entities,
 the Database layers, API, Services/Handlers, will be here. **Under the hood**: The BackEnd .NET Core with Rich 
-Architecture DDD/SOLID will be running providing all this data for both apps.
+Architecture DDD/SOLID with CleanCode will be running providing all this data for both apps.
 
 **MobileApp** can "register" the Device on backend - informing to backend the Manufacturer, Model, Phone Number, Serial
 Number, IMEI and some other information. You could use your Real Device or also an Emulator (like Android Studio or
@@ -59,7 +59,7 @@ help-me to increase this App and make it better :)
 ![DeviceDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel8.png)
 
 # 
-### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID using:
+### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID CleanCode using:
 * Rich Modeling (Models-Entities, Enums, ValueObjects) (read below for the Business Logic)
 * Api REST + Handlers (Services) to Deal with the Requests + Dependency Injection
 * JWT Token to Auth Parts + Claims + JSON to Data
