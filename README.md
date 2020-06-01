@@ -177,8 +177,6 @@ Then inside Mobile folder:
 I've recorded some videos also showing you how to Run this App. Just go to these channel:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
-### If you like this project, follow us and give a star :sunglasses: :computer:
-
 # 
 ### Additional Info:
 **Note about the CLAIMS**: System comes with a Claim Table and have 5 base claims: dashboard, manufacturer, devicemodel,
@@ -204,3 +202,5 @@ Note: Need to be done on Future. Once i don't know (even if it's possible) to en
 know how to make it runs inside a docker and make it automatically. Maybe it's possible to run "npm start" and 
 "react-native run-android" inside the docker containner and install on local mobile. Well, to be checked/done...
 ### Lint: Need to pass the code by Linting and fix the inconsistences.
+
+**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do :stew:**

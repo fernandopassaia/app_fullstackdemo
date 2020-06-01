@@ -176,8 +176,6 @@ Dentro da Pasta Mobile rode:
 Eu gravei alguns vídeos também mostrando como rodar esse App. Apenas vá para esse canal:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
-### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
-
 # 
 ### Informações adicionais:
 **Nota sobre as CLAIMS**: O sistema vem com 5 claims de base: dashboard, manufacturer, devicemodel, user and 
@@ -194,3 +192,5 @@ você pode deletar da tabela "UserClaim" (que linka Claims a Usuários). Então 
 vieram dele. Partes dos itens eu fiz (como modals, mensagens, alguns desings), instalei e configurei componentes. O
 Template não veio com código para integrar ao backend, sem serviços, sem interceptor, autenticação, nada. Apenas um
 design limpo material. Eu não sou um Designer, então tive que usar um template pronto para seguir em frente com o painel.
+
+**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer :stew:**
