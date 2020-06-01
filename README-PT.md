@@ -1,6 +1,7 @@
+**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer :stew:**
+
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
 ### Angular Material Panel + React Native Mobile.
-### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
 
 * Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Basta acessar meu canal: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
 * Nota 2: Você pode usar apenas partes desse sistema. Exemplo: Se você não é um DevMobile, apenas ignore.

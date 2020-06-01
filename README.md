@@ -1,6 +1,8 @@
+**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do :stew:**
+
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
 ### Angular Material Panel + React Native Mobile.
-### If you like this project, follow us and give a star :sunglasses: :computer:
+
 
 * Note: Esse documento também está disponível em Português. Por favor veja o README-PT.
 * Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Just access my channel: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
