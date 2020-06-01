@@ -1,4 +1,4 @@
-**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do :stew:**
+**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do ☕**
 
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
 ### Angular Material Panel + React Native Mobile.
@@ -203,4 +203,4 @@ know how to make it runs inside a docker and make it automatically. Maybe it's p
 "react-native run-android" inside the docker containner and install on local mobile. Well, to be checked/done...
 ### Lint: Need to pass the code by Linting and fix the inconsistences.
 
-**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do :stew:**
+**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do ☕**

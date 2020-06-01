@@ -1,4 +1,4 @@
-**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer :stew:**
+**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer ☕**
 
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
 ### Angular Material Panel + React Native Mobile.
@@ -193,4 +193,4 @@ vieram dele. Partes dos itens eu fiz (como modals, mensagens, alguns desings), i
 Template não veio com código para integrar ao backend, sem serviços, sem interceptor, autenticação, nada. Apenas um
 design limpo material. Eu não sou um Designer, então tive que usar um template pronto para seguir em frente com o painel.
 
-**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer :stew:**
+**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer ☕**
