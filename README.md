@@ -1,6 +1,8 @@
+**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do ☕**
+
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
 ### Angular Material Panel + React Native Mobile.
-### If you like this project, follow us and give a star :sunglasses: :computer:
+
 
 * Note: Esse documento também está disponível em Português. Por favor veja o README-PT.
 * Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Just access my channel: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
@@ -110,10 +112,12 @@ as a "skeleton" for your next Real-Software. Good luck :cake:
 
 # 
 ### How to RUN it and Technical Information:
-**Tutorial**: If you prefer Video Tutorial about how to run this app, please access here:
-https://www.youtube.com/watch?v=8z7R0NsU5tw
+There are two ways to run this app: Manually (below) or by Docker with docker-compose (please read on the end of this Readme).
 
 You can Develop and Run it on Windows, Linux and MacOs. In My Machine: I've Used Linux Ubuntu 20.04 and VS Code :)
+
+**Tutorial**: If you prefer Video Tutorial about how to run this app, please access here:
+https://www.youtube.com/watch?v=8z7R0NsU5tw
 
 If you want to know how do i configure my Linux Envoirnment: VSCode, extensions, the fonts i use, the system variables
 of my envoirnment and how to i configure then, the packages i use: I have it in a documented way. Please take a look
@@ -175,8 +179,6 @@ Then inside Mobile folder:
 I've recorded some videos also showing you how to Run this App. Just go to these channel:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
-### If you like this project, follow us and give a star :sunglasses: :computer:
-
 # 
 ### Additional Info:
 **Note about the CLAIMS**: System comes with a Claim Table and have 5 base claims: dashboard, manufacturer, devicemodel,
@@ -194,4 +196,8 @@ comes from it. Part of items i've done (like modals, messages, some designs), in
 The Template comes with no code to integrate to backend, no services, no interceptor, auth, nothing at all. Just
 clean Design-Material template. I'm not a Designer, so i have to use a ready-to-go template to go-ahead with Panel.
 
+
 ### Docker-Compose and How to RUN it with Docker:
+
+**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do ☕**
+

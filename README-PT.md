@@ -1,6 +1,7 @@
+**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer ☕**
+
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
 ### Angular Material Panel + React Native Mobile.
-### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
 
 * Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Basta acessar meu canal: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
 * Nota 2: Você pode usar apenas partes desse sistema. Exemplo: Se você não é um DevMobile, apenas ignore.
@@ -109,6 +110,8 @@ Você pode usar como um "esqueleto" para seu próximo software real. Boa sorte :
 
 # 
 ### Como rodar o App e Informações Técnicas:
+Há duas formas para rodar esse app: Manualmente (abaixo) ou via Docker com docker-compose (leia no final desse Readme).
+
 Você pode Desenvolver e rodar no Windows, Linux ou MacOs. Na minha máquina: Eu usei Linux Ubuntu 20.04 e VS Code :)
 
 **Tutorial**: Se você preferir um Tutorial em vídeo sobre como rodar esse App, basta acessar:
@@ -150,14 +153,14 @@ Então, na pasta ".Api" rode o comando:
 Sua Api deve iniciar. Se você ver ela rodando na porta 4001, perfeito! O BackEnd está pronto e rodando!
 
 
-### How to Run the FrontEnd:
+### Como rodar o FrontEnd:
 Para rodar o Angular e o Mobile, primeiro você precisa instalar o NodeJs e NPM. Na minha máquina pessoal, estou usando
 Node 14.2.0 e NPM 6.14.4. Apṕs isso, dentro da pasta do FrontEnd rode:
 
 <li>npm install</li>
 <li>ng serve --o</li>
 
-### How to Run the Mobile:
+### Como rodar o Mobile:
 Dentro da Pasta Mobile vá para "src > services > api.js". Você precisa configurar seu IP (troque 192.168.1.10).
 Para descobrir seu IP use "ifconfig" (linux) or "ipconfig" (windows). Nota: Eu tentei usar "localhost" com o React-Native,
 mas conflitou. Então eu usei o endereço de IP local.
@@ -174,8 +177,6 @@ Dentro da Pasta Mobile rode:
 ### Tutorial vídeos on Youtube:
 Eu gravei alguns vídeos também mostrando como rodar esse App. Apenas vá para esse canal:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
-
-### Se você gostar desse projeto, por favor siga e nos dê uma estrela :sunglasses: :computer:
 
 # 
 ### Informações adicionais:
@@ -194,4 +195,7 @@ vieram dele. Partes dos itens eu fiz (como modals, mensagens, alguns desings), i
 Template não veio com código para integrar ao backend, sem serviços, sem interceptor, autenticação, nada. Apenas um
 design limpo material. Eu não sou um Designer, então tive que usar um template pronto para seguir em frente com o painel.
 
+
 ### Docker-Compose and How to RUN it with Docker:
+
+**Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer ☕**
