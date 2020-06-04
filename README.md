@@ -111,7 +111,7 @@ of a Architecture, and start your own system under it, following the patterns al
 as a "skeleton" for your next Real-Software. Good luck :cake:
 
 # 
-### How to RUN it and Technical Information:
+### How to RUN it (manually way):
 There are two ways to run this app: Manually (below) or by Docker with docker-compose (please read on the end of this Readme).
 
 You can Develop and Run it on Windows, Linux and MacOs. In My Machine: I've Used Linux Ubuntu 20.04 and VS Code :)
@@ -175,6 +175,10 @@ Then inside Mobile folder:
 
 (Note: you'll need to setup your envoirnment and have a Device or Emulator running)
 
+# 
+###  How to RUN it (with docker-compose):
+
+
 ### Tutorial vídeos on Youtube:
 I've recorded some videos also showing you how to Run this App. Just go to these channel:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
@@ -195,9 +199,6 @@ will have all accesses. Anyway, if you want to test a "forbidden" and Angular In
 comes from it. Part of items i've done (like modals, messages, some designs), installed and configured components.
 The Template comes with no code to integrate to backend, no services, no interceptor, auth, nothing at all. Just
 clean Design-Material template. I'm not a Designer, so i have to use a ready-to-go template to go-ahead with Panel.
-
-
-### Docker-Compose and How to RUN it with Docker:
 
 **Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do ☕**
 

@@ -109,7 +109,7 @@ usar como base para seu sistema e arquitetura, e iniciar seu sistema sobre esse,
 Você pode usar como um "esqueleto" para seu próximo software real. Boa sorte :cake:
 
 # 
-### Como rodar o App e Informações Técnicas:
+### Como rodar esse app (forma manual):
 Há duas formas para rodar esse app: Manualmente (abaixo) ou via Docker com docker-compose (leia no final desse Readme).
 
 Você pode Desenvolver e rodar no Windows, Linux ou MacOs. Na minha máquina: Eu usei Linux Ubuntu 20.04 e VS Code :)
@@ -174,6 +174,9 @@ Dentro da Pasta Mobile rode:
 
 (Nota: Você precisará configurar seu ambiente e precisa ter um Equipamento ou Emulador rodando).
 
+# 
+### Como rodar (com docker-compose):
+
 ### Tutorial vídeos on Youtube:
 Eu gravei alguns vídeos também mostrando como rodar esse App. Apenas vá para esse canal:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
@@ -194,8 +197,5 @@ você pode deletar da tabela "UserClaim" (que linka Claims a Usuários). Então 
 vieram dele. Partes dos itens eu fiz (como modals, mensagens, alguns desings), instalei e configurei componentes. O
 Template não veio com código para integrar ao backend, sem serviços, sem interceptor, autenticação, nada. Apenas um
 design limpo material. Eu não sou um Designer, então tive que usar um template pronto para seguir em frente com o painel.
-
-
-### Docker-Compose and How to RUN it with Docker:
 
 **Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer ☕**
