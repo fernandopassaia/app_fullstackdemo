@@ -175,13 +175,12 @@ Then inside Mobile folder:
 
 (Note: you'll need to setup your envoirnment and have a Device or Emulator running)
 
-# 
-###  How to RUN it (with docker-compose):
-
-
 ### Tutorial vídeos on Youtube:
 I've recorded some videos also showing you how to Run this App. Just go to these channel:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
+
+# 
+###  How to RUN it (with docker-compose):
 
 # 
 ### Additional Info:

@@ -174,12 +174,12 @@ Dentro da Pasta Mobile rode:
 
 (Nota: Você precisará configurar seu ambiente e precisa ter um Equipamento ou Emulador rodando).
 
-# 
-### Como rodar (com docker-compose):
-
 ### Tutorial vídeos on Youtube:
 Eu gravei alguns vídeos também mostrando como rodar esse App. Apenas vá para esse canal:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
+
+# 
+### Como rodar (com docker-compose):
 
 # 
 ### Informações adicionais:
