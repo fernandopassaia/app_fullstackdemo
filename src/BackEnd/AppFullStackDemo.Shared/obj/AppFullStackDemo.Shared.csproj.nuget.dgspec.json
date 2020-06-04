@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Shared/AppFullStackDemo.Shared.csproj": {}
+    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {}
   },
   "projects": {
-    "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Shared/AppFullStackDemo.Shared.csproj": {
+    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Shared/AppFullStackDemo.Shared.csproj",
+        "projectUniqueName": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
         "projectName": "AppFullStackDemo.Shared",
-        "projectPath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Shared/AppFullStackDemo.Shared.csproj",
-        "packagesPath": "/home/fernandopassaia/.nuget/packages/",
-        "outputPath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Shared/obj/",
+        "projectPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
+        "packagesPath": "C:\\Users\\FernandoPassaia\\.nuget\\packages\\",
+        "outputPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/home/fernandopassaia/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\FernandoPassaia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -56,7 +55,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

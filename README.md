@@ -194,11 +194,4 @@ comes from it. Part of items i've done (like modals, messages, some designs), in
 The Template comes with no code to integrate to backend, no services, no interceptor, auth, nothing at all. Just
 clean Design-Material template. I'm not a Designer, so i have to use a ready-to-go template to go-ahead with Panel.
 
-# 
-### TO-DO:
-### Docker-Compose and integrated Envoirnment:
-Note: Need to be done on Future. Once i don't know (even if it's possible) to encapsulate inside a Containner the
-"React Native" (Mobile) part. Once app needs to Run on Machine (to access the Device and install the APK), i don't
-know how to make it runs inside a docker and make it automatically. Maybe it's possible to run "npm start" and 
-"react-native run-android" inside the docker containner and install on local mobile. Well, to be checked/done...
-### Lint: Need to pass the code by Linting and fix the inconsistences.
+### Docker-Compose and How to RUN it with Docker:

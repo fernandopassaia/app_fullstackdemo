@@ -12,3 +12,17 @@
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Domain.pdb
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/bin/Debug/netstandard2.0/AppFullStackDemo.Shared.pdb
 /home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Infra/obj/Debug/netstandard2.0/AppFullStackDemo.Infra.csproj.CopyComplete
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandard2.0\AppFullStackDemo.Infra.deps.json
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandard2.0\AppFullStackDemo.Infra.dll
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandard2.0\AppFullStackDemo.Infra.pdb
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandard2.0\AppFullStackDemo.Domain.dll
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandard2.0\AppFullStackDemo.Shared.dll
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandard2.0\AppFullStackDemo.Domain.pdb
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandard2.0\AppFullStackDemo.Shared.pdb
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.csprojAssemblyReference.cache
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.AssemblyInfoInputs.cache
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.AssemblyInfo.cs
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.csproj.CoreCompileInputs.cache
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.csproj.CopyComplete
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.dll
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.pdb

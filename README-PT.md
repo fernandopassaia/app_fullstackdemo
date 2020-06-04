@@ -193,3 +193,5 @@ você pode deletar da tabela "UserClaim" (que linka Claims a Usuários). Então 
 vieram dele. Partes dos itens eu fiz (como modals, mensagens, alguns desings), instalei e configurei componentes. O
 Template não veio com código para integrar ao backend, sem serviços, sem interceptor, autenticação, nada. Apenas um
 design limpo material. Eu não sou um Designer, então tive que usar um template pronto para seguir em frente com o painel.
+
+### Docker-Compose and How to RUN it with Docker:

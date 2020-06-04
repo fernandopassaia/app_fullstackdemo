@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "pdetOg62Ugnha9EmG5rTVums/qDPxO188uV5VyMMspevciCN7BkFNmt4W+7HZd+ls6LRK2tOvkEpeRKhikE04w==",
+  "dgSpecHash": "mU3ao34wV3muyjTHn6ObIgaAdhiYNSB9WtbQ05CFkORhpCz091KcKnS/qQObyfuiRTl1v5Urpy7UFez7sbbaPA==",
   "success": true,
-  "projectFilePath": "/home/fernandopassaia/Dev/app_fullstackdemo/src/BackEnd/AppFullStackDemo.Shared/AppFullStackDemo.Shared.csproj",
+  "projectFilePath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
   "expectedPackageFiles": [
-    "/home/fernandopassaia/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "/home/fernandopassaia/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\FernandoPassaia\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\FernandoPassaia\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }
