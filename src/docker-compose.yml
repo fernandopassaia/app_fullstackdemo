@@ -1,0 +1,31 @@
+version: "3"
+volumes:
+    studentsdata:
+networks:
+    backend:
+
+services:
+    mysql:
+        image: "mysql:5.7"
+        volumes:
+            - studentsdata:/var/lib/mysql
+            - ./MySqlInitScript:/docker-entrypoint-initdb.d
+        networks:
+            - backend
+        environment: 
+            - MYSQL_ROOT_PASSWORD=@1234Fd#
+            - bind-address=0.0.0.0
+    
+    mvc:
+        build :
+            context: .
+            dockerfile: Dockerfile
+        networks :
+            - backend            
+        ports :
+            - 5000:80
+        environment :
+            - DBHOST=mysql
+            - ASPNETCORE_ENVIRONMENT=Development
+        depends_on :
+            - mysql
