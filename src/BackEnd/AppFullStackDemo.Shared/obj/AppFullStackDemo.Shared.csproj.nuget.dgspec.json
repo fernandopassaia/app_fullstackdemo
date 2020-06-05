@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {}
+    "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {}
   },
   "projects": {
-    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {
+    "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
+        "projectUniqueName": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
         "projectName": "AppFullStackDemo.Shared",
-        "projectPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
+        "projectPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
         "packagesPath": "C:\\Users\\FernandoPassaia\\.nuget\\packages\\",
-        "outputPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\obj\\",
+        "outputPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\FernandoPassaia\\AppData\\Roaming\\NuGet\\NuGet.Config",
