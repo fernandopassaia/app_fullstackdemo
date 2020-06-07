@@ -15,6 +15,7 @@ namespace AppFullStackDemo.Infra.Context
 
         public AppFullStackDemoContext(DbContextOptions<AppFullStackDemoContext> options) : base(options)
         {
+
         }
 
         public AppFullStackDemoContext()
@@ -37,7 +38,7 @@ namespace AppFullStackDemo.Infra.Context
         {
             if (!optionsBuilder.IsConfigured) //if it's not configured and not comming from anysource, I'll use the default connection here
             {
-                optionsBuilder.UseSqlServer("Data Source=(local);Initial Catalog=AppFullStackDemo;Persist Security Info=True;User ID=sa;Password=@1234Fd@");
+                optionsBuilder.UseSqlServer("Data Source=172.19.0.2,1433;Initial Catalog=AppFullStackDemo;Persist Security Info=True;User ID=sa;Password=@1234Fd@");
             }
         }
 

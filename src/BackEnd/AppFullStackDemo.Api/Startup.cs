@@ -119,7 +119,7 @@ namespace AppFullStackDemo.Api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AppFullStackDemoContext context)
         {
             //here is the culture of your app language, please change it to modify Dates and other settings
             var supportedCultures = new[] { new CultureInfo("pt-BR") };
@@ -134,6 +134,7 @@ namespace AppFullStackDemo.Api
                 app.UseDeveloperExceptionPage();
 
             app.UseHttpsRedirection();
+            context.Database.Migrate(); //note: If API is running inside a DockerContainer, on the first RUN It will run the migration and create the database =)
 
             app.UseRouting();
             app.UseCors(x => x
