@@ -13,7 +13,7 @@ services:
             SA_PASSWORD: "@1234Fd#"
             ACCEPT_EULA: "Y"
         ports:
-            - "1433:1433"
+            - "4002:1433"
     
     appfullstackdemo.backend:
         build :
