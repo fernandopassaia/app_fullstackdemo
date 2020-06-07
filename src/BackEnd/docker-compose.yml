@@ -5,8 +5,7 @@ networks:
         driver: bridge
 
 services:
-    appfullstackdemo.sqlserver:
-        container_name: appfullstackdemo.sqlserver
+    sql.database:        
         image: microsoft/mssql-server-linux:2017-latest
         networks:
         - appfullstackdemo
@@ -16,8 +15,7 @@ services:
         ports:
             - "1433:1433"
     
-    appfullstackdemo.backend:
-        container_name: appfullstackdemo.backend
+    appfullstackdemo.api:        
         build :
             context: .
             dockerfile: Dockerfile
@@ -28,4 +26,4 @@ services:
         environment :            
             - ASPNETCORE_ENVIRONMENT=Development
         depends_on :
-            - appfullstackdemo.sqlserver
+            - sql.database
