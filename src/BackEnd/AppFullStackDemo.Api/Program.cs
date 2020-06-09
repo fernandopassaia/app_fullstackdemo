@@ -9,7 +9,7 @@ namespace AppFullStackDemo.Api
     {
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
                     WebHost.CreateDefaultBuilder(args)
-                    .UseUrls("http://*:4001") //Localhost dev: Angular will run on 4000 and BackEnd will run on 4001
+                    .UseUrls("http://*:4001") //Localhost dev: Angular will run on 4200 and BackEnd will run on 4001)
                     .UseContentRoot(Directory.GetCurrentDirectory())
                     .UseIISIntegration()
                         .UseStartup<Startup>();

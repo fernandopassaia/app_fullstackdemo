@@ -34,6 +34,14 @@ namespace AppFullStackDemo.Api.Controllers
             _appSettings = appSettings.Value;
         }
 
+        [HttpGet]
+        [Route("v1/test")]
+        [AllowAnonymous]
+        public string GetTest()
+        {
+            return "Nota 7 pra cima";
+        }
+
         [HttpPost]
         [Route("v1")]
         [AllowAnonymous]
