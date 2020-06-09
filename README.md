@@ -180,7 +180,7 @@ I've recorded some videos also showing you how to Run this App. Just go to these
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
 # 
-###  How to RUN it (with docker-compose):
+###  How to RUN it (with docker-compose) (under development, not working yet):
 
 # 
 ### Additional Info:

@@ -179,7 +179,7 @@ Eu gravei alguns vídeos também mostrando como rodar esse App. Apenas vá para 
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
 
 # 
-### Como rodar (com docker-compose):
+### Como rodar (com docker-compose) (sob desenvolvimento, ainda não funcionando):
 
 # 
 ### Informações adicionais:
