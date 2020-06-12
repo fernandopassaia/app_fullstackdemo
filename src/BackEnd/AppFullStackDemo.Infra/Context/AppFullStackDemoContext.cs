@@ -38,7 +38,7 @@ namespace AppFullStackDemo.Infra.Context
         {
             if (!optionsBuilder.IsConfigured) //if it's not configured and not comming from anysource, I'll use the default connection here
             {
-                optionsBuilder.UseNpgsql("server=localhost;port=5432;userid=postgres;database=AppFullStackDemo;password=@1234Fd#;");
+                optionsBuilder.UseNpgsql("server=postgres_container;port=5432;userid=postgres;database=AppFullStackDemo;password=@1234Fd#;");
             }
         }
 
