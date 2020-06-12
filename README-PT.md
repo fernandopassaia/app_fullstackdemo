@@ -1,6 +1,6 @@
 **Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer ☕**
 
-### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode
+### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode  - PostgreSQL
 ### Angular Material Panel + React Native Mobile.
 
 * Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Basta acessar meu canal: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
@@ -66,7 +66,7 @@ ReactNative, então você pode me ajudar a melhorar esse App e fazê-lo melhor :
 * Api REST + Handlers (Services) para lidar com as requisições - injeção de dependência
 * JWT Token para Autenticação + Claims + Json para transferir Data
 * Camada de Handler (você pode chamar de Serviço) para orquestrar as requisições
-* Entity Framework Core com camadas separadas para o ConfigMap das Tabelas + SQL Server Express (Free)
+* Entity Framework Core com camadas separadas para o ConfigMap das Tabelas + PostgreSQL (Free)
 * Camada de Repositórios + Unit of Work + 3 CRUDS (EF Code First)
 * CQRS para Receber Queries, Commands e Retornar Results
 * Validação por Contratos nos Comandos (Fail-Fast Validations)
@@ -127,7 +127,7 @@ Eu também uso "Azure Data Studio" para verificar o banco, caso precise. Nota: E
 Windows 10 e funcionou perfeitamente, também no VS Community 2019. Então basicamente escolha o seu predileto :trollface:
 
 ### Como rodar o BackEnd:
-A conexão do SQL Server para o BackEnd fica em "BackEnd>AppFullStackDemo.Api>appsettins.json", então por favor configure sua
+A conexão do PostgreSQL para o BackEnd fica em "BackEnd>AppFullStackDemo.Api>appsettins.json", então por favor configure sua
 conexão antes de tentar rodar o app. Se sua conexão não existir nesse arquivo, o EF irá usar o Default que está no arquivo
 "AppFullStackDemoContext.cs".
 

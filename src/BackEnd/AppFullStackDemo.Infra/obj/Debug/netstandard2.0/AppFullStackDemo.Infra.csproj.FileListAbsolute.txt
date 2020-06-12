@@ -22,7 +22,7 @@ c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\bin\Debug\netstandar
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.csprojAssemblyReference.cache
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.AssemblyInfoInputs.cache
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.AssemblyInfo.cs
-c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.csproj.CoreCompileInputs.cache
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.csproj.CopyComplete
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.dll
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.pdb
+C:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Infra\obj\Debug\netstandard2.0\AppFullStackDemo.Infra.csproj.CoreCompileInputs.cache

@@ -1,43 +1,54 @@
-version: "3.6"
+version: '3.6'
 
 services:
-    appfullstackdemo.database:
-        container_name: mssqlserver
-        image: mcr.microsoft.com/mssql/server:2019-CU4-ubuntu-16.04        
+    postgres:
+        container_name: postgres_container
+        image: postgres:10.13-alpine
         environment:
-            SA_PASSWORD: "@1234Fd#"
-            ACCEPT_EULA: "Y"
-        networks:
-            testing_net:
-                ipv4_address: 198.162.1.5
+            POSTGRES_USER: "postgres"
+            POSTGRES_PASSWORD: "@1234Fd#"
+            PGDATA: /data/postgres
+        volumes:
+            - postgres:/data/postgres
         ports:
-            - "4002:1433"    
-    
-    appfullstackdemo.backend:
-        container_name: webapi
+            - "5432:5432"
+        networks:
+            - postgres
+        restart: unless-stopped
+  
+    pgadmin:
+        container_name: pgadmin_container
+        image: dpage/pgadmin4
+        environment:
+            PGADMIN_DEFAULT_EMAIL: "pgadmin4@pgadmin.org"
+            PGADMIN_DEFAULT_PASSWORD: "@1234Fd#"
+        volumes:
+            - pgadmin:/root/.pgadmin
+        ports:
+            - "5050:80"
+        networks:
+            - postgres
+        restart: unless-stopped
+
+    backend:
+        container_name: backend_container
         build :
             context: .
-            dockerfile: Dockerfile
-        networks:
-            testing_net:
-                ipv4_address: 198.162.1.10
-        ports :
-            - 4001:4001
+            dockerfile: Dockerfile        
+        ports:
+            - "4001:4001"
         environment :
-            - ASPNETCORE_ENVIRONMENT=Development
-        depends_on :
-            - appfullstackdemo.database        
-
-    appfullstackdemo.sqltools:
-        container_name: mssqlservertools
-        image: mcr.microsoft.com/mssql-tools
+            - ASPNETCORE_ENVIRONMENT=Production
         networks:
-            testing_net:
-                ipv4_address: 198.162.1.15
+            - postgres
+        restart: unless-stopped
+        depends_on :
+            - postgres
 
 networks:
-    testing_net:
-        ipam:
-            driver: default
-            config:
-                - subnet: 198.162.1.0/16
+  postgres:
+    driver: bridge
+
+volumes:
+    postgres:
+    pgadmin: 
