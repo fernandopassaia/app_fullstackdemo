@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sSis0kdNdXTHp5Ju0VrKusVyprHeE4qmiUkGKfkHCNtX/CPlQZW067+MVoDgXwZXBS3wwW/zAc/fl8yK4EfraA==",
+  "dgSpecHash": "JhO20hcEn7ssKoJDj/izI1v+t19z0EjeROz6C3QXZkS5gsQevGaNq4BYoKIHLXZdLizncscIaW9nUbOrzSMMKQ==",
   "success": true,
-  "projectFilePath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj",
+  "projectFilePath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FernandoPassaia\\.nuget\\packages\\flunt\\1.0.4\\flunt.1.0.4.nupkg.sha512",
     "C:\\Users\\FernandoPassaia\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

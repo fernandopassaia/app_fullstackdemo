@@ -114,6 +114,8 @@ namespace AppFullStackDemo.Domain.Handlers
             if (!user.UserAccount.Authenticate(command.UserName, command.Password))
                 return new GetLoggedUserResult(false, "Cannot find UserName or Password", "", "", "", "", null);
 
+            _repository.MockDataCreator(); //note: comment THIS LINE to avoid the creation of FAKE MockData
+
             // If pass, user was authenticated, so i need to get the claims
             var userClaim = _userClaimRepository.GetByUser(user);
             List<string> Claims = new List<string>();
