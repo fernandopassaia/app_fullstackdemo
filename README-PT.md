@@ -1,7 +1,7 @@
 **Por favor se gostar deixe uma Estrela/Fork :star: . Você ficará atualizado - ainda temos muito código pra fazer ☕**
 
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode  - PostgreSQL
-### Angular Material Panel + React Native Mobile.
+### Angular Material Panel + React Native Mobile. Tudo containerizado com Docker...
 
 * Nota 1: Eu também gravei alguns tutoriais em vídeo que mostram como rodar essa app. Basta acessar meu canal: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
 * Nota 2: Você pode usar apenas partes desse sistema. Exemplo: Se você não é um DevMobile, apenas ignore.
@@ -109,7 +109,35 @@ usar como base para seu sistema e arquitetura, e iniciar seu sistema sobre esse,
 Você pode usar como um "esqueleto" para seu próximo software real. Boa sorte :cake:
 
 # 
-### Como rodar esse app (forma manual):
+###  How to RUN it (Option1 - Automatized way with docker-compose):
+É um tanto quanto simples: Apenas rode dentro da pasta "src" os comandos:
+
+<li>docker-compose build</li>
+<li>docker-compose up -d</li>
+
+Nota: O build deve levar algum tempo pra rodar a primeira vez, pois poderá baixar imagens do Docker Hub para o .NetCore,
+PostgreSQL, pgAdmin4, NodeJs14, nginx server. Também irá criar os containers, compilar, buildar imagens, criar bancos,
+npm install no Angular, deploy da aplicação e outras operações. Pegue um café e assista acontecer. Depois disso:
+
+Você pode usar "docker images" para verificar imagens criadas, e "docker container ps" para verificar se os 4 containers
+estão OK e UP: Você deve ver 4 containers - src_backend, postgres, dpage/pgadmin and src_frontend.
+
+Depois de tudo: abra seu browser no **http://localhost:4200** e veja tudo funcionando.
+Crie um novo usuário no "Registrar" e então use-o pra Logar. É isso ai!
+
+Se você quiser fazer alguns **testes** no banco de dados:
+PgAdmin4: localhost:5000
+Acesse com: postgres - @1234Fd#
+E então crie um Novo Servidor com o Endereço "postgres_container", user "postgres", password "@1234Fd#" e port 5432.
+
+Para **testar a API**:
+Use PostMan ou Imsomnia e Get no: http://localhost:4001/api/User/v1/test (se responder "nota 7 pra cima" - está OK!).
+
+Para dar **ShutDown** nos containers:
+docker-compose down --remove-orphans
+
+# 
+### Como rodar esse App (Opção 2 - manualmente configurando seu ambiente de desenvolvimento):
 Há duas formas para rodar esse app: Manualmente (abaixo) ou via Docker com docker-compose (leia no final desse Readme).
 
 Você pode Desenvolver e rodar no Windows, Linux ou MacOs. Na minha máquina: Eu usei Linux Ubuntu 20.04 e VS Code :)
@@ -177,9 +205,6 @@ Dentro da Pasta Mobile rode:
 ### Tutorial vídeos on Youtube:
 Eu gravei alguns vídeos também mostrando como rodar esse App. Apenas vá para esse canal:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
-
-# 
-### Como rodar (com docker-compose) (sob desenvolvimento, ainda não funcionando):
 
 # 
 ### Informações adicionais:

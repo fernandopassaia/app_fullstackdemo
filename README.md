@@ -1,18 +1,18 @@
-**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do ☕**
+**Please support us by giving a Star/Fork :star: . You"ll receive updates - we still have much code to do ☕**
 
 ### AppFullStackDemo .NetCore 3.1 DDD/SOLID/CQRS/Api Rest - CleanCode - PostgreSQL
-### Angular Material Panel + React Native Mobile.
+### Angular Material Panel + React Native Mobile. Everything Docker Containerized...
 
 
 * Note: Esse documento também está disponível em Português. Por favor veja o README-PT.
-* Note 2: I've also recorded some Vídeos tutorials that shows how to RUN this app. Just access my channel: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
+* Note 2: I"ve also recorded some Vídeos tutorials that shows how to RUN this app. Just access my channel: https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ
 * Note 3: You can use just parts of this project. Example: If you are not MobileDev, just ignore it.
 
 # 
 ### Business Logic:
 How it works: WebPanel (Angular Material) and MobileApp (React Native) will have a Login-Screen, that will works with the
 BackEnd to Login - in case of Panel it will provide full-management for DashBoard + 3 CRUDS + List/Details screen. In the
-case of MobileApp you will be allowed to see details of Device, and register it on portal. Once registered, you'll see it
+case of MobileApp you will be allowed to see details of Device, and register it on portal. Once registered, you"ll see it
 on Panel linked to the logged-user (details of Device) and will interact to the Dashboard.
 
 **FrontEnd** Will have a LoginScreen, where user can click on "Register new user" and create a new user, or also login
@@ -38,10 +38,10 @@ Architecture DDD/SOLID with CleanCode will be running providing all this data fo
 
 **MobileApp** can "register" the Device on backend - informing to backend the Manufacturer, Model, Phone Number, Serial
 Number, IMEI and some other information. You could use your Real Device or also an Emulator (like Android Studio or
-Genymotion) to test it. Once it's React Native and you have a Mac - you can work on it to compile it for iOS.
+Genymotion) to test it. Once it"s React Native and you have a Mac - you can work on it to compile it for iOS.
 
 Note that MobileApp is a "bônus": This App will basically just list some information about the Device, and allow this
-device to be registered on the backend, that will appears on the Panel. I'm not a React Native developer, so you can
+device to be registered on the backend, that will appears on the Panel. I"m not a React Native developer, so you can
 help-me to increase this App and make it better :)
 
 ![Login Panel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel1.png)
@@ -81,7 +81,7 @@ help-me to increase this App and make it better :)
 * Nice Interface using Angular Material, Modals, MatTable, Chartlist and more.
 * CQRS Models and Interfaces based on BackEnd (Commands and Results)
 * Layer for the Services and API Communication - Capable to Catch Results and Display Messages (like
-  good result or list of validation-errors) coming from the backend (you'll not need to catch on each
+  good result or list of validation-errors) coming from the backend (you"ll not need to catch on each
   service or screen the messages to display to user what happens) (httpinterceptor)
 * Separated Modules and Rotes Files for better Organization.
 * Shared Services for Dialogs, Notification Messages, Modal Screens, Enum Description.
@@ -90,7 +90,7 @@ help-me to increase this App and make it better :)
 ### Mobile React-Native + Device-Info:
 Login Screen that Will Communicate with the BackEnd for Auth and Store the JWT. Once Logged, MobileApp will
 allow user to add this device to the account with the Details of the Device (Imei, PhoneNumber, Serial,
-manufacturer, model). Once Registered, Device and it's info will appears on the Panel > User > Equipment list.
+manufacturer, model). Once Registered, Device and it"s info will appears on the Panel > User > Equipment list.
 
 # 
 ### License and USE of this App in a RealWorld Scenario:
@@ -99,7 +99,7 @@ to improve it. In a REAL-WORLD, this App needs to be better planned:
 
 Users should belong to a Company (or even better - User should belong to a Real-Entity like Employee or something),
 Claims should have Profiles (like Master, Admin...) where the Claims will be connected (not right to the user). We also
-need a screen to manage the CRUD of the Claims (that we don't have on this app). Create category for the Devices:
+need a screen to manage the CRUD of the Claims (that we don"t have on this app). Create category for the Devices:
 
 We also need to implement things like RefreshToken Logic, WelcomeEmail, Recover Password, Change PassWord Screen and go
 on and on - lot of other things to use this app in a Real-scenario. We need to adapt lot of things to a REAL-WORLD
@@ -111,21 +111,47 @@ of a Architecture, and start your own system under it, following the patterns al
 as a "skeleton" for your next Real-Software. Good luck :cake:
 
 # 
-### How to RUN it (manually way):
-There are two ways to run this app: Manually (below) or by Docker with docker-compose (please read on the end of this Readme).
+###  How to RUN it (Option1 - Automatized way with docker-compose):
+It's quite simple, just inside the "src" folder RUN the commands:
 
-You can Develop and Run it on Windows, Linux and MacOs. In My Machine: I've Used Linux Ubuntu 20.04 and VS Code :)
+<li>docker-compose build</li>
+<li>docker-compose up -d</li>
+
+Note: Build could take a lot of time on the first RUN, once it can download Docker Hub images for .NetCore, PostgreSQL, 
+pgAdmin4, NodeJs14, nginx server. It will also create the containers, compile and build the images, create databases, npm
+install on Angular, Deploy of applications and other operations. Take a coofee and watch it while it works. After that:
+
+You can use "docker images" to check the images created, and "docker container ps" to check if the 4 containers is OK and 
+UP: You should see 4 containers - src_backend, postgres, dpage/pgadmin and src_frontend.
+
+After everything: open your browser on **http://localhost:4200** and see everything working.
+Create a New User on "Register" and then use it to Login. That's it folks.
+
+If you want to do some **tests** on database:
+PgAdmin4: localhost:5000
+To access it use: postgres - @1234Fd#
+And then Create a New Server with Address "postgres_container", user "postgres", password "@1234Fd#" and port 5432.
+
+To **test API**:
+Use PostMan or Imsomnia and Get on: http://localhost:4001/api/User/v1/test (if API answer "nota 7 pra cima" - it's working).
+
+To **ShutDown** the containers:
+docker-compose down --remove-orphans
+
+# 
+### How to RUN it (Option2 - manually way by setting up your dev-env):
+You can Develop and Run it on Windows, Linux and MacOs. In My Machine: I"ve Used Linux Ubuntu 20.04 and VS Code :)
 
 **Tutorial**: If you prefer Video Tutorial about how to run this app, please access here:
-https://www.youtube.com/watch?v=8z7R0NsU5tw
+https://www.youtube.com/watch?v:8z7R0NsU5tw
 
 If you want to know how do i configure my Linux Envoirnment: VSCode, extensions, the fonts i use, the system variables
 of my envoirnment and how to i configure then, the packages i use: I have it in a documented way. Please take a look
-to my repo called **docsamples > generaldocs**. You'll see files and folders for .Net Core, VsCode, Angular, React 
+to my repo called **docsamples > generaldocs**. You"ll see files and folders for .Net Core, VsCode, Angular, React 
 Native - this are my references and the things i use to work in these languages.
 
 I also use "Insomnia" to TEST API, but you can use Postman or if you prefer, install some integrated tool like Swagger.
-I also use "Azure Data Studio" to check the DataBase in case of need. Note: I've also tested all this APP and Envoirment
+I also use "Azure Data Studio" to check the DataBase in case of need. Note: I"ve also tested all this APP and Envoirment
 using Windows 10 and it also works perfect, also in VS Community 2019. Basically chooose your favorite :trollface:
 
 ### How to Run the BackEnd:
@@ -155,32 +181,29 @@ Then, on the ".Api" folder run the command:
 The Api should start. If you see it running on PORT 4001, well done. BackEnd is ready to go.
 
 ### How to Run the FrontEnd:
-To Run the Angular AND the Mobile, first of all you need to install NodeJs and NPM. In my personal machine, I'm using
+To Run the Angular AND the Mobile, first of all you need to install NodeJs and NPM. In my personal machine, I"m using
 Node 14.2.0 and NPM 6.14.4. Then, Inside the FrontEnd folder run:
 
 <li>npm install</li>
 <li>ng serve --o</li>
 
 ### How to Run the Mobile:
-Inside Mobile folder go to "src > services > api.js". You'll need to setup your IP connection (replace 192.168.1.10).
-To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Note: I've tried to use "localhost" with React-Native
-api, but it conflicts. So I've used the Machine-IP instead.
+Inside Mobile folder go to "src > services > api.js". You"ll need to setup your IP connection (replace 192.168.1.10).
+To discover your IP use "ifconfig" (linux) or "ipconfig" (windows). Note: I"ve tried to use "localhost" with React-Native
+api, but it conflicts. So I"ve used the Machine-IP instead.
 
 You need to create a file called "local.properties" inside "android" Folder with your SDK Location. In my case:
-sdk.dir = /home/fernandopassaia/Android/Sdk
+sdk.dir : /home/fernandopassaia/Android/Sdk
 
 Then inside Mobile folder:
 <li>npm install</li>
 <li>react-native run-android</li>
 
-(Note: you'll need to setup your envoirnment and have a Device or Emulator running)
+(Note: you"ll need to setup your envoirnment and have a Device or Emulator running)
 
 ### Tutorial vídeos on Youtube:
-I've recorded some videos also showing you how to Run this App. Just go to these channel:
+I"ve recorded some videos also showing you how to Run this App. Just go to these channel:
 <li>https://www.youtube.com/channel/UCFzZD9snKFKZAx-FwL6SpeQ</li>
-
-# 
-###  How to RUN it (with docker-compose) (under development, not working yet):
 
 # 
 ### Additional Info:
@@ -194,10 +217,9 @@ So basically when a User is created, on the "UserHandler" the claims (all of the
 will have all accesses. Anyway, if you want to test a "forbidden" and Angular Interceptor, you can delete it from
 "UserClaim" table (that links Claims to the Users). Than just logout (to delete token) and go on...
 
-**Note about the Template**: I've used a Ready-Template from internet. So basically most of the things, html/css code
-comes from it. Part of items i've done (like modals, messages, some designs), installed and configured components.
+**Note about the Template**: I"ve used a Ready-Template from internet. So basically most of the things, html/css code
+comes from it. Part of items i"ve done (like modals, messages, some designs), installed and configured components.
 The Template comes with no code to integrate to backend, no services, no interceptor, auth, nothing at all. Just
-clean Design-Material template. I'm not a Designer, so i have to use a ready-to-go template to go-ahead with Panel.
+clean Design-Material template. I"m not a Designer, so i have to use a ready-to-go template to go-ahead with Panel.
 
-**Please support us by giving a Star/Fork :star: . You'll receive updates - we still have much code to do ☕**
-
+**Please support us by giving a Star/Fork :star: . You"ll receive updates - we still have much code to do ☕**

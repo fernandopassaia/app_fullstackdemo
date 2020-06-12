@@ -48,7 +48,7 @@ namespace AppFullStackDemo.Api
 
             services.AddScoped<AppFullStackDemoContext>();
             services.AddDbContext<AppFullStackDemoContext>(options =>
-            options.UseNpgsql(Configuration.GetConnectionString("ServerLocalConnection")));
+            options.UseNpgsql(Configuration.GetConnectionString("LocalConnection")));
 
             services.AddTransient<IUow, Uow>();
             services.AddTransient<IDeviceModelRepository, DeviceModelRepository>();

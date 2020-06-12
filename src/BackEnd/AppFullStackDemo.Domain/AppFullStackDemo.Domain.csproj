@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Handlers\Security\**" />
     <Compile Remove="Services\**" />
+    <EmbeddedResource Remove="Handlers\Security\**" />
     <EmbeddedResource Remove="Services\**" />
+    <None Remove="Handlers\Security\**" />
     <None Remove="Services\**" />
   </ItemGroup>
 
@@ -16,9 +19,5 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AppFullStackDemo.Shared\AppFullStackDemo.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Handlers\Security\" />
   </ItemGroup>
 </Project>
