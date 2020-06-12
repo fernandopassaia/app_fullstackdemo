@@ -31,6 +31,8 @@ namespace AppFullStackDemo.Domain.Handlers
 
         public IBaseCommandResult Handle(CreateUserCommand command)
         {
+            _repository.MockDataCreator(); //note: comment THIS LINE to avoid the creation of FAKE MockData
+
             // Fail Fast Validation
             command.Validate();
             if (command.Invalid)
@@ -48,8 +50,6 @@ namespace AppFullStackDemo.Domain.Handlers
                 new Email(command.EmailAddress),
                 new Address(command.Street, command.StreetNumber, command.NeighborHood, command.City, command.ZipCode),
                 new UserAccount(command.UserName, command.Password));
-
-            _repository.MockDataCreator(); //note: comment THIS LINE to avoid the creation of FAKE MockData
 
             // Save on Database
             _repository.Create(user);
@@ -105,6 +105,8 @@ namespace AppFullStackDemo.Domain.Handlers
 
         public GetLoggedUserResult Handle(LoginUserCommand command)
         {
+            _repository.MockDataCreator(); //note: comment THIS LINE to avoid the creation of FAKE MockData
+
             command.Validate();
             if (command.Invalid)
                 return new GetLoggedUserResult(false, "Cannot login because invalid information", "", "", "", "", null);
@@ -114,7 +116,7 @@ namespace AppFullStackDemo.Domain.Handlers
                 return new GetLoggedUserResult(false, "Cannot find UserName or Password", "", "", "", "", null);
 
             if (!user.UserAccount.Authenticate(command.UserName, command.Password))
-                return new GetLoggedUserResult(false, "Cannot find UserName or Password", "", "", "", "", null);            
+                return new GetLoggedUserResult(false, "Cannot find UserName or Password", "", "", "", "", null);
 
             // If pass, user was authenticated, so i need to get the claims
             var userClaim = _userClaimRepository.GetByUser(user);
