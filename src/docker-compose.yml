@@ -34,7 +34,7 @@ services:
         container_name: backend_container
         build :
             context: .
-            dockerfile: Dockerfile        
+            dockerfile: DockerfileBackEnd
         ports:
             - "4001:4001"
         environment :
@@ -44,6 +44,17 @@ services:
         restart: unless-stopped
         depends_on :
             - postgres
+
+    frontend:
+        container_name: frontend_container
+        build :
+            context: .
+            dockerfile: DockerfileFrontEnd
+        ports:
+            - "4200:80"
+        networks:
+            - postgres
+        restart: unless-stopped        
 
 networks:
   postgres:

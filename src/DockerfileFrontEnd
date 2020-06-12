@@ -1,0 +1,13 @@
+FROM node:14.4.0-alpine3.12 AS build
+WORKDIR /src
+ADD ./FrontEnd/ ./
+RUN npm install
+COPY . .
+RUN npm run build --prod
+
+### STAGE 2: Run ###
+FROM nginx:1.19.0-alpine
+COPY --from=build /src/dist/demo /usr/share/nginx/html
+EXPOSE 4200
+EXPOSE 80
+EXPOSE 8080

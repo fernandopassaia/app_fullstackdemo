@@ -10,9 +10,9 @@
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\bin\Debug\netstandard2.0\AppFullStackDemo.Shared.deps.json
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\bin\Debug\netstandard2.0\AppFullStackDemo.Shared.dll
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\bin\Debug\netstandard2.0\AppFullStackDemo.Shared.pdb
-c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\obj\Debug\netstandard2.0\AppFullStackDemo.Shared.csprojAssemblyReference.cache
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\obj\Debug\netstandard2.0\AppFullStackDemo.Shared.AssemblyInfoInputs.cache
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\obj\Debug\netstandard2.0\AppFullStackDemo.Shared.AssemblyInfo.cs
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\obj\Debug\netstandard2.0\AppFullStackDemo.Shared.csproj.CoreCompileInputs.cache
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\obj\Debug\netstandard2.0\AppFullStackDemo.Shared.dll
 c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\obj\Debug\netstandard2.0\AppFullStackDemo.Shared.pdb
+c:\Dev\app_fullstackdemo\src\BackEnd\AppFullStackDemo.Shared\obj\Debug\netstandard2.0\AppFullStackDemo.Shared.csprojAssemblyReference.cache

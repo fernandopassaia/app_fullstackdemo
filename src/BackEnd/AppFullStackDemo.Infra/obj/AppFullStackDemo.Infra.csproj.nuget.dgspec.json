@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj": {}
+    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj": {}
   },
   "projects": {
-    "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj": {
+    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj",
+        "projectUniqueName": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj",
         "projectName": "AppFullStackDemo.Domain",
-        "projectPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj",
+        "projectPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj",
         "packagesPath": "C:\\Users\\FernandoPassaia\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\obj\\",
+        "outputPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\FernandoPassaia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {
-                "projectPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj"
+              "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {
+                "projectPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj"
               }
             }
           }
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj": {
+    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj",
+        "projectUniqueName": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj",
         "projectName": "AppFullStackDemo.Infra",
-        "projectPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj",
+        "projectPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj",
         "packagesPath": "C:\\Users\\FernandoPassaia\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\obj\\",
+        "outputPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\FernandoPassaia\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -90,8 +90,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj": {
-                "projectPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj"
+              "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj": {
+                "projectPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Domain\\AppFullStackDemo.Domain.csproj"
               }
             }
           }
@@ -144,14 +144,14 @@
         }
       }
     },
-    "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {
+    "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
+        "projectUniqueName": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
         "projectName": "AppFullStackDemo.Shared",
-        "projectPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
+        "projectPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
         "packagesPath": "C:\\Users\\FernandoPassaia\\.nuget\\packages\\",
-        "outputPath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\obj\\",
+        "outputPath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\FernandoPassaia\\AppData\\Roaming\\NuGet\\NuGet.Config",

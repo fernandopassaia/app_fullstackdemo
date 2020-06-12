@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T2mp2662Tsx2ucMN8XQljZE5zmClmbpsDf09bFqeQYm9CHS9X/nJuY/JsRgHRMPrlwNT7Deo01MwEozdEms3Xg==",
+  "dgSpecHash": "uUGxXHHrToq04HemqOBvDvHctP61eX1+efskCodSQTl1mJcg/dSMex+CZUt5SbxmTi4qjdbEjVS3B656yNbyRg==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj",
+  "projectFilePath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Infra\\AppFullStackDemo.Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FernandoPassaia\\.nuget\\packages\\flunt\\1.0.4\\flunt.1.0.4.nupkg.sha512",
     "C:\\Users\\FernandoPassaia\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
