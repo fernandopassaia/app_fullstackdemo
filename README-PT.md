@@ -43,21 +43,21 @@ Note que o MobileApp é um bônus: Esse App irá basicamente apenas listar algum
 permitir que esse equipamento seja registrado no BackEnd, e então aparecerá no painel. Eu não sou um desenvolvedor
 ReactNative, então você pode me ajudar a melhorar esse App e fazê-lo melhor :)
 
-![Login Panel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel1.png)
+![Login Panel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel1.png)
 
-![Register Page](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel2.png)
+![Register Page](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel2.png)
 
-![DashBoard](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel3.png)
+![DashBoard](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel3.png)
 
-![DashBoard2](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel4.png)
+![DashBoard2](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel4.png)
 
-![UpdateDeviceModel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel5.png)
+![UpdateDeviceModel](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel5.png)
 
-![UserCrud](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel6.png)
+![UserCrud](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel6.png)
 
-![UserDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel7.png)
+![UserDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel7.png)
 
-![DeviceDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/panel/Panel8.png)
+![DeviceDetails](https://github.com/fernandopassaia/app_fullstackdemo/blob/master/docs/Panel8.png)
 
 # 
 ### BackEnd .NET Core 3.1 C# + EF Core (SQLServer). Rich Architecture DDD/SOLID CleanCode using:
