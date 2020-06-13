@@ -1,6 +1,11 @@
-FROM node:14.4.0-alpine3.12 AS build
+FROM node:14.4.0-buster AS build
 WORKDIR /src
 ADD ./FrontEnd/ ./
+RUN apt-get update && apt-get install -y apt-utils
+RUN apt-get install -y sudo
+RUN apt-get install -y curl && apt-get install -y ssh
+RUN apt-get install -y build-essential
+RUN npm install -g -save @angular/cli @angular/core @angular/material @angular/cdk @angular/animations
 RUN npm install
 COPY . .
 RUN npm run build --prod
