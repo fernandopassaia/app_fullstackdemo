@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kF8Zs7zqTHKR+IOsTXBy5NetZW/znUuSC57iIaeGBC1J7E7Hnlr42L0vyCUUT1fiQ+3igMYw4JDmKtTTJNJCFg==",
+  "dgSpecHash": "mcxhEIWKraN0+l0M8bZ+KUSJcQEnMyH1MNIZHhvvLPExf+lO3KGvtGPo4G8h52vfLbwAtwEGKX7B3wYQvBCX8w==",
   "success": true,
-  "projectFilePath": "C:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
+  "projectFilePath": "c:\\Dev\\app_fullstackdemo\\src\\BackEnd\\AppFullStackDemo.Shared\\AppFullStackDemo.Shared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FernandoPassaia\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\FernandoPassaia\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
