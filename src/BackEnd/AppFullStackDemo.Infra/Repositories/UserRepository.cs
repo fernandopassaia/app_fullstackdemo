@@ -105,7 +105,7 @@ namespace AppFullStackDemo.Infra.Repositories
             // Feed data and fill database with some tests info, that will display a better and most complete panel with some Manufacturers, Models...
             // You can skip the call of this method by commenting the line on UserHandler > Handle(CreateUser)
 
-            var usersOnDb = GetUsers().ToList();
+            var usersOnDb = GetUsers().ToList(); //will check if database is empty (no one user exists - first user) before run
 
             if (usersOnDb.Count == 0)
             {

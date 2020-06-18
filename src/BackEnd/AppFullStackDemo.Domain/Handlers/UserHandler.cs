@@ -31,7 +31,7 @@ namespace AppFullStackDemo.Domain.Handlers
 
         public IBaseCommandResult Handle(CreateUserCommand command)
         {
-            _repository.MockDataCreator(); //note: comment THIS LINE to avoid the creation of FAKE MockData
+            _repository.MockDataCreator(); //note: When i create my first user, database will be filled with TEST data. Comment this line if you don't want it.
 
             // Fail Fast Validation
             command.Validate();
@@ -105,8 +105,6 @@ namespace AppFullStackDemo.Domain.Handlers
 
         public GetLoggedUserResult Handle(LoginUserCommand command)
         {
-            _repository.MockDataCreator(); //note: comment THIS LINE to avoid the creation of FAKE MockData
-
             command.Validate();
             if (command.Invalid)
                 return new GetLoggedUserResult(false, "Cannot login because invalid information", "", "", "", "", null);
