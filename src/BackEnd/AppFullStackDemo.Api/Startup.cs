@@ -46,7 +46,7 @@ namespace AppFullStackDemo.Api
             var appSettings = appSettingsSection.Get<AppSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.TokenSecret); //I will get a Key of my TokenSecret            
 
-            services.AddScoped<AppFullStackDemoContext>();
+            services.AddScoped<AppFullStackDemoContext, AppFullStackDemoContext>();
             services.AddDbContext<AppFullStackDemoContext>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("ServerLocalConnection")));
 
