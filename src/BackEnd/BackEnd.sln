@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFullStackDemo.Domain", "AppFullStackDemo.Domain\AppFullStackDemo.Domain.csproj", "{5051D249-32BE-4694-A606-FB1790739D1C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFullStackDemo.Tests", "AppFullStackDemo.Tests\AppFullStackDemo.Tests.csproj", "{4AD5B98C-F639-4DCA-B0E5-68BFF21ABE8C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFullStackDemo.Shared", "AppFullStackDemo.Shared\AppFullStackDemo.Shared.csproj", "{F408DC8D-CC65-463E-80D7-1273522025A1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppFullStackDemo.Infra", "AppFullStackDemo.Infra\AppFullStackDemo.Infra.csproj", "{F7223773-6487-4726-AD05-25FF647C6910}"
