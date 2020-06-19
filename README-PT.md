@@ -114,7 +114,7 @@ Você pode usar como um "esqueleto" para seu próximo software real. Boa sorte :
 
 <li>docker-compose build</li>
 <li>docker-compose up -d</li>
-
+<br />
 Nota: O build deve levar algum tempo pra rodar a primeira vez, pois poderá baixar imagens do Docker Hub para o .NetCore,
 PostgreSQL, pgAdmin4, NodeJs14, nginx server. Também irá criar os containers, compilar, buildar imagens, criar bancos,
 npm install no Angular, deploy da aplicação e outras operações. Pegue um café e assista acontecer. Depois disso:

@@ -116,6 +116,7 @@ It's quite simple, just inside the "src" folder RUN the commands:
 
 <li>docker-compose build</li>
 <li>docker-compose up -d</li>
+<br />
 
 Note: Build could take a lot of time on the first RUN, once it can download Docker Hub images for .NetCore, PostgreSQL, 
 pgAdmin4, NodeJs14, nginx server. It will also create the containers, compile and build the images, create databases, npm
