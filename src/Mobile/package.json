@@ -9,7 +9,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.7.1",
     "@react-native-community/geolocation": "^2.0.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "react": "16.8.3",
     "react-native": "0.59.9",
     "react-native-device-info": "^5.5.1",
