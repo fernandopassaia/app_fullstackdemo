@@ -11,7 +11,7 @@
     "@react-native-community/geolocation": "^2.0.2",
     "axios": "^0.19.2",
     "react": "16.8.3",
-    "react-native": "0.59.9",
+    "react-native": "0.62.3",
     "react-native-device-info": "^5.5.1",
     "react-native-geolocation-service": "^4.0.0",
     "react-native-gesture-handler": "^1.5.6",
